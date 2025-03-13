@@ -1,0 +1,745 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>使用 ReportLab 实现在 pdf 生成表格印章 | 梁亚军的博客</title>
+  <meta name="keywords" content=" Python , ReportLab ">
+  <meta name="description" content="使用 ReportLab 实现在 pdf 生成表格印章 | 梁亚军的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content=".rui-content {         display: flex;         overflow: hidden;         width: 100%;       }       .rui-grid {         --time: 10s;         flex: none;         display: flex;         w">
+<meta property="og:type" content="website">
+<meta property="og:title" content="梁亚军的博客">
+<meta property="og:url" content="http://example.com/demo/index.html">
+<meta property="og:site_name" content="梁亚军的博客">
+<meta property="og:description" content=".rui-content {         display: flex;         overflow: hidden;         width: 100%;       }       .rui-grid {         --time: 10s;         flex: none;         display: flex;         w">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://picsum.photos/200/300?random=1">
+<meta property="og:image" content="https://picsum.photos/200/300?random=2">
+<meta property="og:image" content="https://picsum.photos/200/300?random=3">
+<meta property="og:image" content="https://picsum.photos/200/300?random=1">
+<meta property="og:image" content="https://picsum.photos/200/300?random=2">
+<meta property="og:image" content="https://picsum.photos/200/300?random=3">
+<meta property="article:published_time" content="2025-03-12T08:58:38.038Z">
+<meta property="article:modified_time" content="2025-03-12T08:58:38.038Z">
+<meta property="article:author" content="梁亚军">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://picsum.photos/200/300?random=1">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/brown-paper.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>梁亚军</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(11)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="Python">
+            
+            Python
+            <small>(9)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="前端">
+            
+            前端
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+        <a 
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="11">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://blog.csdn.net/m0_38082783">CSDN</a></li>
+            
+            <li><a target="_blank" href="https://juejin.cn/user/2124687263150136">掘金</a></li>
+            
+            <li><a target="_blank" href="https://www.zhihu.com/people/wen-bin-54-21">知乎</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="search shortcut key i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="switch to outline view shortcut key w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="return"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="case sensitive"></i>
+            <i class="iconfont icon-tag" data-title="label"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">outline</div>
+            <i class="iconfont icon-list" data-title="switch to article list"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>爬虫</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>文件名</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSDN</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSS</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Email</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Excel</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Image</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>PDF</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Python</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ReportLab</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Sort</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All "
+           href="/2025/03/12/python/Batch-recognize-the-text-in-pictures-and-save-it-into-an-Excel-spreadsheet/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="批量识别图片文字保存到 excel 中">批量识别图片文字保存到 excel 中</span>
+            <span class="post-date" title="2025-03-12 17:30:51">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2025/03/11/python/auto-on-pdf-in-to-excel-info/"
+           data-tag="Python,PDF,Excel"
+           data-author="" >
+            <span class="post-title" title="实现批量给 pdf 插入 excel 动态生成的印章">实现批量给 pdf 插入 excel 动态生成的印章</span>
+            <span class="post-date" title="2025-03-11 15:17:00">2025/03/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2025/03/11/python/auto-send-email/"
+           data-tag="Python,Excel,Email"
+           data-author="" >
+            <span class="post-title" title="实现批量发送邮件，通过读取 excel 中的发送内容">实现批量发送邮件，通过读取 excel 中的发送内容</span>
+            <span class="post-date" title="2025-03-11 15:17:00">2025/03/11</span>
+        </a>
+        
+        
+        <a  class="All 前端 "
+           href="/2025/03/05/%E5%89%8D%E7%AB%AF/css/css-scrolling/"
+           data-tag="CSS"
+           data-author="" >
+            <span class="post-title" title="CSS 实现无限滚动轮播">CSS 实现无限滚动轮播</span>
+            <span class="post-date" title="2025-03-05 14:51:00">2025/03/05</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/11/python/Automatically-generate-the-icon-management-file-for-the-front-end-project/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="自动生成前端项目图标管理文件">自动生成前端项目图标管理文件</span>
+            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/11/python/Sort-according-to-the-numbers-in-the-names-of-the-picture-files/"
+           data-tag="Python,Sort,文件名"
+           data-author="" >
+            <span class="post-title" title="根据图片文件名称中的数字排序">根据图片文件名称中的数字排序</span>
+            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/11/python/auto-replace-image-url/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="自动替换项目中全部图片的新服务器地址">自动替换项目中全部图片的新服务器地址</span>
+            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/11/python/do-pdf-in-to-image/"
+           data-tag="Python,PDF,Image"
+           data-author="" >
+            <span class="post-title" title="实现向指定PDF指定页面指定位置插入图片">实现向指定PDF指定页面指定位置插入图片</span>
+            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/11/python/to-pdf-table/"
+           data-tag="Python,ReportLab"
+           data-author="" >
+            <span class="post-title" title="使用 ReportLab 实现在 pdf 生成表格印章">使用 ReportLab 实现在 pdf 生成表格印章</span>
+            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/10/python/Automatically-download-all-the-hero-avatars-in-Honor-of-Kings-in-batches/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="自动批量下载王者荣耀的所有英雄头像">自动批量下载王者荣耀的所有英雄头像</span>
+            <span class="post-date" title="2021-08-10 16:00:00">2021/08/10</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/01/13/python/auto-crawl-the-list-of-CSDN-column-articles/"
+           data-tag="Python,CSDN,爬虫"
+           data-author="" >
+            <span class="post-title" title="爬取 CSDN 专栏文章列表">爬取 CSDN 专栏文章列表</span>
+            <span class="post-date" title="2021-01-13 16:00:00">2021/01/13</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="Toggle full screen shortcut key s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-python/to-pdf-table" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">使用 ReportLab 实现在 pdf 生成表格印章</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Python">Python</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">Python</a>
+            
+            <a class="color5">ReportLab</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2025-03-12 17:13:18'>2021-08-11 16:00</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%9C%80%E6%B1%82%E5%9C%BA%E6%99%AF"><span class="toc-text">1. 需求场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-ReportLab-%E7%94%9F%E6%88%90%E8%A1%A8%E6%A0%BC%E7%9A%84%E7%B1%BB-Table"><span class="toc-text">2. ReportLab 生成表格的类 Table</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-ReportLab-%E8%AE%BE%E7%BD%AE%E8%A1%A8%E6%A0%BC%E6%A0%B7%E5%BC%8F%E7%9A%84%E7%B1%BB-TableStyle"><span class="toc-text">3. ReportLab 设置表格样式的类 TableStyle</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-ReportLab-%E7%94%9F%E6%88%90%E8%A1%A8%E6%A0%BC%E6%B3%A8%E5%86%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93"><span class="toc-text">4. ReportLab 生成表格注册自定义字体</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E5%AF%BC%E5%85%A5%E5%BF%85%E8%A6%81%E7%9A%84%E6%A8%A1%E5%9D%97"><span class="toc-text">4.1 导入必要的模块</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E6%B3%A8%E5%86%8C%E5%AD%97%E4%BD%93"><span class="toc-text">4.2 注册字体</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-%E4%BD%BF%E7%94%A8%E5%AD%97%E4%BD%93"><span class="toc-text">4.3 使用字体</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-TableStyle-%E5%88%97%E8%A1%A8%E5%85%83%E7%BB%84%E7%9A%84%E5%90%AB%E4%B9%89"><span class="toc-text">5. TableStyle 列表元组的含义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%AE%9E%E7%8E%B0%E8%A1%A8%E6%A0%BC%E5%8D%B0%E7%AB%A0"><span class="toc-text">6. 实现表格印章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%AE%9E%E7%8E%B0%E6%95%88%E6%9E%9C"><span class="toc-text">7. 实现效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E6%80%BB%E7%BB%93"><span class="toc-text">8. 总结</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-需求场景"><a href="#1-需求场景" class="headerlink" title="1. 需求场景"></a>1. 需求场景</h3><p>之前写过一篇博客，使用 PIL 生成表格样式的印章，在使用 reportlab 和 PyPDF2 插入图片到指定位置。后来学习了一下 ReportLab，发现可以直接创建表格。那么之前的那个需求就没有那么麻烦了，我们可以直接创建表格在一个 pdf 的指定位置，然后再合并到需要印章的 pdf 中。减少了生成印章的步骤。</p>
+<h3 id="2-ReportLab-生成表格的类-Table"><a href="#2-ReportLab-生成表格的类-Table" class="headerlink" title="2. ReportLab 生成表格的类 Table"></a>2. ReportLab 生成表格的类 Table</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>data</td>
+<td>表格中单元格值的序列。每个单元格的值应该能够转换成字符串，或者是一个Flowable实例（如Paragraph），或者是一个包含此类实例的列表或元组。</td>
+</tr>
+<tr>
+<td>colWidths</td>
+<td>一个数字序列，可以是None，代表列的宽度。如果设置为None，则相应的列宽将自动计算。</td>
+</tr>
+<tr>
+<td>rowHeights</td>
+<td>一个数字序列，可以是None，代表行的高度。如果设置为None，则相应的行高将自动计算。</td>
+</tr>
+<tr>
+<td>style</td>
+<td>表格的初始样式。</td>
+</tr>
+<tr>
+<td>splitByRow</td>
+<td>当表格太高或太宽而无法适应当前上下文时，这个参数决定是先按行分割还是先按列分割。</td>
+</tr>
+<tr>
+<td>repeatRows</td>
+<td>指定当表格被要求拆分时应该重复的前导行数量或元组。</td>
+</tr>
+<tr>
+<td>rowSplitRange</td>
+<td>可以用来控制表的分割，将表分割成其行的子集。</td>
+</tr>
+<tr>
+<td>spaceBefore</td>
+<td>当在platypus故事中重新编排时，可以用来在表格之前或之后放置额外的空间。</td>
+</tr>
+<tr>
+<td>spaceAfter</td>
+<td>当在platypus故事中重新编排时，可以用来在表格之前或之后放置额外的空间。</td>
+</tr>
+</tbody></table>
+<h3 id="3-ReportLab-设置表格样式的类-TableStyle"><a href="#3-ReportLab-设置表格样式的类-TableStyle" class="headerlink" title="3. ReportLab 设置表格样式的类 TableStyle"></a>3. ReportLab 设置表格样式的类 TableStyle</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FONT</td>
+<td>需要字体名称，可选的字体大小和行距。</td>
+</tr>
+<tr>
+<td>FONTNAME (或 FACE)</td>
+<td>需要字体名称（自定义字体需要注册）。</td>
+</tr>
+<tr>
+<td>FONTSIZE (或 SIZE)</td>
+<td>需要字体大小（以点为单位）。</td>
+</tr>
+<tr>
+<td>LEADING</td>
+<td>需要行距（以点为单位）。</td>
+</tr>
+<tr>
+<td>TEXTCOLOR</td>
+<td>需要颜色名称或(R,G,B)元组。</td>
+</tr>
+<tr>
+<td>ALIGNMENT (或 ALIGN)</td>
+<td>可以是LEFT、RIGHT、CENTER或DECIMAL之一。</td>
+</tr>
+<tr>
+<td>BACKGROUND</td>
+<td>可以是颜色对象、字符串名称、数值元组&#x2F;列表，或者是描述所需渐变填充的列表&#x2F;元组。</td>
+</tr>
+<tr>
+<td>LEFTPADDING, RIGHTPADDING, BOTTOMPADDING, TOPPADDING</td>
+<td>以点为单位的填充值。</td>
+</tr>
+<tr>
+<td>ROWBACKGROUNDS</td>
+<td>使用循环的背景颜色列表。</td>
+</tr>
+<tr>
+<td>COLBACKGROUNDS</td>
+<td>使用循环的列背景颜色列表。</td>
+</tr>
+<tr>
+<td>VALIGN</td>
+<td>可以是TOP、MIDDLE或默认的BOTTOM。</td>
+</tr>
+<tr>
+<td>GRID, BOX, OUTLINE, INNERGRID, LINEBELOW, LINEABOVE, LINEBEFORE, LINEAFTER</td>
+<td>线条命令以标识符开始，接着是起始和停止单元格坐标，然后是所需的线条厚度（以点为单位）和颜色。颜色可以是名称，也可以是(R,G,B)元组。</td>
+</tr>
+<tr>
+<td>SPAN</td>
+<td>指示将某些单元格合并为一个超级单元格。</td>
+</tr>
+</tbody></table>
+<h3 id="4-ReportLab-生成表格注册自定义字体"><a href="#4-ReportLab-生成表格注册自定义字体" class="headerlink" title="4. ReportLab 生成表格注册自定义字体"></a>4. ReportLab 生成表格注册自定义字体</h3><h4 id="4-1-导入必要的模块"><a href="#4-1-导入必要的模块" class="headerlink" title="4.1 导入必要的模块"></a>4.1 导入必要的模块</h4><blockquote>
+<p>需要从reportlab.pdfbase.ttfonts导入TTFont类，以及从reportlab.pdfbase.pdfmetrics导入registerFont函数。</p>
+</blockquote>
+<h4 id="4-2-注册字体"><a href="#4-2-注册字体" class="headerlink" title="4.2 注册字体"></a>4.2 注册字体</h4><blockquote>
+<p>使用registerFont函数来注册你的自定义字体。你需要提供一个字体名称和字体文件的路径。例如，registerFont(TTFont(‘song’, ‘path&#x2F;to&#x2F;your&#x2F;font.ttf’))。</p>
+</blockquote>
+<h4 id="4-3-使用字体"><a href="#4-3-使用字体" class="headerlink" title="4.3 使用字体"></a>4.3 使用字体</h4><blockquote>
+<p>一旦字体被注册，你就可以在创建PDF文档时使用这个字体名称。例如，在创建表格时，你可以指定fontName参数为你注册的自定义字体名称。</p>
+</blockquote>
+<h3 id="5-TableStyle-列表元组的含义"><a href="#5-TableStyle-列表元组的含义" class="headerlink" title="5. TableStyle 列表元组的含义"></a>5. TableStyle 列表元组的含义</h3><table>
+<thead>
+<tr>
+<th>参数</th>
+<th>参数说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>FONTNAME</td>
+<td>这是命令的关键字，用于指定要设置的样式属性是字体名称。</td>
+</tr>
+<tr>
+<td>(startRow, startCol)</td>
+<td>这是一个二元组，指定了样式应用的起始单元格的行号和列号。</td>
+</tr>
+<tr>
+<td>(endRow, endCol)</td>
+<td>这是一个二元组，指定了样式应用的结束单元格的行号和列号。</td>
+</tr>
+<tr>
+<td>fontName</td>
+<td>这是你想要应用到指定范围内的单元格的字体名称。</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p>如果你想要将这种样式应用到整个表格，你可以将起始和结束坐标设置为 (0,0) 和 (-1,-1)。-1 在这里表示最后一列或最后一行。</p>
+</blockquote>
+<h3 id="6-实现表格印章"><a href="#6-实现表格印章" class="headerlink" title="6. 实现表格印章"></a>6. 实现表格印章</h3><ol>
+<li>导入对应的模块，Table, TableStyle创建表格和设置表格样式；</li>
+<li>初始化创建的表格，设置每个表格单元格的宽高；</li>
+<li>注册【仿宋】字体名为 simsun，后期使用；</li>
+<li>创建表格函数的实现：</li>
+<li>初始化表格数据 data，当然如果做批量创建，数据最好传入；</li>
+<li>创建表格实例，由于此处创建的是两行三列，所以 colWidths&#x3D;3<em>xxx，rowHeights&#x3D;2</em>xxx；</li>
+<li>hAlign 和 vAlign 设置表格所处的位置；</li>
+<li>TableStyle 创建表格样式，通过 setStyle 设置表格样式；</li>
+<li>创建 PDF 文档并添加表格。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">from reportlab.platypus import Table, TableStyle</span><br><span class="line">from reportlab.lib import colors</span><br><span class="line">from reportlab.pdfbase import pdfmetrics</span><br><span class="line">from reportlab.pdfbase.ttfonts import TTFont</span><br><span class="line">from reportlab.lib.units import inch</span><br><span class="line">from reportlab.platypus import SimpleDocTemplate</span><br><span class="line">from PyPDF2 import PdfWriter, PdfReader</span><br><span class="line">import io</span><br><span class="line"></span><br><span class="line">class CreateTable:</span><br><span class="line">  def __init__(self):</span><br><span class="line">    self.width = 90</span><br><span class="line">    self.height = 40</span><br><span class="line">    # 注册自定义字体</span><br><span class="line">    pdfmetrics.registerFont(TTFont(&#x27;simsun&#x27;, &#x27;C:/Windows/Fonts/simsun.ttc&#x27;))</span><br><span class="line">  </span><br><span class="line">  def create_table(self):</span><br><span class="line">    # 表格数据</span><br><span class="line">    data = [[&#x27;Q103&#x27;, &#x27;2022&#x27;, &#x27;37&#x27;],</span><br><span class="line">            [&#x27;DQB&#x27;, &#x27;永久&#x27;, &#x27;12&#x27;]]</span><br><span class="line">    # 创建表格实例</span><br><span class="line">    t = Table(data, colWidths=3*[self.width], rowHeights=2*[self.height])</span><br><span class="line">    t.hAlign = &#x27;LEFT&#x27;</span><br><span class="line">    t.vAlign = &#x27;MIDDLE&#x27;</span><br><span class="line">    # 设置表格样式</span><br><span class="line">    t.setStyle(TableStyle([</span><br><span class="line">      (&#x27;FONTNAME&#x27;, (0, 0), (-1, -1), &#x27;simsun&#x27;),</span><br><span class="line">      (&#x27;FONTSIZE&#x27;, (0, 0), (-1, -1), 24),</span><br><span class="line">      (&#x27;TEXTCOLOR&#x27;,(0,0),(-1,-1),colors.red),</span><br><span class="line">      (&#x27;INNERGRID&#x27;, (0,0), (-1,-1), 2, colors.red),</span><br><span class="line">      (&#x27;BOX&#x27;, (0,0), (-1,-1), 2, colors.red),</span><br><span class="line">      (&#x27;ALIGN&#x27;, (0, 0), (-1, -1), &#x27;CENTER&#x27;),</span><br><span class="line">      (&#x27;VALIGN&#x27;, (0, 0), (-1, -1), &#x27;TOP&#x27;),</span><br><span class="line">    ]))</span><br><span class="line">    # 创建 PDF 文档并添加表格</span><br><span class="line">    elements = [t]</span><br><span class="line">    doc = SimpleDocTemplate(&#x27;TabDemo3.pdf&#x27;)</span><br><span class="line">    doc.build(elements)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">  table = CreateTable()</span><br><span class="line">  table.create_table()</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-实现效果"><a href="#7-实现效果" class="headerlink" title="7. 实现效果"></a>7. 实现效果</h3><p><img src="https://foruda.gitee.com/images/1709104163778821481/26c531e1_1681522.png" alt="输入图片说明"></p>
+<h3 id="8-总结"><a href="#8-总结" class="headerlink" title="8. 总结"></a>8. 总结</h3><ol>
+<li>单纯样式来说，还是基本满足需求，不过这样创建的印章有一个最大的问题，就是不能放到指定的位置。表格修改位置的属性只有 hAlign 和 vAlign，并不能满足我的需求。</li>
+<li>思考到这里，有考虑可以使用 Canvas 类实现印章的绘制，不过又要熟悉一下 ReportLab 的 Canvas，这就比较麻烦了，如果是一个大项目，为了性能考虑，我或许会考虑使用ReportLab 的 Canvas 实现。但是这么一个小的工具，最后就使用了比较熟悉的 PIL 实现。</li>
+<li>实现需求的工具和方法很多，最主要的是找到合适自己的并且自己比较熟悉的，在自己闲下来的时候，把自己找到或者想到的方法都实现一次，就能知道每个方法的优劣点，方便在以后遇到类似问题，能够快速处理，找到最合适的方法。</li>
+</ol>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 1148063373@qq.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2017 梁亚军
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

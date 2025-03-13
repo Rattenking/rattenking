@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>实现批量给 pdf 插入 excel 动态生成的印章 | 梁亚军的博客</title>
+  <meta name="keywords" content=" Python , PDF , Excel ">
+  <meta name="description" content="实现批量给 pdf 插入 excel 动态生成的印章 | 梁亚军的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content=".rui-content {         display: flex;         overflow: hidden;         width: 100%;       }       .rui-grid {         --time: 10s;         flex: none;         display: flex;         w">
+<meta property="og:type" content="website">
+<meta property="og:title" content="梁亚军的博客">
+<meta property="og:url" content="http://example.com/demo/index.html">
+<meta property="og:site_name" content="梁亚军的博客">
+<meta property="og:description" content=".rui-content {         display: flex;         overflow: hidden;         width: 100%;       }       .rui-grid {         --time: 10s;         flex: none;         display: flex;         w">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://picsum.photos/200/300?random=1">
+<meta property="og:image" content="https://picsum.photos/200/300?random=2">
+<meta property="og:image" content="https://picsum.photos/200/300?random=3">
+<meta property="og:image" content="https://picsum.photos/200/300?random=1">
+<meta property="og:image" content="https://picsum.photos/200/300?random=2">
+<meta property="og:image" content="https://picsum.photos/200/300?random=3">
+<meta property="article:published_time" content="2025-03-12T08:58:38.038Z">
+<meta property="article:modified_time" content="2025-03-12T08:58:38.038Z">
+<meta property="article:author" content="梁亚军">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://picsum.photos/200/300?random=1">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/brown-paper.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>梁亚军</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(11)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="Python">
+            
+            Python
+            <small>(9)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="前端">
+            
+            前端
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+        <a 
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="11">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://blog.csdn.net/m0_38082783">CSDN</a></li>
+            
+            <li><a target="_blank" href="https://juejin.cn/user/2124687263150136">掘金</a></li>
+            
+            <li><a target="_blank" href="https://www.zhihu.com/people/wen-bin-54-21">知乎</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="search shortcut key i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="switch to outline view shortcut key w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="return"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="case sensitive"></i>
+            <i class="iconfont icon-tag" data-title="label"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">outline</div>
+            <i class="iconfont icon-list" data-title="switch to article list"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>爬虫</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>文件名</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSDN</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSS</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Email</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Excel</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Image</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>PDF</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Python</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ReportLab</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Sort</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All "
+           href="/2025/03/12/python/Batch-recognize-the-text-in-pictures-and-save-it-into-an-Excel-spreadsheet/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="批量识别图片文字保存到 excel 中">批量识别图片文字保存到 excel 中</span>
+            <span class="post-date" title="2025-03-12 17:30:51">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2025/03/11/python/auto-on-pdf-in-to-excel-info/"
+           data-tag="Python,PDF,Excel"
+           data-author="" >
+            <span class="post-title" title="实现批量给 pdf 插入 excel 动态生成的印章">实现批量给 pdf 插入 excel 动态生成的印章</span>
+            <span class="post-date" title="2025-03-11 15:17:00">2025/03/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2025/03/11/python/auto-send-email/"
+           data-tag="Python,Excel,Email"
+           data-author="" >
+            <span class="post-title" title="实现批量发送邮件，通过读取 excel 中的发送内容">实现批量发送邮件，通过读取 excel 中的发送内容</span>
+            <span class="post-date" title="2025-03-11 15:17:00">2025/03/11</span>
+        </a>
+        
+        
+        <a  class="All 前端 "
+           href="/2025/03/05/%E5%89%8D%E7%AB%AF/css/css-scrolling/"
+           data-tag="CSS"
+           data-author="" >
+            <span class="post-title" title="CSS 实现无限滚动轮播">CSS 实现无限滚动轮播</span>
+            <span class="post-date" title="2025-03-05 14:51:00">2025/03/05</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/11/python/Automatically-generate-the-icon-management-file-for-the-front-end-project/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="自动生成前端项目图标管理文件">自动生成前端项目图标管理文件</span>
+            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/11/python/Sort-according-to-the-numbers-in-the-names-of-the-picture-files/"
+           data-tag="Python,Sort,文件名"
+           data-author="" >
+            <span class="post-title" title="根据图片文件名称中的数字排序">根据图片文件名称中的数字排序</span>
+            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/11/python/auto-replace-image-url/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="自动替换项目中全部图片的新服务器地址">自动替换项目中全部图片的新服务器地址</span>
+            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/11/python/do-pdf-in-to-image/"
+           data-tag="Python,PDF,Image"
+           data-author="" >
+            <span class="post-title" title="实现向指定PDF指定页面指定位置插入图片">实现向指定PDF指定页面指定位置插入图片</span>
+            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/11/python/to-pdf-table/"
+           data-tag="Python,ReportLab"
+           data-author="" >
+            <span class="post-title" title="使用 ReportLab 实现在 pdf 生成表格印章">使用 ReportLab 实现在 pdf 生成表格印章</span>
+            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/10/python/Automatically-download-all-the-hero-avatars-in-Honor-of-Kings-in-batches/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="自动批量下载王者荣耀的所有英雄头像">自动批量下载王者荣耀的所有英雄头像</span>
+            <span class="post-date" title="2021-08-10 16:00:00">2021/08/10</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/01/13/python/auto-crawl-the-list-of-CSDN-column-articles/"
+           data-tag="Python,CSDN,爬虫"
+           data-author="" >
+            <span class="post-title" title="爬取 CSDN 专栏文章列表">爬取 CSDN 专栏文章列表</span>
+            <span class="post-date" title="2021-01-13 16:00:00">2021/01/13</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="Toggle full screen shortcut key s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-python/auto-on-pdf-in-to-excel-info" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">实现批量给 pdf 插入 excel 动态生成的印章</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Python">Python</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">Python</a>
+            
+            <a class="color4">PDF</a>
+            
+            <a class="color1">Excel</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2025-03-12 17:17:21'>2025-03-11 15:17</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%9C%80%E6%B1%82"><span class="toc-text">1. 需求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="toc-text">2. 需求分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%94%9F%E6%88%90%E5%8D%B0%E7%AB%A0-SealImage-py"><span class="toc-text">3. 生成印章 SealImage.py</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%8D%B0%E7%AB%A0%E7%BB%98%E5%88%B6%E7%BB%93%E6%9E%9C"><span class="toc-text">4. 印章绘制结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%90%88%E5%B9%B6%E5%9B%BE%E7%89%87%E5%88%B0-pdf-%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE-MergeImageToPDF-py"><span class="toc-text">5. 合并图片到 pdf 指定位置 MergeImageToPDF.py</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C"><span class="toc-text">6. 插入图片运行结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-excel-%E6%96%87%E4%BB%B6%E8%BF%9B%E8%A1%8C%E8%87%AA%E5%8A%A8%E6%89%B9%E9%87%8F%E6%93%8D%E4%BD%9C"><span class="toc-text">7. excel 文件进行自动批量操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C"><span class="toc-text">8. 批量处理运行结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E6%80%BB%E7%BB%93"><span class="toc-text">9. 总结</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-需求"><a href="#1-需求" class="headerlink" title="1. 需求"></a>1. 需求</h3><ol>
+<li>想要能否实现批量自动为多个pdf加盖不同六格虚拟章（不改变pdf原有分辨率和文字可识别性）；</li>
+<li>改在pdf首页上方空白位置，一般居中即可；</li>
+<li>如可由使用者自主选择靠页边距更好，以便部分首页上方有字的文件时人工可微调位置；</li>
+<li>从上而下，自左往右分别对应 excel 中各个字段；</li>
+<li>pdf 的文件名和 excel 中档号字段一致。</li>
+</ol>
+<h3 id="2-需求分析"><a href="#2-需求分析" class="headerlink" title="2. 需求分析"></a>2. 需求分析</h3><ol>
+<li>印章绘制技术可采用 opencv，PIL，reportlab等；</li>
+<li>excel 文件的读取可以采用 openpyxl，pandas，xlrd，xlwt 和 xlutils等；</li>
+<li>pdf 文件的读写操作可采用 PyPDF2，pdfminer.six，PyMuPDF；</li>
+<li>根据需求绘制印章采用了 PIL， excel 操作采用 openpyxl， pdf 读写操作采用 PyPDF2。</li>
+</ol>
+<h3 id="3-生成印章-SealImage-py"><a href="#3-生成印章-SealImage-py" class="headerlink" title="3. 生成印章 SealImage.py"></a>3. 生成印章 SealImage.py</h3><ol>
+<li>初始化印章的边框、文本、背景颜色；</li>
+<li>创建印章函数；<blockquote>
+<p>印章大小、创建印章图像、绘制印章格子、绘制印章文字、添加纹理。</p>
+</blockquote>
+</li>
+<li>方形印章格子绘制；<blockquote>
+<p>获取图像长宽、计算各个矩形的起始点、绘制上侧中间矩形、绘制上下矩形， 注意边框占位一半、绘制边框。</p>
+</blockquote>
+</li>
+<li>绘制印章中的文字；<blockquote>
+<p>获取图像长宽、计算各个文本的中心点坐标、文本、数字、英文对应的font、获取传入的字段、依次绘制对应的文本。</p>
+</blockquote>
+</li>
+<li>给印章添加纹理；<br>5.1 打开纹理图像，随机截取旋转；<br>5.2 随机截取一部分纹理图；<br>5.3 重新设置截取图片的的大小，并进行一次高斯模糊；<br>5.4 将纹理图的灰度映射到原图的透明度，由于纹理图片自带灰度，映射后会有透明效果，所以fill的透明度不能太低；<br>5.5 进行一次高斯模糊，提高真实度。</li>
+<li>测试使用查看当前图片绘制情况；</li>
+<li>保存图片；</li>
+<li>绘制矩形；</li>
+<li>绘制文本。<blockquote>
+<p>计算传入文本的占位的盒子宽高、根据文字的占位，计算绘制文本。</p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br></pre></td><td class="code"><pre><span class="line">from random import randint</span><br><span class="line">from PIL  import Image</span><br><span class="line">from PIL  import ImageFont</span><br><span class="line">from PIL  import ImageDraw</span><br><span class="line">from PIL  import ImageFilter</span><br><span class="line"></span><br><span class="line">class Seal:</span><br><span class="line">  def __init__(self):</span><br><span class="line">    # 印章边框颜色</span><br><span class="line">    self.border_color = (234, 24, 27, 180)</span><br><span class="line">    # 印章文本颜色</span><br><span class="line">    self.text_color = (234, 24, 27, 180)</span><br><span class="line">    # 印章背景颜色</span><br><span class="line">    self.bg_color = (255,255,255,1)</span><br><span class="line">    # 保存印章的图像对象</span><br><span class="line">    self.image = None</span><br><span class="line">    # 印章图像绘制对象</span><br><span class="line">    self.draw = None</span><br><span class="line"></span><br><span class="line">  # 创建印章</span><br><span class="line">  def create_seal(self, opts = &#123;&#125;):</span><br><span class="line">    # 印章大小</span><br><span class="line">    base = [950,240]</span><br><span class="line">    # 创建印章图像</span><br><span class="line">    self.image = Image.new(&#x27;RGBA&#x27;,tuple(base),self.bg_color)</span><br><span class="line">    self.draw = ImageDraw.Draw(self.image)</span><br><span class="line">    # 绘制印章格子</span><br><span class="line">    self.draw_seal_box()</span><br><span class="line">    # 绘制印章文字</span><br><span class="line">    self.draw_seal_text(opts)</span><br><span class="line">    # 添加纹理</span><br><span class="line">    self.add_texture_to_image()</span><br><span class="line"></span><br><span class="line">  # 绘制印章的格子</span><br><span class="line">  def draw_seal_box(self):</span><br><span class="line">    # 获取图像长宽</span><br><span class="line">    w, h = self.image.size</span><br><span class="line">    # 计算各个矩形的起始点</span><br><span class="line">    # 三分之一宽</span><br><span class="line">    third_w = w / 3</span><br><span class="line">    # 二分之一高</span><br><span class="line">    half_h = h / 2</span><br><span class="line">    # 绘制下侧右边的矩形</span><br><span class="line">    # self.draw_rect([third_w * 2 - 5,0,w,h], 6)</span><br><span class="line">    # 绘制上侧中间矩形</span><br><span class="line">    self.draw_rect([third_w,0,third_w * 2,h], 6)</span><br><span class="line">    # 绘制上下矩形， 注意边框占位一半</span><br><span class="line">    self.draw_rect([0,0,w,half_h], 6)</span><br><span class="line">    # 绘制边框</span><br><span class="line">    self.draw_rect([0,0,w,h])</span><br><span class="line"></span><br><span class="line">  # 绘制印章中的文字</span><br><span class="line">  def draw_seal_text(self, opts = &#123;&#125;):</span><br><span class="line">    # 获取图像长宽</span><br><span class="line">    w, h = self.image.size</span><br><span class="line">    # 计算各个文本的中心点坐标</span><br><span class="line">    # 六分之一宽</span><br><span class="line">    half_third_w = w / 6</span><br><span class="line">    # 四分之一高</span><br><span class="line">    half_half_h = h / 4</span><br><span class="line">    font_size = int(half_half_h * 1.2)</span><br><span class="line">    # 文本、数字、英文对应的font</span><br><span class="line">    font = ImageFont.truetype(&#x27;C:/Windows/Fonts/simsun.ttc&#x27;,font_size)</span><br><span class="line">    # font = ImageFont.truetype(&#x27;./lib/font/FZLTZHJW.TTF&#x27;,font_size)</span><br><span class="line">    font_num = ImageFont.truetype(&#x27;./lib/font/HelveticaNeueLTPro-Lt.ttf&#x27;,font_size)</span><br><span class="line">    font_num_en = ImageFont.truetype(&#x27;./lib/font/PingFang Medium.ttf&#x27;,font_size)</span><br><span class="line">    # &quot;name&quot;: name,</span><br><span class="line">    # &quot;year&quot;: year,</span><br><span class="line">    # &quot;file_num&quot;: file_num,</span><br><span class="line">    # &quot;file_page_num&quot;: file_page_num,</span><br><span class="line">    # &quot;file_save_date&quot;: file_save_date,</span><br><span class="line">    # &quot;qb&quot;: qb,</span><br><span class="line">    # &quot;file_no&quot;: file_no</span><br><span class="line">    # 获取传入的字段</span><br><span class="line">    year = opts.get(&quot;year&quot;)</span><br><span class="line">    file_num = opts.get(&quot;file_num&quot;)</span><br><span class="line">    file_page_num = opts.get(&quot;file_page_num&quot;)</span><br><span class="line">    file_save_date = opts.get(&quot;file_save_date&quot;)</span><br><span class="line">    qb = opts.get(&quot;qb&quot;)</span><br><span class="line">    file_no = opts.get(&quot;file_no&quot;)</span><br><span class="line">    # 依次绘制对应的文本</span><br><span class="line">    self.draw_text(file_num, font, half_third_w * 5, half_half_h)</span><br><span class="line">    self.draw_text(year, font, half_third_w * 3, half_half_h)</span><br><span class="line">    self.draw_text(file_no, font, half_third_w, half_half_h)</span><br><span class="line">    self.draw_text(file_page_num, font, half_third_w * 5, half_half_h * 3)</span><br><span class="line">    self.draw_text(file_save_date, font, half_third_w * 3, half_half_h * 3)</span><br><span class="line">    self.draw_text(qb, font, half_third_w, half_half_h * 3)</span><br><span class="line"></span><br><span class="line">  # 给印章添加纹理</span><br><span class="line">  def add_texture_to_image(self):</span><br><span class="line">    # 打开纹理图像，随机截取旋转</span><br><span class="line">    img_wl = Image.open(&#x27;./lib/icon/bg.png&#x27;)</span><br><span class="line">    # 随机截取一部分纹理图</span><br><span class="line">    pos_random = (randint(0,220), randint(0,340))</span><br><span class="line">    box = (pos_random[0], pos_random[1], pos_random[0]+180, pos_random[1]+60)</span><br><span class="line">    img_wl_random = img_wl.crop(box)</span><br><span class="line">    # 重新设置截取图片的的大小，并进行一次高斯模糊</span><br><span class="line">    img_wl_random = img_wl_random.resize(self.image.size).convert(&#x27;L&#x27;).filter(ImageFilter.GaussianBlur(1))</span><br><span class="line">    # 将纹理图的灰度映射到原图的透明度，由于纹理图片自带灰度，映射后会有透明效果，所以fill的透明度不能太低</span><br><span class="line">    L, H = self.image.size</span><br><span class="line">    for h in range(H):</span><br><span class="line">      for l in range(L):</span><br><span class="line">        dot = (l, h)</span><br><span class="line">        color = self.image.getpixel(dot)[:3]+(int(img_wl_random.getpixel(dot)/255*self.image.getpixel(dot)[3]),)</span><br><span class="line">        self.image.putpixel(dot, color)</span><br><span class="line">    # 进行一次高斯模糊，提高真实度</span><br><span class="line">    self.image = self.image.filter(ImageFilter.GaussianBlur(0.6))</span><br><span class="line"></span><br><span class="line">  # 测试使用查看当前图片绘制情况</span><br><span class="line">  def show(self):</span><br><span class="line">    if self.image:</span><br><span class="line">      self.image.show()</span><br><span class="line"></span><br><span class="line">  # 保存图片</span><br><span class="line">  def save(self, path):</span><br><span class="line">    if self.image:</span><br><span class="line">      self.image.save(path)</span><br><span class="line"></span><br><span class="line">  # 绘制矩形</span><br><span class="line">  def draw_rect(self, shape, width=8):</span><br><span class="line">    self.draw.rectangle(shape, fill=None, outline=self.border_color, width=width)</span><br><span class="line"></span><br><span class="line">  # 绘制文本</span><br><span class="line">  def draw_text(self, text, font, x, y):</span><br><span class="line">    # 计算传入文本的占位的盒子宽高</span><br><span class="line">    x1, y1, x2, y2 = self.draw.textbbox((x, y), text, font)</span><br><span class="line">    text_size_x = x2 - x1</span><br><span class="line">    text_size_y = y2 - y1</span><br><span class="line">    # 根据文字的占位，计算绘制文本</span><br><span class="line">    self.draw.text(</span><br><span class="line">      (int(x - text_size_x / 2), int(y - text_size_y / 2)), </span><br><span class="line">      text, </span><br><span class="line">      font=font, </span><br><span class="line">      fill=self.text_color</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">  seal = Seal()</span><br><span class="line">  seal.create_seal(&#123;</span><br><span class="line">    &quot;name&quot;: &quot;pdf-1&quot;,</span><br><span class="line">    &quot;year&quot;: 2024,</span><br><span class="line">    &quot;file_num&quot;: 56,</span><br><span class="line">    &quot;file_page_num&quot;: 15,</span><br><span class="line">    &quot;file_save_date&quot;: &quot;期限&quot;,</span><br><span class="line">    &quot;qb&quot;: &quot;XXX&quot;,</span><br><span class="line">    &quot;file_no&quot;: &quot;X156&quot;</span><br><span class="line">  &#125;)</span><br><span class="line">  if not os.path.exists(f&#x27;./out_images/&#x27;):</span><br><span class="line">    os.makedirs(f&#x27;./out_images/&#x27;)</span><br><span class="line">  # 保存图片</span><br><span class="line">  seal.save(f&#x27;./out_images/pdf-1.png&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-印章绘制结果"><a href="#4-印章绘制结果" class="headerlink" title="4. 印章绘制结果"></a>4. 印章绘制结果</h3><p><img src="https://foruda.gitee.com/images/1707123433480826675/01c42d81_1681522.png" alt="输入图片说明"></p>
+<h3 id="5-合并图片到-pdf-指定位置-MergeImageToPDF-py"><a href="#5-合并图片到-pdf-指定位置-MergeImageToPDF-py" class="headerlink" title="5. 合并图片到 pdf 指定位置 MergeImageToPDF.py"></a>5. 合并图片到 pdf 指定位置 MergeImageToPDF.py</h3><ol>
+<li>初始化插入图片的宽高；<blockquote>
+<p><strong>init</strong> 默认插入图片的宽高。</p>
+</blockquote>
+</li>
+<li>设置图片的宽高；<blockquote>
+<p>reset_image_width_and_height 方法提供修改插入图片宽高的方法。</p>
+</blockquote>
+</li>
+<li>创建一个PDF页面，并在其中放置图片；<br>3.1 创建一个 BytesIO 对象；<br>3.2 Canvas 类是 ReportLab PDF 创建工具包的核心，它提供了一个画布，你可以在上面绘制文本、图形、图像等，以生成 PDF 文档；<br>3.3 创建一个 Canvas 对象，指定 packet 和页面大小；<br>3.4 drawImage 方法插入图像；<br>3.5 调用 save() 方法将绘制的内容保存到 packet 对象中；<br>3.6 packet.seek(0) 将文件指针移动到 BytesIO 对象的开头；<br>3.7 使用 PdfReader 读取 pdf 文件，并将第一页返回。</li>
+<li>将创建的覆盖层合并到目标PDF的指定页面。<br>4.1. 读取原始PDF文件【需要插入图片的 pdf】；<br>4.2 创建一个PDF writer对象；<br>4.3 遍历PDF的每一页，找到目标页面；<br>4.4 获取当前页面对象；<br>4.5 判断当前页是否是目标页面；<br>4.6 计算图片的插入位置；<br>4.7 调用 create_overlay 创建一个插入图片的 pdf 页面对象；<br>4.8 将 create_overlay 返回的页面通过 merge_page 合并到当前 page；<br>4.9 将每一个循环的 page 通过 add_page 添加到第二步中创建的 writer 对象中；<br>4.10 判断输出路径是否存在，然后写入 pdf。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br></pre></td><td class="code"><pre><span class="line">from reportlab.pdfgen import canvas</span><br><span class="line">from PyPDF2 import PdfWriter, PdfReader</span><br><span class="line">import io</span><br><span class="line"></span><br><span class="line">class InsertImageToPDF:</span><br><span class="line">  def __init__(self):</span><br><span class="line">    self.image_width = int(237 * 0.6)</span><br><span class="line">    self.image_height = int(60 * 0.8)</span><br><span class="line"></span><br><span class="line">  # 设置图片的宽高</span><br><span class="line">  def reset_image_width_and_height(self, w, h):</span><br><span class="line">    self.image_width = w</span><br><span class="line">    self.image_height = h</span><br><span class="line"></span><br><span class="line">  # 创建一个PDF页面，并在其中放置图片</span><br><span class="line">  def create_overlay(self, image_path, x_pos, y_pos, page_width, page_height):</span><br><span class="line">    packet = io.BytesIO()</span><br><span class="line">    can = canvas.Canvas(packet, pagesize=(page_width, page_height))</span><br><span class="line">    can.drawImage(image_path, x_pos, y_pos, width=self.image_width, height=self.image_height)  # 图片位置和大小</span><br><span class="line">    can.save()</span><br><span class="line">    packet.seek(0)</span><br><span class="line">    overlay = PdfReader(packet)</span><br><span class="line">    return overlay.pages[0]</span><br><span class="line"></span><br><span class="line">  # 将创建的覆盖层合并到目标PDF的指定页面</span><br><span class="line">  def merge_image_to_pdf(self, input_pdf_path, output_pdf_path, image_path, page_number, x_pos, y_pos):</span><br><span class="line">    # 读取原始PDF文件</span><br><span class="line">    original_pdf = PdfReader(open(input_pdf_path, &quot;rb&quot;))</span><br><span class="line">    # 创建一个PDF writer对象</span><br><span class="line">    pdf_writer = PdfWriter()</span><br><span class="line">    # 遍历PDF的每一页</span><br><span class="line">    for page_num in range(len(original_pdf.pages)):</span><br><span class="line">      page = original_pdf.pages[page_num]</span><br><span class="line">      if page_number == page_num:</span><br><span class="line">        # 计算距离</span><br><span class="line">        left_distance = int((page.mediabox.width - self.image_width) / 2 + x_pos)</span><br><span class="line">        top_distance = int((page.mediabox.height - self.image_height) - y_pos)</span><br><span class="line"></span><br><span class="line">        overlay = self.create_overlay(image_path, left_distance, top_distance, page.mediabox.width, page.mediabox.height)</span><br><span class="line">        page.merge_page(overlay)</span><br><span class="line">      pdf_writer.add_page(page)</span><br><span class="line"></span><br><span class="line">    # 写入修改后的PDF</span><br><span class="line">    with open(output_pdf_path, &quot;wb&quot;) as out_file:</span><br><span class="line">      pdf_writer.write(out_file)</span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">  pdf = InsertImageToPDF()</span><br><span class="line">  # 使用函数</span><br><span class="line">  pdf.merge_image_to_pdf(</span><br><span class="line">    &quot;./pdf/pdf-1/pdf-1.pdf&quot;, </span><br><span class="line">    &quot;./out_pdf/pdf-1.pdf&quot;, </span><br><span class="line">    &quot;./out_images/pdf.png&quot;, </span><br><span class="line">    0, 0, 10)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="6-插入图片运行结果"><a href="#6-插入图片运行结果" class="headerlink" title="6. 插入图片运行结果"></a>6. 插入图片运行结果</h3><p><img src="https://foruda.gitee.com/images/1707117801834172026/990959b7_1681522.png" alt="输入图片说明"></p>
+<h3 id="7-excel-文件进行自动批量操作"><a href="#7-excel-文件进行自动批量操作" class="headerlink" title="7. excel 文件进行自动批量操作"></a>7. excel 文件进行自动批量操作</h3><ol>
+<li>设置印章距离居中的距离，距离顶部的距离；</li>
+<li>获取路径下的所有 excel 表；<br>2.1 获取 path 路径下的所有文件和文件夹名称；<br>2.2 筛选文件列表中的 xlsx 后缀的文件名称；<br>2.3 返回筛选结果。</li>
+<li>循环读取 xlsx 文件；</li>
+<li>读取 xlsx 文件中的文本字段；<br>4.1 读取 xlsx 文件中的数据；<br>4.2 获取印章文件名以及印章中的文本字段；<br>4.3 读取的全部数据；<br>4.4 将图片合并到pdf中。</li>
+<li>将图片合并到pdf中。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">import os</span><br><span class="line">import openpyxl</span><br><span class="line">import shutil</span><br><span class="line">from MergeImageToPDF import InsertImageToPDF</span><br><span class="line">from SealImage import Seal</span><br><span class="line"></span><br><span class="line">pdf = InsertImageToPDF()</span><br><span class="line">seal = Seal()</span><br><span class="line"># 设置印章距离居中的距离，距离顶部的距离</span><br><span class="line">top = 10</span><br><span class="line">left = 0</span><br><span class="line"></span><br><span class="line"># 获取路径下的所有 excel 表</span><br><span class="line">def get_all_xlsx(path):</span><br><span class="line">  # 获取 path 路径下的所有文件和文件夹名称</span><br><span class="line">  names = os.listdir(path)</span><br><span class="line">  # 筛选文件列表中的 xlsx 后缀的文件名称</span><br><span class="line">  xlsx_names = list(filter(lambda x : x.split(&#x27;.&#x27;).pop() in [&#x27;xlsx&#x27;], names))</span><br><span class="line">  # 返回筛选结果</span><br><span class="line">  return xlsx_names</span><br><span class="line"></span><br><span class="line"># 循环读取 xlsx 文件</span><br><span class="line">def loop_read_xlsx_file(path, names):</span><br><span class="line">  for name in names:</span><br><span class="line">    read_xlsx_data(f&#x27;&#123;path&#125;/&#123;name&#125;&#x27;, seal, merge_image)</span><br><span class="line"></span><br><span class="line"># 读取 xlsx 文件中的文本字段</span><br><span class="line">def read_xlsx_data(path, seal, merge_image):</span><br><span class="line">  # 读取 xlsx 文件中的数据</span><br><span class="line">  wb = openpyxl.load_workbook(path,data_only=True)</span><br><span class="line">  sheets = wb.sheetnames</span><br><span class="line">  sheet_first = sheets[0]</span><br><span class="line">  ws = wb[sheet_first]</span><br><span class="line">  for r in range(2,ws.max_row + 1):</span><br><span class="line">    # 获取印章文件名以及印章中的文本字段</span><br><span class="line">    name = ws.cell(row=r, column=1).value</span><br><span class="line">    year = ws.cell(row=r, column=2).value</span><br><span class="line">    file_num = ws.cell(row=r, column=3).value</span><br><span class="line">    file_page_num = ws.cell(row=r, column=4).value</span><br><span class="line">    file_save_date = ws.cell(row=r, column=5).value</span><br><span class="line">    qb = ws.cell(row=r, column=6).value</span><br><span class="line">    file_no = ws.cell(row=r, column=7).value</span><br><span class="line">    # 读取的全部数据</span><br><span class="line">    print(&#x27;当前印章数据：&#x27;,name, year, file_num, file_page_num, file_save_date, qb, file_no)</span><br><span class="line">    if name and year and file_num and file_page_num and file_save_date and qb and file_no:</span><br><span class="line">      seal.create_seal(&#123;</span><br><span class="line">        &quot;name&quot;: name,</span><br><span class="line">        &quot;year&quot;: year,</span><br><span class="line">        &quot;file_num&quot;: file_num,</span><br><span class="line">        &quot;file_page_num&quot;: file_page_num,</span><br><span class="line">        &quot;file_save_date&quot;: file_save_date,</span><br><span class="line">        &quot;qb&quot;: qb,</span><br><span class="line">        &quot;file_no&quot;: file_no</span><br><span class="line">      &#125;)</span><br><span class="line">      if not os.path.exists(f&#x27;./out_images/&#x27;):</span><br><span class="line">        os.makedirs(f&#x27;./out_images/&#x27;)</span><br><span class="line">      # 保存图片</span><br><span class="line">      seal.save(f&#x27;./out_images/&#123;name&#125;.png&#x27;)</span><br><span class="line">      print(&#x27;图片绘制成功，开始合并到 pdf 中!&#x27;)</span><br><span class="line">      # 将图片合并到pdf中</span><br><span class="line">      merge_image(name)</span><br><span class="line"></span><br><span class="line"># 将图片合并到pdf中</span><br><span class="line">def merge_image(name):</span><br><span class="line">  if not os.path.exists(f&#x27;./out_pdf/&#123;name&#125;/&#x27;):</span><br><span class="line">    os.makedirs(f&#x27;./out_pdf/&#123;name&#125;/&#x27;)</span><br><span class="line">  # 使用函数</span><br><span class="line">  # merge_image_to_pdf(</span><br><span class="line">  #   &quot;./pdf/Q103-WS·2022-Y-DQB-0037/Q103-WS·2022-Y-DQB-0037.pdf&quot;, </span><br><span class="line">  #   &quot;./out/Q103-WS·2022-Y-DQB-0037.pdf&quot;, </span><br><span class="line">  #   &quot;20210125.png&quot;, </span><br><span class="line">  #   0, 0, 10)</span><br><span class="line">  pdf.merge_image_to_pdf(</span><br><span class="line">    f&#x27;./pdf/&#123;name&#125;/&#123;name&#125;.pdf&#x27;,</span><br><span class="line">    f&#x27;./out_pdf/&#123;name&#125;/&#123;name&#125;.pdf&#x27;,</span><br><span class="line">    f&#x27;./out_images/&#123;name&#125;.png&#x27;,</span><br><span class="line">    0, left, top</span><br><span class="line">  )</span><br><span class="line">  print(f&#x27;&#123;name&#125; 文件合并成功!&#x27;)</span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">  # 获取印章宽度 </span><br><span class="line">  # image_width = int(237 * 0.6)</span><br><span class="line">  # image_height = int(60 * 0.8)</span><br><span class="line">  init_img_w = input(&quot;请输入印章宽度（默认142px）：&quot;)</span><br><span class="line">  init_img_h = input(&quot;请输入印章高度（默认48px）：&quot;)</span><br><span class="line">  init_img_top = input(&quot;请输入印章距离顶部距离（默认10px）：&quot;)</span><br><span class="line">  init_img_left = input(&quot;请输入印章距离左侧距离（默认居中）：&quot;)</span><br><span class="line">  # 判断输入宽高的值是否有效</span><br><span class="line">  if init_img_w and init_img_h:</span><br><span class="line">    pdf.reset_image_width_and_height(int(init_img_w), int(init_img_h))</span><br><span class="line">  # 判断输入的边距是否有效</span><br><span class="line">  if init_img_top:</span><br><span class="line">    print(&#x27;init_img_top&#x27;, init_img_top)</span><br><span class="line">    top = int(init_img_top)</span><br><span class="line">  if init_img_left:</span><br><span class="line">    print(&#x27;init_img_left&#x27;, int(init_img_left))</span><br><span class="line">    left = int(init_img_left)</span><br><span class="line"></span><br><span class="line">  # 获取所有的xlsx文件</span><br><span class="line">  xlsxs = get_all_xlsx(&#x27;./&#x27;)</span><br><span class="line">  # 读取文件内容</span><br><span class="line">  loop_read_xlsx_file(&#x27;./&#x27;, xlsxs)</span><br><span class="line">  print(&#x27;数据处理完成！&#x27;)</span><br><span class="line">  # 数据处理完成，删除生成的图片文件夹</span><br><span class="line">  shutil.rmtree(&#x27;./out_images&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-批量处理运行结果"><a href="#8-批量处理运行结果" class="headerlink" title="8. 批量处理运行结果"></a>8. 批量处理运行结果</h3><p><img src="https://foruda.gitee.com/images/1707123829556422322/b4164922_1681522.png" alt="输入图片说明"></p>
+<h3 id="9-总结"><a href="#9-总结" class="headerlink" title="9. 总结"></a>9. 总结</h3><ol>
+<li>将每一个单独的功能提出来，作为一个独立的类存在，各自完善独立的功能；</li>
+<li>最后将各个模块的代码组装，在批量程序中使用，完成自动批量化使用。</li>
+</ol>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 1148063373@qq.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2017 梁亚军
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

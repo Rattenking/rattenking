@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>自动替换项目中全部图片的新服务器地址 | 梁亚军的博客</title>
+  <meta name="keywords" content=" Python ">
+  <meta name="description" content="自动替换项目中全部图片的新服务器地址 | 梁亚军的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content=".rui-content {         display: flex;         overflow: hidden;         width: 100%;       }       .rui-grid {         --time: 10s;         flex: none;         display: flex;         w">
+<meta property="og:type" content="website">
+<meta property="og:title" content="梁亚军的博客">
+<meta property="og:url" content="http://example.com/demo/index.html">
+<meta property="og:site_name" content="梁亚军的博客">
+<meta property="og:description" content=".rui-content {         display: flex;         overflow: hidden;         width: 100%;       }       .rui-grid {         --time: 10s;         flex: none;         display: flex;         w">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://picsum.photos/200/300?random=1">
+<meta property="og:image" content="https://picsum.photos/200/300?random=2">
+<meta property="og:image" content="https://picsum.photos/200/300?random=3">
+<meta property="og:image" content="https://picsum.photos/200/300?random=1">
+<meta property="og:image" content="https://picsum.photos/200/300?random=2">
+<meta property="og:image" content="https://picsum.photos/200/300?random=3">
+<meta property="article:published_time" content="2025-03-12T08:58:38.038Z">
+<meta property="article:modified_time" content="2025-03-12T08:58:38.038Z">
+<meta property="article:author" content="梁亚军">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://picsum.photos/200/300?random=1">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/brown-paper.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>梁亚军</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(11)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="Python">
+            
+            Python
+            <small>(9)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="前端">
+            
+            前端
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+        <a 
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="11">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://blog.csdn.net/m0_38082783">CSDN</a></li>
+            
+            <li><a target="_blank" href="https://juejin.cn/user/2124687263150136">掘金</a></li>
+            
+            <li><a target="_blank" href="https://www.zhihu.com/people/wen-bin-54-21">知乎</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="search shortcut key i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="switch to outline view shortcut key w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="return"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="case sensitive"></i>
+            <i class="iconfont icon-tag" data-title="label"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">outline</div>
+            <i class="iconfont icon-list" data-title="switch to article list"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>爬虫</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>文件名</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSDN</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSS</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Email</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Excel</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Image</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>PDF</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Python</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ReportLab</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Sort</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All "
+           href="/2025/03/12/python/Batch-recognize-the-text-in-pictures-and-save-it-into-an-Excel-spreadsheet/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="批量识别图片文字保存到 excel 中">批量识别图片文字保存到 excel 中</span>
+            <span class="post-date" title="2025-03-12 17:30:51">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2025/03/11/python/auto-on-pdf-in-to-excel-info/"
+           data-tag="Python,PDF,Excel"
+           data-author="" >
+            <span class="post-title" title="实现批量给 pdf 插入 excel 动态生成的印章">实现批量给 pdf 插入 excel 动态生成的印章</span>
+            <span class="post-date" title="2025-03-11 15:17:00">2025/03/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2025/03/11/python/auto-send-email/"
+           data-tag="Python,Excel,Email"
+           data-author="" >
+            <span class="post-title" title="实现批量发送邮件，通过读取 excel 中的发送内容">实现批量发送邮件，通过读取 excel 中的发送内容</span>
+            <span class="post-date" title="2025-03-11 15:17:00">2025/03/11</span>
+        </a>
+        
+        
+        <a  class="All 前端 "
+           href="/2025/03/05/%E5%89%8D%E7%AB%AF/css/css-scrolling/"
+           data-tag="CSS"
+           data-author="" >
+            <span class="post-title" title="CSS 实现无限滚动轮播">CSS 实现无限滚动轮播</span>
+            <span class="post-date" title="2025-03-05 14:51:00">2025/03/05</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/11/python/Automatically-generate-the-icon-management-file-for-the-front-end-project/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="自动生成前端项目图标管理文件">自动生成前端项目图标管理文件</span>
+            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/11/python/Sort-according-to-the-numbers-in-the-names-of-the-picture-files/"
+           data-tag="Python,Sort,文件名"
+           data-author="" >
+            <span class="post-title" title="根据图片文件名称中的数字排序">根据图片文件名称中的数字排序</span>
+            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/11/python/auto-replace-image-url/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="自动替换项目中全部图片的新服务器地址">自动替换项目中全部图片的新服务器地址</span>
+            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/11/python/do-pdf-in-to-image/"
+           data-tag="Python,PDF,Image"
+           data-author="" >
+            <span class="post-title" title="实现向指定PDF指定页面指定位置插入图片">实现向指定PDF指定页面指定位置插入图片</span>
+            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/11/python/to-pdf-table/"
+           data-tag="Python,ReportLab"
+           data-author="" >
+            <span class="post-title" title="使用 ReportLab 实现在 pdf 生成表格印章">使用 ReportLab 实现在 pdf 生成表格印章</span>
+            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/10/python/Automatically-download-all-the-hero-avatars-in-Honor-of-Kings-in-batches/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="自动批量下载王者荣耀的所有英雄头像">自动批量下载王者荣耀的所有英雄头像</span>
+            <span class="post-date" title="2021-08-10 16:00:00">2021/08/10</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/01/13/python/auto-crawl-the-list-of-CSDN-column-articles/"
+           data-tag="Python,CSDN,爬虫"
+           data-author="" >
+            <span class="post-title" title="爬取 CSDN 专栏文章列表">爬取 CSDN 专栏文章列表</span>
+            <span class="post-date" title="2021-01-13 16:00:00">2021/01/13</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="Toggle full screen shortcut key s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-python/auto-replace-image-url" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">自动替换项目中全部图片的新服务器地址</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Python">Python</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">Python</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2025-03-12 17:15:02'>2021-08-11 16:00</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E8%83%8C%E6%99%AF"><span class="toc-text">1. 背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88"><span class="toc-text">2. 解决方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%9B%BF%E6%8D%A2%E5%89%8D"><span class="toc-text">3. 替换前</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8E%9F%E5%9B%BE%E7%89%87"><span class="toc-text">3.1 项目中原图片</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-excel-%E4%B8%AD%E7%9A%84%E6%95%B0%E6%8D%AE"><span class="toc-text">3.2 excel 中的数据</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%AF%B9-excel-%E6%95%B0%E6%8D%AE%E5%88%86%E7%B1%BB"><span class="toc-text">4. 对 excel 数据分类</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E9%80%BB%E8%BE%91%E5%88%86%E6%9E%90"><span class="toc-text">4.1 逻辑分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">4.2 代码实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C"><span class="toc-text">4.3 执行结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E8%AF%BB%E5%8F%96%E5%AF%B9%E5%BA%94%E6%96%87%E4%BB%B6%E5%A4%B9%E6%9B%BF%E6%8D%A2"><span class="toc-text">5. 读取对应文件夹替换</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-%E9%80%BB%E8%BE%91%E5%88%86%E6%9E%90"><span class="toc-text">5.1 逻辑分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">5.2 代码实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%89%A7%E8%A1%8C%E6%95%88%E6%9E%9C"><span class="toc-text">6. 执行效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%85%A8%E9%83%A8%E4%BB%A3%E7%A0%81"><span class="toc-text">7. 全部代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E6%80%BB%E7%BB%93"><span class="toc-text">8. 总结</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-背景"><a href="#1-背景" class="headerlink" title="1. 背景"></a>1. 背景</h3><p>由于安全的需要，图片服务器已经变更很多次了，我之前写过<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_38082783/article/details/139240962">【Python 实战】—- 获取所有项目中配置的所有图片路径</a>，这篇博客就是当时图片地址太多，所以需要对前端图标图片进行白名单处理，当时加班实现查询所有项目中图标图片地址的脚本。但是这次坑比的事情来了，服务器和域名还有图片地址的规则全部换了，说到此处，真的是心理有千万只🐎在奔跑，就没有其他事情了吗？天天都搞这种事情，有什么意义？这次没有白名单了，必须所有项目的图片都进行替换，崩溃的一天啊，但是还要写，总不能一个一个图片的处理吧，那估计就真的疯了！</p>
+<h3 id="2-解决方案"><a href="#2-解决方案" class="headerlink" title="2. 解决方案"></a>2. 解决方案</h3><ol>
+<li>我写脚本将图片下载到本地，然后再上传的新的域名下，再将新的图片地址替换原来的图片地址；这个方案否决了，因为上传图片需要权限，也就是说上传必须登录，登录为了安全加了图片滑动验证的操作，目前我还没有那个能力解决这个登录问题，因此此方案去掉；</li>
+<li>通过<a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_38082783/article/details/139240962">【Python 实战】—- 获取所有项目中配置的所有图片路径</a>将图片地址集中到一个excel中，由后端自己去下载上传这些图片，再将新的图片地址保存到excel原来图片地址后，将新的excel发我，我写脚本进行替换。</li>
+</ol>
+<h3 id="3-替换前"><a href="#3-替换前" class="headerlink" title="3. 替换前"></a>3. 替换前</h3><h4 id="3-1-项目中原图片"><a href="#3-1-项目中原图片" class="headerlink" title="3.1 项目中原图片"></a>3.1 项目中原图片</h4><p><img src="https://foruda.gitee.com/images/1730171760343768633/1f1b7920_1681522.png" alt="输入图片说明"></p>
+<h4 id="3-2-excel-中的数据"><a href="#3-2-excel-中的数据" class="headerlink" title="3.2 excel 中的数据"></a>3.2 excel 中的数据</h4><p><img src="https://foruda.gitee.com/images/1730172332730378088/a151eac0_1681522.png" alt="输入图片说明"></p>
+<h3 id="4-对-excel-数据分类"><a href="#4-对-excel-数据分类" class="headerlink" title="4. 对 excel 数据分类"></a>4. 对 excel 数据分类</h3><h4 id="4-1-逻辑分析"><a href="#4-1-逻辑分析" class="headerlink" title="4.1 逻辑分析"></a>4.1 逻辑分析</h4><ol>
+<li>wb &#x3D; openpyxl.load_workbook(file_path)：使用 openpyxl 库加载指定的 Excel 文件。</li>
+<li>sheet &#x3D; wb.active：获取 Excel 文件中的图片地址表。</li>
+<li>data &#x3D; {}：初始化一个空字典，用于存储从 Excel 文件中读取的数据。</li>
+<li>遍历工作表中的每一行数据，从第二行开始（min_row&#x3D;2），读取前三列数据（max_col&#x3D;3），并且只读取单元格的值（values_only&#x3D;True）。</li>
+<li>检查当前行的第一列数据（row[0]）是否已经存在于字典 data 中。</li>
+<li>如果当前行的第一列数据不存在于字典 data 中，则在字典中创建一个新的键值对，键为当前行的第一列数据，值为一个空列表。</li>
+<li>将当前行的第二列和第三列数据（row[1:]）添加到对应键的列表中，函数返回读取并组织好的数据字典。</li>
+<li><strong>注意：此处主要是以图片所在的文件对数据进行分类处理。</strong></li>
+</ol>
+<h4 id="4-2-代码实现"><a href="#4-2-代码实现" class="headerlink" title="4.2 代码实现"></a>4.2 代码实现</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">import openpyxl</span><br><span class="line"></span><br><span class="line"># 读取表格数据</span><br><span class="line">def read_excel_info(file_path):</span><br><span class="line">  # 加载工作簿</span><br><span class="line">  wb = openpyxl.load_workbook(file_path)</span><br><span class="line">  # 获取工作表</span><br><span class="line">  sheet = wb.active</span><br><span class="line">  # 读取前三列数据</span><br><span class="line">  data = &#123;&#125;</span><br><span class="line">  for row in sheet.iter_rows(min_row=2, max_col=3, values_only=True):</span><br><span class="line">    # 判断键是否存在，如果不存在则创建一个空列表</span><br><span class="line">    if row[0] not in data:</span><br><span class="line">      data[row[0]] = []</span><br><span class="line">    # 将数据添加到对应键的列表中</span><br><span class="line">    data[row[0]].append(row[1:])</span><br><span class="line">  return data</span><br></pre></td></tr></table></figure>
+
+<h4 id="4-3-执行结果"><a href="#4-3-执行结果" class="headerlink" title="4.3 执行结果"></a>4.3 执行结果</h4><p><img src="https://foruda.gitee.com/images/1730172200470244774/9a8ee734_1681522.png" alt="输入图片说明"></p>
+<h3 id="5-读取对应文件夹替换"><a href="#5-读取对应文件夹替换" class="headerlink" title="5. 读取对应文件夹替换"></a>5. 读取对应文件夹替换</h3><h4 id="5-1-逻辑分析"><a href="#5-1-逻辑分析" class="headerlink" title="5.1 逻辑分析"></a>5.1 逻辑分析</h4><ol>
+<li>遍历字典 data 中的每个键值对。key 是文件名，value 是一个列表，列表中包含了要替换的字符串。</li>
+<li>使用 with 语句打开文件，文件路径是 base_path 加上文件名 key。’r’ 表示以只读模式打开文件，encoding&#x3D;’utf-8’ 表示文件的编码格式是 UTF-8。</li>
+<li>读取文件的内容，并将其存储在变量 content 中。</li>
+<li>调用 replace_all_excel_info 函数，将文件内容 content 和要替换的字符串列表 value 作为参数传递给它。replace_all_excel_info 函数会遍历列表中的每个元素，将文件内容中的所有匹配的字符串替换为新的字符串，并返回替换后的新内容。</li>
+<li>使用 with 语句打开文件，文件路径是 base_path 加上文件名 key。’w’ 表示以写入模式打开文件，如果文件不存在，则创建一个新文件。</li>
+<li>将替换后的新内容 new_content 写入到文件中。</li>
+<li>遍历传入的data列表，这个列表中的每个元素都是一个元组，包含两个字符串，第一个字符串是需要被替换的旧字符串，第二个字符串是替换后的新字符串。</li>
+<li>对于data列表中的每个元组item，检查item[0]（旧字符串）是否存在于content（文本内容）中，并且item[1]（新字符串）是否不为空。</li>
+<li>如果上述两个条件都满足，那么就使用replace方法将content中的item[0]替换为item[1]。replace方法会返回一个新的字符串，其中所有匹配的旧字符串都被替换为新字符串。返回新的字符串。</li>
+</ol>
+<h4 id="5-2-代码实现"><a href="#5-2-代码实现" class="headerlink" title="5.2 代码实现"></a>5.2 代码实现</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"># 读取数据并替换保存</span><br><span class="line">def replace_excel_info(base_path, data):</span><br><span class="line">  for key, value in data.items():</span><br><span class="line">    # print(key, value)</span><br><span class="line">    # 读取对应文件信息</span><br><span class="line">    with open(base_path + key, &#x27;r&#x27;, encoding=&#x27;utf-8&#x27;) as f:</span><br><span class="line">      content = f.read()</span><br><span class="line">      # 替换对应数据</span><br><span class="line">      new_content = replace_all_excel_info(content, value)</span><br><span class="line">      # 保存替换后的文件</span><br><span class="line">      with open(base_path + key, &#x27;w&#x27;, encoding=&#x27;utf-8&#x27;) as fw:</span><br><span class="line">        fw.write(new_content)</span><br><span class="line"></span><br><span class="line">def replace_all_excel_info(content, data):</span><br><span class="line">  for item in data:</span><br><span class="line">    # 第一个地址在文件中能找到，并且第二个值不为空，就替换</span><br><span class="line">    if item[0] in content and item[1]:</span><br><span class="line">      content = content.replace(item[0], item[1])</span><br><span class="line">  return content</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-执行效果"><a href="#6-执行效果" class="headerlink" title="6. 执行效果"></a>6. 执行效果</h3><p><img src="https://foruda.gitee.com/images/1730181407784483606/92177cde_1681522.png" alt="输入图片说明"></p>
+<h3 id="7-全部代码"><a href="#7-全部代码" class="headerlink" title="7. 全部代码"></a>7. 全部代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line">import openpyxl</span><br><span class="line"></span><br><span class="line"># 读取表格数据</span><br><span class="line">def read_excel_info(file_path):</span><br><span class="line">  # 加载工作簿</span><br><span class="line">  wb = openpyxl.load_workbook(file_path)</span><br><span class="line">  # 获取工作表</span><br><span class="line">  sheet = wb.active</span><br><span class="line">  # 读取前三列数据</span><br><span class="line">  data = &#123;&#125;</span><br><span class="line">  for row in sheet.iter_rows(min_row=2, max_col=3, values_only=True):</span><br><span class="line">    # 判断键是否存在，如果不存在则创建一个空列表</span><br><span class="line">    if row[0] not in data:</span><br><span class="line">      data[row[0]] = []</span><br><span class="line">    # 将数据添加到对应键的列表中</span><br><span class="line">    data[row[0]].append(row[1:])</span><br><span class="line">  return data</span><br><span class="line"></span><br><span class="line"># 读取数据并替换保存</span><br><span class="line">def replace_excel_info(base_path, data):</span><br><span class="line">  for key, value in data.items():</span><br><span class="line">    # print(key, value)</span><br><span class="line">    # 读取对应文件信息</span><br><span class="line">    with open(base_path + key, &#x27;r&#x27;, encoding=&#x27;utf-8&#x27;) as f:</span><br><span class="line">      content = f.read()</span><br><span class="line">      # 替换对应数据</span><br><span class="line">      new_content = replace_all_excel_info(content, value)</span><br><span class="line">      # 保存替换后的文件</span><br><span class="line">      with open(base_path + key, &#x27;w&#x27;, encoding=&#x27;utf-8&#x27;) as fw:</span><br><span class="line">        fw.write(new_content)</span><br><span class="line"></span><br><span class="line">def replace_all_excel_info(content, data):</span><br><span class="line">  for item in data:</span><br><span class="line">    # 第一个地址在文件中能找到，并且第二个值不为空，就替换</span><br><span class="line">    if item[0] in content and item[1]:</span><br><span class="line">      content = content.replace(item[0], item[1])</span><br><span class="line">  return content</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">  file_path = &#x27;F:/xxx/excel.xlsx&#x27;</span><br><span class="line">  base_path = &#x27;F:/xxx/&#x27;</span><br><span class="line">  # 读取表格数据并分类</span><br><span class="line">  infos = read_excel_info(file_path)</span><br><span class="line">  # 读取对应文件并替换</span><br><span class="line">  replace_excel_info(base_path, infos)</span><br><span class="line">  # 替换完成</span><br><span class="line">  print(&#x27;替换完成!&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-总结"><a href="#8-总结" class="headerlink" title="8. 总结"></a>8. 总结</h3><ol>
+<li>脚本虽然简单，但是减少了开发中很多繁琐的容易出错的事情，替换也比较容易。</li>
+</ol>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 1148063373@qq.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2017 梁亚军
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>爬取 CSDN 专栏文章列表 | 梁亚军的博客</title>
+  <meta name="keywords" content=" Python , CSDN , 爬虫 ">
+  <meta name="description" content="爬取 CSDN 专栏文章列表 | 梁亚军的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content=".rui-content {         display: flex;         overflow: hidden;         width: 100%;       }       .rui-grid {         --time: 10s;         flex: none;         display: flex;         w">
+<meta property="og:type" content="website">
+<meta property="og:title" content="梁亚军的博客">
+<meta property="og:url" content="http://example.com/demo/index.html">
+<meta property="og:site_name" content="梁亚军的博客">
+<meta property="og:description" content=".rui-content {         display: flex;         overflow: hidden;         width: 100%;       }       .rui-grid {         --time: 10s;         flex: none;         display: flex;         w">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://picsum.photos/200/300?random=1">
+<meta property="og:image" content="https://picsum.photos/200/300?random=2">
+<meta property="og:image" content="https://picsum.photos/200/300?random=3">
+<meta property="og:image" content="https://picsum.photos/200/300?random=1">
+<meta property="og:image" content="https://picsum.photos/200/300?random=2">
+<meta property="og:image" content="https://picsum.photos/200/300?random=3">
+<meta property="article:published_time" content="2025-03-12T08:58:38.038Z">
+<meta property="article:modified_time" content="2025-03-12T08:58:38.038Z">
+<meta property="article:author" content="梁亚军">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://picsum.photos/200/300?random=1">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/brown-paper.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="//cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>梁亚军</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(11)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="Python">
+            
+            Python
+            <small>(9)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="前端">
+            
+            前端
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+        <a 
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="11">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://blog.csdn.net/m0_38082783">CSDN</a></li>
+            
+            <li><a target="_blank" href="https://juejin.cn/user/2124687263150136">掘金</a></li>
+            
+            <li><a target="_blank" href="https://www.zhihu.com/people/wen-bin-54-21">知乎</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="search shortcut key i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="switch to outline view shortcut key w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="return"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="case sensitive"></i>
+            <i class="iconfont icon-tag" data-title="label"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">outline</div>
+            <i class="iconfont icon-list" data-title="switch to article list"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>爬虫</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>文件名</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSDN</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSS</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Email</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Excel</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Image</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>PDF</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Python</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ReportLab</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Sort</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All "
+           href="/2025/03/12/python/Batch-recognize-the-text-in-pictures-and-save-it-into-an-Excel-spreadsheet/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="批量识别图片文字保存到 excel 中">批量识别图片文字保存到 excel 中</span>
+            <span class="post-date" title="2025-03-12 17:30:51">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2025/03/11/python/auto-on-pdf-in-to-excel-info/"
+           data-tag="Python,PDF,Excel"
+           data-author="" >
+            <span class="post-title" title="实现批量给 pdf 插入 excel 动态生成的印章">实现批量给 pdf 插入 excel 动态生成的印章</span>
+            <span class="post-date" title="2025-03-11 15:17:00">2025/03/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2025/03/11/python/auto-send-email/"
+           data-tag="Python,Excel,Email"
+           data-author="" >
+            <span class="post-title" title="实现批量发送邮件，通过读取 excel 中的发送内容">实现批量发送邮件，通过读取 excel 中的发送内容</span>
+            <span class="post-date" title="2025-03-11 15:17:00">2025/03/11</span>
+        </a>
+        
+        
+        <a  class="All 前端 "
+           href="/2025/03/05/%E5%89%8D%E7%AB%AF/css/css-scrolling/"
+           data-tag="CSS"
+           data-author="" >
+            <span class="post-title" title="CSS 实现无限滚动轮播">CSS 实现无限滚动轮播</span>
+            <span class="post-date" title="2025-03-05 14:51:00">2025/03/05</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/11/python/Automatically-generate-the-icon-management-file-for-the-front-end-project/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="自动生成前端项目图标管理文件">自动生成前端项目图标管理文件</span>
+            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/11/python/Sort-according-to-the-numbers-in-the-names-of-the-picture-files/"
+           data-tag="Python,Sort,文件名"
+           data-author="" >
+            <span class="post-title" title="根据图片文件名称中的数字排序">根据图片文件名称中的数字排序</span>
+            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/11/python/auto-replace-image-url/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="自动替换项目中全部图片的新服务器地址">自动替换项目中全部图片的新服务器地址</span>
+            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/11/python/do-pdf-in-to-image/"
+           data-tag="Python,PDF,Image"
+           data-author="" >
+            <span class="post-title" title="实现向指定PDF指定页面指定位置插入图片">实现向指定PDF指定页面指定位置插入图片</span>
+            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/11/python/to-pdf-table/"
+           data-tag="Python,ReportLab"
+           data-author="" >
+            <span class="post-title" title="使用 ReportLab 实现在 pdf 生成表格印章">使用 ReportLab 实现在 pdf 生成表格印章</span>
+            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/10/python/Automatically-download-all-the-hero-avatars-in-Honor-of-Kings-in-batches/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="自动批量下载王者荣耀的所有英雄头像">自动批量下载王者荣耀的所有英雄头像</span>
+            <span class="post-date" title="2021-08-10 16:00:00">2021/08/10</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/01/13/python/auto-crawl-the-list-of-CSDN-column-articles/"
+           data-tag="Python,CSDN,爬虫"
+           data-author="" >
+            <span class="post-title" title="爬取 CSDN 专栏文章列表">爬取 CSDN 专栏文章列表</span>
+            <span class="post-date" title="2021-01-13 16:00:00">2021/01/13</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="Toggle full screen shortcut key s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-python/auto-crawl-the-list-of-CSDN-column-articles" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">爬取 CSDN 专栏文章列表</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Python">Python</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">Python</a>
+            
+            <a class="color5">CSDN</a>
+            
+            <a class="color3">爬虫</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2025-03-12 17:19:48'>2021-01-13 16:00</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9C%BA%E6%99%AF"><span class="toc-text">1. 场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%BC%95%E5%85%A5%E4%BD%BF%E7%94%A8%E6%A8%A1%E5%9D%97"><span class="toc-text">2. 引入使用模块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%8E%B7%E5%8F%96%E4%B8%93%E6%A0%8F%E6%96%87%E7%AB%A0"><span class="toc-text">3. 获取专栏文章</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E5%88%9D%E5%A7%8B%E5%8C%96%E5%8F%98%E9%87%8F"><span class="toc-text">3.1 初始化变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E5%BE%AA%E7%8E%AF%E8%8E%B7%E5%8F%96%E6%96%87%E7%AB%A0"><span class="toc-text">3.2 循环获取文章</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-%E6%A3%80%E6%9F%A5%E5%BD%93%E5%89%8D%E9%A1%B5%E6%96%87%E7%AB%A0%E7%9A%84%E6%95%B0%E9%87%8F"><span class="toc-text">3.3 检查当前页文章的数量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-%E8%8E%B7%E5%8F%96%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%98%E5%92%8C%E9%93%BE%E6%8E%A5"><span class="toc-text">3.4 获取文章标题和链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-%E5%88%9B%E5%BB%BA-Markdown-%E6%96%87%E4%BB%B6"><span class="toc-text">3.5 创建 Markdown 文件</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-6-%E6%89%93%E5%8D%B0%E5%AE%8C%E6%88%90%E4%BF%A1%E6%81%AF"><span class="toc-text">3.6 打印完成信息</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E4%B8%93%E6%A0%8F%E5%9C%B0%E5%9D%80%E6%9E%84%E9%80%A0"><span class="toc-text">4. 专栏地址构造</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E4%B8%93%E6%A0%8F%E7%AC%AC%E4%B8%80%E9%A1%B5"><span class="toc-text">4.1 专栏第一页</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E4%B8%93%E6%A0%8F%E7%AC%AC%E4%BA%8C%E9%A1%B5"><span class="toc-text">4.2 专栏第二页</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-%E4%B8%93%E6%A0%8F%E7%AC%AC%E4%B8%89%E9%A1%B5"><span class="toc-text">4.3 专栏第三页</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-%E6%80%BB%E7%BB%93"><span class="toc-text">4.4 总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E8%8E%B7%E5%8F%96%E4%B8%93%E6%A0%8F%E6%96%87%E7%AB%A0%E5%88%97%E8%A1%A8-DOM-%E7%BB%93%E6%9E%84%E5%88%86%E6%9E%90"><span class="toc-text">5. 获取专栏文章列表 DOM 结构分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-%E8%8E%B7%E5%8F%96%E4%B8%93%E6%A0%8F%E5%90%8D%E7%A7%B0"><span class="toc-text">5.1 获取专栏名称</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-%E8%8E%B7%E5%8F%96%E4%B8%93%E6%A0%8F%E6%96%87%E7%AB%A0%E5%88%97%E8%A1%A8"><span class="toc-text">5.2 获取专栏文章列表</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF"><span class="toc-text">5.3 实现思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-%E5%AE%9E%E7%8E%B0%E4%BB%A3%E7%A0%81"><span class="toc-text">5.4 实现代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%8F%90%E5%8F%96%E4%B8%93%E6%A0%8F%E7%9A%84%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%98%E5%92%8C%E6%96%87%E7%AB%A0%E9%93%BE%E6%8E%A5"><span class="toc-text">6. 提取专栏的文章标题和文章链接</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-%E6%96%87%E7%AB%A0%E6%A0%87%E9%A2%98"><span class="toc-text">6.1 文章标题</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-%E6%96%87%E7%AB%A0%E9%93%BE%E6%8E%A5"><span class="toc-text">6.2 文章链接</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-3-%E6%96%87%E7%AB%A0%E5%8F%91%E5%B8%83%E6%97%B6%E9%97%B4"><span class="toc-text">6.3 文章发布时间</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-4-%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF"><span class="toc-text">6.4 实现思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-5-%E5%AE%9E%E7%8E%B0%E4%BB%A3%E7%A0%81"><span class="toc-text">6.5 实现代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%88%9B%E5%BB%BA-markdown-%E6%96%87%E4%BB%B6%EF%BC%8C%E5%86%99%E5%85%A5%E5%86%85%E5%AE%B9"><span class="toc-text">7. 创建 markdown 文件，写入内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF"><span class="toc-text">7.1 实现思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-%E5%AE%9E%E7%8E%B0%E4%BB%A3%E7%A0%81"><span class="toc-text">7.2 实现代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E5%85%A8%E9%83%A8%E5%AE%9E%E7%8E%B0%E4%BB%A3%E7%A0%81"><span class="toc-text">8. 全部实现代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E8%BF%90%E8%A1%8C%E6%95%88%E6%9E%9C"><span class="toc-text">9. 运行效果</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9-1-%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C"><span class="toc-text">9.1 运行结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-2-%E7%94%9F%E6%88%90%E7%9A%84-markdown-%E6%96%87%E4%BB%B6%E7%A4%BA%E4%BE%8B"><span class="toc-text">9.2 生成的 markdown 文件示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-3-%E5%B0%86%E7%94%9F%E6%88%90%E7%9A%84%E6%96%87%E6%A1%A3%E6%9B%B4%E6%96%B0%E5%88%B0-CSDN"><span class="toc-text">9.3 将生成的文档更新到 CSDN</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E6%80%BB%E7%BB%93"><span class="toc-text">10. 总结</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-场景"><a href="#1-场景" class="headerlink" title="1. 场景"></a>1. 场景</h3><blockquote>
+<p>需求就是专栏中文章随着时间写的越多，如果后边需要去查找的时候比较麻烦，比如一些不常用的 git 命令，或者有些开发场景的细节，在之前已经开发完了，现在忘记部分细节，需要在之前的输出文章中去查找，当几十几百篇文章时，查找就比较麻烦，但是如果没发布一篇文章，自己去更新专栏的文章目录又是一个比较繁琐的事情，因此写了一个小的爬取程序，在每次发布新的文章时，运行此程序，就可以更新文章目录，方便后期在需要的时候能够快速查找。</p>
+</blockquote>
+<h3 id="2-引入使用模块"><a href="#2-引入使用模块" class="headerlink" title="2. 引入使用模块"></a>2. 引入使用模块</h3><ol>
+<li>requests 获取网页的内容；</li>
+<li>re 使用正则匹配文章的发布日期；</li>
+<li>time 用于每次获取网页后的等待，防止被 CSDN 识别为爬虫；</li>
+<li>datetime 用于文章发布日期的排序格式化；</li>
+<li>BeautifulSoup HTML 解析。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line">import time</span><br><span class="line">from datetime import datetime</span><br><span class="line">from bs4 import BeautifulSoup</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-获取专栏文章"><a href="#3-获取专栏文章" class="headerlink" title="3. 获取专栏文章"></a>3. 获取专栏文章</h3><h4 id="3-1-初始化变量"><a href="#3-1-初始化变量" class="headerlink" title="3.1 初始化变量"></a>3.1 初始化变量</h4><ol>
+<li>page 变量初始化为 1，表示从第一页开始获取文章。</li>
+<li>articles 列表用于存储所有获取到的文章。</li>
+<li>file_name 变量用于存储专栏的名称。</li>
+</ol>
+<h4 id="3-2-循环获取文章"><a href="#3-2-循环获取文章" class="headerlink" title="3.2 循环获取文章"></a>3.2 循环获取文章</h4><ol>
+<li>使用 while True 循环不断获取文章，直到没有更多文章为止。</li>
+<li>构造请求 URL，其中 column_url 是专栏的 ID，page 是当前页码。</li>
+<li>调用 scrape_csdn_blog 函数获取当前页的文章列表，并存储在 current_page_articles 中。</li>
+</ol>
+<h4 id="3-3-检查当前页文章的数量"><a href="#3-3-检查当前页文章的数量" class="headerlink" title="3.3 检查当前页文章的数量"></a>3.3 检查当前页文章的数量</h4><ol>
+<li>如果文章数量少于 40 篇，表示已经获取到了所有文章，跳出循环。</li>
+<li>如果文章数量大于 0，则将当前页的文章添加到 articles 列表中，并增加 page 页码以获取下一页文章。</li>
+<li>如果文章数量为 0，表示出现了异常情况，也跳出循环。</li>
+<li>每次循环结束后，延迟 5 秒，以避免被 CSDN 识别为爬虫。</li>
+</ol>
+<h4 id="3-4-获取文章标题和链接"><a href="#3-4-获取文章标题和链接" class="headerlink" title="3.4 获取文章标题和链接"></a>3.4 获取文章标题和链接</h4><ol>
+<li>调用 get_all_articles_title_and_urls 函数，传入获取到的所有文章列表 articles，该函数会返回一个包含文章标题和链接的列表 markdown_texts。</li>
+</ol>
+<h4 id="3-5-创建-Markdown-文件"><a href="#3-5-创建-Markdown-文件" class="headerlink" title="3.5 创建 Markdown 文件"></a>3.5 创建 Markdown 文件</h4><ol>
+<li>调用 create_markdown_folder 函数，传入当前路径 ‘.’、专栏名称 file_name 和文章标题及链接列表 markdown_texts，该函数会创建一个 Markdown 文件，并将文章标题和链接写入其中。</li>
+</ol>
+<h4 id="3-6-打印完成信息"><a href="#3-6-打印完成信息" class="headerlink" title="3.6 打印完成信息"></a>3.6 打印完成信息</h4><ol>
+<li>打印一条信息，表示专栏更新完成。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">def get_all_articles(column_url):</span><br><span class="line">  # 从第一页获取文章列表</span><br><span class="line">  page = 1</span><br><span class="line">  articles = []</span><br><span class="line">  # 专栏名称</span><br><span class="line">  file_name = &#x27;&#x27;</span><br><span class="line">  while True:</span><br><span class="line">    # 构造请求 URL</span><br><span class="line">    url = f&#x27;https://blog.csdn.net/m0_38082783/category_&#123;column_url&#125;_&#123;page&#125;.html&#x27;</span><br><span class="line">    # 获取当前页文章列表 </span><br><span class="line">    current_page_articles_dict = scrape_csdn_blog(url)</span><br><span class="line">    current_page_articles = current_page_articles_dict[&#x27;articles&#x27;]</span><br><span class="line">    # 若当前页没有文章，则停止循环；否则，继续获取下一页文章</span><br><span class="line">    if(len(current_page_articles) &lt; 40):</span><br><span class="line">      articles = articles + current_page_articles</span><br><span class="line">      # 专栏名称</span><br><span class="line">      file_name = current_page_articles_dict[&#x27;file_name&#x27;]</span><br><span class="line">      break</span><br><span class="line">    elif len(current_page_articles) &gt; 0:</span><br><span class="line">      page += 1</span><br><span class="line">      articles = articles + current_page_articles</span><br><span class="line">      # 专栏名称</span><br><span class="line">      file_name = current_page_articles_dict[&#x27;file_name&#x27;]</span><br><span class="line">      time.sleep(5)  # 延迟 5 秒，防止被 CSDN 识别为爬虫</span><br><span class="line">    else:</span><br><span class="line">      break</span><br><span class="line">  # 获取文章标题和链接</span><br><span class="line">  markdown_texts = get_all_articles_title_and_urls(articles)</span><br><span class="line">  # 创建 markdown 文件</span><br><span class="line">  create_markdown_folder(path=&#x27;.&#x27;, foldername=file_name, markdown_texts=markdown_texts)</span><br><span class="line">  print(f&#x27;【&#123;file_name&#125;】专栏更新完成&#x27;)</span><br></pre></td></tr></table></figure>
+
+<h3 id="4-专栏地址构造"><a href="#4-专栏地址构造" class="headerlink" title="4. 专栏地址构造"></a>4. 专栏地址构造</h3><h4 id="4-1-专栏第一页"><a href="#4-1-专栏第一页" class="headerlink" title="4.1 专栏第一页"></a>4.1 专栏第一页</h4><p><img src="https://foruda.gitee.com/images/1726820591742007443/8b540e0f_1681522.png" alt="输入图片说明"></p>
+<h4 id="4-2-专栏第二页"><a href="#4-2-专栏第二页" class="headerlink" title="4.2 专栏第二页"></a>4.2 专栏第二页</h4><p><img src="https://foruda.gitee.com/images/1726820743941375184/5fddd61c_1681522.png" alt="输入图片说明"></p>
+<h4 id="4-3-专栏第三页"><a href="#4-3-专栏第三页" class="headerlink" title="4.3 专栏第三页"></a>4.3 专栏第三页</h4><p><img src="https://foruda.gitee.com/images/1726820799542481055/ac5ee5d0_1681522.png" alt="输入图片说明"></p>
+<h4 id="4-4-总结"><a href="#4-4-总结" class="headerlink" title="4.4 总结"></a>4.4 总结</h4><ol>
+<li>column_url 专栏id；</li>
+<li>page 表示页码；</li>
+<li>每一页会返回四十条数据。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f&#x27;https://blog.csdn.net/m0_38082783/category_&#123;column_url&#125;_&#123;page&#125;.html&#x27;</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-获取专栏文章列表-DOM-结构分析"><a href="#5-获取专栏文章列表-DOM-结构分析" class="headerlink" title="5. 获取专栏文章列表 DOM 结构分析"></a>5. 获取专栏文章列表 DOM 结构分析</h3><h4 id="5-1-获取专栏名称"><a href="#5-1-获取专栏名称" class="headerlink" title="5.1 获取专栏名称"></a>5.1 获取专栏名称</h4><p><img src="https://foruda.gitee.com/images/1726821070554499905/d5e053cb_1681522.png" alt="输入图片说明"></p>
+<h4 id="5-2-获取专栏文章列表"><a href="#5-2-获取专栏文章列表" class="headerlink" title="5.2 获取专栏文章列表"></a>5.2 获取专栏文章列表</h4><p><img src="https://foruda.gitee.com/images/1726821180657155591/9888d37f_1681522.png" alt="输入图片说明"></p>
+<h4 id="5-3-实现思路"><a href="#5-3-实现思路" class="headerlink" title="5.3 实现思路"></a>5.3 实现思路</h4><ol>
+<li>发送请求：使用 requests 库发送一个GET请求到指定的 column_url，同时设置了请求头 headers 和超时时间 timeout。</li>
+<li>检查请求是否成功：检查HTTP响应的状态码是否为200，表示请求成功。</li>
+<li>解析网页内容：使用 BeautifulSoup 库解析响应的HTML内容。</li>
+<li>提取专栏名称：通过查找HTML中的 h3 标签，并且具有 column_title 类，来提取专栏的名称。</li>
+<li>找到文章标题和链接：先找到具有 column_article_list 类的 ul 标签，然后在这个标签下找到所有的 li 标签，这些 li 标签通常包含了文章的标题和链接。</li>
+<li>返回结果：请求成功，函数返回一个包含专栏名称和文章列表的字典。</li>
+<li>处理请求失败的情况：请求失败（即状态码不是200），函数打印出错误信息，并返回一个包含空专栏名称和空文章列表的字典。</li>
+</ol>
+<h4 id="5-4-实现代码"><a href="#5-4-实现代码" class="headerlink" title="5.4 实现代码"></a>5.4 实现代码</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">def scrape_csdn_blog(column_url):</span><br><span class="line">  # 发送请求</span><br><span class="line">  response = requests.get(url=column_url, headers=headers, timeout = (3,7))</span><br><span class="line">  # 检查请求是否成功</span><br><span class="line">  if response.status_code == 200:</span><br><span class="line">    # 解析网页内容</span><br><span class="line">    soup = BeautifulSoup(response.text, &#x27;html.parser&#x27;)</span><br><span class="line">    # 专栏名称</span><br><span class="line">    file_name = soup.find(&#x27;h3&#x27;, class_=&#x27;column_title&#x27;).get_text()</span><br><span class="line">    # 找到文章标题和链接</span><br><span class="line">    articles = soup.find(&#x27;ul&#x27;, class_=&#x27;column_article_list&#x27;)  # 根据实际网页结构调整类名</span><br><span class="line">    articles = articles.find_all(&#x27;li&#x27;)</span><br><span class="line">    return &#123;</span><br><span class="line">      &#x27;file_name&#x27;: file_name,</span><br><span class="line">      &#x27;articles&#x27;: articles</span><br><span class="line">    &#125;</span><br><span class="line">  else:</span><br><span class="line">    print(f&#x27;访问失败，状态码: &#123;response.status_code&#125;&#x27;)</span><br><span class="line">    return &#123;</span><br><span class="line">      &#x27;file_name&#x27;: &#x27;&#x27;,</span><br><span class="line">      &#x27;articles&#x27;: []</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-提取专栏的文章标题和文章链接"><a href="#6-提取专栏的文章标题和文章链接" class="headerlink" title="6. 提取专栏的文章标题和文章链接"></a>6. 提取专栏的文章标题和文章链接</h3><h4 id="6-1-文章标题"><a href="#6-1-文章标题" class="headerlink" title="6.1 文章标题"></a>6.1 文章标题</h4><p><img src="https://foruda.gitee.com/images/1726821759583183491/f6c9bb64_1681522.png" alt="输入图片说明"></p>
+<h4 id="6-2-文章链接"><a href="#6-2-文章链接" class="headerlink" title="6.2 文章链接"></a>6.2 文章链接</h4><p><img src="https://foruda.gitee.com/images/1726821811647842375/8db3cf59_1681522.png" alt="输入图片说明"></p>
+<h4 id="6-3-文章发布时间"><a href="#6-3-文章发布时间" class="headerlink" title="6.3 文章发布时间"></a>6.3 文章发布时间</h4><p><img src="https://foruda.gitee.com/images/1726821871424691906/55157051_1681522.png" alt="输入图片说明"></p>
+<h4 id="6-4-实现思路"><a href="#6-4-实现思路" class="headerlink" title="6.4 实现思路"></a>6.4 实现思路</h4><ol>
+<li>初始化列表：创建一个名为 markdown_texts 的空列表，用于存储处理后的文章信息。</li>
+<li>遍历文章列表：使用 for 循环遍历传入的 articles 列表中的每一篇文章。</li>
+<li>提取文章信息：</li>
+</ol>
+<ul>
+<li>从当前文章中提取 h2 标签且具有 title 类的文本，作为文章的标题。</li>
+<li>从当前文章中提取 a 标签的 href 属性，作为文章的链接。</li>
+<li>从当前文章中提取所有 span 标签且具有 status 类的文本，取第一个作为文章的发布日期。</li>
+</ul>
+<ol start="4">
+<li>格式化日期：调用 extract_time_format 函数，将提取到的日期字符串格式化为 年-月-日 时:分:秒 的格式。</li>
+<li>存储文章信息：将提取到的文章标题、链接和格式化后的日期存储到 markdown_texts 列表中。</li>
+<li>排序文章列表：调用 sort_by_date 函数，根据文章的发布日期对 markdown_texts 列表进行排序。</li>
+<li>返回结果：返回处理后的文章信息列表。</li>
+</ol>
+<h4 id="6-5-实现代码"><a href="#6-5-实现代码" class="headerlink" title="6.5 实现代码"></a>6.5 实现代码</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"># 按发布日期排序</span><br><span class="line">def sort_by_date(articles):</span><br><span class="line">  def get_date(article):</span><br><span class="line">    return datetime.strptime(article[&#x27;date&#x27;], &#x27;%Y-%m-%d  %H:%M:%S&#x27;)</span><br><span class="line">  return sorted(articles, key=get_date)</span><br><span class="line"></span><br><span class="line"># 正则匹配字符串中的时间字符串</span><br><span class="line">def extract_time_format(string):</span><br><span class="line">  pattern = r&#x27;\d&#123;4&#125;-\d&#123;2&#125;-\d&#123;2&#125; \d&#123;2&#125;:\d&#123;2&#125;:\d&#123;2&#125;&#x27;  # 正则表达式模式，匹配 &#x27;年-月-日 时:分:秒&#x27; 格式的时间</span><br><span class="line">  match = re.search(pattern, string)</span><br><span class="line">  if match:</span><br><span class="line">    return match.group()</span><br><span class="line">  else:</span><br><span class="line">    return None</span><br><span class="line"></span><br><span class="line"># 循环获取专栏的文章标题和文章链接</span><br><span class="line">def get_all_articles_title_and_urls(articles):</span><br><span class="line">  markdown_texts = []</span><br><span class="line">  for article in articles:</span><br><span class="line">    title = article.find(&#x27;h2&#x27;, class_=&#x27;title&#x27;).get_text()  # 获取文章标题</span><br><span class="line">    link = article.find(&#x27;a&#x27;)[&#x27;href&#x27;]  # 获取文章链接</span><br><span class="line">    date = article.find_all(&#x27;span&#x27;, class_=&#x27;status&#x27;)[0].get_text()  # 获取文章发布日期</span><br><span class="line">    markdown_texts.append(&#123;</span><br><span class="line">      &#x27;title&#x27;: title.strip(),</span><br><span class="line">      &#x27;link&#x27;: link,</span><br><span class="line">      &#x27;date&#x27;: extract_time_format(date)</span><br><span class="line">    &#125;)</span><br><span class="line">  markdown_texts = list(sort_by_date(markdown_texts))</span><br><span class="line">  return markdown_texts</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-创建-markdown-文件，写入内容"><a href="#7-创建-markdown-文件，写入内容" class="headerlink" title="7. 创建 markdown 文件，写入内容"></a>7. 创建 markdown 文件，写入内容</h3><h4 id="7-1-实现思路"><a href="#7-1-实现思路" class="headerlink" title="7.1 实现思路"></a>7.1 实现思路</h4><ol>
+<li>循环文章标题和链接重构；</li>
+<li>内容重构：将传入的 markdown_texts 列表转换为一个新的字符串列表 texts。对于列表中的每一篇文章，它提取标题和链接，并将其格式化为一个带有编号的列表项，其中编号使用 zfill(3) 方法进行前导零填充，以确保编号始终是三位数。</li>
+<li>写入文件：使用 with open 语句打开一个文件，文件名为 path 和 foldername 组成的路径，文件扩展名为 .md，表示这是一个 Markdown 文件。文件以写入模式打开，并指定编码为 utf-8，以确保可以正确处理包含非 ASCII 字符的标题。然后，它将重构后的 texts 列表写入文件。如果在写入过程中发生异常，它会捕获异常并打印出错误信息。</li>
+</ol>
+<h4 id="7-2-实现代码"><a href="#7-2-实现代码" class="headerlink" title="7.2 实现代码"></a>7.2 实现代码</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"># 创建 markdown 文件，写入内容</span><br><span class="line">def create_markdown_folder(path, foldername, markdown_texts):</span><br><span class="line">  # 内容重构</span><br><span class="line">  texts = []</span><br><span class="line">  for index, article in enumerate(markdown_texts):</span><br><span class="line">    title = article[&#x27;title&#x27;]</span><br><span class="line">    link = article[&#x27;link&#x27;]</span><br><span class="line">    texts.append(f&#x27;&#123;str(index + 1).zfill(3)&#125;. [&#123;title.strip()&#125;](&#123;link&#125;)\n&#x27;)</span><br><span class="line">  try:</span><br><span class="line">    with open(path + &quot;/&quot; + foldername + &quot;.md&quot;, &quot;w&quot;,encoding=&quot;utf-8&quot;) as markdown:</span><br><span class="line">      markdown.writelines(texts)</span><br><span class="line">  except Exception as e:</span><br><span class="line">    print(e)</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-全部实现代码"><a href="#8-全部实现代码" class="headerlink" title="8. 全部实现代码"></a>8. 全部实现代码</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br></pre></td><td class="code"><pre><span class="line">import requests</span><br><span class="line">import re</span><br><span class="line">import time</span><br><span class="line">from datetime import datetime</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line"># 构造请求头</span><br><span class="line">headers = &#123;</span><br><span class="line">  &#x27;User-Agent&#x27;: &#x27;Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_3) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/85.0.4183.102 Safari/537.36&#x27;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"># 获取专栏文章列表</span><br><span class="line">def scrape_csdn_blog(column_url):</span><br><span class="line">  # 发送请求</span><br><span class="line">  response = requests.get(url=column_url, headers=headers, timeout = (3,7))</span><br><span class="line">  # 检查请求是否成功</span><br><span class="line">  if response.status_code == 200:</span><br><span class="line">    # 解析网页内容</span><br><span class="line">    soup = BeautifulSoup(response.text, &#x27;html.parser&#x27;)</span><br><span class="line">    # 专栏名称</span><br><span class="line">    file_name = soup.find(&#x27;h3&#x27;, class_=&#x27;column_title&#x27;).get_text()</span><br><span class="line">    # 找到文章标题和链接</span><br><span class="line">    articles = soup.find(&#x27;ul&#x27;, class_=&#x27;column_article_list&#x27;)  # 根据实际网页结构调整类名</span><br><span class="line">    articles = articles.find_all(&#x27;li&#x27;)</span><br><span class="line">    return &#123;</span><br><span class="line">      &#x27;file_name&#x27;: file_name,</span><br><span class="line">      &#x27;articles&#x27;: articles</span><br><span class="line">    &#125;</span><br><span class="line">  else:</span><br><span class="line">    print(f&#x27;访问失败，状态码: &#123;response.status_code&#125;&#x27;)</span><br><span class="line">    return &#123;</span><br><span class="line">      &#x27;file_name&#x27;: &#x27;&#x27;,</span><br><span class="line">      &#x27;articles&#x27;: []</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line"># 按发布日期排序</span><br><span class="line">def sort_by_date(articles):</span><br><span class="line">  def get_date(article):</span><br><span class="line">    return datetime.strptime(article[&#x27;date&#x27;], &#x27;%Y-%m-%d  %H:%M:%S&#x27;)</span><br><span class="line">  return sorted(articles, key=get_date)</span><br><span class="line"></span><br><span class="line"># 正则匹配字符串中的时间字符串</span><br><span class="line">def extract_time_format(string):</span><br><span class="line">  pattern = r&#x27;\d&#123;4&#125;-\d&#123;2&#125;-\d&#123;2&#125; \d&#123;2&#125;:\d&#123;2&#125;:\d&#123;2&#125;&#x27;  # 正则表达式模式，匹配 &#x27;年-月-日 时:分:秒&#x27; 格式的时间</span><br><span class="line">  match = re.search(pattern, string)</span><br><span class="line">  if match:</span><br><span class="line">    return match.group()</span><br><span class="line">  else:</span><br><span class="line">    return None</span><br><span class="line"></span><br><span class="line"># 循环获取专栏的文章标题和文章链接</span><br><span class="line">def get_all_articles_title_and_urls(articles):</span><br><span class="line">  markdown_texts = []</span><br><span class="line">  for article in articles:</span><br><span class="line">    title = article.find(&#x27;h2&#x27;, class_=&#x27;title&#x27;).get_text()  # 获取文章标题</span><br><span class="line">    link = article.find(&#x27;a&#x27;)[&#x27;href&#x27;]  # 获取文章链接</span><br><span class="line">    date = article.find_all(&#x27;span&#x27;, class_=&#x27;status&#x27;)[0].get_text()  # 获取文章发布日期</span><br><span class="line">    markdown_texts.append(&#123;</span><br><span class="line">      &#x27;title&#x27;: title.strip(),</span><br><span class="line">      &#x27;link&#x27;: link,</span><br><span class="line">      &#x27;date&#x27;: extract_time_format(date)</span><br><span class="line">    &#125;)</span><br><span class="line">  markdown_texts = list(sort_by_date(markdown_texts))</span><br><span class="line">  return markdown_texts</span><br><span class="line"></span><br><span class="line"># 创建 markdown 文件，写入内容</span><br><span class="line">def create_markdown_folder(path, foldername, markdown_texts):</span><br><span class="line">  # 内容重构</span><br><span class="line">  texts = []</span><br><span class="line">  for index, article in enumerate(markdown_texts):</span><br><span class="line">    title = article[&#x27;title&#x27;]</span><br><span class="line">    link = article[&#x27;link&#x27;]</span><br><span class="line">    texts.append(f&#x27;&#123;str(index + 1).zfill(3)&#125;. [&#123;title.strip()&#125;](&#123;link&#125;)\n&#x27;)</span><br><span class="line">  try:</span><br><span class="line">    with open(path + &quot;/&quot; + foldername + &quot;.md&quot;, &quot;w&quot;,encoding=&quot;utf-8&quot;) as markdown:</span><br><span class="line">      markdown.writelines(texts)</span><br><span class="line">  except Exception as e:</span><br><span class="line">    print(e)</span><br><span class="line"></span><br><span class="line">def get_all_articles(column_url):</span><br><span class="line">  # 从第一页获取文章列表</span><br><span class="line">  page = 1</span><br><span class="line">  articles = []</span><br><span class="line">  # 专栏名称</span><br><span class="line">  file_name = &#x27;&#x27;</span><br><span class="line">  while True:</span><br><span class="line">    # 构造请求 URL</span><br><span class="line">    url = f&#x27;https://blog.csdn.net/m0_38082783/category_&#123;column_url&#125;_&#123;page&#125;.html&#x27;</span><br><span class="line">    # 获取当前页文章列表 </span><br><span class="line">    current_page_articles_dict = scrape_csdn_blog(url)</span><br><span class="line">    current_page_articles = current_page_articles_dict[&#x27;articles&#x27;]</span><br><span class="line">    # 若当前页没有文章，则停止循环；否则，继续获取下一页文章</span><br><span class="line">    if(len(current_page_articles) &lt; 40):</span><br><span class="line">      articles = articles + current_page_articles</span><br><span class="line">      # 专栏名称</span><br><span class="line">      file_name = current_page_articles_dict[&#x27;file_name&#x27;]</span><br><span class="line">      break</span><br><span class="line">    elif len(current_page_articles) &gt; 0:</span><br><span class="line">      page += 1</span><br><span class="line">      articles = articles + current_page_articles</span><br><span class="line">      # 专栏名称</span><br><span class="line">      file_name = current_page_articles_dict[&#x27;file_name&#x27;]</span><br><span class="line">      time.sleep(5)  # 延迟 5 秒，防止被 CSDN 识别为爬虫</span><br><span class="line">    else:</span><br><span class="line">      break</span><br><span class="line">  # 获取文章标题和链接</span><br><span class="line">  markdown_texts = get_all_articles_title_and_urls(articles)</span><br><span class="line">  # 创建 markdown 文件</span><br><span class="line">  create_markdown_folder(path=&#x27;.&#x27;, foldername=file_name, markdown_texts=markdown_texts)</span><br><span class="line">  print(f&#x27;【&#123;file_name&#125;】专栏更新完成&#x27;)</span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">  categorys = [</span><br><span class="line">    &#x27;11374248&#x27;, # Taro React 入门到实战系列</span><br><span class="line">    &#x27;11804544&#x27;, # Python 小工具制作</span><br><span class="line">    &#x27;9271033&#x27;, # 游戏</span><br><span class="line">    &#x27;9270946&#x27;, # Rattenking 的前端笔记</span><br><span class="line">    &#x27;9270957&#x27;, # 微信小程序</span><br><span class="line">  ]</span><br><span class="line">  for category in categorys:</span><br><span class="line">    get_all_articles(category)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="9-运行效果"><a href="#9-运行效果" class="headerlink" title="9. 运行效果"></a>9. 运行效果</h3><h4 id="9-1-运行结果"><a href="#9-1-运行结果" class="headerlink" title="9.1 运行结果"></a>9.1 运行结果</h4><p><img src="https://foruda.gitee.com/images/1726822624543078189/e1788142_1681522.png" alt="输入图片说明"></p>
+<h4 id="9-2-生成的-markdown-文件示例"><a href="#9-2-生成的-markdown-文件示例" class="headerlink" title="9.2 生成的 markdown 文件示例"></a>9.2 生成的 markdown 文件示例</h4><p><img src="https://foruda.gitee.com/images/1726822707099594844/86e2d698_1681522.png" alt="输入图片说明"></p>
+<h4 id="9-3-将生成的文档更新到-CSDN"><a href="#9-3-将生成的文档更新到-CSDN" class="headerlink" title="9.3 将生成的文档更新到 CSDN"></a>9.3 将生成的文档更新到 CSDN</h4><p><img src="https://foruda.gitee.com/images/1726822784038689631/669429b7_1681522.png" alt="输入图片说明"></p>
+<h3 id="10-总结"><a href="#10-总结" class="headerlink" title="10. 总结"></a>10. 总结</h3><ol>
+<li>写这个爬虫工具只是为了方便文章的查找，说别了就是程序员其实都比较懒，能够用程序做的事情，都不想自己干；</li>
+<li>由于只是对自己专栏文章实现目录归档，因此爬取不需要很快，因此每次翻页的时候等待五秒，不然检测到是爬虫，会出现超时现象；</li>
+<li>用自己所学完成自己一些小功能，挺好玩的，工具很多，自己学会、自己喜欢就好。</li>
+</ol>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 1148063373@qq.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2017 梁亚军
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
