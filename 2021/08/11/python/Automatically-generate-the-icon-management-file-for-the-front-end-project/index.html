@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>自动生成前端项目图标管理文件 | 梁亚军的博客</title>
+  <meta name="keywords" content=" Python ">
+  <meta name="description" content="自动生成前端项目图标管理文件 | 梁亚军的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content=".rui-content {         display: flex;         overflow: hidden;         width: 100%;       }       .rui-grid {         --time: 10s;         flex: none;         display: flex;         w">
+<meta property="og:type" content="website">
+<meta property="og:title" content="梁亚军的博客">
+<meta property="og:url" content="http://example.com/demo/index.html">
+<meta property="og:site_name" content="梁亚军的博客">
+<meta property="og:description" content=".rui-content {         display: flex;         overflow: hidden;         width: 100%;       }       .rui-grid {         --time: 10s;         flex: none;         display: flex;         w">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://picsum.photos/200/300?random=1">
+<meta property="og:image" content="https://picsum.photos/200/300?random=2">
+<meta property="og:image" content="https://picsum.photos/200/300?random=3">
+<meta property="og:image" content="https://picsum.photos/200/300?random=1">
+<meta property="og:image" content="https://picsum.photos/200/300?random=2">
+<meta property="og:image" content="https://picsum.photos/200/300?random=3">
+<meta property="article:published_time" content="2025-03-12T08:58:38.038Z">
+<meta property="article:modified_time" content="2025-03-12T08:58:38.038Z">
+<meta property="article:author" content="梁亚军">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://picsum.photos/200/300?random=1">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/brown-paper.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>梁亚军</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(11)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="Python">
+            
+            Python
+            <small>(9)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="前端">
+            
+            前端
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="11">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://blog.csdn.net/m0_38082783">CSDN</a></li>
+            
+            <li><a target="_blank" href="https://juejin.cn/user/2124687263150136">掘金</a></li>
+            
+            <li><a target="_blank" href="https://www.zhihu.com/people/wen-bin-54-21">知乎</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="search shortcut key i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="switch to outline view shortcut key w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="return"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="case sensitive"></i>
+            <i class="iconfont icon-tag" data-title="label"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">outline</div>
+            <i class="iconfont icon-list" data-title="switch to article list"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>爬虫</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>文件名</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSDN</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSS</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Email</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Excel</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Image</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>PDF</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Python</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ReportLab</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Sort</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All "
+           href="/2025/03/12/python/Batch-recognize-the-text-in-pictures-and-save-it-into-an-Excel-spreadsheet/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="批量识别图片文字保存到 excel 中">批量识别图片文字保存到 excel 中</span>
+            <span class="post-date" title="2025-03-12 17:30:51">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2025/03/11/python/auto-send-email/"
+           data-tag="Python,Excel,Email"
+           data-author="" >
+            <span class="post-title" title="实现批量发送邮件，通过读取 excel 中的发送内容">实现批量发送邮件，通过读取 excel 中的发送内容</span>
+            <span class="post-date" title="2025-03-11 15:17:00">2025/03/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2025/03/11/python/auto-on-pdf-in-to-excel-info/"
+           data-tag="Python,Excel,PDF"
+           data-author="" >
+            <span class="post-title" title="实现批量给 pdf 插入 excel 动态生成的印章">实现批量给 pdf 插入 excel 动态生成的印章</span>
+            <span class="post-date" title="2025-03-11 15:17:00">2025/03/11</span>
+        </a>
+        
+        
+        <a  class="All 前端 "
+           href="/2025/03/05/%E5%89%8D%E7%AB%AF/css/css-scrolling/"
+           data-tag="CSS"
+           data-author="" >
+            <span class="post-title" title="CSS 实现无限滚动轮播">CSS 实现无限滚动轮播</span>
+            <span class="post-date" title="2025-03-05 14:51:00">2025/03/05</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/11/python/Automatically-generate-the-icon-management-file-for-the-front-end-project/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="自动生成前端项目图标管理文件">自动生成前端项目图标管理文件</span>
+            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/11/python/Sort-according-to-the-numbers-in-the-names-of-the-picture-files/"
+           data-tag="Python,Sort,文件名"
+           data-author="" >
+            <span class="post-title" title="根据图片文件名称中的数字排序">根据图片文件名称中的数字排序</span>
+            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/11/python/auto-replace-image-url/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="自动替换项目中全部图片的新服务器地址">自动替换项目中全部图片的新服务器地址</span>
+            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/11/python/do-pdf-in-to-image/"
+           data-tag="Python,PDF,Image"
+           data-author="" >
+            <span class="post-title" title="实现向指定PDF指定页面指定位置插入图片">实现向指定PDF指定页面指定位置插入图片</span>
+            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/11/python/to-pdf-table/"
+           data-tag="Python,ReportLab"
+           data-author="" >
+            <span class="post-title" title="使用 ReportLab 实现在 pdf 生成表格印章">使用 ReportLab 实现在 pdf 生成表格印章</span>
+            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/08/10/python/Automatically-download-all-the-hero-avatars-in-Honor-of-Kings-in-batches/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="自动批量下载王者荣耀的所有英雄头像">自动批量下载王者荣耀的所有英雄头像</span>
+            <span class="post-date" title="2021-08-10 16:00:00">2021/08/10</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2021/01/13/python/auto-crawl-the-list-of-CSDN-column-articles/"
+           data-tag="Python,CSDN,爬虫"
+           data-author="" >
+            <span class="post-title" title="爬取 CSDN 专栏文章列表">爬取 CSDN 专栏文章列表</span>
+            <span class="post-date" title="2021-01-13 16:00:00">2021/01/13</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="Toggle full screen shortcut key s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-python/Automatically-generate-the-icon-management-file-for-the-front-end-project" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">自动生成前端项目图标管理文件</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Python">Python</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">Python</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2025-03-12 17:27:11'>2021-08-11 16:00</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9C%BA%E6%99%AF"><span class="toc-text">1. 场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%9B%BE%E6%A0%87%E7%AE%A1%E7%90%86"><span class="toc-text">2. 图标管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF"><span class="toc-text">3. 实现思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%E5%90%8D%E7%A7%B0"><span class="toc-text">4. 获取文件夹下所有文件名称</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF"><span class="toc-text">4.1 实现思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E5%AE%9E%E7%8E%B0%E4%BB%A3%E7%A0%81"><span class="toc-text">4.2 实现代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E6%89%80%E6%9C%89%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6"><span class="toc-text">5. 获取文件夹下所有图片文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%A3%80%E6%9F%A5%E8%B7%AF%E5%BE%84%E7%B1%BB%E5%9E%8B"><span class="toc-text">6. 检查路径类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%B0%86%E5%9B%BE%E7%89%87%E6%8B%BC%E6%8E%A5%E4%B8%BA%E5%89%8D%E7%AB%AF%E4%BD%BF%E7%94%A8%E7%9A%84js%E6%96%87%E4%BB%B6%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9"><span class="toc-text">7. 将图片拼接为前端使用的js文件文本内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90"><span class="toc-text">7.1 代码分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-%E5%AE%9E%E7%8E%B0%E4%BB%A3%E7%A0%81"><span class="toc-text">7.2 实现代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E5%88%9B%E5%BB%BA-js-%E6%96%87%E4%BB%B6%EF%BC%8C%E5%86%99%E5%85%A5%E5%86%85%E5%AE%B9"><span class="toc-text">8. 创建 js 文件，写入内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E8%BF%90%E8%A1%8C"><span class="toc-text">9. 运行</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9-1-%E8%BF%90%E8%A1%8C%E5%91%BD%E4%BB%A4"><span class="toc-text">9.1 运行命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-2-%E7%94%9F%E6%88%90%E7%9A%84%E5%9B%BE%E6%A0%87%E6%96%87%E4%BB%B6"><span class="toc-text">9.2 生成的图标文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81"><span class="toc-text">10. 完整代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E6%80%BB%E7%BB%93"><span class="toc-text">11. 总结</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-场景"><a href="#1-场景" class="headerlink" title="1. 场景"></a>1. 场景</h3><p>在前端项目开发中，图标维护一直是一个比较麻烦的事情：</p>
+<ol>
+<li>第一种：就是直接项目页面里边直接读取图片，这种有个问题，就是如果后期图片地址存在变更，维护就比较麻烦，比如下图就是我 uniapp 项目的图标，如果后期将这些图片传到服务器【微信小程序由于包大小限制，因此图片尽量放在服务器，减小包的大小】，前端必须使用服务器地址，这样是不是直接懵逼。</li>
+<li>第二种：就是为了减小维护成本或者说后期改变的替换成本，就需要一个图标管理的 js 文件文件，将所有图标集中管理，这样后期即便需要替换，直接维护这个 js 文件就可以了。有所进步，但是还是比较麻烦，需要我们人工去维护，每次添加或者修改，都需要开发人员来维护这个文件，比较麻烦，比如改成服务器图片路径，需要替换的成本依然很高。</li>
+<li>第三种：写一个脚本来维护这些图标文件，当然脚本的语言随便你选择，node、python等等，只要可以实现功能，都是可以的，由于我比较熟悉 python 的脚本，所以本文直接以 python 实现自动化图标文件管理。</li>
+</ol>
+<h3 id="2-图标管理"><a href="#2-图标管理" class="headerlink" title="2. 图标管理"></a>2. 图标管理</h3><p><img src="https://foruda.gitee.com/images/1728960218226143308/c7a5e443_1681522.png" alt="输入图片说明"></p>
+<h3 id="3-实现思路"><a href="#3-实现思路" class="headerlink" title="3. 实现思路"></a>3. 实现思路</h3><ol>
+<li>递归查询图片文件夹中的所有文件夹和图片文件；</li>
+<li>遍历对应文件夹下的图片文件；</li>
+<li>将图片文件的路径组装为项目中图标 js 文件的字符串；</li>
+<li>创建对应的图标 js 文件。</li>
+</ol>
+<h3 id="4-获取文件夹下所有文件名称"><a href="#4-获取文件夹下所有文件名称" class="headerlink" title="4. 获取文件夹下所有文件名称"></a>4. 获取文件夹下所有文件名称</h3><h4 id="4-1-实现思路"><a href="#4-1-实现思路" class="headerlink" title="4.1 实现思路"></a>4.1 实现思路</h4><ol>
+<li>定义函数，接受一个参数 path，表示要遍历的路径。</li>
+<li>调用 get_all_image_names 函数，获取指定路径下的所有图片文件名，并将结果存储在 image_names 变量中。</li>
+<li>如果 image_names 不为空，调用 create_js_file 函数，传入 path 和 image_names 作为参数，该函数的作用是根据图片文件名创建一个 JavaScript 文件。</li>
+<li>获取指定路径下的所有文件和文件夹名，并将结果存储在 names 变量中。</li>
+<li>遍历 names 列表中的每个元素。</li>
+<li>使用 os.path.join 函数将当前路径 path 和当前遍历的文件名 name 拼接起来，形成一个新的路径 new_path。</li>
+<li>调用 check_path_type 函数，检查 new_path 的类型，并将结果存储在 type_name 变量中。</li>
+<li>如果 type_name 等于 ‘dir’，即 new_path 是一个文件夹。</li>
+<li>如果 new_path 是一个文件夹，则递归调用 get_all_file_names 函数，继续遍历该文件夹下的文件和文件夹。</li>
+</ol>
+<h4 id="4-2-实现代码"><a href="#4-2-实现代码" class="headerlink" title="4.2 实现代码"></a>4.2 实现代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 获取文件夹下所有文件名称</span><br><span class="line">def get_all_file_names(path):</span><br><span class="line">  # 获取当前文件夹下的图片文件</span><br><span class="line">  image_names = get_all_image_names(path)</span><br><span class="line">  if len(image_names) &gt; 0:</span><br><span class="line">    create_js_file(path, image_names)</span><br><span class="line">  # 获取路径下的所有文件</span><br><span class="line">  names = os.listdir(path)</span><br><span class="line">  for name in names:</span><br><span class="line">    new_path = os.path.join(path, name)</span><br><span class="line">    type_name = check_path_type(new_path)</span><br><span class="line">    if type_name == &#x27;dir&#x27;:</span><br><span class="line">      get_all_file_names(new_path)</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-获取文件夹下所有图片文件"><a href="#5-获取文件夹下所有图片文件" class="headerlink" title="5. 获取文件夹下所有图片文件"></a>5. 获取文件夹下所有图片文件</h3><ol>
+<li>获取路径下的所有文件。</li>
+<li>筛选其中的图片文件，返回图片名称列表。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 获取文件夹下所有图片文件名称</span><br><span class="line">def get_all_image_names(path):</span><br><span class="line">  # 获取路径下的所有文件</span><br><span class="line">  names = os.listdir(path)</span><br><span class="line">  # 筛选其中的图片文件，返回图片名称列表</span><br><span class="line">  image_names = list(filter(lambda x : x.split(&#x27;.&#x27;).pop() in [&#x27;jpg&#x27;, &#x27;png&#x27;, &#x27;jpeg&#x27;, &#x27;bmp&#x27;], names))</span><br><span class="line">  return image_names</span><br></pre></td></tr></table></figure>
+
+<h3 id="6-检查路径类型"><a href="#6-检查路径类型" class="headerlink" title="6. 检查路径类型"></a>6. 检查路径类型</h3><ol>
+<li>如果是文件夹，返回 dir 字符串。</li>
+<li>如果是文件，返回 file 字符串。</li>
+</ol>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 检查路径类型</span><br><span class="line">def check_path_type(path):</span><br><span class="line">  if os.path.isfile(path):</span><br><span class="line">    return &quot;file&quot;</span><br><span class="line">  elif os.path.isdir(path):</span><br><span class="line">    return &quot;dir&quot;</span><br><span class="line">  else:</span><br><span class="line">    return &quot;other&quot;</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-将图片拼接为前端使用的js文件文本内容"><a href="#7-将图片拼接为前端使用的js文件文本内容" class="headerlink" title="7. 将图片拼接为前端使用的js文件文本内容"></a>7. 将图片拼接为前端使用的js文件文本内容</h3><h4 id="7-1-代码分析"><a href="#7-1-代码分析" class="headerlink" title="7.1 代码分析"></a>7.1 代码分析</h4><ol>
+<li>定义函数，接受两个参数 path 和 image_names，分别表示要创建 JavaScript 文件的路径和图片文件名列表。</li>
+<li>获取文件名：从 path 中提取文件名，使用 split(‘\‘) 将路径分割成多个部分，然后使用 pop() 方法获取最后一个部分，即文件名。</li>
+<li>从 path 中提取创建路径，使用 split(‘user\‘) 将路径分割成多个部分，然后使用 pop() 方法获取最后一个部分，即创建路径。</li>
+<li>将 create_path 中的反斜杠 \ 替换为正斜杠 &#x2F;，以确保路径在 JavaScript 文件中正确表示。</li>
+<li>初始化一个空列表 icon_imports，用于存储导入图片文件的 JavaScript 代码。</li>
+<li>定义一个字符串 start_text，表示 JavaScript 文件的开头部分，其中包含导出的常量名称，该名称与文件名相同。</li>
+<li>初始化一个列表 icon_names，用于存储 JavaScript 文件的内容，首先将 start_text 添加到列表中。</li>
+<li>遍历 image_names 列表中的每个图片文件名。</li>
+<li>从图片文件名中提取不带扩展名的部分，作为图标的名称。</li>
+<li>定义一个字符串 icon_name，表示图标的名称，其中包含 V2Icon 后缀，并以逗号和换行符结尾。</li>
+<li>将 icon_name 添加到 icon_names 列表中。</li>
+<li>定义一个字符串 icon_import，表示导入图片文件的 JavaScript 代码【此步骤有一个优势，就是后期如果需要替换服务器路径时，直接将此字符串改为对应的服务器拼接字符串，上传图片都可以自动上传实现】。</li>
+<li>将 icon_import 添加到 icon_imports 列表中。</li>
+<li>将 JavaScript 文件的结束部分 };\n 添加到 icon_names 列表中。</li>
+<li>将 icon_imports 和 icon_names 列表合并成一个列表 js_texts，其中包含了导入图片文件的代码和图标的名称。</li>
+<li>定义一个字符串 js_file_path，表示要创建的 JavaScript 文件的路径。</li>
+<li>调用 create_js_folder 函数，传入 js_file_path、file_name 和 js_texts 作为参数，该函数的作用是创建一个 JavaScript 文件，并将 js_texts 中的内容写入该文件。</li>
+</ol>
+<h4 id="7-2-实现代码"><a href="#7-2-实现代码" class="headerlink" title="7.2 实现代码"></a>7.2 实现代码</h4><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 将图片拼接为前端使用的js文件文本内容</span><br><span class="line">def create_js_file(path, image_names):</span><br><span class="line">  file_name = path.split(&#x27;\\&#x27;).pop()</span><br><span class="line">  create_path = path.split(&#x27;user\\&#x27;).pop()</span><br><span class="line">  create_path = create_path.replace(&#x27;\\&#x27;, &#x27;/&#x27;)</span><br><span class="line">  # 存储图标名称</span><br><span class="line">  icon_imports = []</span><br><span class="line">  start_text = &quot;export const &quot;+ file_name +&quot; = &#123;\n&quot;</span><br><span class="line">  icon_names = [start_text]</span><br><span class="line">  # 遍历图片名称列表</span><br><span class="line">  for name in image_names:</span><br><span class="line">    image_name = name.split(&#x27;.&#x27;)[0]</span><br><span class="line">    icon_name = f&#x27;  &#123;image_name&#125;V2Icon,\n&#x27;</span><br><span class="line">    icon_names.append(icon_name)</span><br><span class="line">    icon_import = f&#x27;import &#123;image_name&#125;V2Icon from &quot;@/&#123;create_path&#125;/&#123;name&#125;&quot;;\n&#x27;</span><br><span class="line">    icon_imports.append(icon_import)</span><br><span class="line">  icon_names.append(&quot;&#125;;\n&quot;)</span><br><span class="line">  js_texts = icon_imports + icon_names</span><br><span class="line">  # 写入js文件</span><br><span class="line">  js_file_path = r&#x27;f:\taro-react-rui\reservation-venue-platform\user\utils\icons&#x27;</span><br><span class="line">  create_js_folder(js_file_path, file_name, js_texts)</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-创建-js-文件，写入内容"><a href="#8-创建-js-文件，写入内容" class="headerlink" title="8. 创建 js 文件，写入内容"></a>8. 创建 js 文件，写入内容</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line"># 创建 js 文件，写入内容</span><br><span class="line">def create_js_folder(path, foldername, texts):</span><br><span class="line">  try:</span><br><span class="line">    with open(path + &quot;/&quot; + foldername + &quot;.js&quot;, &quot;w&quot;,encoding=&quot;utf-8&quot;) as js:</span><br><span class="line">      js.writelines(texts)</span><br><span class="line">      print(f&quot;创建 &#123;foldername&#125;.js 文件成功&quot;)</span><br><span class="line">  except Exception as e:</span><br><span class="line">    print(e)</span><br></pre></td></tr></table></figure>
+
+<h3 id="9-运行"><a href="#9-运行" class="headerlink" title="9. 运行"></a>9. 运行</h3><h4 id="9-1-运行命令"><a href="#9-1-运行命令" class="headerlink" title="9.1 运行命令"></a>9.1 运行命令</h4><p><img src="https://foruda.gitee.com/images/1728981332023518843/a570008e_1681522.png" alt="输入图片说明"></p>
+<h4 id="9-2-生成的图标文件"><a href="#9-2-生成的图标文件" class="headerlink" title="9.2 生成的图标文件"></a>9.2 生成的图标文件</h4><p><img src="https://foruda.gitee.com/images/1728981459750145195/9d58036a_1681522.png" alt="输入图片说明"><br><img src="https://foruda.gitee.com/images/1728981482734320127/6afe4aea_1681522.png" alt="输入图片说明"></p>
+<h3 id="10-完整代码"><a href="#10-完整代码" class="headerlink" title="10. 完整代码"></a>10. 完整代码</h3><figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">import os</span><br><span class="line"></span><br><span class="line"># 获取文件夹下所有图片文件名称</span><br><span class="line">def get_all_image_names(path):</span><br><span class="line">  # 获取路径下的所有文件</span><br><span class="line">  names = os.listdir(path)</span><br><span class="line">  # 筛选其中的图片文件，返回图片名称列表</span><br><span class="line">  image_names = list(filter(lambda x : x.split(&#x27;.&#x27;).pop() in [&#x27;jpg&#x27;, &#x27;png&#x27;, &#x27;jpeg&#x27;, &#x27;bmp&#x27;], names))</span><br><span class="line">  return image_names</span><br><span class="line"></span><br><span class="line"># 检查路径类型</span><br><span class="line">def check_path_type(path):</span><br><span class="line">  if os.path.isfile(path):</span><br><span class="line">    return &quot;file&quot;</span><br><span class="line">  elif os.path.isdir(path):</span><br><span class="line">    return &quot;dir&quot;</span><br><span class="line">  else:</span><br><span class="line">    return &quot;other&quot;</span><br><span class="line"></span><br><span class="line"># 获取文件夹下所有文件名称</span><br><span class="line">def get_all_file_names(path):</span><br><span class="line">  # 获取当前文件夹下的图片文件</span><br><span class="line">  image_names = get_all_image_names(path)</span><br><span class="line">  if len(image_names) &gt; 0:</span><br><span class="line">    create_js_file(path, image_names)</span><br><span class="line">  # 获取路径下的所有文件</span><br><span class="line">  names = os.listdir(path)</span><br><span class="line">  for name in names:</span><br><span class="line">    new_path = os.path.join(path, name)</span><br><span class="line">    type_name = check_path_type(new_path)</span><br><span class="line">    if type_name == &#x27;dir&#x27;:</span><br><span class="line">      get_all_file_names(new_path)</span><br><span class="line"></span><br><span class="line"># 将图片拼接为前端使用的js文件文本内容</span><br><span class="line">def create_js_file(path, image_names):</span><br><span class="line">  file_name = path.split(&#x27;\\&#x27;).pop()</span><br><span class="line">  create_path = path.split(&#x27;user\\&#x27;).pop()</span><br><span class="line">  create_path = create_path.replace(&#x27;\\&#x27;, &#x27;/&#x27;)</span><br><span class="line">  # 存储图标名称</span><br><span class="line">  icon_imports = []</span><br><span class="line">  start_text = &quot;export const &quot;+ file_name +&quot; = &#123;\n&quot;</span><br><span class="line">  icon_names = [start_text]</span><br><span class="line">  # 遍历图片名称列表</span><br><span class="line">  for name in image_names:</span><br><span class="line">    image_name = name.split(&#x27;.&#x27;)[0]</span><br><span class="line">    icon_name = f&#x27;  &#123;image_name&#125;V2Icon,\n&#x27;</span><br><span class="line">    icon_names.append(icon_name)</span><br><span class="line">    icon_import = f&#x27;import &#123;image_name&#125;V2Icon from &quot;@/&#123;create_path&#125;/&#123;name&#125;&quot;;\n&#x27;</span><br><span class="line">    icon_imports.append(icon_import)</span><br><span class="line">  icon_names.append(&quot;&#125;;\n&quot;)</span><br><span class="line">  js_texts = icon_imports + icon_names</span><br><span class="line">  # 写入js文件</span><br><span class="line">  js_file_path = r&#x27;f:\taro-react-rui\reservation-venue-platform\user\utils\icons&#x27;</span><br><span class="line">  create_js_folder(js_file_path, file_name, js_texts)</span><br><span class="line"></span><br><span class="line"># 创建 js 文件，写入内容</span><br><span class="line">def create_js_folder(path, foldername, texts):</span><br><span class="line">  try:</span><br><span class="line">    with open(path + &quot;/&quot; + foldername + &quot;.js&quot;, &quot;w&quot;,encoding=&quot;utf-8&quot;) as js:</span><br><span class="line">      js.writelines(texts)</span><br><span class="line">      print(f&quot;创建 &#123;foldername&#125;.js 文件成功&quot;)</span><br><span class="line">  except Exception as e:</span><br><span class="line">    print(e)</span><br><span class="line"></span><br><span class="line">if __name__ == &#x27;__main__&#x27;:</span><br><span class="line">  path = r&#x27;f:\taro-react-rui\reservation-venue-platform\user\static\v2&#x27;</span><br><span class="line">  get_all_file_names(path)</span><br></pre></td></tr></table></figure>
+
+<h3 id="11-总结"><a href="#11-总结" class="headerlink" title="11. 总结"></a>11. 总结</h3><ol>
+<li>方法很简单，实现的功能很简单，但是它减少了我的维护成本，我后边只需要将蓝湖中的图标下载下来，放到目标文件夹下，执行脚本，就能得到项目中使用的图标管理文件。</li>
+<li>后期上微信小程序时，将图片上传到服务器也好维护，直接在导入图片地址哪里调用上传接口，然后将返回的图片地址换为导入图片地址，这样只需要修改一个地方的代码，再执行脚本，就能将所有图片地址切换到服务器地址，是不是比前边的方法方便了很多，也不需要人为的去替换，解放我们的双手。哈哈哈！</li>
+</ol>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 1148063373@qq.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2017 梁亚军
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'default';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>
