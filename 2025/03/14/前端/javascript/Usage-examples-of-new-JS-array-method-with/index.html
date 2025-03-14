@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>使用 ReportLab 实现在 pdf 生成表格印章 | 梁亚军的博客</title>
-  <meta name="keywords" content=" Python , ReportLab ">
-  <meta name="description" content="使用 ReportLab 实现在 pdf 生成表格印章 | 梁亚军的博客">
+  <title>【JavaScript】---- JS 数组新方法 with 的使用示例 | 梁亚军的博客</title>
+  <meta name="keywords" content=" JavaScript ">
+  <meta name="description" content="【JavaScript】---- JS 数组新方法 with 的使用示例 | 梁亚军的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="1. 不改变原数组设值 使用 with 方法，不改变原来的数组； 对新的数组某个索引进行设值，不改变原来的数组。  1.1 示例let a &#x3D; [2,3,4,5,6]let c &#x3D; a.with(0,9)console.log(a)console.log(c)  1.2 输出结果 1.3 with 方法之前的实现 使用…扩展语法进行数组复制  let a &#x3D; [2,3,4,5,6]let d &#x3D;">
 <meta property="og:type" content="article">
@@ -454,9 +454,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-python/to-pdf-table" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-前端/javascript/Usage-examples-of-new-JS-array-method-with" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">使用 ReportLab 实现在 pdf 生成表格印章</h1>
+        <h1 class="article-title">【JavaScript】---- JS 数组新方法 with 的使用示例</h1>
     
     <div class="article-meta">
         
@@ -466,7 +466,9 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="Python">Python</a>
+            <a  data-rel="前端">前端</a> > 
+            
+            <a  data-rel="前端&lt;---&gt;JavaScript">JavaScript</a>
             
         </span>
         
@@ -474,16 +476,14 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color2">Python</a>
-            
-            <a class="color5">ReportLab</a>
+            <a class="color1">JavaScript</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2025-03-14 16:31:16'>2025-03-12 17:12</time>
+            Created At : <time class="date" title='Updated At: 2025-03-14 16:37:25'>2025-03-14 16:36</time>
         
     </div>
     <div class="article-meta">
@@ -505,7 +505,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%9C%80%E6%B1%82%E5%9C%BA%E6%99%AF"><span class="toc-text">1. 需求场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-ReportLab-%E7%94%9F%E6%88%90%E8%A1%A8%E6%A0%BC%E7%9A%84%E7%B1%BB-Table"><span class="toc-text">2. ReportLab 生成表格的类 Table</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-ReportLab-%E8%AE%BE%E7%BD%AE%E8%A1%A8%E6%A0%BC%E6%A0%B7%E5%BC%8F%E7%9A%84%E7%B1%BB-TableStyle"><span class="toc-text">3. ReportLab 设置表格样式的类 TableStyle</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-ReportLab-%E7%94%9F%E6%88%90%E8%A1%A8%E6%A0%BC%E6%B3%A8%E5%86%8C%E8%87%AA%E5%AE%9A%E4%B9%89%E5%AD%97%E4%BD%93"><span class="toc-text">4. ReportLab 生成表格注册自定义字体</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E5%AF%BC%E5%85%A5%E5%BF%85%E8%A6%81%E7%9A%84%E6%A8%A1%E5%9D%97"><span class="toc-text">4.1 导入必要的模块</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E6%B3%A8%E5%86%8C%E5%AD%97%E4%BD%93"><span class="toc-text">4.2 注册字体</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-%E4%BD%BF%E7%94%A8%E5%AD%97%E4%BD%93"><span class="toc-text">4.3 使用字体</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-TableStyle-%E5%88%97%E8%A1%A8%E5%85%83%E7%BB%84%E7%9A%84%E5%90%AB%E4%B9%89"><span class="toc-text">5. TableStyle 列表元组的含义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%AE%9E%E7%8E%B0%E8%A1%A8%E6%A0%BC%E5%8D%B0%E7%AB%A0"><span class="toc-text">6. 实现表格印章</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%AE%9E%E7%8E%B0%E6%95%88%E6%9E%9C"><span class="toc-text">7. 实现效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E6%80%BB%E7%BB%93"><span class="toc-text">8. 总结</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%8D%E6%94%B9%E5%8F%98%E5%8E%9F%E6%95%B0%E7%BB%84%E8%AE%BE%E5%80%BC"><span class="toc-text">1. 不改变原数组设值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E7%A4%BA%E4%BE%8B"><span class="toc-text">1.1 示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C"><span class="toc-text">1.2 输出结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-with-%E6%96%B9%E6%B3%95%E4%B9%8B%E5%89%8D%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-text">1.3 with 方法之前的实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-%E6%80%BB%E7%BB%93"><span class="toc-text">1.4 总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Array-prototype-with-%E8%AF%B4%E6%98%8E"><span class="toc-text">2. Array.prototype.with 说明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E8%AF%AD%E6%B3%95"><span class="toc-text">2.1 语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E5%8F%82%E6%95%B0"><span class="toc-text">2.2 参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-text">2.3 返回值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-%E5%85%BC%E5%AE%B9%E6%80%A7"><span class="toc-text">2.4 兼容性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%B3%A8%E6%84%8F"><span class="toc-text">3. 注意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8"><span class="toc-text">4. 链式调用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="toc-text">4.1 测试代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="toc-text">4.2 测试结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E4%BD%BF%E7%94%A8-at-%E5%92%8C-with-%E5%87%BD%E6%95%B0%E8%BF%9B%E8%A1%8C%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C"><span class="toc-text">5. 使用 at 和 with 函数进行读写操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%B0%B8%E8%BF%9C%E4%B8%8D%E4%BC%9A%E4%BA%A7%E7%94%9F%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84"><span class="toc-text">6. 永远不会产生稀疏数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81"><span class="toc-text">6.1 示例代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-%E7%BB%93%E6%9E%9C"><span class="toc-text">6.2 结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%9C%A8%E9%9D%9E%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1%E4%B8%8A%E8%B0%83%E7%94%A8-with"><span class="toc-text">7. 在非数组对象上调用 with</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81"><span class="toc-text">7.1 示例代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-%E7%BB%93%E6%9E%9C"><span class="toc-text">7.2 结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-%E6%B3%A8%E6%84%8F"><span class="toc-text">7.3 注意</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E5%9F%BA%E7%A1%80%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95"><span class="toc-text">8. 基础性能测试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-1-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="toc-text">8.1 测试代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="toc-text">8.2 测试结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E4%B8%8D%E6%94%B9%E5%8F%98%E5%8E%9F%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95"><span class="toc-text">11. 不改变原数组的数组方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E6%80%BB%E7%BB%93"><span class="toc-text">10. 总结</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -521,165 +521,90 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-需求场景"><a href="#1-需求场景" class="headerlink" title="1. 需求场景"></a>1. 需求场景</h3><p>之前写过一篇博客，使用 PIL 生成表格样式的印章，在使用 reportlab 和 PyPDF2 插入图片到指定位置。后来学习了一下 ReportLab，发现可以直接创建表格。那么之前的那个需求就没有那么麻烦了，我们可以直接创建表格在一个 pdf 的指定位置，然后再合并到需要印章的 pdf 中。减少了生成印章的步骤。</p>
-<h3 id="2-ReportLab-生成表格的类-Table"><a href="#2-ReportLab-生成表格的类-Table" class="headerlink" title="2. ReportLab 生成表格的类 Table"></a>2. ReportLab 生成表格的类 Table</h3><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>参数说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>data</td>
-<td>表格中单元格值的序列。每个单元格的值应该能够转换成字符串，或者是一个Flowable实例（如Paragraph），或者是一个包含此类实例的列表或元组。</td>
-</tr>
-<tr>
-<td>colWidths</td>
-<td>一个数字序列，可以是None，代表列的宽度。如果设置为None，则相应的列宽将自动计算。</td>
-</tr>
-<tr>
-<td>rowHeights</td>
-<td>一个数字序列，可以是None，代表行的高度。如果设置为None，则相应的行高将自动计算。</td>
-</tr>
-<tr>
-<td>style</td>
-<td>表格的初始样式。</td>
-</tr>
-<tr>
-<td>splitByRow</td>
-<td>当表格太高或太宽而无法适应当前上下文时，这个参数决定是先按行分割还是先按列分割。</td>
-</tr>
-<tr>
-<td>repeatRows</td>
-<td>指定当表格被要求拆分时应该重复的前导行数量或元组。</td>
-</tr>
-<tr>
-<td>rowSplitRange</td>
-<td>可以用来控制表的分割，将表分割成其行的子集。</td>
-</tr>
-<tr>
-<td>spaceBefore</td>
-<td>当在platypus故事中重新编排时，可以用来在表格之前或之后放置额外的空间。</td>
-</tr>
-<tr>
-<td>spaceAfter</td>
-<td>当在platypus故事中重新编排时，可以用来在表格之前或之后放置额外的空间。</td>
-</tr>
-</tbody></table>
-<h3 id="3-ReportLab-设置表格样式的类-TableStyle"><a href="#3-ReportLab-设置表格样式的类-TableStyle" class="headerlink" title="3. ReportLab 设置表格样式的类 TableStyle"></a>3. ReportLab 设置表格样式的类 TableStyle</h3><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>参数说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>FONT</td>
-<td>需要字体名称，可选的字体大小和行距。</td>
-</tr>
-<tr>
-<td>FONTNAME (或 FACE)</td>
-<td>需要字体名称（自定义字体需要注册）。</td>
-</tr>
-<tr>
-<td>FONTSIZE (或 SIZE)</td>
-<td>需要字体大小（以点为单位）。</td>
-</tr>
-<tr>
-<td>LEADING</td>
-<td>需要行距（以点为单位）。</td>
-</tr>
-<tr>
-<td>TEXTCOLOR</td>
-<td>需要颜色名称或(R,G,B)元组。</td>
-</tr>
-<tr>
-<td>ALIGNMENT (或 ALIGN)</td>
-<td>可以是LEFT、RIGHT、CENTER或DECIMAL之一。</td>
-</tr>
-<tr>
-<td>BACKGROUND</td>
-<td>可以是颜色对象、字符串名称、数值元组&#x2F;列表，或者是描述所需渐变填充的列表&#x2F;元组。</td>
-</tr>
-<tr>
-<td>LEFTPADDING, RIGHTPADDING, BOTTOMPADDING, TOPPADDING</td>
-<td>以点为单位的填充值。</td>
-</tr>
-<tr>
-<td>ROWBACKGROUNDS</td>
-<td>使用循环的背景颜色列表。</td>
-</tr>
-<tr>
-<td>COLBACKGROUNDS</td>
-<td>使用循环的列背景颜色列表。</td>
-</tr>
-<tr>
-<td>VALIGN</td>
-<td>可以是TOP、MIDDLE或默认的BOTTOM。</td>
-</tr>
-<tr>
-<td>GRID, BOX, OUTLINE, INNERGRID, LINEBELOW, LINEABOVE, LINEBEFORE, LINEAFTER</td>
-<td>线条命令以标识符开始，接着是起始和停止单元格坐标，然后是所需的线条厚度（以点为单位）和颜色。颜色可以是名称，也可以是(R,G,B)元组。</td>
-</tr>
-<tr>
-<td>SPAN</td>
-<td>指示将某些单元格合并为一个超级单元格。</td>
-</tr>
-</tbody></table>
-<h3 id="4-ReportLab-生成表格注册自定义字体"><a href="#4-ReportLab-生成表格注册自定义字体" class="headerlink" title="4. ReportLab 生成表格注册自定义字体"></a>4. ReportLab 生成表格注册自定义字体</h3><h4 id="4-1-导入必要的模块"><a href="#4-1-导入必要的模块" class="headerlink" title="4.1 导入必要的模块"></a>4.1 导入必要的模块</h4><blockquote>
-<p>需要从reportlab.pdfbase.ttfonts导入TTFont类，以及从reportlab.pdfbase.pdfmetrics导入registerFont函数。</p>
-</blockquote>
-<h4 id="4-2-注册字体"><a href="#4-2-注册字体" class="headerlink" title="4.2 注册字体"></a>4.2 注册字体</h4><blockquote>
-<p>使用registerFont函数来注册你的自定义字体。你需要提供一个字体名称和字体文件的路径。例如，registerFont(TTFont(‘song’, ‘path&#x2F;to&#x2F;your&#x2F;font.ttf’))。</p>
-</blockquote>
-<h4 id="4-3-使用字体"><a href="#4-3-使用字体" class="headerlink" title="4.3 使用字体"></a>4.3 使用字体</h4><blockquote>
-<p>一旦字体被注册，你就可以在创建PDF文档时使用这个字体名称。例如，在创建表格时，你可以指定fontName参数为你注册的自定义字体名称。</p>
-</blockquote>
-<h3 id="5-TableStyle-列表元组的含义"><a href="#5-TableStyle-列表元组的含义" class="headerlink" title="5. TableStyle 列表元组的含义"></a>5. TableStyle 列表元组的含义</h3><table>
-<thead>
-<tr>
-<th>参数</th>
-<th>参数说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>FONTNAME</td>
-<td>这是命令的关键字，用于指定要设置的样式属性是字体名称。</td>
-</tr>
-<tr>
-<td>(startRow, startCol)</td>
-<td>这是一个二元组，指定了样式应用的起始单元格的行号和列号。</td>
-</tr>
-<tr>
-<td>(endRow, endCol)</td>
-<td>这是一个二元组，指定了样式应用的结束单元格的行号和列号。</td>
-</tr>
-<tr>
-<td>fontName</td>
-<td>这是你想要应用到指定范围内的单元格的字体名称。</td>
-</tr>
-</tbody></table>
-<blockquote>
-<p>如果你想要将这种样式应用到整个表格，你可以将起始和结束坐标设置为 (0,0) 和 (-1,-1)。-1 在这里表示最后一列或最后一行。</p>
-</blockquote>
-<h3 id="6-实现表格印章"><a href="#6-实现表格印章" class="headerlink" title="6. 实现表格印章"></a>6. 实现表格印章</h3><ol>
-<li>导入对应的模块，Table, TableStyle创建表格和设置表格样式；</li>
-<li>初始化创建的表格，设置每个表格单元格的宽高；</li>
-<li>注册【仿宋】字体名为 simsun，后期使用；</li>
-<li>创建表格函数的实现：</li>
-<li>初始化表格数据 data，当然如果做批量创建，数据最好传入；</li>
-<li>创建表格实例，由于此处创建的是两行三列，所以 colWidths&#x3D;3<em>xxx，rowHeights&#x3D;2</em>xxx；</li>
-<li>hAlign 和 vAlign 设置表格所处的位置；</li>
-<li>TableStyle 创建表格样式，通过 setStyle 设置表格样式；</li>
-<li>创建 PDF 文档并添加表格。</li>
+        <h3 id="1-不改变原数组设值"><a href="#1-不改变原数组设值" class="headerlink" title="1. 不改变原数组设值"></a>1. 不改变原数组设值</h3><ol>
+<li>使用 with 方法，不改变原来的数组；</li>
+<li>对新的数组某个索引进行设值，不改变原来的数组。</li>
 </ol>
-<figure class="highlight haskell"><table><tr><td class="code"><pre><code class="hljs haskell"><span class="hljs-title">from</span> reportlab.platypus <span class="hljs-keyword">import</span> Table, TableStyle<br><span class="hljs-title">from</span> reportlab.lib <span class="hljs-keyword">import</span> colors<br><span class="hljs-title">from</span> reportlab.pdfbase <span class="hljs-keyword">import</span> pdfmetrics<br><span class="hljs-title">from</span> reportlab.pdfbase.ttfonts <span class="hljs-keyword">import</span> TTFont<br><span class="hljs-title">from</span> reportlab.lib.units <span class="hljs-keyword">import</span> inch<br><span class="hljs-title">from</span> reportlab.platypus <span class="hljs-keyword">import</span> SimpleDocTemplate<br><span class="hljs-title">from</span> <span class="hljs-type">PyPDF2</span> <span class="hljs-keyword">import</span> PdfWriter, PdfReader<br><span class="hljs-keyword">import</span> io<br><span class="hljs-class"></span><br><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-type">CreateTable</span>:</span><br><span class="hljs-class">  def __init__(<span class="hljs-title">self</span>):</span><br><span class="hljs-class">    self.width = 90</span><br><span class="hljs-class">    self.height = 40</span><br><span class="hljs-class">    # 注册自定义字体</span><br><span class="hljs-class">    pdfmetrics.registerFont(<span class="hljs-type">TTFont</span>(&#x27;<span class="hljs-title">simsun&#x27;</span>, &#x27;<span class="hljs-type">C</span>:/<span class="hljs-type">Windows</span>/<span class="hljs-type">Fonts</span>/<span class="hljs-title">simsun</span>.<span class="hljs-title">ttc&#x27;</span>))</span><br><span class="hljs-class">  </span><br><span class="hljs-class">  def create_table(<span class="hljs-title">self</span>):</span><br><span class="hljs-class">    # 表格数据</span><br><span class="hljs-class">    data = [[&#x27;<span class="hljs-type">Q103&#x27;</span>, &#x27;2022&#x27;, &#x27;37&#x27;],</span><br><span class="hljs-class">            [&#x27;<span class="hljs-type">DQB&#x27;</span>, &#x27;永久&#x27;, &#x27;12&#x27;]]</span><br><span class="hljs-class">    # 创建表格实例</span><br><span class="hljs-class">    t = <span class="hljs-type">Table</span>(<span class="hljs-title">data</span>, <span class="hljs-title">colWidths</span>=3*[<span class="hljs-title">self</span>.<span class="hljs-title">width</span>], <span class="hljs-title">rowHeights</span>=2*[<span class="hljs-title">self</span>.<span class="hljs-title">height</span>])</span><br><span class="hljs-class">    t.hAlign = &#x27;<span class="hljs-type">LEFT&#x27;</span></span><br><span class="hljs-class">    t.vAlign = &#x27;<span class="hljs-type">MIDDLE&#x27;</span></span><br><span class="hljs-class">    # 设置表格样式</span><br><span class="hljs-class">    t.setStyle(<span class="hljs-type">TableStyle</span>([</span><br><span class="hljs-class">      (&#x27;<span class="hljs-type">FONTNAME</span>&#x27;, (0, 0), (-1, -1), &#x27;simsun&#x27;),</span><br><span class="hljs-class">      (&#x27;<span class="hljs-type">FONTSIZE</span>&#x27;, (0, 0), (-1, -1), 24),</span><br><span class="hljs-class">      (&#x27;<span class="hljs-type">TEXTCOLOR</span>&#x27;,(0,0),(-1,-1),colors.red),</span><br><span class="hljs-class">      (&#x27;<span class="hljs-type">INNERGRID</span>&#x27;, (0,0), (-1,-1), 2, colors.red),</span><br><span class="hljs-class">      (&#x27;<span class="hljs-type">BOX</span>&#x27;, (0,0), (-1,-1), 2, colors.red),</span><br><span class="hljs-class">      (&#x27;<span class="hljs-type">ALIGN</span>&#x27;, (0, 0), (-1, -1), &#x27;<span class="hljs-type">CENTER&#x27;</span>),</span><br><span class="hljs-class">      (&#x27;<span class="hljs-type">VALIGN</span>&#x27;, (0, 0), (-1, -1), &#x27;<span class="hljs-type">TOP&#x27;</span>),</span><br><span class="hljs-class">    ]))</span><br><span class="hljs-class">    # 创建 <span class="hljs-type">PDF</span> 文档并添加表格</span><br><span class="hljs-class">    elements = [t]</span><br><span class="hljs-class">    doc = <span class="hljs-type">SimpleDocTemplate</span>(&#x27;<span class="hljs-type">TabDemo3</span>.<span class="hljs-title">pdf&#x27;</span>)</span><br><span class="hljs-class">    doc.build(<span class="hljs-title">elements</span>)</span><br><span class="hljs-class"></span><br><span class="hljs-class"></span><br><span class="hljs-class">if __name__ == &quot;__main__&quot;:</span><br><span class="hljs-class">  table = <span class="hljs-type">CreateTable</span>()</span><br><span class="hljs-class">  table.create_table()</span><br></code></pre></td></tr></table></figure>
+<h4 id="1-1-示例"><a href="#1-1-示例" class="headerlink" title="1.1 示例"></a>1.1 示例</h4><figure class="highlight livecodeserver"><table><tr><td class="code"><pre><code class="hljs livecodeserver">let <span class="hljs-keyword">a</span> = [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]<br>let c = <span class="hljs-keyword">a</span>.<span class="hljs-keyword">with</span>(<span class="hljs-number">0</span>,<span class="hljs-number">9</span>)<br>console.<span class="hljs-built_in">log</span>(<span class="hljs-keyword">a</span>)<br>console.<span class="hljs-built_in">log</span>(c)<br></code></pre></td></tr></table></figure>
 
-<h3 id="7-实现效果"><a href="#7-实现效果" class="headerlink" title="7. 实现效果"></a>7. 实现效果</h3><p><img src="https://foruda.gitee.com/images/1709104163778821481/26c531e1_1681522.png" alt="输入图片说明"></p>
-<h3 id="8-总结"><a href="#8-总结" class="headerlink" title="8. 总结"></a>8. 总结</h3><ol>
-<li>单纯样式来说，还是基本满足需求，不过这样创建的印章有一个最大的问题，就是不能放到指定的位置。表格修改位置的属性只有 hAlign 和 vAlign，并不能满足我的需求。</li>
-<li>思考到这里，有考虑可以使用 Canvas 类实现印章的绘制，不过又要熟悉一下 ReportLab 的 Canvas，这就比较麻烦了，如果是一个大项目，为了性能考虑，我或许会考虑使用ReportLab 的 Canvas 实现。但是这么一个小的工具，最后就使用了比较熟悉的 PIL 实现。</li>
-<li>实现需求的工具和方法很多，最主要的是找到合适自己的并且自己比较熟悉的，在自己闲下来的时候，把自己找到或者想到的方法都实现一次，就能知道每个方法的优劣点，方便在以后遇到类似问题，能够快速处理，找到最合适的方法。</li>
+<h4 id="1-2-输出结果"><a href="#1-2-输出结果" class="headerlink" title="1.2 输出结果"></a>1.2 输出结果</h4><p><img src="https://foruda.gitee.com/images/1740453299133599402/8563fcb6_1681522.png" alt="输入图片说明"></p>
+<h4 id="1-3-with-方法之前的实现"><a href="#1-3-with-方法之前的实现" class="headerlink" title="1.3 with 方法之前的实现"></a>1.3 with 方法之前的实现</h4><ol>
+<li>使用…扩展语法进行数组复制</li>
+</ol>
+<figure class="highlight apache"><table><tr><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">let</span> a =<span class="hljs-meta"> [2,3,4,5,6]</span><br><span class="hljs-attribute">let</span> d =<span class="hljs-meta"> [...a]</span><br><span class="hljs-attribute">d</span>[<span class="hljs-number">0</span>] = <span class="hljs-number">9</span>;<br><span class="hljs-attribute">console</span>.log(a)<br><span class="hljs-attribute">console</span>.log(d)<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://foruda.gitee.com/images/1740453712450674598/d68ce06d_1681522.png" alt="输入图片说明"></p>
+<ol start="2">
+<li>使用slice()方法进行数组复制</li>
+</ol>
+<figure class="highlight stylus"><table><tr><td class="code"><pre><code class="hljs stylus">let <span class="hljs-selector-tag">a</span> = <span class="hljs-selector-attr">[2,3,4,5,6]</span><br>let e = <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.slice</span>()<br>e<span class="hljs-selector-attr">[0]</span> = <span class="hljs-number">9</span><br>console<span class="hljs-selector-class">.log</span>(a)<br>console<span class="hljs-selector-class">.log</span>(e)<br></code></pre></td></tr></table></figure>
+
+<p><img src="https://foruda.gitee.com/images/1740453768059088889/3172673f_1681522.png" alt="输入图片说明"></p>
+<h4 id="1-4-总结"><a href="#1-4-总结" class="headerlink" title="1.4 总结"></a>1.4 总结</h4><ol>
+<li>当然复制数组的方法还有很多，这里我只举例了我最常用的两种；</li>
+<li>可以看到，在不修改原数组的要求下，要改变数组的某个元素，在 with 之前，都需要先进行一步复制数组的操作，然后再对复制数组对应索引进行修改；</li>
+<li>从表面看，就是将复制数组和修改索引值两步合并到一个函数，但是可以对其性能进行测试，测试一下差距。</li>
+</ol>
+<h3 id="2-Array-prototype-with-说明"><a href="#2-Array-prototype-with-说明" class="headerlink" title="2. Array.prototype.with 说明"></a>2. Array.prototype.with 说明</h3><blockquote>
+<p>Array 实例的 with() 方法是使用方括号表示法修改指定索引值的复制方法版本。它会<strong>返回一个新数组</strong>，其指定索引处的值会被新值替换。</p>
+</blockquote>
+<h4 id="2-1-语法"><a href="#2-1-语法" class="headerlink" title="2.1 语法"></a>2.1 语法</h4><figure class="highlight delphi"><table><tr><td class="code"><pre><code class="hljs delphi">arrayInstance.<span class="hljs-keyword">with</span>(<span class="hljs-keyword">index</span>, value)<br></code></pre></td></tr></table></figure>
+
+<h4 id="2-2-参数"><a href="#2-2-参数" class="headerlink" title="2.2 参数"></a>2.2 参数</h4><ol>
+<li>index 要修改的数组索引（从 0 开始），将会转换为整数。<br>1.1 负数索引会从数组末尾开始计数——即当 index &lt; 0 时，会使用 index + array.length。<br>1.2 如果规范化后的索引超出数组边界，会抛出 RangeError。</li>
+<li>value 要分配给指定索引的任何值。</li>
+</ol>
+<h4 id="2-3-返回值"><a href="#2-3-返回值" class="headerlink" title="2.3 返回值"></a>2.3 返回值</h4><p><strong>一个全新的数组</strong>，其中 index 索引处的元素被替换为 value。</p>
+<h4 id="2-4-兼容性"><a href="#2-4-兼容性" class="headerlink" title="2.4 兼容性"></a>2.4 兼容性</h4><p><img src="https://foruda.gitee.com/images/1740463042784839687/4e134ea8_1681522.png" alt="输入图片说明"></p>
+<h3 id="3-注意"><a href="#3-注意" class="headerlink" title="3. 注意"></a>3. 注意</h3><ol>
+<li>with() 通过返回一个指定索引处的值被新值替换的<strong>新数组</strong>，来改变数组中指定索引处的值。<strong>原数组不会被修改</strong>，这使得你<strong>可以以链式调用</strong>数组方法的方式来对数组进行操作。</li>
+<li>读取数组使用 at() 函数，写入数组使用 with() 函数，<strong>索引使用正数负数均可</strong>。</li>
+<li>with() 方法永远不会产生稀疏数组。如果原数组是稀疏的，<strong>新数组对应的空白索引位置会替换为 undefined</strong>。</li>
+<li>with() 方法是通用的。<strong>它只期望 this 值具有 length 属性和整数键属性</strong>。</li>
+</ol>
+<h3 id="4-链式调用"><a href="#4-链式调用" class="headerlink" title="4. 链式调用"></a>4. 链式调用</h3><blockquote>
+<p>使用 with() 方法，你可以在更新一个数组元素后继续调用其他的数组方法。</p>
+</blockquote>
+<h4 id="4-1-测试代码"><a href="#4-1-测试代码" class="headerlink" title="4.1 测试代码"></a>4.1 测试代码</h4><figure class="highlight stylus"><table><tr><td class="code"><pre><code class="hljs stylus">let <span class="hljs-selector-tag">a</span> = <span class="hljs-selector-attr">[2,3,4,5,6]</span><br>let <span class="hljs-selector-tag">b</span> = <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.with</span>(<span class="hljs-number">2</span>, <span class="hljs-number">6</span>)<span class="hljs-selector-class">.map</span>((<span class="hljs-attribute">x</span>) =&gt; x ** <span class="hljs-number">2</span>)<br>console<span class="hljs-selector-class">.log</span>(a)<br>console<span class="hljs-selector-class">.log</span>(b)<br></code></pre></td></tr></table></figure>
+
+<h4 id="4-2-测试结果"><a href="#4-2-测试结果" class="headerlink" title="4.2 测试结果"></a>4.2 测试结果</h4><p><img src="https://foruda.gitee.com/images/1740463910734420281/b25f95a5_1681522.png" alt="输入图片说明"></p>
+<h3 id="5-使用-at-和-with-函数进行读写操作"><a href="#5-使用-at-和-with-函数进行读写操作" class="headerlink" title="5. 使用 at 和 with 函数进行读写操作"></a>5. 使用 at 和 with 函数进行读写操作</h3><p><img src="https://foruda.gitee.com/images/1740464105466060961/7196a29f_1681522.png" alt="输入图片说明"></p>
+<blockquote>
+<p>注意：<strong>当 index &gt; array.length 或 index &lt; -array.length 时 with 函数会抛出异常，at 读取函数直接返回 undefined</strong>。</p>
+</blockquote>
+<h3 id="6-永远不会产生稀疏数组"><a href="#6-永远不会产生稀疏数组" class="headerlink" title="6. 永远不会产生稀疏数组"></a>6. 永远不会产生稀疏数组</h3><blockquote>
+<p>在稀疏数组上使用 with()，with() 方法总会创建一个密集数组。</p>
+</blockquote>
+<h4 id="6-1-示例代码"><a href="#6-1-示例代码" class="headerlink" title="6.1 示例代码"></a>6.1 示例代码</h4><figure class="highlight apache"><table><tr><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">let</span> z =<span class="hljs-meta"> [1,45,,56,23,,34,,8]</span><br><span class="hljs-attribute">z</span>.with(<span class="hljs-number">0</span>,<span class="hljs-number">10</span>)<br></code></pre></td></tr></table></figure>
+
+<h4 id="6-2-结果"><a href="#6-2-结果" class="headerlink" title="6.2 结果"></a>6.2 结果</h4><p><img src="https://foruda.gitee.com/images/1740464398207791096/65376cd7_1681522.png" alt="输入图片说明"></p>
+<h3 id="7-在非数组对象上调用-with"><a href="#7-在非数组对象上调用-with" class="headerlink" title="7. 在非数组对象上调用 with"></a>7. 在非数组对象上调用 with</h3><blockquote>
+<p>with() 方法创建并<strong>返回一个新数组</strong>。<strong>它读取 this 的 length 属性，然后访问其键是小于 length 的非负整数的每个属性</strong>。当 this 的每个属性被访问后，索引等于该属性的键的数组元素被设置为该属性的值。最后，将 index 的数组值设置为 value。</p>
+</blockquote>
+<h4 id="7-1-示例代码"><a href="#7-1-示例代码" class="headerlink" title="7.1 示例代码"></a>7.1 示例代码</h4><figure class="highlight nix"><table><tr><td class="code"><pre><code class="hljs nix"><span class="hljs-keyword">let</span> obj <span class="hljs-operator">=</span> &#123;<br>  <span class="hljs-params">length:</span> <span class="hljs-number">3</span>,<br>  <span class="hljs-params">fookey:</span> <span class="hljs-string">&quot;foo&quot;</span>,<br>  <span class="hljs-number">0</span>: <span class="hljs-number">56</span>,<br>  <span class="hljs-number">2</span>: <span class="hljs-string">&quot;rfg&quot;</span>,<br>  <span class="hljs-number">3</span>: <span class="hljs-number">9</span>,<br>  <span class="hljs-number">5</span>: <span class="hljs-string">&quot;aio&quot;</span><br>&#125;<br>Array.prototype.<span class="hljs-keyword">with</span>.call(obj,<span class="hljs-number">0</span>,<span class="hljs-number">2</span>)<br></code></pre></td></tr></table></figure>
+
+<h4 id="7-2-结果"><a href="#7-2-结果" class="headerlink" title="7.2 结果"></a>7.2 结果</h4><p><img src="https://foruda.gitee.com/images/1740464800896575189/a8319fca_1681522.png" alt="输入图片说明"></p>
+<h4 id="7-3-注意"><a href="#7-3-注意" class="headerlink" title="7.3 注意"></a>7.3 注意</h4><ol>
+<li>创建并返回一个新数组；</li>
+<li>新数组的长度读取的对象的 length 属性；</li>
+<li>读取的是小于 length 的非负整数的每个属性；</li>
+<li>对应 index 的值就是非负整数的属性读取的值。</li>
+</ol>
+<h3 id="8-基础性能测试"><a href="#8-基础性能测试" class="headerlink" title="8. 基础性能测试"></a>8. 基础性能测试</h3><h4 id="8-1-测试代码"><a href="#8-1-测试代码" class="headerlink" title="8.1 测试代码"></a>8.1 测试代码</h4><figure class="highlight arcade"><table><tr><td class="code"><pre><code class="hljs arcade">const LARGE_ARRAY = <span class="hljs-built_in">Array</span>(<span class="hljs-number">1e5</span>).fill().<span class="hljs-built_in">map</span>(<span class="hljs-function">(<span class="hljs-params">_,i</span>) =&gt;</span> i)<br><br><span class="hljs-comment">// splice测试</span><br><span class="hljs-built_in">console</span>.<span class="hljs-built_in">time</span>(<span class="hljs-string">&#x27;splice&#x27;</span>)<br>const copy1 = [...LARGE_ARRAY]<br>copy1.<span class="hljs-built_in">splice</span>(<span class="hljs-number">50000</span>, <span class="hljs-number">1</span>, <span class="hljs-string">&#x27;new&#x27;</span>)<br><span class="hljs-built_in">console</span>.timeEnd(<span class="hljs-string">&#x27;splice&#x27;</span>)<br><br><span class="hljs-comment">// with()测试</span><br><span class="hljs-built_in">console</span>.<span class="hljs-built_in">time</span>(<span class="hljs-string">&#x27;with&#x27;</span>)<br>const copy2 = LARGE_ARRAY.with(<span class="hljs-number">50000</span>, <span class="hljs-string">&#x27;new&#x27;</span>)<br><span class="hljs-built_in">console</span>.timeEnd(<span class="hljs-string">&#x27;with&#x27;</span>)<br></code></pre></td></tr></table></figure>
+<h4 id="8-2-测试结果"><a href="#8-2-测试结果" class="headerlink" title="8.2 测试结果"></a>8.2 测试结果</h4><p><img src="https://foruda.gitee.com/images/1740465372053915954/479fa10c_1681522.png" alt="输入图片说明"></p>
+<h3 id="11-不改变原数组的数组方法"><a href="#11-不改变原数组的数组方法" class="headerlink" title="11. 不改变原数组的数组方法"></a>11. 不改变原数组的数组方法</h3><ol>
+<li>Array.prototype.toSpliced：不修改原始数组，与 splice() 类似，可以同时完成多个操作，在数组中给定的索引开始移除指定数量的元素，然后在相同的索引处插入给定的元素。</li>
+<li>Array.prototype.toSorted：<strong>不修改原始数组</strong>，同时对数组进行排序，返回内容是新数组。对应的原始方法是 sort() 方法，两者参数一致。</li>
+<li>Array.prototype.toReversed：<strong>不修改原始数组</strong>，同时数组反序，返回值是新数组。改变原数组的反序方法是 reverse() 方法，参数都是一样的。</li>
+<li>Array.prototype.slice：<strong>不修改原始数组</strong>，返回一个新的数组对象，这一对象是一个由 start 和 end 决定的原数组的浅拷贝（包括 start，不包括 end），其中 start 和 end 代表了数组元素的索引。</li>
+<li>Array.prototype.map：<strong>不修改原始数组</strong>，创建一个新数组，这个新数组由原数组中的每个元素都调用一次提供的函数后的返回值组成。</li>
+<li>Array.prototype.flat：<strong>不修改原始数组</strong>，创建一个新的数组，并根据指定深度递归地将所有子数组元素拼接到新的数组中。</li>
+<li>Array.prototype.filter：<strong>不修改原始数组</strong>，创建给定数组一部分的浅拷贝，其包含通过所提供函数实现的测试的所有元素。</li>
+<li>Array.prototype.concat：<strong>不修改原始数组</strong>，用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。</li>
+</ol>
+<h3 id="10-总结"><a href="#10-总结" class="headerlink" title="10. 总结"></a>10. 总结</h3><ol>
+<li>Array.prototype.with() 通过复制原数组实现不可变修改，适合小数据量和函数式场景，但需注意大数组的性能损耗。</li>
+<li>Array.prototype.with() 是 ECMAScript 2023（ES14）新增的数组方法，其核心目的是以<strong>不可变方式修改数组的某个元素，返回新数组，而非修改原数组</strong>。</li>
 </ol>
 
       

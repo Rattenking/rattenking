@@ -6,19 +6,28 @@
   <meta name="keywords" content=" Python ">
   <meta name="description" content="自动批量下载王者荣耀的所有英雄头像 | 梁亚军的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="不管是觉得是任务，还是兴趣。值得高兴的事情就是我把《技术写作指南》这本小册读完了。当然不是自夸，而是在小册或者CSDN上花钱买课程，可以说估计最少也有近千个打烊了。真真完整看完的，其实不多，小册可以说是第一本。视频的还比较多，我就是那个不怎么容易集中注意力的，很容易就被各种信息干扰，对于这一点我觉得最少值得庆贺，哈哈哈！ 说说我买这本小册的初衷吧！可以说开始是有希望将自己的博客写的更好，必定我也还">
+<meta name="description" content="1. 不改变原数组设值 使用 with 方法，不改变原来的数组； 对新的数组某个索引进行设值，不改变原来的数组。  1.1 示例let a &#x3D; [2,3,4,5,6]let c &#x3D; a.with(0,9)console.log(a)console.log(c)  1.2 输出结果 1.3 with 方法之前的实现 使用…扩展语法进行数组复制  let a &#x3D; [2,3,4,5,6]let d &#x3D;">
 <meta property="og:type" content="article">
-<meta property="og:title" content="张鑫旭的技术写作指南总结">
-<meta property="og:url" content="http://example.com/2025/03/14/books/Summary-of-Zhang-Xinxu-Technical-Writing-Guide/index.html">
+<meta property="og:title" content="【JavaScript】---- JS 数组新方法 with 的使用示例">
+<meta property="og:url" content="http://example.com/2025/03/14/%E5%89%8D%E7%AB%AF/javascript/Usage-examples-of-new-JS-array-method-with/index.html">
 <meta property="og:site_name" content="梁亚军的博客">
-<meta property="og:description" content="不管是觉得是任务，还是兴趣。值得高兴的事情就是我把《技术写作指南》这本小册读完了。当然不是自夸，而是在小册或者CSDN上花钱买课程，可以说估计最少也有近千个打烊了。真真完整看完的，其实不多，小册可以说是第一本。视频的还比较多，我就是那个不怎么容易集中注意力的，很容易就被各种信息干扰，对于这一点我觉得最少值得庆贺，哈哈哈！ 说说我买这本小册的初衷吧！可以说开始是有希望将自己的博客写的更好，必定我也还">
+<meta property="og:description" content="1. 不改变原数组设值 使用 with 方法，不改变原来的数组； 对新的数组某个索引进行设值，不改变原来的数组。  1.1 示例let a &#x3D; [2,3,4,5,6]let c &#x3D; a.with(0,9)console.log(a)console.log(c)  1.2 输出结果 1.3 with 方法之前的实现 使用…扩展语法进行数组复制  let a &#x3D; [2,3,4,5,6]let d &#x3D;">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://foruda.gitee.com/images/1740646828232084217/40c49417_1681522.png">
-<meta property="article:published_time" content="2025-03-14T06:30:32.503Z">
-<meta property="article:modified_time" content="2025-03-14T08:29:39.429Z">
+<meta property="og:image" content="https://foruda.gitee.com/images/1740453299133599402/8563fcb6_1681522.png">
+<meta property="og:image" content="https://foruda.gitee.com/images/1740453712450674598/d68ce06d_1681522.png">
+<meta property="og:image" content="https://foruda.gitee.com/images/1740453768059088889/3172673f_1681522.png">
+<meta property="og:image" content="https://foruda.gitee.com/images/1740463042784839687/4e134ea8_1681522.png">
+<meta property="og:image" content="https://foruda.gitee.com/images/1740463910734420281/b25f95a5_1681522.png">
+<meta property="og:image" content="https://foruda.gitee.com/images/1740464105466060961/7196a29f_1681522.png">
+<meta property="og:image" content="https://foruda.gitee.com/images/1740464398207791096/65376cd7_1681522.png">
+<meta property="og:image" content="https://foruda.gitee.com/images/1740464800896575189/a8319fca_1681522.png">
+<meta property="og:image" content="https://foruda.gitee.com/images/1740465372053915954/479fa10c_1681522.png">
+<meta property="article:published_time" content="2025-03-14T08:36:35.152Z">
+<meta property="article:modified_time" content="2025-03-14T08:37:25.629Z">
 <meta property="article:author" content="梁亚军">
+<meta property="article:tag" content="JavaScript">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://foruda.gitee.com/images/1740646828232084217/40c49417_1681522.png">
+<meta name="twitter:image" content="https://foruda.gitee.com/images/1740453299133599402/8563fcb6_1681522.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -87,7 +96,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(14)</small>
+                <small>(15)</small>
             
         </div>
     </li>
@@ -112,10 +121,25 @@
                 
     <li>
         <div data-rel="前端">
-            
+            <i class="fold iconfont icon-right"></i>
             前端
-            <small>(2)</small>
+            <small>(3)</small>
         </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="前端&lt;---&gt;JavaScript">
+            
+            JavaScript
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
         
     </li>
 
@@ -137,6 +161,10 @@
             
         
     
+        
+            
+        
+    
 </ul>
 <div class="left-bottom">
     <div class="menus">
@@ -152,7 +180,7 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="14">
+<input type="hidden" id="yelog_site_posts_number" value="15">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -239,6 +267,10 @@
             </li>
         
             <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>JavaScript</a>
+            </li>
+        
+            <li class="article-tag-list-item">
                 <i class="iconfont icon-tag"></i><a>JS</a>
             </li>
         
@@ -268,6 +300,15 @@
 
     
     <nav id="title-list-nav">
+        
+        
+        <a  class="All 前端 JavaScript "
+           href="/2025/03/14/%E5%89%8D%E7%AB%AF/javascript/Usage-examples-of-new-JS-array-method-with/"
+           data-tag="JavaScript"
+           data-author="" >
+            <span class="post-title" title="【JavaScript】---- JS 数组新方法 with 的使用示例">【JavaScript】---- JS 数组新方法 with 的使用示例</span>
+            <span class="post-date" title="2025-03-14 16:36:35">2025/03/14</span>
+        </a>
         
         
         <a  class="All 前端 "
