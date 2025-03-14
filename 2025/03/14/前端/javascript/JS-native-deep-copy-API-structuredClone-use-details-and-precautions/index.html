@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>根据图片文件名称中的数字排序 | 梁亚军的博客</title>
-  <meta name="keywords" content=" Python , Sort , 文件名 ">
-  <meta name="description" content="根据图片文件名称中的数字排序 | 梁亚军的博客">
+  <title>JS 原生深拷贝 API structuredClone 使用细节和注意事项 | 梁亚军的博客</title>
+  <meta name="keywords" content=" JS ">
+  <meta name="description" content="JS 原生深拷贝 API structuredClone 使用细节和注意事项 | 梁亚军的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="1. 什么是 structuredClone？ structuredClone 是 JavaScript 内置的深拷贝方法，基于结构化克隆算法，用于复制复杂对象（如包含嵌套对象、数组、Date、Map、Set 等类型的数据），并支持处理循环引用。它替代了传统的 JSON.parse(JSON.stringify()) 深拷贝方法，解决了后者无法复制特殊对象和丢失数据类型的问题。  2. 语法str">
 <meta property="og:type" content="article">
@@ -413,9 +413,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-python/Sort-according-to-the-numbers-in-the-names-of-the-picture-files" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-前端/javascript/JS-native-deep-copy-API-structuredClone-use-details-and-precautions" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">根据图片文件名称中的数字排序</h1>
+        <h1 class="article-title">JS 原生深拷贝 API structuredClone 使用细节和注意事项</h1>
     
     <div class="article-meta">
         
@@ -425,7 +425,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="Python">Python</a>
+            <a  data-rel="前端">前端</a>
             
         </span>
         
@@ -433,18 +433,14 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color2">Python</a>
-            
-            <a class="color5">Sort</a>
-            
-            <a class="color4">文件名</a>
+            <a class="color3">JS</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2025-03-12 17:30:41'>2021-08-11 16:00</time>
+            Created At : <time class="date" title='Updated At: 2025-03-14 14:33:52'>2025-03-14 14:33</time>
         
     </div>
     <div class="article-meta">
@@ -466,7 +462,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="toc-text">1. 需求分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%8E%B7%E5%8F%96%E6%89%80%E6%9C%89%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6%E5%90%8D%E7%A7%B0"><span class="toc-text">2. 获取所有图片文件名称</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E5%88%86%E6%9E%90"><span class="toc-text">2.1 代码实现分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">2.2 代码实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C"><span class="toc-text">2.3 输出结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%8E%B7%E5%8F%96%E6%8E%92%E5%BA%8F%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E5%90%8D%E7%A7%B0%E5%88%97%E8%A1%A8"><span class="toc-text">3. 获取排序后的文件名称列表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E5%90%8D%E7%A7%B0%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%97"><span class="toc-text">3.1 获取文件名称中的数字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C"><span class="toc-text">3.2 输出结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-%E5%A4%9A%E6%AC%A1%E5%BE%AA%E7%8E%AF%E5%AE%9E%E7%8E%B0%E5%90%8D%E7%A7%B0%E6%8E%92%E5%BA%8F"><span class="toc-text">3.3 多次循环实现名称排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C"><span class="toc-text">3.4 输出结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-%E4%BD%BF%E7%94%A8-sorted-%E9%85%8D%E5%90%88-lambda-%E5%AE%9E%E7%8E%B0"><span class="toc-text">3.5 使用 sorted 配合 lambda 实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-6-%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C"><span class="toc-text">3.6 输出结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%B3%A8%E6%84%8F"><span class="toc-text">4. 注意</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF-structuredClone%EF%BC%9F"><span class="toc-text">1. 什么是 structuredClone？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%AF%AD%E6%B3%95"><span class="toc-text">2. 语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8F%82%E6%95%B0"><span class="toc-text">3. 参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%9F%BA%E7%A1%80%E5%AE%9E%E4%BE%8B"><span class="toc-text">4. 基础实例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E5%AE%9E%E4%BE%8B%E4%BB%A3%E7%A0%81"><span class="toc-text">4.1 实例代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C"><span class="toc-text">4.2 执行结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-structuredClone-%E6%94%AF%E6%8C%81%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">5. structuredClone 支持的数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-structuredClone-%E6%97%A0%E6%B3%95%E5%85%8B%E9%9A%86%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="toc-text">6. structuredClone 无法克隆的类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%87%BD%E6%95%B0%E6%B5%8B%E8%AF%95"><span class="toc-text">7. 函数测试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="toc-text">7.1 测试代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="toc-text">7.2 测试结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-DOM-%E5%AF%B9%E8%B1%A1%E6%B5%8B%E8%AF%95"><span class="toc-text">8. DOM 对象测试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-1-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="toc-text">8.1 测试代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="toc-text">8.2 测试结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E5%8E%9F%E5%9E%8B%E9%93%BE"><span class="toc-text">9. 原型链</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9-1-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="toc-text">9.1 测试代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-2-%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="toc-text">9.2 测试结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E9%83%A8%E5%88%86%E7%89%B9%E6%AE%8A%E5%AF%B9%E8%B1%A1%E6%B5%8B%E8%AF%95"><span class="toc-text">10. 部分特殊对象测试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#10-1-%E6%B5%8B%E8%AF%95-Promise-%E4%BB%A3%E7%A0%81"><span class="toc-text">10.1 测试 Promise 代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-2-%E6%B5%8B%E8%AF%95-Promise-%E7%BB%93%E6%9E%9C"><span class="toc-text">10.2 测试 Promise 结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-3-%E6%B5%8B%E8%AF%95-WeakMap-%E4%BB%A3%E7%A0%81"><span class="toc-text">10.3 测试 WeakMap 代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-4-%E6%B5%8B%E8%AF%95-WeakMap-%E7%BB%93%E6%9E%9C"><span class="toc-text">10.4 测试 WeakMap 结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-5-%E6%B5%8B%E8%AF%95-Proxy-%E4%BB%A3%E7%A0%81"><span class="toc-text">10.5 测试 Proxy 代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-6-%E6%B5%8B%E8%AF%95-Promise-%E7%BB%93%E6%9E%9C"><span class="toc-text">10.6 测试 Promise 结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E5%85%BC%E5%AE%B9%E6%80%A7"><span class="toc-text">11. 兼容性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-text">注意</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -482,38 +478,70 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-需求分析"><a href="#1-需求分析" class="headerlink" title="1. 需求分析"></a>1. 需求分析</h3><ol>
-<li>获取文件夹中的所有文件名称；</li>
-<li>筛选所有文件名称中的图片文件；</li>
-<li>获取图片文件名称中的数字；</li>
-<li>对数字排序；</li>
-<li>返回排序后的图片文件名称列表。</li>
+        <h3 id="1-什么是-structuredClone？"><a href="#1-什么是-structuredClone？" class="headerlink" title="1. 什么是 structuredClone？"></a>1. 什么是 structuredClone？</h3><blockquote>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/structuredClone">structuredClone</a> 是 JavaScript 内置的深拷贝方法，基于<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Workers_API/Structured_clone_algorithm">结构化克隆算法</a>，用于复制复杂对象（如包含嵌套对象、数组、Date、Map、Set 等类型的数据），并支持处理循环引用。它替代了传统的 JSON.parse(JSON.stringify()) 深拷贝方法，解决了后者无法复制特殊对象和丢失数据类型的问题。</p>
+</blockquote>
+<h3 id="2-语法"><a href="#2-语法" class="headerlink" title="2. 语法"></a>2. 语法</h3><figure class="highlight stylus"><table><tr><td class="code"><pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">structuredClone</span><span class="hljs-params">(value)</span></span><br><span class="hljs-function"><span class="hljs-title">structuredClone</span><span class="hljs-params">(value, options)</span></span><br></code></pre></td></tr></table></figure>
+
+<h3 id="3-参数"><a href="#3-参数" class="headerlink" title="3. 参数"></a>3. 参数</h3><ol>
+<li>value: 被克隆的对象。可以是任何<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Workers_API/Structured_clone_algorithm#%E6%94%AF%E6%8C%81%E7%9A%84%E7%B1%BB%E5%9E%8B">结构化克隆支持的类型</a>。</li>
+<li>options：一个具有以下属性的对象：<br>2.1 transfer：一个可转移对象的数组，里面的对象将被移动而不是克隆到返回的对象上。</li>
 </ol>
-<h3 id="2-获取所有图片文件名称"><a href="#2-获取所有图片文件名称" class="headerlink" title="2. 获取所有图片文件名称"></a>2. 获取所有图片文件名称</h3><h4 id="2-1-代码实现分析"><a href="#2-1-代码实现分析" class="headerlink" title="2.1 代码实现分析"></a>2.1 代码实现分析</h4><ol>
-<li>使用 os.listdir 获取文件夹下的所有文件名称；</li>
-<li>使用 for in 依次获取列表中的文件名称；</li>
-<li>获取文件名称的后缀；</li>
-<li>判断该文件是否是图片文件；</li>
-<li>是图片文件就将文件名称放入图片名称列表；</li>
-<li>返回汇总后的图片名称列表。</li>
+<h3 id="4-基础实例"><a href="#4-基础实例" class="headerlink" title="4. 基础实例"></a>4. 基础实例</h3><h4 id="4-1-实例代码"><a href="#4-1-实例代码" class="headerlink" title="4.1 实例代码"></a>4.1 实例代码</h4><figure class="highlight arcade"><table><tr><td class="code"><pre><code class="hljs arcade">const original = &#123; <br>  <span class="hljs-attr">date</span>: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(),<br>  <span class="hljs-attr">map</span>: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>([[<span class="hljs-string">&#x27;key&#x27;</span>, <span class="hljs-string">&#x27;value&#x27;</span>]]),<br>  <span class="hljs-attr">array</span>: [<span class="hljs-number">1</span>, &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;test&#x27;</span> &#125;]<br>&#125;;<br><br><span class="hljs-comment">// 深拷贝对象</span><br>const cloned = structuredClone(original);<br><br><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(cloned.<span class="hljs-built_in">date</span> instanceof <span class="hljs-built_in">Date</span>); <span class="hljs-comment">// true（原数据类型保留）</span><br><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(cloned.<span class="hljs-built_in">map</span> instanceof <span class="hljs-built_in">Map</span>);   <span class="hljs-comment">// true</span><br><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(cloned.<span class="hljs-built_in">array</span>[<span class="hljs-number">1</span>] === original.<span class="hljs-built_in">array</span>[<span class="hljs-number">1</span>]); <span class="hljs-comment">// false（深拷贝生效）</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="4-2-执行结果"><a href="#4-2-执行结果" class="headerlink" title="4.2 执行结果"></a>4.2 执行结果</h4><p><img src="https://foruda.gitee.com/images/1740469105262845784/ee1914e7_1681522.png" alt="输入图片说明"></p>
+<h3 id="5-structuredClone-支持的数据类型"><a href="#5-structuredClone-支持的数据类型" class="headerlink" title="5. structuredClone 支持的数据类型"></a>5. structuredClone 支持的数据类型</h3><ol>
+<li>原始类型：string、number、boolean、null、undefined、BigInt；</li>
+<li>对象类型：Object、Array、Date、RegExp、Map、Set、ArrayBuffer；</li>
+<li>特殊类型：Error（部分场景）、Blob、ImageBitmap（浏览器环境）；</li>
+<li>循环引用：自动处理对象内部的循环引用。</li>
 </ol>
-<h4 id="2-2-代码实现"><a href="#2-2-代码实现" class="headerlink" title="2.2 代码实现"></a>2.2 代码实现</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line"></span><br><span class="line"># 获取文件夹中的所有图片文件</span><br><span class="line">def get_all_image_name(path):</span><br><span class="line">  names = os.listdir(path)</span><br><span class="line">  images = []</span><br><span class="line">  for name in names:</span><br><span class="line">    suffix = name.split(&#x27;.&#x27;).pop()</span><br><span class="line">    if suffix in [&#x27;jpg&#x27;, &#x27;png&#x27;, &#x27;jpeg&#x27;, &#x27;bmp&#x27;]:</span><br><span class="line">      images.append(name)</span><br><span class="line">  return images</span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">  image_names = get_all_image_name(&#x27;./images&#x27;)</span><br><span class="line">  print(&#x27;image_names:&#x27;,image_names)</span><br></pre></td></tr></table></figure>
-
-<h4 id="2-3-输出结果"><a href="#2-3-输出结果" class="headerlink" title="2.3 输出结果"></a>2.3 输出结果</h4><p><img src="https://foruda.gitee.com/images/1688110714117536680/f363e0ed_1681522.png" alt="输入图片说明"></p>
-<h3 id="3-获取排序后的文件名称列表"><a href="#3-获取排序后的文件名称列表" class="headerlink" title="3. 获取排序后的文件名称列表"></a>3. 获取排序后的文件名称列表</h3><h4 id="3-1-获取文件名称中的数字"><a href="#3-1-获取文件名称中的数字" class="headerlink" title="3.1 获取文件名称中的数字"></a>3.1 获取文件名称中的数字</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">import re</span><br><span class="line"></span><br><span class="line"># 获取文件夹中的所有图片文件</span><br><span class="line">def get_all_image_name(path):</span><br><span class="line">  names = os.listdir(path)</span><br><span class="line">  images = []</span><br><span class="line">  for name in names:</span><br><span class="line">    suffix = name.split(&#x27;.&#x27;).pop()</span><br><span class="line">    if suffix in [&#x27;jpg&#x27;, &#x27;png&#x27;, &#x27;jpeg&#x27;, &#x27;bmp&#x27;]:</span><br><span class="line">      images.append(name)</span><br><span class="line">  return images</span><br><span class="line"></span><br><span class="line"># 获取排序后的文件名称</span><br><span class="line">def sort_names(names):</span><br><span class="line">  for name in names:</span><br><span class="line">    print(int(re.sub(&#x27;\D&#x27;, &#x27;&#x27;, name)))</span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">  image_names = get_all_image_name(&#x27;./images&#x27;)</span><br><span class="line">  print(&#x27;image_names:&#x27;,image_names)</span><br><span class="line">  sort_names(image_names)</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-2-输出结果"><a href="#3-2-输出结果" class="headerlink" title="3.2 输出结果"></a>3.2 输出结果</h4><p><img src="https://foruda.gitee.com/images/1688110770030924002/37e130fa_1681522.png" alt="输入图片说明"></p>
-<h4 id="3-3-多次循环实现名称排序"><a href="#3-3-多次循环实现名称排序" class="headerlink" title="3.3 多次循环实现名称排序"></a>3.3 多次循环实现名称排序</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">import re</span><br><span class="line"></span><br><span class="line"># 获取文件夹中的所有图片文件</span><br><span class="line">def get_all_image_name(path):</span><br><span class="line">  names = os.listdir(path)</span><br><span class="line">  images = []</span><br><span class="line">  for name in names:</span><br><span class="line">    suffix = name.split(&#x27;.&#x27;).pop()</span><br><span class="line">    if suffix in [&#x27;jpg&#x27;, &#x27;png&#x27;, &#x27;jpeg&#x27;, &#x27;bmp&#x27;]:</span><br><span class="line">      images.append(name)</span><br><span class="line">  return images</span><br><span class="line"></span><br><span class="line"># 获取排序后的文件名称</span><br><span class="line">def sort_names(names):</span><br><span class="line">  nums = []</span><br><span class="line">  for name in names:</span><br><span class="line">    nums.append(int(re.sub(&#x27;\D&#x27;, &#x27;&#x27;, name)))</span><br><span class="line">  # 排序</span><br><span class="line">  nums.sort()</span><br><span class="line">  last_names = []</span><br><span class="line">  for num in nums:</span><br><span class="line">    for name in names:</span><br><span class="line">      if num == int(re.sub(&#x27;\D&#x27;, &#x27;&#x27;, name)):</span><br><span class="line">        last_names.append(name)</span><br><span class="line">  return last_names</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">  image_names = get_all_image_name(&#x27;./images&#x27;)</span><br><span class="line">  print(&#x27;image_names:&#x27;,image_names)</span><br><span class="line">  sort_images = sort_names(image_names)</span><br><span class="line">  print(&#x27;sort_images:&#x27;,sort_images)</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-4-输出结果"><a href="#3-4-输出结果" class="headerlink" title="3.4 输出结果"></a>3.4 输出结果</h4><p><img src="https://foruda.gitee.com/images/1688110817275563155/281ae17d_1681522.png" alt="输入图片说明"></p>
-<h4 id="3-5-使用-sorted-配合-lambda-实现"><a href="#3-5-使用-sorted-配合-lambda-实现" class="headerlink" title="3.5 使用 sorted 配合 lambda 实现"></a>3.5 使用 sorted 配合 lambda 实现</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">import os</span><br><span class="line">import re</span><br><span class="line"></span><br><span class="line"># 获取文件夹中的所有图片文件</span><br><span class="line">def get_all_image_name(path):</span><br><span class="line">  names = os.listdir(path)</span><br><span class="line">  images = []</span><br><span class="line">  for name in names:</span><br><span class="line">    suffix = name.split(&#x27;.&#x27;).pop()</span><br><span class="line">    if suffix in [&#x27;jpg&#x27;, &#x27;png&#x27;, &#x27;jpeg&#x27;, &#x27;bmp&#x27;]:</span><br><span class="line">      images.append(name)</span><br><span class="line">  return images</span><br><span class="line"></span><br><span class="line"># 获取排序后的文件名称</span><br><span class="line">def sort_names(names):</span><br><span class="line">  last_names = list(sorted(names, key=lambda x:(int(re.sub(&#x27;\D&#x27;, &#x27;&#x27;, x)),x)))</span><br><span class="line">  return last_names</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">if __name__ == &quot;__main__&quot;:</span><br><span class="line">  image_names = get_all_image_name(&#x27;./images&#x27;)</span><br><span class="line">  print(&#x27;image_names:&#x27;,image_names)</span><br><span class="line">  sort_images = sort_names(image_names)</span><br><span class="line">  print(&#x27;sort_images:&#x27;,sort_images)</span><br></pre></td></tr></table></figure>
-
-<h4 id="3-6-输出结果"><a href="#3-6-输出结果" class="headerlink" title="3.6 输出结果"></a>3.6 输出结果</h4><p><img src="https://foruda.gitee.com/images/1688110848370230964/03667210_1681522.png" alt="输入图片说明"></p>
-<h3 id="4-注意"><a href="#4-注意" class="headerlink" title="4. 注意"></a>4. 注意</h3><ol>
-<li>使用 os 模块获取所有的文件名称；</li>
-<li>使用 re 获取文件名称中的数字；</li>
-<li>使用 sorted 对文件名称排序。</li>
+<h3 id="6-structuredClone-无法克隆的类型"><a href="#6-structuredClone-无法克隆的类型" class="headerlink" title="6. structuredClone 无法克隆的类型"></a>6. structuredClone 无法克隆的类型</h3><ol>
+<li>函数（Function）、DOM 节点；</li>
+<li>对象原型链：克隆后的对象原型为 Object，而非原构造函数（如 class 实例会丢失方法）；</li>
+<li>部分特殊对象：Promise、WeakMap、Proxy。</li>
 </ol>
+<h3 id="7-函数测试"><a href="#7-函数测试" class="headerlink" title="7. 函数测试"></a>7. 函数测试</h3><h4 id="7-1-测试代码"><a href="#7-1-测试代码" class="headerlink" title="7.1 测试代码"></a>7.1 测试代码</h4><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">let</span> obj = &#123; <span class="hljs-built_in">test</span>: () =&gt; &#123; &#125; &#125;<br><span class="hljs-built_in">let</span> <span class="hljs-built_in">clone</span> = structuredClone(obj)<br></code></pre></td></tr></table></figure>
+<h4 id="7-2-测试结果"><a href="#7-2-测试结果" class="headerlink" title="7.2 测试结果"></a>7.2 测试结果</h4><p><img src="https://foruda.gitee.com/images/1740469548601245372/96c5b3eb_1681522.png" alt="输入图片说明"></p>
+<h3 id="8-DOM-对象测试"><a href="#8-DOM-对象测试" class="headerlink" title="8. DOM 对象测试"></a>8. DOM 对象测试</h3><h4 id="8-1-测试代码"><a href="#8-1-测试代码" class="headerlink" title="8.1 测试代码"></a>8.1 测试代码</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> dom1 = &#123; <span class="hljs-attr">el</span>: <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span> &#125;<br><span class="hljs-keyword">let</span> clone1 = <span class="hljs-title function_">structuredClone</span>(dom1)<br></code></pre></td></tr></table></figure>
+<h4 id="8-2-测试结果"><a href="#8-2-测试结果" class="headerlink" title="8.2 测试结果"></a>8.2 测试结果</h4><p><img src="https://foruda.gitee.com/images/1740469695177485487/625adfaa_1681522.png" alt="输入图片说明"></p>
+<h3 id="9-原型链"><a href="#9-原型链" class="headerlink" title="9. 原型链"></a>9. 原型链</h3><h4 id="9-1-测试代码"><a href="#9-1-测试代码" class="headerlink" title="9.1 测试代码"></a>9.1 测试代码</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">User</span> &#123; <span class="hljs-title function_">greet</span>(<span class="hljs-params"></span>) &#123;&#125; &#125;<br><span class="hljs-keyword">const</span> user = <span class="hljs-keyword">new</span> <span class="hljs-title class_">User</span>();<br><span class="hljs-keyword">const</span> clonedUser = <span class="hljs-title function_">structuredClone</span>(user);<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(clonedUser <span class="hljs-keyword">instanceof</span> <span class="hljs-title class_">User</span>);<br></code></pre></td></tr></table></figure>
+<h4 id="9-2-测试结果"><a href="#9-2-测试结果" class="headerlink" title="9.2 测试结果"></a>9.2 测试结果</h4><p><img src="https://foruda.gitee.com/images/1740469813362041666/70a1efe9_1681522.png" alt="输入图片说明"></p>
+<h3 id="10-部分特殊对象测试"><a href="#10-部分特殊对象测试" class="headerlink" title="10. 部分特殊对象测试"></a>10. 部分特殊对象测试</h3><h4 id="10-1-测试-Promise-代码"><a href="#10-1-测试-Promise-代码" class="headerlink" title="10.1 测试 Promise 代码"></a>10.1 测试 Promise 代码</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> originalPromise = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve</span>) =&gt;</span> <span class="hljs-title function_">resolve</span>(<span class="hljs-number">42</span>));<br><br><span class="hljs-keyword">try</span> &#123;<br>  <span class="hljs-keyword">const</span> clonedPromise = <span class="hljs-title function_">structuredClone</span>(originalPromise);<br>&#125; <span class="hljs-keyword">catch</span> (error) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">&quot;克隆 Promise 失败:&quot;</span>, error.<span class="hljs-property">message</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="10-2-测试-Promise-结果"><a href="#10-2-测试-Promise-结果" class="headerlink" title="10.2 测试 Promise 结果"></a>10.2 测试 Promise 结果</h4><p><img src="https://foruda.gitee.com/images/1740470069218444854/0611c8b9_1681522.png" alt="输入图片说明"></p>
+<h4 id="10-3-测试-WeakMap-代码"><a href="#10-3-测试-WeakMap-代码" class="headerlink" title="10.3 测试 WeakMap 代码"></a>10.3 测试 WeakMap 代码</h4><figure class="highlight aspectj"><table><tr><td class="code"><pre><code class="hljs aspectj"><span class="hljs-keyword">const</span> originalWeakMap = <span class="hljs-keyword">new</span> WeakMap();<br><span class="hljs-keyword">const</span> key = &#123;&#125;;<br>originalWeakMap.set(key, <span class="hljs-string">&quot;value&quot;</span>);<br><br><span class="hljs-keyword">try</span> &#123;<br>  <span class="hljs-keyword">const</span> clonedWeakMap = structuredClone(originalWeakMap);<br>&#125; <span class="hljs-keyword">catch</span> (<span class="hljs-keyword">error</span>) &#123;<br>  console.<span class="hljs-keyword">error</span>(<span class="hljs-string">&quot;克隆 WeakMap 失败:&quot;</span>, <span class="hljs-keyword">error</span>.message);<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="10-4-测试-WeakMap-结果"><a href="#10-4-测试-WeakMap-结果" class="headerlink" title="10.4 测试 WeakMap 结果"></a>10.4 测试 WeakMap 结果</h4><p><img src="https://foruda.gitee.com/images/1740470177385056641/77bf24dc_1681522.png" alt="输入图片说明"></p>
+<h4 id="10-5-测试-Proxy-代码"><a href="#10-5-测试-Proxy-代码" class="headerlink" title="10.5 测试 Proxy 代码"></a>10.5 测试 Proxy 代码</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> target = &#123; <span class="hljs-attr">value</span>: <span class="hljs-number">100</span> &#125;;<br><span class="hljs-keyword">const</span> originalProxy = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Proxy</span>(target, &#123;<br>  <span class="hljs-attr">get</span>: <span class="hljs-function">(<span class="hljs-params">obj, prop</span>) =&gt;</span> obj[prop] * <span class="hljs-number">2</span>,<br>&#125;);<br><br><span class="hljs-keyword">try</span> &#123;<br>  <span class="hljs-keyword">const</span> clonedProxy = <span class="hljs-title function_">structuredClone</span>(originalProxy);<br>&#125; <span class="hljs-keyword">catch</span> (error) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">&quot;克隆 Proxy 失败:&quot;</span>, error.<span class="hljs-property">message</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="10-6-测试-Promise-结果"><a href="#10-6-测试-Promise-结果" class="headerlink" title="10.6 测试 Promise 结果"></a>10.6 测试 Promise 结果</h4><p><img src="https://foruda.gitee.com/images/1740470245298332629/b31500e2_1681522.png" alt="输入图片说明"></p>
+<h3 id="11-兼容性"><a href="#11-兼容性" class="headerlink" title="11. 兼容性"></a>11. 兼容性</h3><p><img src="https://foruda.gitee.com/images/1740470368239378273/cf650e0c_1681522.png" alt="输入图片说明"></p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ol>
+<li>深拷贝大数据量或嵌套层级过深的对象时，可能产生性能损耗。</li>
+<li>深拷贝方法对比：</li>
+</ol>
+<table>
+<thead>
+<tr>
+<th align="left">场景</th>
+<th align="left">推荐方法</th>
+<th align="left">注意事项</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">简单对象深拷贝</td>
+<td align="left">structuredClone</td>
+<td align="left">避免用于含函数的对象。</td>
+</tr>
+<tr>
+<td align="left">保留原型链的深拷贝</td>
+<td align="left">手动实现或 lodash.cloneDeep</td>
+<td align="left">需处理循环引用。</td>
+</tr>
+<tr>
+<td align="left">兼容旧浏览器</td>
+<td align="left">JSON.parse(JSON.stringify())</td>
+<td align="left">丢失特殊类型（如 Date、Map）。</td>
+</tr>
+</tbody></table>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 1148063373@qq.com </span>
