@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>实现批量给 pdf 插入 excel 动态生成的印章 | 梁亚军的博客</title>
+  <meta name="keywords" content=" Python , PDF , Excel ">
+  <meta name="description" content="实现批量给 pdf 插入 excel 动态生成的印章 | 梁亚军的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="不管是觉得是任务，还是兴趣。值得高兴的事情就是我把《技术写作指南》这本小册读完了。当然不是自夸，而是在小册或者CSDN上花钱买课程，可以说估计最少也有近千个打烊了。真真完整看完的，其实不多，小册可以说是第一本。视频的还比较多，我就是那个不怎么容易集中注意力的，很容易就被各种信息干扰，对于这一点我觉得最少值得庆贺，哈哈哈！ 说说我买这本小册的初衷吧！可以说开始是有希望将自己的博客写的更好，必定我也还">
+<meta property="og:type" content="article">
+<meta property="og:title" content="张鑫旭的技术写作指南总结">
+<meta property="og:url" content="http://example.com/2025/03/14/books/Summary-of-Zhang-Xinxu-Technical-Writing-Guide/index.html">
+<meta property="og:site_name" content="梁亚军的博客">
+<meta property="og:description" content="不管是觉得是任务，还是兴趣。值得高兴的事情就是我把《技术写作指南》这本小册读完了。当然不是自夸，而是在小册或者CSDN上花钱买课程，可以说估计最少也有近千个打烊了。真真完整看完的，其实不多，小册可以说是第一本。视频的还比较多，我就是那个不怎么容易集中注意力的，很容易就被各种信息干扰，对于这一点我觉得最少值得庆贺，哈哈哈！ 说说我买这本小册的初衷吧！可以说开始是有希望将自己的博客写的更好，必定我也还">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://foruda.gitee.com/images/1740646828232084217/40c49417_1681522.png">
+<meta property="article:published_time" content="2025-03-14T06:30:32.503Z">
+<meta property="article:modified_time" content="2025-03-14T08:29:39.429Z">
+<meta property="article:author" content="梁亚军">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://foruda.gitee.com/images/1740646828232084217/40c49417_1681522.png">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<!-- <script src="//cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script> -->
+ <script src="/js/vue.js?v=1.1.0" ></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>梁亚军</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(14)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="Python">
+            
+            Python
+            <small>(10)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="前端">
+            
+            前端
+            <small>(2)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="读书笔记">
+            
+            读书笔记
+            <small>(2)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+        <a 
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="14">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://blog.csdn.net/m0_38082783">CSDN</a></li>
+            
+            <li><a target="_blank" href="https://juejin.cn/user/2124687263150136">掘金</a></li>
+            
+            <li><a target="_blank" href="https://www.zhihu.com/people/wen-bin-54-21">知乎</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="search shortcut key i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="switch to outline view shortcut key w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="return"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="case sensitive"></i>
+            <i class="iconfont icon-tag" data-title="label"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">outline</div>
+            <i class="iconfont icon-list" data-title="switch to article list"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>百度通用文字识别</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>非暴力沟通</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>爬虫</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>文件名</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSDN</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSS</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Email</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Excel</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Image</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>JS</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>openpyxl</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>PDF</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Python</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ReportLab</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Sort</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All 前端 "
+           href="/2025/03/14/%E5%89%8D%E7%AB%AF/javascript/JS-native-deep-copy-API-structuredClone-use-details-and-precautions/"
+           data-tag="JS"
+           data-author="" >
+            <span class="post-title" title="JS 原生深拷贝 API structuredClone 使用细节和注意事项">JS 原生深拷贝 API structuredClone 使用细节和注意事项</span>
+            <span class="post-date" title="2025-03-14 14:33:02">2025/03/14</span>
+        </a>
+        
+        
+        <a  class="All 读书笔记 "
+           href="/2025/03/14/books/Summary-of-Zhang-Xinxu-Technical-Writing-Guide/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="张鑫旭的技术写作指南总结">张鑫旭的技术写作指南总结</span>
+            <span class="post-date" title="2025-03-14 14:30:32">2025/03/14</span>
+        </a>
+        
+        
+        <a  class="All 读书笔记 "
+           href="/2025/03/14/books/Nonviolent-Communication/"
+           data-tag="非暴力沟通"
+           data-author="" >
+            <span class="post-title" title="非暴力沟通每一章节的读后感">非暴力沟通每一章节的读后感</span>
+            <span class="post-date" title="2025-03-14 10:48:26">2025/03/14</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2025/03/12/python/Batch-recognize-the-text-in-pictures-and-save-it-into-an-Excel-spreadsheet/"
+           data-tag="Python,openpyxl,百度通用文字识别"
+           data-author="" >
+            <span class="post-title" title="批量识别图片文字保存到 excel 中">批量识别图片文字保存到 excel 中</span>
+            <span class="post-date" title="2025-03-12 17:30:51">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2025/03/12/python/Sort-according-to-the-numbers-in-the-names-of-the-picture-files/"
+           data-tag="Python,Sort,文件名"
+           data-author="" >
+            <span class="post-title" title="根据图片文件名称中的数字排序">根据图片文件名称中的数字排序</span>
+            <span class="post-date" title="2025-03-12 17:27:23">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2025/03/12/python/Automatically-generate-the-icon-management-file-for-the-front-end-project/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="自动生成前端项目图标管理文件">自动生成前端项目图标管理文件</span>
+            <span class="post-date" title="2025-03-12 17:24:28">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2025/03/12/python/Automatically-download-all-the-hero-avatars-in-Honor-of-Kings-in-batches/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="自动批量下载王者荣耀的所有英雄头像">自动批量下载王者荣耀的所有英雄头像</span>
+            <span class="post-date" title="2025-03-12 17:22:12">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2025/03/12/python/auto-crawl-the-list-of-CSDN-column-articles/"
+           data-tag="Python,CSDN,爬虫"
+           data-author="" >
+            <span class="post-title" title="爬取 CSDN 专栏文章列表">爬取 CSDN 专栏文章列表</span>
+            <span class="post-date" title="2025-03-12 17:19:03">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2025/03/12/python/auto-replace-image-url/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="自动替换项目中全部图片的新服务器地址">自动替换项目中全部图片的新服务器地址</span>
+            <span class="post-date" title="2025-03-12 17:14:28">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2025/03/12/python/to-pdf-table/"
+           data-tag="Python,ReportLab"
+           data-author="" >
+            <span class="post-title" title="使用 ReportLab 实现在 pdf 生成表格印章">使用 ReportLab 实现在 pdf 生成表格印章</span>
+            <span class="post-date" title="2025-03-12 17:12:20">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2025/03/12/python/do-pdf-in-to-image/"
+           data-tag="Python,PDF,Image"
+           data-author="" >
+            <span class="post-title" title="实现向指定PDF指定页面指定位置插入图片">实现向指定PDF指定页面指定位置插入图片</span>
+            <span class="post-date" title="2025-03-12 17:09:10">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2025/03/12/python/auto-on-pdf-in-to-excel-info/"
+           data-tag="Python,PDF,Excel"
+           data-author="" >
+            <span class="post-title" title="实现批量给 pdf 插入 excel 动态生成的印章">实现批量给 pdf 插入 excel 动态生成的印章</span>
+            <span class="post-date" title="2025-03-12 17:03:01">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All 前端 "
+           href="/2025/03/12/%E5%89%8D%E7%AB%AF/css/css-scrolling/"
+           data-tag="CSS"
+           data-author="" >
+            <span class="post-title" title="CSS 实现无限滚动轮播">CSS 实现无限滚动轮播</span>
+            <span class="post-date" title="2025-03-12 16:03:54">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2025/03/12/python/auto-send-email/"
+           data-tag="Python,Excel,Email"
+           data-author="" >
+            <span class="post-title" title="实现批量发送邮件，通过读取 excel 中的发送内容">实现批量发送邮件，通过读取 excel 中的发送内容</span>
+            <span class="post-date" title="2025-03-12 15:40:25">2025/03/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="Toggle full screen shortcut key s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-python/auto-on-pdf-in-to-excel-info" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">实现批量给 pdf 插入 excel 动态生成的印章</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Python">Python</a>
+            
+        </span>
+        
+        
+        <span class="tag">
+            <i class="iconfont icon-tag"></i>
+            
+            <a class="color2">Python</a>
+            
+            <a class="color4">PDF</a>
+            
+            <a class="color1">Excel</a>
+            
+        </span>
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2025-03-14 16:31:55'>2025-03-12 17:03</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%9C%80%E6%B1%82"><span class="toc-text">1. 需求</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="toc-text">2. 需求分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E7%94%9F%E6%88%90%E5%8D%B0%E7%AB%A0-SealImage-py"><span class="toc-text">3. 生成印章 SealImage.py</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%8D%B0%E7%AB%A0%E7%BB%98%E5%88%B6%E7%BB%93%E6%9E%9C"><span class="toc-text">4. 印章绘制结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%90%88%E5%B9%B6%E5%9B%BE%E7%89%87%E5%88%B0-pdf-%E6%8C%87%E5%AE%9A%E4%BD%8D%E7%BD%AE-MergeImageToPDF-py"><span class="toc-text">5. 合并图片到 pdf 指定位置 MergeImageToPDF.py</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%8F%92%E5%85%A5%E5%9B%BE%E7%89%87%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C"><span class="toc-text">6. 插入图片运行结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-excel-%E6%96%87%E4%BB%B6%E8%BF%9B%E8%A1%8C%E8%87%AA%E5%8A%A8%E6%89%B9%E9%87%8F%E6%93%8D%E4%BD%9C"><span class="toc-text">7. excel 文件进行自动批量操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E6%89%B9%E9%87%8F%E5%A4%84%E7%90%86%E8%BF%90%E8%A1%8C%E7%BB%93%E6%9E%9C"><span class="toc-text">8. 批量处理运行结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E6%80%BB%E7%BB%93"><span class="toc-text">9. 总结</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-需求"><a href="#1-需求" class="headerlink" title="1. 需求"></a>1. 需求</h3><ol>
+<li>想要能否实现批量自动为多个pdf加盖不同六格虚拟章（不改变pdf原有分辨率和文字可识别性）；</li>
+<li>改在pdf首页上方空白位置，一般居中即可；</li>
+<li>如可由使用者自主选择靠页边距更好，以便部分首页上方有字的文件时人工可微调位置；</li>
+<li>从上而下，自左往右分别对应 excel 中各个字段；</li>
+<li>pdf 的文件名和 excel 中档号字段一致。</li>
+</ol>
+<h3 id="2-需求分析"><a href="#2-需求分析" class="headerlink" title="2. 需求分析"></a>2. 需求分析</h3><ol>
+<li>印章绘制技术可采用 opencv，PIL，reportlab等；</li>
+<li>excel 文件的读取可以采用 openpyxl，pandas，xlrd，xlwt 和 xlutils等；</li>
+<li>pdf 文件的读写操作可采用 PyPDF2，pdfminer.six，PyMuPDF；</li>
+<li>根据需求绘制印章采用了 PIL， excel 操作采用 openpyxl， pdf 读写操作采用 PyPDF2。</li>
+</ol>
+<h3 id="3-生成印章-SealImage-py"><a href="#3-生成印章-SealImage-py" class="headerlink" title="3. 生成印章 SealImage.py"></a>3. 生成印章 SealImage.py</h3><ol>
+<li>初始化印章的边框、文本、背景颜色；</li>
+<li>创建印章函数；<blockquote>
+<p>印章大小、创建印章图像、绘制印章格子、绘制印章文字、添加纹理。</p>
+</blockquote>
+</li>
+<li>方形印章格子绘制；<blockquote>
+<p>获取图像长宽、计算各个矩形的起始点、绘制上侧中间矩形、绘制上下矩形， 注意边框占位一半、绘制边框。</p>
+</blockquote>
+</li>
+<li>绘制印章中的文字；<blockquote>
+<p>获取图像长宽、计算各个文本的中心点坐标、文本、数字、英文对应的font、获取传入的字段、依次绘制对应的文本。</p>
+</blockquote>
+</li>
+<li>给印章添加纹理；<br>5.1 打开纹理图像，随机截取旋转；<br>5.2 随机截取一部分纹理图；<br>5.3 重新设置截取图片的的大小，并进行一次高斯模糊；<br>5.4 将纹理图的灰度映射到原图的透明度，由于纹理图片自带灰度，映射后会有透明效果，所以fill的透明度不能太低；<br>5.5 进行一次高斯模糊，提高真实度。</li>
+<li>测试使用查看当前图片绘制情况；</li>
+<li>保存图片；</li>
+<li>绘制矩形；</li>
+<li>绘制文本。<blockquote>
+<p>计算传入文本的占位的盒子宽高、根据文字的占位，计算绘制文本。</p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> random <span class="hljs-keyword">import</span> randint<br><span class="hljs-keyword">from</span> PIL  <span class="hljs-keyword">import</span> Image<br><span class="hljs-keyword">from</span> PIL  <span class="hljs-keyword">import</span> ImageFont<br><span class="hljs-keyword">from</span> PIL  <span class="hljs-keyword">import</span> ImageDraw<br><span class="hljs-keyword">from</span> PIL  <span class="hljs-keyword">import</span> ImageFilter<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">Seal</span>:<br>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):<br>    <span class="hljs-comment"># 印章边框颜色</span><br>    <span class="hljs-variable language_">self</span>.border_color = (<span class="hljs-number">234</span>, <span class="hljs-number">24</span>, <span class="hljs-number">27</span>, <span class="hljs-number">180</span>)<br>    <span class="hljs-comment"># 印章文本颜色</span><br>    <span class="hljs-variable language_">self</span>.text_color = (<span class="hljs-number">234</span>, <span class="hljs-number">24</span>, <span class="hljs-number">27</span>, <span class="hljs-number">180</span>)<br>    <span class="hljs-comment"># 印章背景颜色</span><br>    <span class="hljs-variable language_">self</span>.bg_color = (<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,<span class="hljs-number">255</span>,<span class="hljs-number">1</span>)<br>    <span class="hljs-comment"># 保存印章的图像对象</span><br>    <span class="hljs-variable language_">self</span>.image = <span class="hljs-literal">None</span><br>    <span class="hljs-comment"># 印章图像绘制对象</span><br>    <span class="hljs-variable language_">self</span>.draw = <span class="hljs-literal">None</span><br><br>  <span class="hljs-comment"># 创建印章</span><br>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">create_seal</span>(<span class="hljs-params">self, opts = &#123;&#125;</span>):<br>    <span class="hljs-comment"># 印章大小</span><br>    base = [<span class="hljs-number">950</span>,<span class="hljs-number">240</span>]<br>    <span class="hljs-comment"># 创建印章图像</span><br>    <span class="hljs-variable language_">self</span>.image = Image.new(<span class="hljs-string">&#x27;RGBA&#x27;</span>,<span class="hljs-built_in">tuple</span>(base),<span class="hljs-variable language_">self</span>.bg_color)<br>    <span class="hljs-variable language_">self</span>.draw = ImageDraw.Draw(<span class="hljs-variable language_">self</span>.image)<br>    <span class="hljs-comment"># 绘制印章格子</span><br>    <span class="hljs-variable language_">self</span>.draw_seal_box()<br>    <span class="hljs-comment"># 绘制印章文字</span><br>    <span class="hljs-variable language_">self</span>.draw_seal_text(opts)<br>    <span class="hljs-comment"># 添加纹理</span><br>    <span class="hljs-variable language_">self</span>.add_texture_to_image()<br><br>  <span class="hljs-comment"># 绘制印章的格子</span><br>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">draw_seal_box</span>(<span class="hljs-params">self</span>):<br>    <span class="hljs-comment"># 获取图像长宽</span><br>    w, h = <span class="hljs-variable language_">self</span>.image.size<br>    <span class="hljs-comment"># 计算各个矩形的起始点</span><br>    <span class="hljs-comment"># 三分之一宽</span><br>    third_w = w / <span class="hljs-number">3</span><br>    <span class="hljs-comment"># 二分之一高</span><br>    half_h = h / <span class="hljs-number">2</span><br>    <span class="hljs-comment"># 绘制下侧右边的矩形</span><br>    <span class="hljs-comment"># self.draw_rect([third_w * 2 - 5,0,w,h], 6)</span><br>    <span class="hljs-comment"># 绘制上侧中间矩形</span><br>    <span class="hljs-variable language_">self</span>.draw_rect([third_w,<span class="hljs-number">0</span>,third_w * <span class="hljs-number">2</span>,h], <span class="hljs-number">6</span>)<br>    <span class="hljs-comment"># 绘制上下矩形， 注意边框占位一半</span><br>    <span class="hljs-variable language_">self</span>.draw_rect([<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,w,half_h], <span class="hljs-number">6</span>)<br>    <span class="hljs-comment"># 绘制边框</span><br>    <span class="hljs-variable language_">self</span>.draw_rect([<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,w,h])<br><br>  <span class="hljs-comment"># 绘制印章中的文字</span><br>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">draw_seal_text</span>(<span class="hljs-params">self, opts = &#123;&#125;</span>):<br>    <span class="hljs-comment"># 获取图像长宽</span><br>    w, h = <span class="hljs-variable language_">self</span>.image.size<br>    <span class="hljs-comment"># 计算各个文本的中心点坐标</span><br>    <span class="hljs-comment"># 六分之一宽</span><br>    half_third_w = w / <span class="hljs-number">6</span><br>    <span class="hljs-comment"># 四分之一高</span><br>    half_half_h = h / <span class="hljs-number">4</span><br>    font_size = <span class="hljs-built_in">int</span>(half_half_h * <span class="hljs-number">1.2</span>)<br>    <span class="hljs-comment"># 文本、数字、英文对应的font</span><br>    font = ImageFont.truetype(<span class="hljs-string">&#x27;C:/Windows/Fonts/simsun.ttc&#x27;</span>,font_size)<br>    <span class="hljs-comment"># font = ImageFont.truetype(&#x27;./lib/font/FZLTZHJW.TTF&#x27;,font_size)</span><br>    font_num = ImageFont.truetype(<span class="hljs-string">&#x27;./lib/font/HelveticaNeueLTPro-Lt.ttf&#x27;</span>,font_size)<br>    font_num_en = ImageFont.truetype(<span class="hljs-string">&#x27;./lib/font/PingFang Medium.ttf&#x27;</span>,font_size)<br>    <span class="hljs-comment"># &quot;name&quot;: name,</span><br>    <span class="hljs-comment"># &quot;year&quot;: year,</span><br>    <span class="hljs-comment"># &quot;file_num&quot;: file_num,</span><br>    <span class="hljs-comment"># &quot;file_page_num&quot;: file_page_num,</span><br>    <span class="hljs-comment"># &quot;file_save_date&quot;: file_save_date,</span><br>    <span class="hljs-comment"># &quot;qb&quot;: qb,</span><br>    <span class="hljs-comment"># &quot;file_no&quot;: file_no</span><br>    <span class="hljs-comment"># 获取传入的字段</span><br>    year = opts.get(<span class="hljs-string">&quot;year&quot;</span>)<br>    file_num = opts.get(<span class="hljs-string">&quot;file_num&quot;</span>)<br>    file_page_num = opts.get(<span class="hljs-string">&quot;file_page_num&quot;</span>)<br>    file_save_date = opts.get(<span class="hljs-string">&quot;file_save_date&quot;</span>)<br>    qb = opts.get(<span class="hljs-string">&quot;qb&quot;</span>)<br>    file_no = opts.get(<span class="hljs-string">&quot;file_no&quot;</span>)<br>    <span class="hljs-comment"># 依次绘制对应的文本</span><br>    <span class="hljs-variable language_">self</span>.draw_text(file_num, font, half_third_w * <span class="hljs-number">5</span>, half_half_h)<br>    <span class="hljs-variable language_">self</span>.draw_text(year, font, half_third_w * <span class="hljs-number">3</span>, half_half_h)<br>    <span class="hljs-variable language_">self</span>.draw_text(file_no, font, half_third_w, half_half_h)<br>    <span class="hljs-variable language_">self</span>.draw_text(file_page_num, font, half_third_w * <span class="hljs-number">5</span>, half_half_h * <span class="hljs-number">3</span>)<br>    <span class="hljs-variable language_">self</span>.draw_text(file_save_date, font, half_third_w * <span class="hljs-number">3</span>, half_half_h * <span class="hljs-number">3</span>)<br>    <span class="hljs-variable language_">self</span>.draw_text(qb, font, half_third_w, half_half_h * <span class="hljs-number">3</span>)<br><br>  <span class="hljs-comment"># 给印章添加纹理</span><br>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">add_texture_to_image</span>(<span class="hljs-params">self</span>):<br>    <span class="hljs-comment"># 打开纹理图像，随机截取旋转</span><br>    img_wl = Image.<span class="hljs-built_in">open</span>(<span class="hljs-string">&#x27;./lib/icon/bg.png&#x27;</span>)<br>    <span class="hljs-comment"># 随机截取一部分纹理图</span><br>    pos_random = (randint(<span class="hljs-number">0</span>,<span class="hljs-number">220</span>), randint(<span class="hljs-number">0</span>,<span class="hljs-number">340</span>))<br>    box = (pos_random[<span class="hljs-number">0</span>], pos_random[<span class="hljs-number">1</span>], pos_random[<span class="hljs-number">0</span>]+<span class="hljs-number">180</span>, pos_random[<span class="hljs-number">1</span>]+<span class="hljs-number">60</span>)<br>    img_wl_random = img_wl.crop(box)<br>    <span class="hljs-comment"># 重新设置截取图片的的大小，并进行一次高斯模糊</span><br>    img_wl_random = img_wl_random.resize(<span class="hljs-variable language_">self</span>.image.size).convert(<span class="hljs-string">&#x27;L&#x27;</span>).<span class="hljs-built_in">filter</span>(ImageFilter.GaussianBlur(<span class="hljs-number">1</span>))<br>    <span class="hljs-comment"># 将纹理图的灰度映射到原图的透明度，由于纹理图片自带灰度，映射后会有透明效果，所以fill的透明度不能太低</span><br>    L, H = <span class="hljs-variable language_">self</span>.image.size<br>    <span class="hljs-keyword">for</span> h <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(H):<br>      <span class="hljs-keyword">for</span> l <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(L):<br>        dot = (l, h)<br>        color = <span class="hljs-variable language_">self</span>.image.getpixel(dot)[:<span class="hljs-number">3</span>]+(<span class="hljs-built_in">int</span>(img_wl_random.getpixel(dot)/<span class="hljs-number">255</span>*<span class="hljs-variable language_">self</span>.image.getpixel(dot)[<span class="hljs-number">3</span>]),)<br>        <span class="hljs-variable language_">self</span>.image.putpixel(dot, color)<br>    <span class="hljs-comment"># 进行一次高斯模糊，提高真实度</span><br>    <span class="hljs-variable language_">self</span>.image = <span class="hljs-variable language_">self</span>.image.<span class="hljs-built_in">filter</span>(ImageFilter.GaussianBlur(<span class="hljs-number">0.6</span>))<br><br>  <span class="hljs-comment"># 测试使用查看当前图片绘制情况</span><br>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">show</span>(<span class="hljs-params">self</span>):<br>    <span class="hljs-keyword">if</span> <span class="hljs-variable language_">self</span>.image:<br>      <span class="hljs-variable language_">self</span>.image.show()<br><br>  <span class="hljs-comment"># 保存图片</span><br>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">save</span>(<span class="hljs-params">self, path</span>):<br>    <span class="hljs-keyword">if</span> <span class="hljs-variable language_">self</span>.image:<br>      <span class="hljs-variable language_">self</span>.image.save(path)<br><br>  <span class="hljs-comment"># 绘制矩形</span><br>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">draw_rect</span>(<span class="hljs-params">self, shape, width=<span class="hljs-number">8</span></span>):<br>    <span class="hljs-variable language_">self</span>.draw.rectangle(shape, fill=<span class="hljs-literal">None</span>, outline=<span class="hljs-variable language_">self</span>.border_color, width=width)<br><br>  <span class="hljs-comment"># 绘制文本</span><br>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">draw_text</span>(<span class="hljs-params">self, text, font, x, y</span>):<br>    <span class="hljs-comment"># 计算传入文本的占位的盒子宽高</span><br>    x1, y1, x2, y2 = <span class="hljs-variable language_">self</span>.draw.textbbox((x, y), text, font)<br>    text_size_x = x2 - x1<br>    text_size_y = y2 - y1<br>    <span class="hljs-comment"># 根据文字的占位，计算绘制文本</span><br>    <span class="hljs-variable language_">self</span>.draw.text(<br>      (<span class="hljs-built_in">int</span>(x - text_size_x / <span class="hljs-number">2</span>), <span class="hljs-built_in">int</span>(y - text_size_y / <span class="hljs-number">2</span>)), <br>      text, <br>      font=font, <br>      fill=<span class="hljs-variable language_">self</span>.text_color<br>    )<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>  seal = Seal()<br>  seal.create_seal(&#123;<br>    <span class="hljs-string">&quot;name&quot;</span>: <span class="hljs-string">&quot;pdf-1&quot;</span>,<br>    <span class="hljs-string">&quot;year&quot;</span>: <span class="hljs-number">2024</span>,<br>    <span class="hljs-string">&quot;file_num&quot;</span>: <span class="hljs-number">56</span>,<br>    <span class="hljs-string">&quot;file_page_num&quot;</span>: <span class="hljs-number">15</span>,<br>    <span class="hljs-string">&quot;file_save_date&quot;</span>: <span class="hljs-string">&quot;期限&quot;</span>,<br>    <span class="hljs-string">&quot;qb&quot;</span>: <span class="hljs-string">&quot;XXX&quot;</span>,<br>    <span class="hljs-string">&quot;file_no&quot;</span>: <span class="hljs-string">&quot;X156&quot;</span><br>  &#125;)<br>  <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> os.path.exists(<span class="hljs-string">f&#x27;./out_images/&#x27;</span>):<br>    os.makedirs(<span class="hljs-string">f&#x27;./out_images/&#x27;</span>)<br>  <span class="hljs-comment"># 保存图片</span><br>  seal.save(<span class="hljs-string">f&#x27;./out_images/pdf-1.png&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<h3 id="4-印章绘制结果"><a href="#4-印章绘制结果" class="headerlink" title="4. 印章绘制结果"></a>4. 印章绘制结果</h3><p><img src="https://foruda.gitee.com/images/1707123433480826675/01c42d81_1681522.png" alt="输入图片说明"></p>
+<h3 id="5-合并图片到-pdf-指定位置-MergeImageToPDF-py"><a href="#5-合并图片到-pdf-指定位置-MergeImageToPDF-py" class="headerlink" title="5. 合并图片到 pdf 指定位置 MergeImageToPDF.py"></a>5. 合并图片到 pdf 指定位置 MergeImageToPDF.py</h3><ol>
+<li>初始化插入图片的宽高；<blockquote>
+<p><strong>init</strong> 默认插入图片的宽高。</p>
+</blockquote>
+</li>
+<li>设置图片的宽高；<blockquote>
+<p>reset_image_width_and_height 方法提供修改插入图片宽高的方法。</p>
+</blockquote>
+</li>
+<li>创建一个PDF页面，并在其中放置图片；<br>3.1 创建一个 BytesIO 对象；<br>3.2 Canvas 类是 ReportLab PDF 创建工具包的核心，它提供了一个画布，你可以在上面绘制文本、图形、图像等，以生成 PDF 文档；<br>3.3 创建一个 Canvas 对象，指定 packet 和页面大小；<br>3.4 drawImage 方法插入图像；<br>3.5 调用 save() 方法将绘制的内容保存到 packet 对象中；<br>3.6 packet.seek(0) 将文件指针移动到 BytesIO 对象的开头；<br>3.7 使用 PdfReader 读取 pdf 文件，并将第一页返回。</li>
+<li>将创建的覆盖层合并到目标PDF的指定页面。<br>4.1. 读取原始PDF文件【需要插入图片的 pdf】；<br>4.2 创建一个PDF writer对象；<br>4.3 遍历PDF的每一页，找到目标页面；<br>4.4 获取当前页面对象；<br>4.5 判断当前页是否是目标页面；<br>4.6 计算图片的插入位置；<br>4.7 调用 create_overlay 创建一个插入图片的 pdf 页面对象；<br>4.8 将 create_overlay 返回的页面通过 merge_page 合并到当前 page；<br>4.9 将每一个循环的 page 通过 add_page 添加到第二步中创建的 writer 对象中；<br>4.10 判断输出路径是否存在，然后写入 pdf。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">from</span> reportlab.pdfgen <span class="hljs-keyword">import</span> canvas<br><span class="hljs-keyword">from</span> PyPDF2 <span class="hljs-keyword">import</span> PdfWriter, PdfReader<br><span class="hljs-keyword">import</span> io<br><br><span class="hljs-keyword">class</span> <span class="hljs-title class_">InsertImageToPDF</span>:<br>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">__init__</span>(<span class="hljs-params">self</span>):<br>    <span class="hljs-variable language_">self</span>.image_width = <span class="hljs-built_in">int</span>(<span class="hljs-number">237</span> * <span class="hljs-number">0.6</span>)<br>    <span class="hljs-variable language_">self</span>.image_height = <span class="hljs-built_in">int</span>(<span class="hljs-number">60</span> * <span class="hljs-number">0.8</span>)<br><br>  <span class="hljs-comment"># 设置图片的宽高</span><br>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">reset_image_width_and_height</span>(<span class="hljs-params">self, w, h</span>):<br>    <span class="hljs-variable language_">self</span>.image_width = w<br>    <span class="hljs-variable language_">self</span>.image_height = h<br><br>  <span class="hljs-comment"># 创建一个PDF页面，并在其中放置图片</span><br>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">create_overlay</span>(<span class="hljs-params">self, image_path, x_pos, y_pos, page_width, page_height</span>):<br>    packet = io.BytesIO()<br>    can = canvas.Canvas(packet, pagesize=(page_width, page_height))<br>    can.drawImage(image_path, x_pos, y_pos, width=<span class="hljs-variable language_">self</span>.image_width, height=<span class="hljs-variable language_">self</span>.image_height)  <span class="hljs-comment"># 图片位置和大小</span><br>    can.save()<br>    packet.seek(<span class="hljs-number">0</span>)<br>    overlay = PdfReader(packet)<br>    <span class="hljs-keyword">return</span> overlay.pages[<span class="hljs-number">0</span>]<br><br>  <span class="hljs-comment"># 将创建的覆盖层合并到目标PDF的指定页面</span><br>  <span class="hljs-keyword">def</span> <span class="hljs-title function_">merge_image_to_pdf</span>(<span class="hljs-params">self, input_pdf_path, output_pdf_path, image_path, page_number, x_pos, y_pos</span>):<br>    <span class="hljs-comment"># 读取原始PDF文件</span><br>    original_pdf = PdfReader(<span class="hljs-built_in">open</span>(input_pdf_path, <span class="hljs-string">&quot;rb&quot;</span>))<br>    <span class="hljs-comment"># 创建一个PDF writer对象</span><br>    pdf_writer = PdfWriter()<br>    <span class="hljs-comment"># 遍历PDF的每一页</span><br>    <span class="hljs-keyword">for</span> page_num <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-built_in">len</span>(original_pdf.pages)):<br>      page = original_pdf.pages[page_num]<br>      <span class="hljs-keyword">if</span> page_number == page_num:<br>        <span class="hljs-comment"># 计算距离</span><br>        left_distance = <span class="hljs-built_in">int</span>((page.mediabox.width - <span class="hljs-variable language_">self</span>.image_width) / <span class="hljs-number">2</span> + x_pos)<br>        top_distance = <span class="hljs-built_in">int</span>((page.mediabox.height - <span class="hljs-variable language_">self</span>.image_height) - y_pos)<br><br>        overlay = <span class="hljs-variable language_">self</span>.create_overlay(image_path, left_distance, top_distance, page.mediabox.width, page.mediabox.height)<br>        page.merge_page(overlay)<br>      pdf_writer.add_page(page)<br><br>    <span class="hljs-comment"># 写入修改后的PDF</span><br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(output_pdf_path, <span class="hljs-string">&quot;wb&quot;</span>) <span class="hljs-keyword">as</span> out_file:<br>      pdf_writer.write(out_file)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>  pdf = InsertImageToPDF()<br>  <span class="hljs-comment"># 使用函数</span><br>  pdf.merge_image_to_pdf(<br>    <span class="hljs-string">&quot;./pdf/pdf-1/pdf-1.pdf&quot;</span>, <br>    <span class="hljs-string">&quot;./out_pdf/pdf-1.pdf&quot;</span>, <br>    <span class="hljs-string">&quot;./out_images/pdf.png&quot;</span>, <br>    <span class="hljs-number">0</span>, <span class="hljs-number">0</span>, <span class="hljs-number">10</span>)<br><br></code></pre></td></tr></table></figure>
+
+<h3 id="6-插入图片运行结果"><a href="#6-插入图片运行结果" class="headerlink" title="6. 插入图片运行结果"></a>6. 插入图片运行结果</h3><p><img src="https://foruda.gitee.com/images/1707117801834172026/990959b7_1681522.png" alt="输入图片说明"></p>
+<h3 id="7-excel-文件进行自动批量操作"><a href="#7-excel-文件进行自动批量操作" class="headerlink" title="7. excel 文件进行自动批量操作"></a>7. excel 文件进行自动批量操作</h3><ol>
+<li>设置印章距离居中的距离，距离顶部的距离；</li>
+<li>获取路径下的所有 excel 表；<br>2.1 获取 path 路径下的所有文件和文件夹名称；<br>2.2 筛选文件列表中的 xlsx 后缀的文件名称；<br>2.3 返回筛选结果。</li>
+<li>循环读取 xlsx 文件；</li>
+<li>读取 xlsx 文件中的文本字段；<br>4.1 读取 xlsx 文件中的数据；<br>4.2 获取印章文件名以及印章中的文本字段；<br>4.3 读取的全部数据；<br>4.4 将图片合并到pdf中。</li>
+<li>将图片合并到pdf中。</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><br><span class="hljs-keyword">import</span> os<br><span class="hljs-keyword">import</span> openpyxl<br><span class="hljs-keyword">import</span> shutil<br><span class="hljs-keyword">from</span> MergeImageToPDF <span class="hljs-keyword">import</span> InsertImageToPDF<br><span class="hljs-keyword">from</span> SealImage <span class="hljs-keyword">import</span> Seal<br><br>pdf = InsertImageToPDF()<br>seal = Seal()<br><span class="hljs-comment"># 设置印章距离居中的距离，距离顶部的距离</span><br>top = <span class="hljs-number">10</span><br>left = <span class="hljs-number">0</span><br><br><span class="hljs-comment"># 获取路径下的所有 excel 表</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">get_all_xlsx</span>(<span class="hljs-params">path</span>):<br>  <span class="hljs-comment"># 获取 path 路径下的所有文件和文件夹名称</span><br>  names = os.listdir(path)<br>  <span class="hljs-comment"># 筛选文件列表中的 xlsx 后缀的文件名称</span><br>  xlsx_names = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">filter</span>(<span class="hljs-keyword">lambda</span> x : x.split(<span class="hljs-string">&#x27;.&#x27;</span>).pop() <span class="hljs-keyword">in</span> [<span class="hljs-string">&#x27;xlsx&#x27;</span>], names))<br>  <span class="hljs-comment"># 返回筛选结果</span><br>  <span class="hljs-keyword">return</span> xlsx_names<br><br><span class="hljs-comment"># 循环读取 xlsx 文件</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">loop_read_xlsx_file</span>(<span class="hljs-params">path, names</span>):<br>  <span class="hljs-keyword">for</span> name <span class="hljs-keyword">in</span> names:<br>    read_xlsx_data(<span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;path&#125;</span>/<span class="hljs-subst">&#123;name&#125;</span>&#x27;</span>, seal, merge_image)<br><br><span class="hljs-comment"># 读取 xlsx 文件中的文本字段</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">read_xlsx_data</span>(<span class="hljs-params">path, seal, merge_image</span>):<br>  <span class="hljs-comment"># 读取 xlsx 文件中的数据</span><br>  wb = openpyxl.load_workbook(path,data_only=<span class="hljs-literal">True</span>)<br>  sheets = wb.sheetnames<br>  sheet_first = sheets[<span class="hljs-number">0</span>]<br>  ws = wb[sheet_first]<br>  <span class="hljs-keyword">for</span> r <span class="hljs-keyword">in</span> <span class="hljs-built_in">range</span>(<span class="hljs-number">2</span>,ws.max_row + <span class="hljs-number">1</span>):<br>    <span class="hljs-comment"># 获取印章文件名以及印章中的文本字段</span><br>    name = ws.cell(row=r, column=<span class="hljs-number">1</span>).value<br>    year = ws.cell(row=r, column=<span class="hljs-number">2</span>).value<br>    file_num = ws.cell(row=r, column=<span class="hljs-number">3</span>).value<br>    file_page_num = ws.cell(row=r, column=<span class="hljs-number">4</span>).value<br>    file_save_date = ws.cell(row=r, column=<span class="hljs-number">5</span>).value<br>    qb = ws.cell(row=r, column=<span class="hljs-number">6</span>).value<br>    file_no = ws.cell(row=r, column=<span class="hljs-number">7</span>).value<br>    <span class="hljs-comment"># 读取的全部数据</span><br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;当前印章数据：&#x27;</span>,name, year, file_num, file_page_num, file_save_date, qb, file_no)<br>    <span class="hljs-keyword">if</span> name <span class="hljs-keyword">and</span> year <span class="hljs-keyword">and</span> file_num <span class="hljs-keyword">and</span> file_page_num <span class="hljs-keyword">and</span> file_save_date <span class="hljs-keyword">and</span> qb <span class="hljs-keyword">and</span> file_no:<br>      seal.create_seal(&#123;<br>        <span class="hljs-string">&quot;name&quot;</span>: name,<br>        <span class="hljs-string">&quot;year&quot;</span>: year,<br>        <span class="hljs-string">&quot;file_num&quot;</span>: file_num,<br>        <span class="hljs-string">&quot;file_page_num&quot;</span>: file_page_num,<br>        <span class="hljs-string">&quot;file_save_date&quot;</span>: file_save_date,<br>        <span class="hljs-string">&quot;qb&quot;</span>: qb,<br>        <span class="hljs-string">&quot;file_no&quot;</span>: file_no<br>      &#125;)<br>      <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> os.path.exists(<span class="hljs-string">f&#x27;./out_images/&#x27;</span>):<br>        os.makedirs(<span class="hljs-string">f&#x27;./out_images/&#x27;</span>)<br>      <span class="hljs-comment"># 保存图片</span><br>      seal.save(<span class="hljs-string">f&#x27;./out_images/<span class="hljs-subst">&#123;name&#125;</span>.png&#x27;</span>)<br>      <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;图片绘制成功，开始合并到 pdf 中!&#x27;</span>)<br>      <span class="hljs-comment"># 将图片合并到pdf中</span><br>      merge_image(name)<br><br><span class="hljs-comment"># 将图片合并到pdf中</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">merge_image</span>(<span class="hljs-params">name</span>):<br>  <span class="hljs-keyword">if</span> <span class="hljs-keyword">not</span> os.path.exists(<span class="hljs-string">f&#x27;./out_pdf/<span class="hljs-subst">&#123;name&#125;</span>/&#x27;</span>):<br>    os.makedirs(<span class="hljs-string">f&#x27;./out_pdf/<span class="hljs-subst">&#123;name&#125;</span>/&#x27;</span>)<br>  <span class="hljs-comment"># 使用函数</span><br>  <span class="hljs-comment"># merge_image_to_pdf(</span><br>  <span class="hljs-comment">#   &quot;./pdf/Q103-WS·2022-Y-DQB-0037/Q103-WS·2022-Y-DQB-0037.pdf&quot;, </span><br>  <span class="hljs-comment">#   &quot;./out/Q103-WS·2022-Y-DQB-0037.pdf&quot;, </span><br>  <span class="hljs-comment">#   &quot;20210125.png&quot;, </span><br>  <span class="hljs-comment">#   0, 0, 10)</span><br>  pdf.merge_image_to_pdf(<br>    <span class="hljs-string">f&#x27;./pdf/<span class="hljs-subst">&#123;name&#125;</span>/<span class="hljs-subst">&#123;name&#125;</span>.pdf&#x27;</span>,<br>    <span class="hljs-string">f&#x27;./out_pdf/<span class="hljs-subst">&#123;name&#125;</span>/<span class="hljs-subst">&#123;name&#125;</span>.pdf&#x27;</span>,<br>    <span class="hljs-string">f&#x27;./out_images/<span class="hljs-subst">&#123;name&#125;</span>.png&#x27;</span>,<br>    <span class="hljs-number">0</span>, left, top<br>  )<br>  <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;<span class="hljs-subst">&#123;name&#125;</span> 文件合并成功!&#x27;</span>)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>  <span class="hljs-comment"># 获取印章宽度 </span><br>  <span class="hljs-comment"># image_width = int(237 * 0.6)</span><br>  <span class="hljs-comment"># image_height = int(60 * 0.8)</span><br>  init_img_w = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入印章宽度（默认142px）：&quot;</span>)<br>  init_img_h = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入印章高度（默认48px）：&quot;</span>)<br>  init_img_top = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入印章距离顶部距离（默认10px）：&quot;</span>)<br>  init_img_left = <span class="hljs-built_in">input</span>(<span class="hljs-string">&quot;请输入印章距离左侧距离（默认居中）：&quot;</span>)<br>  <span class="hljs-comment"># 判断输入宽高的值是否有效</span><br>  <span class="hljs-keyword">if</span> init_img_w <span class="hljs-keyword">and</span> init_img_h:<br>    pdf.reset_image_width_and_height(<span class="hljs-built_in">int</span>(init_img_w), <span class="hljs-built_in">int</span>(init_img_h))<br>  <span class="hljs-comment"># 判断输入的边距是否有效</span><br>  <span class="hljs-keyword">if</span> init_img_top:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;init_img_top&#x27;</span>, init_img_top)<br>    top = <span class="hljs-built_in">int</span>(init_img_top)<br>  <span class="hljs-keyword">if</span> init_img_left:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;init_img_left&#x27;</span>, <span class="hljs-built_in">int</span>(init_img_left))<br>    left = <span class="hljs-built_in">int</span>(init_img_left)<br><br>  <span class="hljs-comment"># 获取所有的xlsx文件</span><br>  xlsxs = get_all_xlsx(<span class="hljs-string">&#x27;./&#x27;</span>)<br>  <span class="hljs-comment"># 读取文件内容</span><br>  loop_read_xlsx_file(<span class="hljs-string">&#x27;./&#x27;</span>, xlsxs)<br>  <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;数据处理完成！&#x27;</span>)<br>  <span class="hljs-comment"># 数据处理完成，删除生成的图片文件夹</span><br>  shutil.rmtree(<span class="hljs-string">&#x27;./out_images&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<h3 id="8-批量处理运行结果"><a href="#8-批量处理运行结果" class="headerlink" title="8. 批量处理运行结果"></a>8. 批量处理运行结果</h3><p><img src="https://foruda.gitee.com/images/1707123829556422322/b4164922_1681522.png" alt="输入图片说明"></p>
+<h3 id="9-总结"><a href="#9-总结" class="headerlink" title="9. 总结"></a>9. 总结</h3><ol>
+<li>将每一个单独的功能提出来，作为一个独立的类存在，各自完善独立的功能；</li>
+<li>最后将各个模块的代码组装，在批量程序中使用，完成自动批量化使用。</li>
+</ol>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 1148063373@qq.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+    ©2017 梁亚军
+</p>
+<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'false';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

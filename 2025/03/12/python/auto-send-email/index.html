@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>JS 原生深拷贝 API structuredClone 使用细节和注意事项 | 梁亚军的博客</title>
-  <meta name="keywords" content=" JS ">
-  <meta name="description" content="JS 原生深拷贝 API structuredClone 使用细节和注意事项 | 梁亚军的博客">
+  <title>实现批量发送邮件，通过读取 excel 中的发送内容 | 梁亚军的博客</title>
+  <meta name="keywords" content=" Python , Excel , Email ">
+  <meta name="description" content="实现批量发送邮件，通过读取 excel 中的发送内容 | 梁亚军的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="不管是觉得是任务，还是兴趣。值得高兴的事情就是我把《技术写作指南》这本小册读完了。当然不是自夸，而是在小册或者CSDN上花钱买课程，可以说估计最少也有近千个打烊了。真真完整看完的，其实不多，小册可以说是第一本。视频的还比较多，我就是那个不怎么容易集中注意力的，很容易就被各种信息干扰，对于这一点我觉得最少值得庆贺，哈哈哈！ 说说我买这本小册的初衷吧！可以说开始是有希望将自己的博客写的更好，必定我也还">
 <meta property="og:type" content="article">
@@ -413,9 +413,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-前端/javascript/JS-native-deep-copy-API-structuredClone-use-details-and-precautions" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-python/auto-send-email" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">JS 原生深拷贝 API structuredClone 使用细节和注意事项</h1>
+        <h1 class="article-title">实现批量发送邮件，通过读取 excel 中的发送内容</h1>
     
     <div class="article-meta">
         
@@ -425,7 +425,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="前端">前端</a>
+            <a  data-rel="Python">Python</a>
             
         </span>
         
@@ -433,14 +433,18 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color3">JS</a>
+            <a class="color2">Python</a>
+            
+            <a class="color1">Excel</a>
+            
+            <a class="color1">Email</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2025-03-14 14:33:52'>2025-03-14 14:33</time>
+            Created At : <time class="date" title='Updated At: 2025-03-14 16:31:42'>2025-03-12 15:40</time>
         
     </div>
     <div class="article-meta">
@@ -462,7 +466,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF-structuredClone%EF%BC%9F"><span class="toc-text">1. 什么是 structuredClone？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%AF%AD%E6%B3%95"><span class="toc-text">2. 语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8F%82%E6%95%B0"><span class="toc-text">3. 参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%9F%BA%E7%A1%80%E5%AE%9E%E4%BE%8B"><span class="toc-text">4. 基础实例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E5%AE%9E%E4%BE%8B%E4%BB%A3%E7%A0%81"><span class="toc-text">4.1 实例代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C"><span class="toc-text">4.2 执行结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-structuredClone-%E6%94%AF%E6%8C%81%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">5. structuredClone 支持的数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-structuredClone-%E6%97%A0%E6%B3%95%E5%85%8B%E9%9A%86%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="toc-text">6. structuredClone 无法克隆的类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%87%BD%E6%95%B0%E6%B5%8B%E8%AF%95"><span class="toc-text">7. 函数测试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="toc-text">7.1 测试代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="toc-text">7.2 测试结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-DOM-%E5%AF%B9%E8%B1%A1%E6%B5%8B%E8%AF%95"><span class="toc-text">8. DOM 对象测试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-1-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="toc-text">8.1 测试代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="toc-text">8.2 测试结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E5%8E%9F%E5%9E%8B%E9%93%BE"><span class="toc-text">9. 原型链</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9-1-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="toc-text">9.1 测试代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-2-%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="toc-text">9.2 测试结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E9%83%A8%E5%88%86%E7%89%B9%E6%AE%8A%E5%AF%B9%E8%B1%A1%E6%B5%8B%E8%AF%95"><span class="toc-text">10. 部分特殊对象测试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#10-1-%E6%B5%8B%E8%AF%95-Promise-%E4%BB%A3%E7%A0%81"><span class="toc-text">10.1 测试 Promise 代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-2-%E6%B5%8B%E8%AF%95-Promise-%E7%BB%93%E6%9E%9C"><span class="toc-text">10.2 测试 Promise 结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-3-%E6%B5%8B%E8%AF%95-WeakMap-%E4%BB%A3%E7%A0%81"><span class="toc-text">10.3 测试 WeakMap 代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-4-%E6%B5%8B%E8%AF%95-WeakMap-%E7%BB%93%E6%9E%9C"><span class="toc-text">10.4 测试 WeakMap 结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-5-%E6%B5%8B%E8%AF%95-Proxy-%E4%BB%A3%E7%A0%81"><span class="toc-text">10.5 测试 Proxy 代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-6-%E6%B5%8B%E8%AF%95-Promise-%E7%BB%93%E6%9E%9C"><span class="toc-text">10.6 测试 Promise 结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E5%85%BC%E5%AE%B9%E6%80%A7"><span class="toc-text">11. 兼容性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-text">注意</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%89%8D%E8%A8%80"><span class="toc-text">1. 前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%87%86%E5%A4%87%E5%B7%A5%E4%BD%9C"><span class="toc-text">2. 准备工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-QQ-%E9%82%AE%E7%AE%B1%E5%BC%80%E5%90%AF-SMTP-%E6%9C%8D%E5%8A%A1%EF%BC%8C%E8%8E%B7%E5%8F%96%E6%8E%88%E6%9D%83%E7%A0%81"><span class="toc-text">3.  QQ 邮箱开启 SMTP 服务，获取授权码</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E5%8F%82%E8%80%83"><span class="toc-text">3.1 参考</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E5%BC%80%E5%90%AF-SMTP-%E6%9C%8D%E5%8A%A1%E6%AD%A5%E9%AA%A4"><span class="toc-text">3.2 开启 SMTP 服务步骤</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%AE%89%E8%A3%85%E5%AF%B9%E5%BA%94%E7%9A%84%E5%BA%93"><span class="toc-text">4. 安装对应的库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E8%AF%BB%E5%8F%96-excel"><span class="toc-text">5. 读取 excel</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90"><span class="toc-text">5.1 代码分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-%E8%AF%BB%E5%8F%96-excel-%E4%BB%A3%E7%A0%81%E5%9D%97"><span class="toc-text">5.2 读取 excel 代码块</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%89%B9%E9%87%8F%E5%8F%91%E9%80%81%E5%87%BD%E6%95%B0"><span class="toc-text">6. 批量发送函数</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90"><span class="toc-text">6.1 代码分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">6.2 代码实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%8F%91%E9%80%81%E9%82%AE%E4%BB%B6"><span class="toc-text">7. 发送邮件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90"><span class="toc-text">7.1 代码分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">7.2 代码实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E5%AF%BC%E5%85%A5%E7%9A%84%E5%BA%93"><span class="toc-text">8. 导入的库</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E4%BD%BF%E7%94%A8%E8%84%9A%E6%9C%AC"><span class="toc-text">9. 使用脚本</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E7%A4%BA%E4%BE%8B-excel"><span class="toc-text">10. 示例 excel</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C"><span class="toc-text">11. 执行结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E7%9B%AE%E6%A0%87%E9%82%AE%E7%AE%B1%E6%8E%A5%E6%94%B6%E7%BB%93%E6%9E%9C"><span class="toc-text">12. 目标邮箱接收结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-%E6%80%BB%E7%BB%93"><span class="toc-text">13. 总结</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -478,70 +482,79 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-什么是-structuredClone？"><a href="#1-什么是-structuredClone？" class="headerlink" title="1. 什么是 structuredClone？"></a>1. 什么是 structuredClone？</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/structuredClone">structuredClone</a> 是 JavaScript 内置的深拷贝方法，基于<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Workers_API/Structured_clone_algorithm">结构化克隆算法</a>，用于复制复杂对象（如包含嵌套对象、数组、Date、Map、Set 等类型的数据），并支持处理循环引用。它替代了传统的 JSON.parse(JSON.stringify()) 深拷贝方法，解决了后者无法复制特殊对象和丢失数据类型的问题。</p>
+        <h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h3><p>在生活中，我们经常遇到的事情就是邮箱收到自己的工资条。你想一个公司如果只有几个人，那么还好说，但是如果上了十个以上，对于大多数人来说，这就是一件比较麻烦的事情。重复的劳动需要重复几十次几百次几千次，这样的事情对于一个程序员来，是不是很 low ？那么人事的小姐姐，就需要我们给他开发一个自动化脚本，它只需要将发送的邮箱和内容写在一个 excel 的表格中，通过表格读取内容，然后自动发送到对应的邮箱中，是不是很简单？</p>
+<h3 id="2-准备工作"><a href="#2-准备工作" class="headerlink" title="2. 准备工作"></a>2. 准备工作</h3><ol>
+<li>QQ 邮箱开启 SMTP 服务，获取授权码(不一定是 QQ 邮箱，只是我这里使用的 QQ 开发，只要提供 SMTP 服务的邮箱，就可以)；</li>
+<li>安装 python 环境 3.7；</li>
+<li>使用 pandas、openpyxl 读取后缀为 xlsx 的 excel 表格；</li>
+<li>使用 smtplib 发送邮件。</li>
+</ol>
+<h3 id="3-QQ-邮箱开启-SMTP-服务，获取授权码"><a href="#3-QQ-邮箱开启-SMTP-服务，获取授权码" class="headerlink" title="3.  QQ 邮箱开启 SMTP 服务，获取授权码"></a>3.  QQ 邮箱开启 SMTP 服务，获取授权码</h3><h4 id="3-1-参考"><a href="#3-1-参考" class="headerlink" title="3.1 参考"></a>3.1 参考</h4><p><a target="_blank" rel="noopener" href="https://jingyan.baidu.com/article/b0b63dbf1b2ef54a49307054.html">QQ 邮箱开启 SMTP 服务，获取授权码！</a></p>
+<h4 id="3-2-开启-SMTP-服务步骤"><a href="#3-2-开启-SMTP-服务步骤" class="headerlink" title="3.2 开启 SMTP 服务步骤"></a>3.2 开启 SMTP 服务步骤</h4><ol>
+<li><p>打开【QQ邮箱】<br><img src="https://foruda.gitee.com/images/1741674603553739041/18ac4914_1681522.png" alt="输入图片说明"></p>
+</li>
+<li><p>进入【设置】<br><img src="https://foruda.gitee.com/images/1741674664994743363/38bffc67_1681522.png" alt="输入图片说明"></p>
+</li>
+<li><p>打开【帐户】<br><img src="https://foruda.gitee.com/images/1741674727024164585/bb759d0e_1681522.png" alt="输入图片说明"></p>
+</li>
+<li><p>找到【POP3&#x2F;IMAP&#x2F;SMTP&#x2F;Exchange&#x2F;CardDAV&#x2F;CalDAV服务】，获取授权码<br><img src="https://foruda.gitee.com/images/1741674823407981003/9a4103fe_1681522.png" alt="输入图片说明"></p>
+</li>
+<li><p>点击【获取授权码】<br><img src="https://foruda.gitee.com/images/1741675027370403596/97330b42_1681522.png" alt="输入图片说明"></p>
+</li>
+<li><p>扫码结果，点击【前往发送短信】<br><img src="https://foruda.gitee.com/images/1741674910303011752/c1038122_1681522.png" alt="输入图片说明"></p>
+</li>
+<li><p>发送信息<br><img src="https://foruda.gitee.com/images/1741674940485762699/3024ddb3_1681522.png" alt="输入图片说明"></p>
+</li>
+<li><p>点击【我已发送】<br><img src="https://foruda.gitee.com/images/1741675154914882601/0d746013_1681522.png" alt="输入图片说明"></p>
+</li>
+<li><p>获取授权码<br><img src="https://foruda.gitee.com/images/1741675205193356461/3f818611_1681522.png" alt="输入图片说明"></p>
+</li>
+</ol>
+<h3 id="4-安装对应的库"><a href="#4-安装对应的库" class="headerlink" title="4. 安装对应的库"></a>4. 安装对应的库</h3><figure class="highlight cmake"><table><tr><td class="code"><pre><code class="hljs cmake">pip <span class="hljs-keyword">install</span> pandas openpyxl smtplib<br></code></pre></td></tr></table></figure>
+
+<h3 id="5-读取-excel"><a href="#5-读取-excel" class="headerlink" title="5. 读取 excel"></a>5. 读取 excel</h3><h4 id="5-1-代码分析"><a href="#5-1-代码分析" class="headerlink" title="5.1 代码分析"></a>5.1 代码分析</h4><ol>
+<li>使用 pandas 库来读取Excel文件。</li>
+<li>openpyxl库，提供读写Excel文件的功能，特别是.xlsx格式的文件。pandas通过调用openpyxl来读取Excel文件内容；</li>
+<li>创建名为 read_excel 的函数，用于读取Excel文件。该函数接受一个参数file_path，即Excel文件的路径；</li>
+<li>使用pandas库中的read_excel方法读取指定路径的Excel文件，并且指定了使用openpyxl作为引擎来解析文件内容。<blockquote>
+<p>注意：engine&#x3D;’openpyxl’ 指定了使用 openpyxl 来读取文件，这在处理.xlsx格式的文件时特别重要，因为不同的Excel文件格式需要不同的引擎。</p>
 </blockquote>
-<h3 id="2-语法"><a href="#2-语法" class="headerlink" title="2. 语法"></a>2. 语法</h3><figure class="highlight stylus"><table><tr><td class="code"><pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">structuredClone</span><span class="hljs-params">(value)</span></span><br><span class="hljs-function"><span class="hljs-title">structuredClone</span><span class="hljs-params">(value, options)</span></span><br></code></pre></td></tr></table></figure>
+</li>
+</ol>
+<h4 id="5-2-读取-excel-代码块"><a href="#5-2-读取-excel-代码块" class="headerlink" title="5.2 读取 excel 代码块"></a>5.2 读取 excel 代码块</h4><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-comment"># 读取Excel文件</span><br>def read_excel(file_path):<br>    <span class="hljs-built_in">df</span> = pd.read_excel(file_path, engine=<span class="hljs-string">&#x27;openpyxl&#x27;</span>)<br>    <span class="hljs-built_in">return</span> <span class="hljs-built_in">df</span><br></code></pre></td></tr></table></figure>
 
-<h3 id="3-参数"><a href="#3-参数" class="headerlink" title="3. 参数"></a>3. 参数</h3><ol>
-<li>value: 被克隆的对象。可以是任何<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Workers_API/Structured_clone_algorithm#%E6%94%AF%E6%8C%81%E7%9A%84%E7%B1%BB%E5%9E%8B">结构化克隆支持的类型</a>。</li>
-<li>options：一个具有以下属性的对象：<br>2.1 transfer：一个可转移对象的数组，里面的对象将被移动而不是克隆到返回的对象上。</li>
+<h3 id="6-批量发送函数"><a href="#6-批量发送函数" class="headerlink" title="6. 批量发送函数"></a>6. 批量发送函数</h3><h4 id="6-1-代码分析"><a href="#6-1-代码分析" class="headerlink" title="6.1 代码分析"></a>6.1 代码分析</h4><ol>
+<li>创建 send_emails_in_batch(file_path, sender_email, sender_password) 批量发送邮件的函数；<br>1.1 file_path 是 excel 的文件路径；<br>1.2 sender_email 是发送邮件的邮箱；<br>1.3 sender_password 是 SMTP 服务的授权码。</li>
+<li>使用read_excel函数读取指定路径下的Excel文件，返回一个Pandas DataFrame对象df。这个DataFrame包含了邮件信息，如收件人邮箱地址、邮件主题和邮件正文；</li>
+<li>使用iterrows()方法遍历DataFrame中的每一行。iterrows()返回一个生成器，每次迭代时产生一个索引和一行数据（以字典格式）。这里，index是行号，row是该行的数据；</li>
+<li>提取收件人邮箱地址、邮件主题、邮件正文；</li>
+<li>对于每一行邮件信息，调用send_email函数，使用提供的发件人邮箱和密码，将邮件发送给指定的收件人。</li>
 </ol>
-<h3 id="4-基础实例"><a href="#4-基础实例" class="headerlink" title="4. 基础实例"></a>4. 基础实例</h3><h4 id="4-1-实例代码"><a href="#4-1-实例代码" class="headerlink" title="4.1 实例代码"></a>4.1 实例代码</h4><figure class="highlight arcade"><table><tr><td class="code"><pre><code class="hljs arcade">const original = &#123; <br>  <span class="hljs-attr">date</span>: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(),<br>  <span class="hljs-attr">map</span>: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>([[<span class="hljs-string">&#x27;key&#x27;</span>, <span class="hljs-string">&#x27;value&#x27;</span>]]),<br>  <span class="hljs-attr">array</span>: [<span class="hljs-number">1</span>, &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;test&#x27;</span> &#125;]<br>&#125;;<br><br><span class="hljs-comment">// 深拷贝对象</span><br>const cloned = structuredClone(original);<br><br><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(cloned.<span class="hljs-built_in">date</span> instanceof <span class="hljs-built_in">Date</span>); <span class="hljs-comment">// true（原数据类型保留）</span><br><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(cloned.<span class="hljs-built_in">map</span> instanceof <span class="hljs-built_in">Map</span>);   <span class="hljs-comment">// true</span><br><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(cloned.<span class="hljs-built_in">array</span>[<span class="hljs-number">1</span>] === original.<span class="hljs-built_in">array</span>[<span class="hljs-number">1</span>]); <span class="hljs-comment">// false（深拷贝生效）</span><br></code></pre></td></tr></table></figure>
+<h4 id="6-2-代码实现"><a href="#6-2-代码实现" class="headerlink" title="6.2 代码实现"></a>6.2 代码实现</h4><figure class="highlight pgsql"><table><tr><td class="code"><pre><code class="hljs pgsql"># 批量发送邮件<br>def send_emails_in_batch(file_path, sender_email, sender_password):<br>    df = read_excel(file_path)<br>    <span class="hljs-keyword">for</span> <span class="hljs-keyword">index</span>, <span class="hljs-keyword">row</span> <span class="hljs-keyword">in</span> df.iterrows():<br>        receiver_email = <span class="hljs-keyword">row</span>[<span class="hljs-string">&#x27;email&#x27;</span>]<br>        subject = <span class="hljs-keyword">row</span>[<span class="hljs-string">&#x27;subject&#x27;</span>]<br>        body = <span class="hljs-keyword">row</span>[<span class="hljs-string">&#x27;body&#x27;</span>]<br>        send_email(sender_email, sender_password, receiver_email, subject, body)<br></code></pre></td></tr></table></figure>
 
-<h4 id="4-2-执行结果"><a href="#4-2-执行结果" class="headerlink" title="4.2 执行结果"></a>4.2 执行结果</h4><p><img src="https://foruda.gitee.com/images/1740469105262845784/ee1914e7_1681522.png" alt="输入图片说明"></p>
-<h3 id="5-structuredClone-支持的数据类型"><a href="#5-structuredClone-支持的数据类型" class="headerlink" title="5. structuredClone 支持的数据类型"></a>5. structuredClone 支持的数据类型</h3><ol>
-<li>原始类型：string、number、boolean、null、undefined、BigInt；</li>
-<li>对象类型：Object、Array、Date、RegExp、Map、Set、ArrayBuffer；</li>
-<li>特殊类型：Error（部分场景）、Blob、ImageBitmap（浏览器环境）；</li>
-<li>循环引用：自动处理对象内部的循环引用。</li>
+<h3 id="7-发送邮件"><a href="#7-发送邮件" class="headerlink" title="7. 发送邮件"></a>7. 发送邮件</h3><h4 id="7-1-代码分析"><a href="#7-1-代码分析" class="headerlink" title="7.1 代码分析"></a>7.1 代码分析</h4><ol>
+<li>导入必要的库<br>1.1 email.mime.text.MIMEText 是用于创建邮件的文本部分；<br>1.2 email.mime.multipart.MIMEMultipart 是用于创建邮件的多部分消息，可以包含文本、附件等；<br>1.3 smtplib 是用于发送邮件的 SMTP 协议客户端。</li>
+<li>创建 send_email函数，函数接受五个参数：发件人邮箱地址sender_email、发件人邮箱密码sender_password、收件人邮箱地址receiver_email、邮件主题subject、邮件正文body；</li>
+<li>创建邮件对象<br>3.1 msg &#x3D; MIMEMultipart() 是创建一个MIMEMultipart对象，用于存储邮件的所有部分；<br>3.2 msg[‘From’] &#x3D; sender_email 是设置邮件的发件人地址；<br>3.3 msg[‘To’] &#x3D; receiver_email 是设置邮件的收件人地址；<br>3.4 msg[‘Subject’] &#x3D; subject 是设置邮件的主题；<br>3.5 msg.attach(MIMEText(body, ‘plain’)) 是将邮件正文作为纯文本附件添加到邮件对象中。</li>
+<li>使用SSL连接到QQ邮箱的SMTP服务器，端口号为 465；</li>
+<li>使用发件人的邮箱地址和密码登录到SMTP服务器；</li>
+<li>将邮件对象转换为字符串格式并发送给收件人；</li>
+<li>发送完邮件后，关闭与SMTP服务器的连接。</li>
 </ol>
-<h3 id="6-structuredClone-无法克隆的类型"><a href="#6-structuredClone-无法克隆的类型" class="headerlink" title="6. structuredClone 无法克隆的类型"></a>6. structuredClone 无法克隆的类型</h3><ol>
-<li>函数（Function）、DOM 节点；</li>
-<li>对象原型链：克隆后的对象原型为 Object，而非原构造函数（如 class 实例会丢失方法）；</li>
-<li>部分特殊对象：Promise、WeakMap、Proxy。</li>
+<h4 id="7-2-代码实现"><a href="#7-2-代码实现" class="headerlink" title="7.2 代码实现"></a>7.2 代码实现</h4><figure class="highlight scss"><table><tr><td class="code"><pre><code class="hljs scss"># 发送邮件<br>def <span class="hljs-built_in">send_email</span>(sender_email, sender_password, receiver_email, subject, body):<br>    try:<br>        msg = <span class="hljs-built_in">MIMEMultipart</span>()<br>        msg[<span class="hljs-string">&#x27;From&#x27;</span>] = sender_email<br>        msg[<span class="hljs-string">&#x27;To&#x27;</span>] = receiver_email<br>        msg[<span class="hljs-string">&#x27;Subject&#x27;</span>] = subject<br>        msg.<span class="hljs-built_in">attach</span>(<span class="hljs-built_in">MIMEText</span>(body, <span class="hljs-string">&#x27;plain&#x27;</span>))<br>        <br>        server = smtplib.<span class="hljs-built_in">SMTP_SSL</span>(<span class="hljs-string">&#x27;smtp.qq.com&#x27;</span>, <span class="hljs-number">465</span>)<br>        # server.<span class="hljs-built_in">starttls</span>()<br>        server.<span class="hljs-built_in">login</span>(sender_email, sender_password)<br>        server.<span class="hljs-built_in">sendmail</span>(sender_email, receiver_email, msg.<span class="hljs-built_in">as_string</span>())<br>        server.<span class="hljs-built_in">quit</span>()<br>        <span class="hljs-built_in">print</span>(f<span class="hljs-string">&#x27;邮件已成功发送至: &#123;receiver_email&#125;&#x27;</span>)<br>    except Exception as e:<br>        <span class="hljs-built_in">print</span>(f<span class="hljs-string">&#x27;发送邮件至 &#123;receiver_email&#125; 失败: &#123;e&#125;&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<h3 id="8-导入的库"><a href="#8-导入的库" class="headerlink" title="8. 导入的库"></a>8. 导入的库</h3><figure class="highlight elm"><table><tr><td class="code"><pre><code class="hljs elm"><span class="hljs-keyword">import</span> pandas <span class="hljs-keyword">as</span> pd<br><span class="hljs-keyword">import</span> openpyxl<br><span class="hljs-keyword">import</span> smtplib<br><span class="hljs-title">from</span> email.mime.text <span class="hljs-keyword">import</span> MIMEText<br><span class="hljs-title">from</span> email.mime.multipart <span class="hljs-keyword">import</span> MIMEMultipart<br></code></pre></td></tr></table></figure>
+
+<h3 id="9-使用脚本"><a href="#9-使用脚本" class="headerlink" title="9. 使用脚本"></a>9. 使用脚本</h3><figure class="highlight nginx"><table><tr><td class="code"><pre><code class="hljs nginx"><span class="hljs-attribute">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    <span class="hljs-comment"># 替换为您的Excel文件路径、发件人邮箱和密码</span><br>    send_emails_in_batch(<span class="hljs-string">&#x27;./emails.xlsx&#x27;</span>, <span class="hljs-string">&#x27;发送邮件的邮箱<span class="hljs-variable">@qq</span>.com&#x27;</span>, <span class="hljs-string">&#x27;发送邮件邮箱的 SMTP 服务的授权码&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<h3 id="10-示例-excel"><a href="#10-示例-excel" class="headerlink" title="10. 示例 excel"></a>10. 示例 excel</h3><p><img src="https://foruda.gitee.com/images/1741676587992272012/53ddfd2c_1681522.png" alt="输入图片说明"></p>
+<h3 id="11-执行结果"><a href="#11-执行结果" class="headerlink" title="11. 执行结果"></a>11. 执行结果</h3><p><img src="https://foruda.gitee.com/images/1741676779717421512/c62dc06e_1681522.png" alt="输入图片说明"></p>
+<h3 id="12-目标邮箱接收结果"><a href="#12-目标邮箱接收结果" class="headerlink" title="12. 目标邮箱接收结果"></a>12. 目标邮箱接收结果</h3><p><img src="https://foruda.gitee.com/images/1741676850538539867/73dcf059_1681522.png" alt="输入图片说明"></p>
+<h3 id="13-总结"><a href="#13-总结" class="headerlink" title="13. 总结"></a>13. 总结</h3><ol>
+<li>整体来说，功能并不是很难，就是一个读取库和一个发送库的配合，就完成了脚本的开发，但是就像我看到的一句话，【想，都是问题。做，才有答案。】只有自己实现一遍，才知道中间需要注意那些细节；</li>
+<li>【邮箱开启 SMTP 服务，获取授权码】这一步其实也很简单，就是需要我们对发送邮件的邮箱去开启；</li>
+<li>我这里只是发送了简单的字符串内容，如果更多功能，比如表格等样式也是可以操作的，不过需要对应的设置，有需求时，在进行细节的研究修改。</li>
 </ol>
-<h3 id="7-函数测试"><a href="#7-函数测试" class="headerlink" title="7. 函数测试"></a>7. 函数测试</h3><h4 id="7-1-测试代码"><a href="#7-1-测试代码" class="headerlink" title="7.1 测试代码"></a>7.1 测试代码</h4><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">let</span> obj = &#123; <span class="hljs-built_in">test</span>: () =&gt; &#123; &#125; &#125;<br><span class="hljs-built_in">let</span> <span class="hljs-built_in">clone</span> = structuredClone(obj)<br></code></pre></td></tr></table></figure>
-<h4 id="7-2-测试结果"><a href="#7-2-测试结果" class="headerlink" title="7.2 测试结果"></a>7.2 测试结果</h4><p><img src="https://foruda.gitee.com/images/1740469548601245372/96c5b3eb_1681522.png" alt="输入图片说明"></p>
-<h3 id="8-DOM-对象测试"><a href="#8-DOM-对象测试" class="headerlink" title="8. DOM 对象测试"></a>8. DOM 对象测试</h3><h4 id="8-1-测试代码"><a href="#8-1-测试代码" class="headerlink" title="8.1 测试代码"></a>8.1 测试代码</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> dom1 = &#123; <span class="hljs-attr">el</span>: <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span> &#125;<br><span class="hljs-keyword">let</span> clone1 = <span class="hljs-title function_">structuredClone</span>(dom1)<br></code></pre></td></tr></table></figure>
-<h4 id="8-2-测试结果"><a href="#8-2-测试结果" class="headerlink" title="8.2 测试结果"></a>8.2 测试结果</h4><p><img src="https://foruda.gitee.com/images/1740469695177485487/625adfaa_1681522.png" alt="输入图片说明"></p>
-<h3 id="9-原型链"><a href="#9-原型链" class="headerlink" title="9. 原型链"></a>9. 原型链</h3><h4 id="9-1-测试代码"><a href="#9-1-测试代码" class="headerlink" title="9.1 测试代码"></a>9.1 测试代码</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">User</span> &#123; <span class="hljs-title function_">greet</span>(<span class="hljs-params"></span>) &#123;&#125; &#125;<br><span class="hljs-keyword">const</span> user = <span class="hljs-keyword">new</span> <span class="hljs-title class_">User</span>();<br><span class="hljs-keyword">const</span> clonedUser = <span class="hljs-title function_">structuredClone</span>(user);<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(clonedUser <span class="hljs-keyword">instanceof</span> <span class="hljs-title class_">User</span>);<br></code></pre></td></tr></table></figure>
-<h4 id="9-2-测试结果"><a href="#9-2-测试结果" class="headerlink" title="9.2 测试结果"></a>9.2 测试结果</h4><p><img src="https://foruda.gitee.com/images/1740469813362041666/70a1efe9_1681522.png" alt="输入图片说明"></p>
-<h3 id="10-部分特殊对象测试"><a href="#10-部分特殊对象测试" class="headerlink" title="10. 部分特殊对象测试"></a>10. 部分特殊对象测试</h3><h4 id="10-1-测试-Promise-代码"><a href="#10-1-测试-Promise-代码" class="headerlink" title="10.1 测试 Promise 代码"></a>10.1 测试 Promise 代码</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> originalPromise = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve</span>) =&gt;</span> <span class="hljs-title function_">resolve</span>(<span class="hljs-number">42</span>));<br><br><span class="hljs-keyword">try</span> &#123;<br>  <span class="hljs-keyword">const</span> clonedPromise = <span class="hljs-title function_">structuredClone</span>(originalPromise);<br>&#125; <span class="hljs-keyword">catch</span> (error) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">&quot;克隆 Promise 失败:&quot;</span>, error.<span class="hljs-property">message</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
-<h4 id="10-2-测试-Promise-结果"><a href="#10-2-测试-Promise-结果" class="headerlink" title="10.2 测试 Promise 结果"></a>10.2 测试 Promise 结果</h4><p><img src="https://foruda.gitee.com/images/1740470069218444854/0611c8b9_1681522.png" alt="输入图片说明"></p>
-<h4 id="10-3-测试-WeakMap-代码"><a href="#10-3-测试-WeakMap-代码" class="headerlink" title="10.3 测试 WeakMap 代码"></a>10.3 测试 WeakMap 代码</h4><figure class="highlight aspectj"><table><tr><td class="code"><pre><code class="hljs aspectj"><span class="hljs-keyword">const</span> originalWeakMap = <span class="hljs-keyword">new</span> WeakMap();<br><span class="hljs-keyword">const</span> key = &#123;&#125;;<br>originalWeakMap.set(key, <span class="hljs-string">&quot;value&quot;</span>);<br><br><span class="hljs-keyword">try</span> &#123;<br>  <span class="hljs-keyword">const</span> clonedWeakMap = structuredClone(originalWeakMap);<br>&#125; <span class="hljs-keyword">catch</span> (<span class="hljs-keyword">error</span>) &#123;<br>  console.<span class="hljs-keyword">error</span>(<span class="hljs-string">&quot;克隆 WeakMap 失败:&quot;</span>, <span class="hljs-keyword">error</span>.message);<br>&#125;<br></code></pre></td></tr></table></figure>
-<h4 id="10-4-测试-WeakMap-结果"><a href="#10-4-测试-WeakMap-结果" class="headerlink" title="10.4 测试 WeakMap 结果"></a>10.4 测试 WeakMap 结果</h4><p><img src="https://foruda.gitee.com/images/1740470177385056641/77bf24dc_1681522.png" alt="输入图片说明"></p>
-<h4 id="10-5-测试-Proxy-代码"><a href="#10-5-测试-Proxy-代码" class="headerlink" title="10.5 测试 Proxy 代码"></a>10.5 测试 Proxy 代码</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> target = &#123; <span class="hljs-attr">value</span>: <span class="hljs-number">100</span> &#125;;<br><span class="hljs-keyword">const</span> originalProxy = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Proxy</span>(target, &#123;<br>  <span class="hljs-attr">get</span>: <span class="hljs-function">(<span class="hljs-params">obj, prop</span>) =&gt;</span> obj[prop] * <span class="hljs-number">2</span>,<br>&#125;);<br><br><span class="hljs-keyword">try</span> &#123;<br>  <span class="hljs-keyword">const</span> clonedProxy = <span class="hljs-title function_">structuredClone</span>(originalProxy);<br>&#125; <span class="hljs-keyword">catch</span> (error) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">&quot;克隆 Proxy 失败:&quot;</span>, error.<span class="hljs-property">message</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
-<h4 id="10-6-测试-Promise-结果"><a href="#10-6-测试-Promise-结果" class="headerlink" title="10.6 测试 Promise 结果"></a>10.6 测试 Promise 结果</h4><p><img src="https://foruda.gitee.com/images/1740470245298332629/b31500e2_1681522.png" alt="输入图片说明"></p>
-<h3 id="11-兼容性"><a href="#11-兼容性" class="headerlink" title="11. 兼容性"></a>11. 兼容性</h3><p><img src="https://foruda.gitee.com/images/1740470368239378273/cf650e0c_1681522.png" alt="输入图片说明"></p>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ol>
-<li>深拷贝大数据量或嵌套层级过深的对象时，可能产生性能损耗。</li>
-<li>深拷贝方法对比：</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th align="left">场景</th>
-<th align="left">推荐方法</th>
-<th align="left">注意事项</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">简单对象深拷贝</td>
-<td align="left">structuredClone</td>
-<td align="left">避免用于含函数的对象。</td>
-</tr>
-<tr>
-<td align="left">保留原型链的深拷贝</td>
-<td align="left">手动实现或 lodash.cloneDeep</td>
-<td align="left">需处理循环引用。</td>
-</tr>
-<tr>
-<td align="left">兼容旧浏览器</td>
-<td align="left">JSON.parse(JSON.stringify())</td>
-<td align="left">丢失特殊类型（如 Date、Map）。</td>
-</tr>
-</tbody></table>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 1148063373@qq.com </span>

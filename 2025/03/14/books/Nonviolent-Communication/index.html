@@ -6,27 +6,19 @@
   <meta name="keywords" content=" 非暴力沟通 ">
   <meta name="description" content="非暴力沟通每一章节的读后感 | 梁亚军的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="1. 什么是 structuredClone？ structuredClone 是 JavaScript 内置的深拷贝方法，基于结构化克隆算法，用于复制复杂对象（如包含嵌套对象、数组、Date、Map、Set 等类型的数据），并支持处理循环引用。它替代了传统的 JSON.parse(JSON.stringify()) 深拷贝方法，解决了后者无法复制特殊对象和丢失数据类型的问题。  2. 语法str">
+<meta name="description" content="不管是觉得是任务，还是兴趣。值得高兴的事情就是我把《技术写作指南》这本小册读完了。当然不是自夸，而是在小册或者CSDN上花钱买课程，可以说估计最少也有近千个打烊了。真真完整看完的，其实不多，小册可以说是第一本。视频的还比较多，我就是那个不怎么容易集中注意力的，很容易就被各种信息干扰，对于这一点我觉得最少值得庆贺，哈哈哈！ 说说我买这本小册的初衷吧！可以说开始是有希望将自己的博客写的更好，必定我也还">
 <meta property="og:type" content="article">
-<meta property="og:title" content="JS 原生深拷贝 API structuredClone 使用细节和注意事项">
-<meta property="og:url" content="http://example.com/2025/03/14/%E5%89%8D%E7%AB%AF/javascript/JS-native-deep-copy-API-structuredClone-use-details-and-precautions/index.html">
+<meta property="og:title" content="张鑫旭的技术写作指南总结">
+<meta property="og:url" content="http://example.com/2025/03/14/books/Summary-of-Zhang-Xinxu-Technical-Writing-Guide/index.html">
 <meta property="og:site_name" content="梁亚军的博客">
-<meta property="og:description" content="1. 什么是 structuredClone？ structuredClone 是 JavaScript 内置的深拷贝方法，基于结构化克隆算法，用于复制复杂对象（如包含嵌套对象、数组、Date、Map、Set 等类型的数据），并支持处理循环引用。它替代了传统的 JSON.parse(JSON.stringify()) 深拷贝方法，解决了后者无法复制特殊对象和丢失数据类型的问题。  2. 语法str">
+<meta property="og:description" content="不管是觉得是任务，还是兴趣。值得高兴的事情就是我把《技术写作指南》这本小册读完了。当然不是自夸，而是在小册或者CSDN上花钱买课程，可以说估计最少也有近千个打烊了。真真完整看完的，其实不多，小册可以说是第一本。视频的还比较多，我就是那个不怎么容易集中注意力的，很容易就被各种信息干扰，对于这一点我觉得最少值得庆贺，哈哈哈！ 说说我买这本小册的初衷吧！可以说开始是有希望将自己的博客写的更好，必定我也还">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://foruda.gitee.com/images/1740469105262845784/ee1914e7_1681522.png">
-<meta property="og:image" content="https://foruda.gitee.com/images/1740469548601245372/96c5b3eb_1681522.png">
-<meta property="og:image" content="https://foruda.gitee.com/images/1740469695177485487/625adfaa_1681522.png">
-<meta property="og:image" content="https://foruda.gitee.com/images/1740469813362041666/70a1efe9_1681522.png">
-<meta property="og:image" content="https://foruda.gitee.com/images/1740470069218444854/0611c8b9_1681522.png">
-<meta property="og:image" content="https://foruda.gitee.com/images/1740470177385056641/77bf24dc_1681522.png">
-<meta property="og:image" content="https://foruda.gitee.com/images/1740470245298332629/b31500e2_1681522.png">
-<meta property="og:image" content="https://foruda.gitee.com/images/1740470368239378273/cf650e0c_1681522.png">
-<meta property="article:published_time" content="2025-03-14T06:33:02.107Z">
-<meta property="article:modified_time" content="2025-03-14T06:33:52.362Z">
+<meta property="og:image" content="https://foruda.gitee.com/images/1740646828232084217/40c49417_1681522.png">
+<meta property="article:published_time" content="2025-03-14T06:30:32.503Z">
+<meta property="article:modified_time" content="2025-03-14T08:29:39.429Z">
 <meta property="article:author" content="梁亚军">
-<meta property="article:tag" content="JS">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://foruda.gitee.com/images/1740469105262845784/ee1914e7_1681522.png">
+<meta name="twitter:image" content="https://foruda.gitee.com/images/1740646828232084217/40c49417_1681522.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -107,7 +99,7 @@
         <div data-rel="Python">
             
             Python
-            <small>(9)</small>
+            <small>(10)</small>
         </div>
         
     </li>
@@ -137,7 +129,7 @@
         <div data-rel="读书笔记">
             
             读书笔记
-            <small>(1)</small>
+            <small>(2)</small>
         </div>
         
     </li>
@@ -211,6 +203,10 @@
     <div class="tag-wrapper">
         
             <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>百度通用文字识别</a>
+            </li>
+        
+            <li class="article-tag-list-item">
                 <i class="iconfont icon-tag"></i><a>非暴力沟通</a>
             </li>
         
@@ -247,6 +243,10 @@
             </li>
         
             <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>openpyxl</a>
+            </li>
+        
+            <li class="article-tag-list-item">
                 <i class="iconfont icon-tag"></i><a>PDF</a>
             </li>
         
@@ -279,7 +279,7 @@
         </a>
         
         
-        <a  class="All "
+        <a  class="All 读书笔记 "
            href="/2025/03/14/books/Summary-of-Zhang-Xinxu-Technical-Writing-Guide/"
            data-tag=""
            data-author="" >
@@ -297,9 +297,9 @@
         </a>
         
         
-        <a  class="All "
+        <a  class="All Python "
            href="/2025/03/12/python/Batch-recognize-the-text-in-pictures-and-save-it-into-an-Excel-spreadsheet/"
-           data-tag=""
+           data-tag="Python,openpyxl,百度通用文字识别"
            data-author="" >
             <span class="post-title" title="批量识别图片文字保存到 excel 中">批量识别图片文字保存到 excel 中</span>
             <span class="post-date" title="2025-03-12 17:30:51">2025/03/12</span>
@@ -307,92 +307,92 @@
         
         
         <a  class="All Python "
-           href="/2025/03/11/python/auto-on-pdf-in-to-excel-info/"
-           data-tag="Python,PDF,Excel"
+           href="/2025/03/12/python/Sort-according-to-the-numbers-in-the-names-of-the-picture-files/"
+           data-tag="Python,Sort,文件名"
            data-author="" >
-            <span class="post-title" title="实现批量给 pdf 插入 excel 动态生成的印章">实现批量给 pdf 插入 excel 动态生成的印章</span>
-            <span class="post-date" title="2025-03-11 15:17:00">2025/03/11</span>
+            <span class="post-title" title="根据图片文件名称中的数字排序">根据图片文件名称中的数字排序</span>
+            <span class="post-date" title="2025-03-12 17:27:23">2025/03/12</span>
         </a>
         
         
         <a  class="All Python "
-           href="/2025/03/11/python/auto-send-email/"
-           data-tag="Python,Excel,Email"
+           href="/2025/03/12/python/Automatically-generate-the-icon-management-file-for-the-front-end-project/"
+           data-tag="Python"
            data-author="" >
-            <span class="post-title" title="实现批量发送邮件，通过读取 excel 中的发送内容">实现批量发送邮件，通过读取 excel 中的发送内容</span>
-            <span class="post-date" title="2025-03-11 15:17:00">2025/03/11</span>
+            <span class="post-title" title="自动生成前端项目图标管理文件">自动生成前端项目图标管理文件</span>
+            <span class="post-date" title="2025-03-12 17:24:28">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2025/03/12/python/Automatically-download-all-the-hero-avatars-in-Honor-of-Kings-in-batches/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="自动批量下载王者荣耀的所有英雄头像">自动批量下载王者荣耀的所有英雄头像</span>
+            <span class="post-date" title="2025-03-12 17:22:12">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2025/03/12/python/auto-crawl-the-list-of-CSDN-column-articles/"
+           data-tag="Python,CSDN,爬虫"
+           data-author="" >
+            <span class="post-title" title="爬取 CSDN 专栏文章列表">爬取 CSDN 专栏文章列表</span>
+            <span class="post-date" title="2025-03-12 17:19:03">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2025/03/12/python/auto-replace-image-url/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="自动替换项目中全部图片的新服务器地址">自动替换项目中全部图片的新服务器地址</span>
+            <span class="post-date" title="2025-03-12 17:14:28">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2025/03/12/python/to-pdf-table/"
+           data-tag="Python,ReportLab"
+           data-author="" >
+            <span class="post-title" title="使用 ReportLab 实现在 pdf 生成表格印章">使用 ReportLab 实现在 pdf 生成表格印章</span>
+            <span class="post-date" title="2025-03-12 17:12:20">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2025/03/12/python/do-pdf-in-to-image/"
+           data-tag="Python,PDF,Image"
+           data-author="" >
+            <span class="post-title" title="实现向指定PDF指定页面指定位置插入图片">实现向指定PDF指定页面指定位置插入图片</span>
+            <span class="post-date" title="2025-03-12 17:09:10">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python "
+           href="/2025/03/12/python/auto-on-pdf-in-to-excel-info/"
+           data-tag="Python,PDF,Excel"
+           data-author="" >
+            <span class="post-title" title="实现批量给 pdf 插入 excel 动态生成的印章">实现批量给 pdf 插入 excel 动态生成的印章</span>
+            <span class="post-date" title="2025-03-12 17:03:01">2025/03/12</span>
         </a>
         
         
         <a  class="All 前端 "
-           href="/2025/03/05/%E5%89%8D%E7%AB%AF/css/css-scrolling/"
+           href="/2025/03/12/%E5%89%8D%E7%AB%AF/css/css-scrolling/"
            data-tag="CSS"
            data-author="" >
             <span class="post-title" title="CSS 实现无限滚动轮播">CSS 实现无限滚动轮播</span>
-            <span class="post-date" title="2025-03-05 14:51:00">2025/03/05</span>
+            <span class="post-date" title="2025-03-12 16:03:54">2025/03/12</span>
         </a>
         
         
         <a  class="All Python "
-           href="/2021/08/11/python/Automatically-generate-the-icon-management-file-for-the-front-end-project/"
-           data-tag="Python"
+           href="/2025/03/12/python/auto-send-email/"
+           data-tag="Python,Excel,Email"
            data-author="" >
-            <span class="post-title" title="自动生成前端项目图标管理文件">自动生成前端项目图标管理文件</span>
-            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
-        </a>
-        
-        
-        <a  class="All Python "
-           href="/2021/08/11/python/Sort-according-to-the-numbers-in-the-names-of-the-picture-files/"
-           data-tag="Python,Sort,文件名"
-           data-author="" >
-            <span class="post-title" title="根据图片文件名称中的数字排序">根据图片文件名称中的数字排序</span>
-            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
-        </a>
-        
-        
-        <a  class="All Python "
-           href="/2021/08/11/python/auto-replace-image-url/"
-           data-tag="Python"
-           data-author="" >
-            <span class="post-title" title="自动替换项目中全部图片的新服务器地址">自动替换项目中全部图片的新服务器地址</span>
-            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
-        </a>
-        
-        
-        <a  class="All Python "
-           href="/2021/08/11/python/do-pdf-in-to-image/"
-           data-tag="Python,PDF,Image"
-           data-author="" >
-            <span class="post-title" title="实现向指定PDF指定页面指定位置插入图片">实现向指定PDF指定页面指定位置插入图片</span>
-            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
-        </a>
-        
-        
-        <a  class="All Python "
-           href="/2021/08/11/python/to-pdf-table/"
-           data-tag="Python,ReportLab"
-           data-author="" >
-            <span class="post-title" title="使用 ReportLab 实现在 pdf 生成表格印章">使用 ReportLab 实现在 pdf 生成表格印章</span>
-            <span class="post-date" title="2021-08-11 16:00:00">2021/08/11</span>
-        </a>
-        
-        
-        <a  class="All Python "
-           href="/2021/08/10/python/Automatically-download-all-the-hero-avatars-in-Honor-of-Kings-in-batches/"
-           data-tag="Python"
-           data-author="" >
-            <span class="post-title" title="自动批量下载王者荣耀的所有英雄头像">自动批量下载王者荣耀的所有英雄头像</span>
-            <span class="post-date" title="2021-08-10 16:00:00">2021/08/10</span>
-        </a>
-        
-        
-        <a  class="All Python "
-           href="/2021/01/13/python/auto-crawl-the-list-of-CSDN-column-articles/"
-           data-tag="Python,CSDN,爬虫"
-           data-author="" >
-            <span class="post-title" title="爬取 CSDN 专栏文章列表">爬取 CSDN 专栏文章列表</span>
-            <span class="post-date" title="2021-01-13 16:00:00">2021/01/13</span>
+            <span class="post-title" title="实现批量发送邮件，通过读取 excel 中的发送内容">实现批量发送邮件，通过读取 excel 中的发送内容</span>
+            <span class="post-date" title="2025-03-12 15:40:25">2025/03/12</span>
         </a>
         
         <div id="no-item-tips">
