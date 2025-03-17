@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>JS 数组新方法 with 的使用示例 | 梁亚军的博客</title>
-  <meta name="keywords" content=" JavaScript ">
-  <meta name="description" content="JS 数组新方法 with 的使用示例 | 梁亚军的博客">
+  <title>解决【Authentication failed for】 | 梁亚军的博客</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="解决【Authentication failed for】 | 梁亚军的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="1. 报错remote: Support for password authentication was removed on August 13, 2021.remote: Please see https:&#x2F;&#x2F;docs.github.com&#x2F;get-started&#x2F;getting-started-with-git&#x2F;about-remote-repositories#cloning-with-h">
 <meta property="og:type" content="article">
@@ -561,9 +561,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-clientSide/javascript/Usage-examples-of-new-JS-array-method-with" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-clientSide/git/solve-Authentication-failed-for" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">JS 数组新方法 with 的使用示例</h1>
+        <h1 class="article-title">解决【Authentication failed for】</h1>
     
     <div class="article-meta">
         
@@ -573,24 +573,15 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="前端">前端</a> > 
-            
-            <a  data-rel="前端&lt;---&gt;JavaScript">JavaScript</a>
+            <a  data-rel="git">git</a>
             
         </span>
         
-        
-        <span class="tag">
-            <i class="iconfont icon-tag"></i>
-            
-            <a class="color1">JavaScript</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2025-03-14 16:48:08'>2025-03-14 16:36</time>
+            Created At : <time class="date" title='Updated At: 2025-03-17 15:23:01'>2025-03-17 15:20</time>
         
     </div>
     <div class="article-meta">
@@ -612,7 +603,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%B8%8D%E6%94%B9%E5%8F%98%E5%8E%9F%E6%95%B0%E7%BB%84%E8%AE%BE%E5%80%BC"><span class="toc-text">1. 不改变原数组设值</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-%E7%A4%BA%E4%BE%8B"><span class="toc-text">1.1 示例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C"><span class="toc-text">1.2 输出结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-3-with-%E6%96%B9%E6%B3%95%E4%B9%8B%E5%89%8D%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-text">1.3 with 方法之前的实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-4-%E6%80%BB%E7%BB%93"><span class="toc-text">1.4 总结</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-Array-prototype-with-%E8%AF%B4%E6%98%8E"><span class="toc-text">2. Array.prototype.with 说明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E8%AF%AD%E6%B3%95"><span class="toc-text">2.1 语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E5%8F%82%E6%95%B0"><span class="toc-text">2.2 参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-%E8%BF%94%E5%9B%9E%E5%80%BC"><span class="toc-text">2.3 返回值</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-%E5%85%BC%E5%AE%B9%E6%80%A7"><span class="toc-text">2.4 兼容性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%B3%A8%E6%84%8F"><span class="toc-text">3. 注意</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E9%93%BE%E5%BC%8F%E8%B0%83%E7%94%A8"><span class="toc-text">4. 链式调用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="toc-text">4.1 测试代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="toc-text">4.2 测试结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E4%BD%BF%E7%94%A8-at-%E5%92%8C-with-%E5%87%BD%E6%95%B0%E8%BF%9B%E8%A1%8C%E8%AF%BB%E5%86%99%E6%93%8D%E4%BD%9C"><span class="toc-text">5. 使用 at 和 with 函数进行读写操作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%B0%B8%E8%BF%9C%E4%B8%8D%E4%BC%9A%E4%BA%A7%E7%94%9F%E7%A8%80%E7%96%8F%E6%95%B0%E7%BB%84"><span class="toc-text">6. 永远不会产生稀疏数组</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81"><span class="toc-text">6.1 示例代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-%E7%BB%93%E6%9E%9C"><span class="toc-text">6.2 结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%9C%A8%E9%9D%9E%E6%95%B0%E7%BB%84%E5%AF%B9%E8%B1%A1%E4%B8%8A%E8%B0%83%E7%94%A8-with"><span class="toc-text">7. 在非数组对象上调用 with</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-%E7%A4%BA%E4%BE%8B%E4%BB%A3%E7%A0%81"><span class="toc-text">7.1 示例代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-%E7%BB%93%E6%9E%9C"><span class="toc-text">7.2 结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-3-%E6%B3%A8%E6%84%8F"><span class="toc-text">7.3 注意</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E5%9F%BA%E7%A1%80%E6%80%A7%E8%83%BD%E6%B5%8B%E8%AF%95"><span class="toc-text">8. 基础性能测试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-1-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="toc-text">8.1 测试代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="toc-text">8.2 测试结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E4%B8%8D%E6%94%B9%E5%8F%98%E5%8E%9F%E6%95%B0%E7%BB%84%E7%9A%84%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95"><span class="toc-text">11. 不改变原数组的数组方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E6%80%BB%E7%BB%93"><span class="toc-text">10. 总结</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%8A%A5%E9%94%99"><span class="toc-text">1. 报错</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%94%99%E8%AF%AF%E8%A7%A3%E9%87%8A"><span class="toc-text">2. 错误解释</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95"><span class="toc-text">3. 解决办法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E4%BD%BF%E7%94%A8%E4%B8%AA%E4%BA%BA%E8%AE%BF%E9%97%AE%E4%BB%A4%E7%89%8C%EF%BC%88Personal-Access-Token%EF%BC%89"><span class="toc-text">4. 使用个人访问令牌（Personal Access Token）</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E7%94%9F%E6%88%90%E4%B8%AA%E4%BA%BA%E8%AE%BF%E9%97%AE%E4%BB%A4%E7%89%8C"><span class="toc-text">4.1 生成个人访问令牌</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E4%BD%BF%E7%94%A8%E4%BB%A4%E7%89%8C%E8%BF%9B%E8%A1%8C%E8%AE%A4%E8%AF%81"><span class="toc-text">4.2 使用令牌进行认证</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-%E6%9B%B4%E6%96%B0%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93%E7%9A%84%E8%AE%A4%E8%AF%81%E4%BF%A1%E6%81%AF%EF%BC%88%E5%8F%AF%E9%80%89%EF%BC%89"><span class="toc-text">4.3 更新本地仓库的认证信息（可选）</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E4%BD%BF%E7%94%A8-SSH-%E5%AF%86%E9%92%A5"><span class="toc-text">5. 使用 SSH 密钥</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-%E7%94%9F%E6%88%90-SSH-%E5%AF%86%E9%92%A5"><span class="toc-text">5.1 生成 SSH 密钥</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-%E6%B7%BB%E5%8A%A0-SSH-%E5%AF%86%E9%92%A5%E5%88%B0-GitHub"><span class="toc-text">5.2 添加 SSH 密钥到 GitHub</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-%E4%BD%BF%E7%94%A8-SSH-%E5%9C%B0%E5%9D%80%E5%85%8B%E9%9A%86%E4%BB%93%E5%BA%93"><span class="toc-text">5.3 使用 SSH 地址克隆仓库</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%8C%E7%BE%8E%E8%A7%A3%E5%86%B3%EF%BC%81%EF%BC%81%EF%BC%81"><span class="toc-text">完美解决！！！</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -628,92 +619,50 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-不改变原数组设值"><a href="#1-不改变原数组设值" class="headerlink" title="1. 不改变原数组设值"></a>1. 不改变原数组设值</h3><ol>
-<li>使用 with 方法，不改变原来的数组；</li>
-<li>对新的数组某个索引进行设值，不改变原来的数组。</li>
-</ol>
-<h4 id="1-1-示例"><a href="#1-1-示例" class="headerlink" title="1.1 示例"></a>1.1 示例</h4><figure class="highlight livecodeserver"><table><tr><td class="code"><pre><code class="hljs livecodeserver">let <span class="hljs-keyword">a</span> = [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>,<span class="hljs-number">6</span>]<br>let c = <span class="hljs-keyword">a</span>.<span class="hljs-keyword">with</span>(<span class="hljs-number">0</span>,<span class="hljs-number">9</span>)<br>console.<span class="hljs-built_in">log</span>(<span class="hljs-keyword">a</span>)<br>console.<span class="hljs-built_in">log</span>(c)<br></code></pre></td></tr></table></figure>
+        <h3 id="1-报错"><a href="#1-报错" class="headerlink" title="1. 报错"></a>1. 报错</h3><figure class="highlight dsconfig"><table><tr><td class="code"><pre><code class="hljs dsconfig"><span class="hljs-string">remote</span>: <span class="hljs-string">Support</span> <span class="hljs-string">for</span> <span class="hljs-string">password</span> <span class="hljs-string">authentication</span> <span class="hljs-string">was</span> <span class="hljs-string">removed</span> <span class="hljs-string">on</span> <span class="hljs-string">August</span> <span class="hljs-string">13</span>, <span class="hljs-string">2021</span>.<br><br><span class="hljs-string">remote</span>: <span class="hljs-string">Please</span> <span class="hljs-string">see</span> <span class="hljs-string">https</span>://<span class="hljs-string">docs</span>.<span class="hljs-string">github</span>.<span class="hljs-string">com</span>/<span class="hljs-built_in">get-started/getting-started-with-git/about-remote-repositories#cloning-with-https-urls</span> <span class="hljs-string">for</span> <span class="hljs-string">information</span> <span class="hljs-string">on</span> <span class="hljs-string">currently</span> <span class="hljs-string">recommended</span> <span class="hljs-string">modes</span> <span class="hljs-string">of</span> <span class="hljs-string">authentication</span>.<br><br><span class="hljs-string">fatal</span>: <span class="hljs-string">Authentication</span> <span class="hljs-string">failed</span> <span class="hljs-string">for</span><br></code></pre></td></tr></table></figure>
 
-<h4 id="1-2-输出结果"><a href="#1-2-输出结果" class="headerlink" title="1.2 输出结果"></a>1.2 输出结果</h4><p><img src="https://foruda.gitee.com/images/1740453299133599402/8563fcb6_1681522.png" alt="输入图片说明"></p>
-<h4 id="1-3-with-方法之前的实现"><a href="#1-3-with-方法之前的实现" class="headerlink" title="1.3 with 方法之前的实现"></a>1.3 with 方法之前的实现</h4><ol>
-<li>使用…扩展语法进行数组复制</li>
+<h3 id="2-错误解释"><a href="#2-错误解释" class="headerlink" title="2. 错误解释"></a>2. 错误解释</h3><p>GitHub 自 2021 年 8 月 13 日起不再支持密码认证，你需要采用其他认证方式，比如使用个人访问令牌（Personal Access Token）或者 SSH 密钥。</p>
+<h3 id="3-解决办法"><a href="#3-解决办法" class="headerlink" title="3. 解决办法"></a>3. 解决办法</h3><ol>
+<li>使用个人访问令牌（Personal Access Token）；</li>
+<li><a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_38082783/article/details/128703902">使用 SSH 密钥</a>。</li>
 </ol>
-<figure class="highlight apache"><table><tr><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">let</span> a =<span class="hljs-meta"> [2,3,4,5,6]</span><br><span class="hljs-attribute">let</span> d =<span class="hljs-meta"> [...a]</span><br><span class="hljs-attribute">d</span>[<span class="hljs-number">0</span>] = <span class="hljs-number">9</span>;<br><span class="hljs-attribute">console</span>.log(a)<br><span class="hljs-attribute">console</span>.log(d)<br></code></pre></td></tr></table></figure>
+<h3 id="4-使用个人访问令牌（Personal-Access-Token）"><a href="#4-使用个人访问令牌（Personal-Access-Token）" class="headerlink" title="4. 使用个人访问令牌（Personal Access Token）"></a>4. 使用个人访问令牌（Personal Access Token）</h3><h4 id="4-1-生成个人访问令牌"><a href="#4-1-生成个人访问令牌" class="headerlink" title="4.1 生成个人访问令牌"></a>4.1 生成个人访问令牌</h4><ol>
+<li>登录你的 GitHub 账号，点击右上角的头像，选择 “Settings”。</li>
+<li>在左侧菜单中，点击 “Developer settings”。</li>
+<li>选择 “Personal access tokens”，然后点击 “Generate new token”。</li>
+<li>给令牌命名，选择需要的权限（一般克隆仓库选择 repo 权限即可），设置令牌的过期时间。</li>
+<li>点击 “Generate token” 生成令牌，注意要及时保存这个令牌，因为页面刷新后就无法再次查看。</li>
+</ol>
+<h4 id="4-2-使用令牌进行认证"><a href="#4-2-使用令牌进行认证" class="headerlink" title="4.2 使用令牌进行认证"></a>4.2 使用令牌进行认证</h4><p>在命令行中，当你进行 git push 或者 git clone 操作时，将原来使用的密码替换为个人访问令牌。<br>例如，克隆仓库时：</p>
+<figure class="highlight crmsh"><table><tr><td class="code"><pre><code class="hljs crmsh">git <span class="hljs-keyword">clone</span> <span class="hljs-title">https</span>://github.com/xxx/xxx.git<br></code></pre></td></tr></table></figure>
 
-<p><img src="https://foruda.gitee.com/images/1740453712450674598/d68ce06d_1681522.png" alt="输入图片说明"></p>
+<p>在输入密码的提示处，输入你刚才生成的个人访问令牌。</p>
+<h4 id="4-3-更新本地仓库的认证信息（可选）"><a href="#4-3-更新本地仓库的认证信息（可选）" class="headerlink" title="4.3 更新本地仓库的认证信息（可选）"></a>4.3 更新本地仓库的认证信息（可选）</h4><p>如果你之前已经克隆了仓库，并且使用的是旧的认证方式，可以通过以下命令更新认证信息：</p>
+<figure class="highlight dsconfig"><table><tr><td class="code"><pre><code class="hljs dsconfig"><span class="hljs-string">git</span> <span class="hljs-string">remote</span> <span class="hljs-built_in">set-url</span> <span class="hljs-string">origin</span> <span class="hljs-string">https</span>://&lt;<span class="hljs-string">your-github-username</span>&gt;:&lt;<span class="hljs-string">your-personal-access-token</span>&gt;@<span class="hljs-string">github</span>.<span class="hljs-string">com</span>/<span class="hljs-string">xxx</span>/<span class="hljs-string">xxx</span>.<span class="hljs-string">git</span><br></code></pre></td></tr></table></figure>
+<p>将 your-github-username 替换为你的 GitHub 用户名， your-personal-access-token 替换为你生成的个人访问令牌。</p>
+<h3 id="5-使用-SSH-密钥"><a href="#5-使用-SSH-密钥" class="headerlink" title="5. 使用 SSH 密钥"></a>5. <a target="_blank" rel="noopener" href="https://blog.csdn.net/m0_38082783/article/details/128703902">使用 SSH 密钥</a></h3><h4 id="5-1-生成-SSH-密钥"><a href="#5-1-生成-SSH-密钥" class="headerlink" title="5.1 生成 SSH 密钥"></a>5.1 生成 SSH 密钥</h4><p>打开终端，输入以下命令生成 SSH 密钥：</p>
+<figure class="highlight excel"><table><tr><td class="code"><pre><code class="hljs excel">ssh-keygen -<span class="hljs-built_in">t</span> <span class="hljs-symbol">ed25519</span> -C <span class="hljs-string">&quot;your_email@example.com&quot;</span><br></code></pre></td></tr></table></figure>
+<p>将 <a href="mailto:&#121;&#111;&#117;&#114;&#x5f;&#x65;&#x6d;&#x61;&#105;&#x6c;&#64;&#x65;&#120;&#97;&#x6d;&#112;&#108;&#101;&#46;&#99;&#111;&#109;">your_email@example.com</a> 替换为你在 GitHub 上注册的邮箱地址。按照提示完成密钥生成过程，生成的密钥默认存储在 ~&#x2F;.ssh&#x2F;id_ed25519 和 ~&#x2F;.ssh&#x2F;id_ed25519.pub 。</p>
+<h4 id="5-2-添加-SSH-密钥到-GitHub"><a href="#5-2-添加-SSH-密钥到-GitHub" class="headerlink" title="5.2 添加 SSH 密钥到 GitHub"></a>5.2 添加 SSH 密钥到 GitHub</h4><ol>
+<li>复制公钥内容：</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">cat</span> ~/.ssh/id_ed25519.pub<br></code></pre></td></tr></table></figure>
 <ol start="2">
-<li>使用slice()方法进行数组复制</li>
+<li>登录 GitHub，点击右上角的头像，选择 “Settings”。</li>
+<li>在左侧菜单中，点击 “SSH and GPG keys”。</li>
+<li>点击 “New SSH key”，将复制的公钥内容粘贴到 “Key” 字段，给密钥命名，然后点击 “Add SSH key”。</li>
 </ol>
-<figure class="highlight stylus"><table><tr><td class="code"><pre><code class="hljs stylus">let <span class="hljs-selector-tag">a</span> = <span class="hljs-selector-attr">[2,3,4,5,6]</span><br>let e = <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.slice</span>()<br>e<span class="hljs-selector-attr">[0]</span> = <span class="hljs-number">9</span><br>console<span class="hljs-selector-class">.log</span>(a)<br>console<span class="hljs-selector-class">.log</span>(e)<br></code></pre></td></tr></table></figure>
+<h4 id="5-3-使用-SSH-地址克隆仓库"><a href="#5-3-使用-SSH-地址克隆仓库" class="headerlink" title="5.3 使用 SSH 地址克隆仓库"></a>5.3 使用 SSH 地址克隆仓库</h4><ol>
+<li>将原来使用的 HTTPS 地址替换为 SSH 地址进行克隆：</li>
+</ol>
+<figure class="highlight crmsh"><table><tr><td class="code"><pre><code class="hljs crmsh">git <span class="hljs-keyword">clone</span> <span class="hljs-title">git</span>@github.com:xxx/xxx.git<br></code></pre></td></tr></table></figure>
 
-<p><img src="https://foruda.gitee.com/images/1740453768059088889/3172673f_1681522.png" alt="输入图片说明"></p>
-<h4 id="1-4-总结"><a href="#1-4-总结" class="headerlink" title="1.4 总结"></a>1.4 总结</h4><ol>
-<li>当然复制数组的方法还有很多，这里我只举例了我最常用的两种；</li>
-<li>可以看到，在不修改原数组的要求下，要改变数组的某个元素，在 with 之前，都需要先进行一步复制数组的操作，然后再对复制数组对应索引进行修改；</li>
-<li>从表面看，就是将复制数组和修改索引值两步合并到一个函数，但是可以对其性能进行测试，测试一下差距。</li>
+<ol start="2">
+<li>删除原来的远程库，添加新的 SSH 地址:</li>
 </ol>
-<h3 id="2-Array-prototype-with-说明"><a href="#2-Array-prototype-with-说明" class="headerlink" title="2. Array.prototype.with 说明"></a>2. Array.prototype.with 说明</h3><blockquote>
-<p>Array 实例的 with() 方法是使用方括号表示法修改指定索引值的复制方法版本。它会<strong>返回一个新数组</strong>，其指定索引处的值会被新值替换。</p>
-</blockquote>
-<h4 id="2-1-语法"><a href="#2-1-语法" class="headerlink" title="2.1 语法"></a>2.1 语法</h4><figure class="highlight delphi"><table><tr><td class="code"><pre><code class="hljs delphi">arrayInstance.<span class="hljs-keyword">with</span>(<span class="hljs-keyword">index</span>, value)<br></code></pre></td></tr></table></figure>
+<figure class="highlight routeros"><table><tr><td class="code"><pre><code class="hljs routeros">git remote <span class="hljs-built_in">remove</span> origin<br>git remote <span class="hljs-built_in">add</span> origin git@github.com:xxx/xxx.git<br>git push -u origin master -f<br></code></pre></td></tr></table></figure>
 
-<h4 id="2-2-参数"><a href="#2-2-参数" class="headerlink" title="2.2 参数"></a>2.2 参数</h4><ol>
-<li>index 要修改的数组索引（从 0 开始），将会转换为整数。<br>1.1 负数索引会从数组末尾开始计数——即当 index &lt; 0 时，会使用 index + array.length。<br>1.2 如果规范化后的索引超出数组边界，会抛出 RangeError。</li>
-<li>value 要分配给指定索引的任何值。</li>
-</ol>
-<h4 id="2-3-返回值"><a href="#2-3-返回值" class="headerlink" title="2.3 返回值"></a>2.3 返回值</h4><p><strong>一个全新的数组</strong>，其中 index 索引处的元素被替换为 value。</p>
-<h4 id="2-4-兼容性"><a href="#2-4-兼容性" class="headerlink" title="2.4 兼容性"></a>2.4 兼容性</h4><p><img src="https://foruda.gitee.com/images/1740463042784839687/4e134ea8_1681522.png" alt="输入图片说明"></p>
-<h3 id="3-注意"><a href="#3-注意" class="headerlink" title="3. 注意"></a>3. 注意</h3><ol>
-<li>with() 通过返回一个指定索引处的值被新值替换的<strong>新数组</strong>，来改变数组中指定索引处的值。<strong>原数组不会被修改</strong>，这使得你<strong>可以以链式调用</strong>数组方法的方式来对数组进行操作。</li>
-<li>读取数组使用 at() 函数，写入数组使用 with() 函数，<strong>索引使用正数负数均可</strong>。</li>
-<li>with() 方法永远不会产生稀疏数组。如果原数组是稀疏的，<strong>新数组对应的空白索引位置会替换为 undefined</strong>。</li>
-<li>with() 方法是通用的。<strong>它只期望 this 值具有 length 属性和整数键属性</strong>。</li>
-</ol>
-<h3 id="4-链式调用"><a href="#4-链式调用" class="headerlink" title="4. 链式调用"></a>4. 链式调用</h3><blockquote>
-<p>使用 with() 方法，你可以在更新一个数组元素后继续调用其他的数组方法。</p>
-</blockquote>
-<h4 id="4-1-测试代码"><a href="#4-1-测试代码" class="headerlink" title="4.1 测试代码"></a>4.1 测试代码</h4><figure class="highlight stylus"><table><tr><td class="code"><pre><code class="hljs stylus">let <span class="hljs-selector-tag">a</span> = <span class="hljs-selector-attr">[2,3,4,5,6]</span><br>let <span class="hljs-selector-tag">b</span> = <span class="hljs-selector-tag">a</span><span class="hljs-selector-class">.with</span>(<span class="hljs-number">2</span>, <span class="hljs-number">6</span>)<span class="hljs-selector-class">.map</span>((<span class="hljs-attribute">x</span>) =&gt; x ** <span class="hljs-number">2</span>)<br>console<span class="hljs-selector-class">.log</span>(a)<br>console<span class="hljs-selector-class">.log</span>(b)<br></code></pre></td></tr></table></figure>
-
-<h4 id="4-2-测试结果"><a href="#4-2-测试结果" class="headerlink" title="4.2 测试结果"></a>4.2 测试结果</h4><p><img src="https://foruda.gitee.com/images/1740463910734420281/b25f95a5_1681522.png" alt="输入图片说明"></p>
-<h3 id="5-使用-at-和-with-函数进行读写操作"><a href="#5-使用-at-和-with-函数进行读写操作" class="headerlink" title="5. 使用 at 和 with 函数进行读写操作"></a>5. 使用 at 和 with 函数进行读写操作</h3><p><img src="https://foruda.gitee.com/images/1740464105466060961/7196a29f_1681522.png" alt="输入图片说明"></p>
-<blockquote>
-<p>注意：<strong>当 index &gt; array.length 或 index &lt; -array.length 时 with 函数会抛出异常，at 读取函数直接返回 undefined</strong>。</p>
-</blockquote>
-<h3 id="6-永远不会产生稀疏数组"><a href="#6-永远不会产生稀疏数组" class="headerlink" title="6. 永远不会产生稀疏数组"></a>6. 永远不会产生稀疏数组</h3><blockquote>
-<p>在稀疏数组上使用 with()，with() 方法总会创建一个密集数组。</p>
-</blockquote>
-<h4 id="6-1-示例代码"><a href="#6-1-示例代码" class="headerlink" title="6.1 示例代码"></a>6.1 示例代码</h4><figure class="highlight apache"><table><tr><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">let</span> z =<span class="hljs-meta"> [1,45,,56,23,,34,,8]</span><br><span class="hljs-attribute">z</span>.with(<span class="hljs-number">0</span>,<span class="hljs-number">10</span>)<br></code></pre></td></tr></table></figure>
-
-<h4 id="6-2-结果"><a href="#6-2-结果" class="headerlink" title="6.2 结果"></a>6.2 结果</h4><p><img src="https://foruda.gitee.com/images/1740464398207791096/65376cd7_1681522.png" alt="输入图片说明"></p>
-<h3 id="7-在非数组对象上调用-with"><a href="#7-在非数组对象上调用-with" class="headerlink" title="7. 在非数组对象上调用 with"></a>7. 在非数组对象上调用 with</h3><blockquote>
-<p>with() 方法创建并<strong>返回一个新数组</strong>。<strong>它读取 this 的 length 属性，然后访问其键是小于 length 的非负整数的每个属性</strong>。当 this 的每个属性被访问后，索引等于该属性的键的数组元素被设置为该属性的值。最后，将 index 的数组值设置为 value。</p>
-</blockquote>
-<h4 id="7-1-示例代码"><a href="#7-1-示例代码" class="headerlink" title="7.1 示例代码"></a>7.1 示例代码</h4><figure class="highlight nix"><table><tr><td class="code"><pre><code class="hljs nix"><span class="hljs-keyword">let</span> obj <span class="hljs-operator">=</span> &#123;<br>  <span class="hljs-params">length:</span> <span class="hljs-number">3</span>,<br>  <span class="hljs-params">fookey:</span> <span class="hljs-string">&quot;foo&quot;</span>,<br>  <span class="hljs-number">0</span>: <span class="hljs-number">56</span>,<br>  <span class="hljs-number">2</span>: <span class="hljs-string">&quot;rfg&quot;</span>,<br>  <span class="hljs-number">3</span>: <span class="hljs-number">9</span>,<br>  <span class="hljs-number">5</span>: <span class="hljs-string">&quot;aio&quot;</span><br>&#125;<br>Array.prototype.<span class="hljs-keyword">with</span>.call(obj,<span class="hljs-number">0</span>,<span class="hljs-number">2</span>)<br></code></pre></td></tr></table></figure>
-
-<h4 id="7-2-结果"><a href="#7-2-结果" class="headerlink" title="7.2 结果"></a>7.2 结果</h4><p><img src="https://foruda.gitee.com/images/1740464800896575189/a8319fca_1681522.png" alt="输入图片说明"></p>
-<h4 id="7-3-注意"><a href="#7-3-注意" class="headerlink" title="7.3 注意"></a>7.3 注意</h4><ol>
-<li>创建并返回一个新数组；</li>
-<li>新数组的长度读取的对象的 length 属性；</li>
-<li>读取的是小于 length 的非负整数的每个属性；</li>
-<li>对应 index 的值就是非负整数的属性读取的值。</li>
-</ol>
-<h3 id="8-基础性能测试"><a href="#8-基础性能测试" class="headerlink" title="8. 基础性能测试"></a>8. 基础性能测试</h3><h4 id="8-1-测试代码"><a href="#8-1-测试代码" class="headerlink" title="8.1 测试代码"></a>8.1 测试代码</h4><figure class="highlight arcade"><table><tr><td class="code"><pre><code class="hljs arcade">const LARGE_ARRAY = <span class="hljs-built_in">Array</span>(<span class="hljs-number">1e5</span>).fill().<span class="hljs-built_in">map</span>(<span class="hljs-function">(<span class="hljs-params">_,i</span>) =&gt;</span> i)<br><br><span class="hljs-comment">// splice测试</span><br><span class="hljs-built_in">console</span>.<span class="hljs-built_in">time</span>(<span class="hljs-string">&#x27;splice&#x27;</span>)<br>const copy1 = [...LARGE_ARRAY]<br>copy1.<span class="hljs-built_in">splice</span>(<span class="hljs-number">50000</span>, <span class="hljs-number">1</span>, <span class="hljs-string">&#x27;new&#x27;</span>)<br><span class="hljs-built_in">console</span>.timeEnd(<span class="hljs-string">&#x27;splice&#x27;</span>)<br><br><span class="hljs-comment">// with()测试</span><br><span class="hljs-built_in">console</span>.<span class="hljs-built_in">time</span>(<span class="hljs-string">&#x27;with&#x27;</span>)<br>const copy2 = LARGE_ARRAY.with(<span class="hljs-number">50000</span>, <span class="hljs-string">&#x27;new&#x27;</span>)<br><span class="hljs-built_in">console</span>.timeEnd(<span class="hljs-string">&#x27;with&#x27;</span>)<br></code></pre></td></tr></table></figure>
-<h4 id="8-2-测试结果"><a href="#8-2-测试结果" class="headerlink" title="8.2 测试结果"></a>8.2 测试结果</h4><p><img src="https://foruda.gitee.com/images/1740465372053915954/479fa10c_1681522.png" alt="输入图片说明"></p>
-<h3 id="11-不改变原数组的数组方法"><a href="#11-不改变原数组的数组方法" class="headerlink" title="11. 不改变原数组的数组方法"></a>11. 不改变原数组的数组方法</h3><ol>
-<li>Array.prototype.toSpliced：不修改原始数组，与 splice() 类似，可以同时完成多个操作，在数组中给定的索引开始移除指定数量的元素，然后在相同的索引处插入给定的元素。</li>
-<li>Array.prototype.toSorted：<strong>不修改原始数组</strong>，同时对数组进行排序，返回内容是新数组。对应的原始方法是 sort() 方法，两者参数一致。</li>
-<li>Array.prototype.toReversed：<strong>不修改原始数组</strong>，同时数组反序，返回值是新数组。改变原数组的反序方法是 reverse() 方法，参数都是一样的。</li>
-<li>Array.prototype.slice：<strong>不修改原始数组</strong>，返回一个新的数组对象，这一对象是一个由 start 和 end 决定的原数组的浅拷贝（包括 start，不包括 end），其中 start 和 end 代表了数组元素的索引。</li>
-<li>Array.prototype.map：<strong>不修改原始数组</strong>，创建一个新数组，这个新数组由原数组中的每个元素都调用一次提供的函数后的返回值组成。</li>
-<li>Array.prototype.flat：<strong>不修改原始数组</strong>，创建一个新的数组，并根据指定深度递归地将所有子数组元素拼接到新的数组中。</li>
-<li>Array.prototype.filter：<strong>不修改原始数组</strong>，创建给定数组一部分的浅拷贝，其包含通过所提供函数实现的测试的所有元素。</li>
-<li>Array.prototype.concat：<strong>不修改原始数组</strong>，用于合并两个或多个数组。此方法不会更改现有数组，而是返回一个新数组。</li>
-</ol>
-<h3 id="10-总结"><a href="#10-总结" class="headerlink" title="10. 总结"></a>10. 总结</h3><ol>
-<li>Array.prototype.with() 通过复制原数组实现不可变修改，适合小数据量和函数式场景，但需注意大数组的性能损耗。</li>
-<li>Array.prototype.with() 是 ECMAScript 2023（ES14）新增的数组方法，其核心目的是以<strong>不可变方式修改数组的某个元素，返回新数组，而非修改原数组</strong>。</li>
-</ol>
-
+<h3 id="完美解决！！！"><a href="#完美解决！！！" class="headerlink" title="完美解决！！！"></a>完美解决！！！</h3>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 1148063373@qq.com </span>
     </div>
