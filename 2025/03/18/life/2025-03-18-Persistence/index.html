@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>2. CSS 实现图片背景清除的滑动效果三种方法 | 梁亚军的博客</title>
-  <meta name="keywords" content=" CSS , 图片背景清除 , 滑动效果 ">
-  <meta name="description" content="2. CSS 实现图片背景清除的滑动效果三种方法 | 梁亚军的博客">
+  <title>坚持 | 梁亚军的博客</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="坚持 | 梁亚军的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="我2014年还没有毕业的时候，其实我的梦想就是成为一个作家。那会儿想法很单纯，就是喜欢将发现或者思考的东西写出来。我不知道为什么不从来都不喜欢熟人看到我写的东西，包括以前的作文，我都很讨厌别作为范文来读给大家听。可能是由于我性格比较内向吧！但是这么多年来，我一直都不喜欢，包括我写博客，到现在也有七八年了，将近四百篇，我一直不愿意在文章中发表自己的观点和看法，我只是喜欢将技术的东西按照步骤一步一步的">
 <meta property="og:type" content="article">
@@ -639,9 +639,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-clientSide/css/2.Three-methods-for-implementing-the-sliding-effect-of-clearing-the-background-of-an-image-with-CSS" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-life/2025-03-18-Persistence" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">2. CSS 实现图片背景清除的滑动效果三种方法</h1>
+        <h1 class="article-title">坚持</h1>
     
     <div class="article-meta">
         
@@ -651,28 +651,17 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="前端">前端</a> > 
+            <a  data-rel="生活">生活</a> > 
             
-            <a  data-rel="前端&lt;---&gt;CSS">CSS</a>
+            <a  data-rel="生活&lt;---&gt;感想">感想</a>
             
         </span>
         
-        
-        <span class="tag">
-            <i class="iconfont icon-tag"></i>
-            
-            <a class="color4">CSS</a>
-            
-            <a class="color2">图片背景清除</a>
-            
-            <a class="color5">滑动效果</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2025-03-18 10:28:51'>2025-03-14 16:56</time>
+            Created At : <time class="date" title='Updated At: 2025-03-18 16:25:18'>2025-03-18 15:18</time>
         
     </div>
     <div class="article-meta">
@@ -694,7 +683,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%AE%9E%E7%8E%B0%E6%95%88%E6%9E%9C"><span class="toc-text">1. 实现效果</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-1-removebg-%E5%AE%9E%E7%8E%B0%E5%9B%BE%E7%89%87%E8%83%8C%E6%99%AF%E7%9A%84%E5%8E%BB%E9%99%A4"><span class="toc-text">1.1 removebg 实现图片背景的去除</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#1-2-gitee-%E7%99%BB%E5%BD%95%E7%95%8C%E9%9D%A2%E7%9A%84%E9%A1%B9%E7%9B%AE%E5%8D%8F%E5%90%8C%E6%95%88%E6%9E%9C"><span class="toc-text">1.2 gitee 登录界面的项目协同效果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%9E%E7%8E%B0%E5%88%86%E6%9E%90"><span class="toc-text">2. 实现分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E6%96%B9%E6%A1%88%E4%B8%80%EF%BC%9Aclip-path-inset-%E5%AE%9E%E7%8E%B0"><span class="toc-text">3. 方案一：clip-path: inset 实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-DOM-%E7%BB%93%E6%9E%84"><span class="toc-text">3.1 DOM 结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-CSS"><span class="toc-text">3.2 CSS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-JS-%E5%AE%9E%E7%8E%B0"><span class="toc-text">3.3 JS 实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-%E5%AE%9E%E7%8E%B0%E6%95%88%E6%9E%9C"><span class="toc-text">3.4 实现效果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-clip-path-inset-%E8%AF%B4%E6%98%8E"><span class="toc-text">4. clip-path: inset 说明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E8%AF%AD%E6%B3%95"><span class="toc-text">4.1 语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E5%80%BC%E8%AF%B4%E6%98%8E"><span class="toc-text">4.2 值说明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-%E6%B3%A8%E6%84%8F"><span class="toc-text">4.3 注意</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-%E5%85%BC%E5%AE%B9%E6%80%A7"><span class="toc-text">4.4 兼容性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%96%B9%E6%A1%88%E4%BA%8C%EF%BC%9Aclip-path-polygon-%E5%AE%9E%E7%8E%B0"><span class="toc-text">5. 方案二：clip-path: polygon 实现</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-DOM-%E7%BB%93%E6%9E%84"><span class="toc-text">5.1 DOM 结构</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-CSS"><span class="toc-text">5.2 CSS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-JS"><span class="toc-text">5.3 JS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-4-%E5%AE%9E%E7%8E%B0%E6%95%88%E6%9E%9C"><span class="toc-text">5.4 实现效果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-clip-path-polygon-%E8%AF%B4%E6%98%8E"><span class="toc-text">6. clip-path: polygon 说明</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-%E8%AF%AD%E6%B3%95"><span class="toc-text">6.1 语法</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-%E5%80%BC%E8%AF%B4%E6%98%8E"><span class="toc-text">6.2 值说明</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-3-%E6%B3%A8%E6%84%8F"><span class="toc-text">6.3 注意</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-4-%E5%85%BC%E5%AE%B9%E6%80%A7"><span class="toc-text">6.4 兼容性</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E6%80%BB%E7%BB%93"><span class="toc-text">7. 总结</span></a></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -710,63 +699,17 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-实现效果"><a href="#1-实现效果" class="headerlink" title="1. 实现效果"></a>1. 实现效果</h3><h4 id="1-1-removebg-实现图片背景的去除"><a href="#1-1-removebg-实现图片背景的去除" class="headerlink" title="1.1 removebg 实现图片背景的去除"></a>1.1 <a target="_blank" rel="noopener" href="https://www.remove.bg/zh/sample_images">removebg 实现图片背景的去除</a></h4><p><img src="https://foruda.gitee.com/images/1735805095284219501/026efc2f_1681522.gif" alt="输入图片说明"></p>
-<h4 id="1-2-gitee-登录界面的项目协同效果"><a href="#1-2-gitee-登录界面的项目协同效果" class="headerlink" title="1.2 gitee 登录界面的项目协同效果"></a>1.2 <a target="_blank" rel="noopener" href="https://gitee.com/">gitee 登录界面的项目协同效果</a></h4><p><img src="https://foruda.gitee.com/images/1735805148871073731/36212f86_1681522.gif" alt="输入图片说明"></p>
-<h3 id="2-实现分析"><a href="#2-实现分析" class="headerlink" title="2. 实现分析"></a>2. 实现分析</h3><ol>
-<li>最常见的方法就是通过 JS 定位获取设置对应盒子的宽度；</li>
-<li>removebg 使用的方法是 clip-path: polygon 来设置图片的显示区域；</li>
-<li>gitee 使用的方法是 clip: rect 来设置图片的显示区域；</li>
-<li>使用 clip-path: inset 来设置图片的隐藏区域。</li>
-</ol>
-<h3 id="3-方案一：clip-path-inset-实现"><a href="#3-方案一：clip-path-inset-实现" class="headerlink" title="3. 方案一：clip-path: inset 实现"></a>3. 方案一：clip-path: inset 实现</h3><h4 id="3-1-DOM-结构"><a href="#3-1-DOM-结构" class="headerlink" title="3.1 DOM 结构"></a>3.1 DOM 结构</h4><figure class="highlight dust"><table><tr><td class="code"><pre><code class="hljs dust"><span class="language-xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;rui-removebg-content&quot;</span>&gt;</span></span><br><span class="language-xml">	<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;@/static/car5.jpg&quot;</span> <span class="hljs-attr">:style</span>=<span class="hljs-string">&quot;`clip-path: inset(0 $</span></span></span><span class="hljs-template-variable">&#123;value&#125;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">% 0 0)`&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;rui-removebg-img&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">img</span>&gt;</span></span><br><span class="language-xml">	<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;@/static/car5.png&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;rui-removebg-png-img&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">img</span>&gt;</span></span><br><span class="language-xml">	<span class="hljs-tag">&lt;<span class="hljs-name">slider</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;50&quot;</span></span></span><br><span class="hljs-tag"><span class="language-xml">		<span class="hljs-attr">backgroundColor</span>=<span class="hljs-string">&quot;transparent&quot;</span></span></span><br><span class="hljs-tag"><span class="language-xml">		<span class="hljs-attr">activeColor</span>=<span class="hljs-string">&quot;transparent&quot;</span></span></span><br><span class="hljs-tag"><span class="language-xml">		@<span class="hljs-attr">changing</span>=<span class="hljs-string">&quot;getValue&quot;</span> </span></span><br><span class="hljs-tag"><span class="language-xml">		@<span class="hljs-attr">change</span>=<span class="hljs-string">&quot;getValue&quot;</span></span></span><br><span class="hljs-tag"><span class="language-xml">		<span class="hljs-attr">step</span>=<span class="hljs-string">&quot;0.01&quot;</span> </span></span><br><span class="hljs-tag"><span class="language-xml">		<span class="hljs-attr">class</span>=<span class="hljs-string">&quot;rui-removebg-input&quot;</span>/&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
-
-<h4 id="3-2-CSS"><a href="#3-2-CSS" class="headerlink" title="3.2 CSS"></a>3.2 CSS</h4><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"> <span class="hljs-selector-class">.rui-removebg-content</span>&#123;<br>	<span class="hljs-attr">--checkerboard-black-color</span>: <span class="hljs-number">#f8f9f9</span>;<br>	<span class="hljs-attr">--checkerboard-white-color</span>: transparent;<br>	<span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">linear-gradient</span>(<span class="hljs-number">45deg</span>, <span class="hljs-built_in">var</span>(--checkerboard-black-color) <span class="hljs-number">25%</span>, <span class="hljs-built_in">var</span>(--checkerboard-white-color) <span class="hljs-number">25%</span>), <span class="hljs-built_in">linear-gradient</span>(-<span class="hljs-number">45deg</span>, <span class="hljs-built_in">var</span>(--checkerboard-black-color) <span class="hljs-number">25%</span>, <span class="hljs-built_in">var</span>(--checkerboard-white-color) <span class="hljs-number">25%</span>), <span class="hljs-built_in">linear-gradient</span>(<span class="hljs-number">45deg</span>, <span class="hljs-built_in">var</span>(--checkerboard-white-color) <span class="hljs-number">75%</span>, <span class="hljs-built_in">var</span>(--checkerboard-black-color) <span class="hljs-number">75%</span>), <span class="hljs-built_in">linear-gradient</span>(-<span class="hljs-number">45deg</span>, <span class="hljs-built_in">var</span>(--checkerboard-white-color) <span class="hljs-number">75%</span>, <span class="hljs-built_in">var</span>(--checkerboard-black-color) <span class="hljs-number">75%</span>);<br>	<span class="hljs-attribute">background-size</span>: <span class="hljs-number">20px</span> <span class="hljs-number">20px</span>;<br>	<span class="hljs-attribute">background-position</span>: <span class="hljs-number">0</span> <span class="hljs-number">0</span>, <span class="hljs-number">0</span> <span class="hljs-number">10px</span>, <span class="hljs-number">10px</span> -<span class="hljs-number">10px</span>, -<span class="hljs-number">10px</span> <span class="hljs-number">0</span>;<br>	<span class="hljs-attribute">width</span>: <span class="hljs-number">720</span>rpx;<br>	<span class="hljs-attribute">height</span>: <span class="hljs-number">478</span>rpx;<br>	<span class="hljs-attribute">overflow</span>: hidden;<br>	<span class="hljs-attribute">position</span>: relative;<br>	<span class="hljs-attribute">margin</span>: <span class="hljs-number">60</span>rpx auto;<br>&#125;<br><span class="hljs-selector-class">.rui-removebg-img</span>&#123;<br>	<span class="hljs-attribute">width</span>: <span class="hljs-number">720</span>rpx;<br>	<span class="hljs-attribute">height</span>: <span class="hljs-number">478</span>rpx;<br>	<span class="hljs-attribute">clip-path</span>: <span class="hljs-built_in">inset</span>(<span class="hljs-number">0</span> <span class="hljs-number">50%</span> <span class="hljs-number">0</span> <span class="hljs-number">0</span>);<br>&#125;<br><span class="hljs-selector-class">.rui-removebg-png-img</span>&#123;<br>	<span class="hljs-attribute">width</span>: <span class="hljs-number">720</span>rpx;<br>	<span class="hljs-attribute">height</span>: <span class="hljs-number">478</span>rpx;<br>	<span class="hljs-attribute">position</span>: absolute;<br>	<span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;<br>	<span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;<br>&#125;<br><span class="hljs-selector-class">.rui-removebg-input</span>&#123;<br>	<span class="hljs-attribute">width</span>: <span class="hljs-number">720</span>rpx;<br>	<span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span>;<br>	<span class="hljs-attribute">position</span>: absolute;<br>	<span class="hljs-attribute">top</span>: <span class="hljs-number">50%</span>;<br>	<span class="hljs-attribute">left</span>: <span class="hljs-number">0</span>;<br>	<span class="hljs-attribute">z-index</span>: <span class="hljs-number">1</span>;<br>	<span class="hljs-attribute">transform</span>: <span class="hljs-built_in">translateY</span>(-<span class="hljs-number">50%</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h4 id="3-3-JS-实现"><a href="#3-3-JS-实现" class="headerlink" title="3.3 JS 实现"></a>3.3 JS 实现</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"> <span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>	<span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;<br>		<span class="hljs-keyword">return</span> &#123;<br>			<span class="hljs-attr">value</span>: <span class="hljs-string">&#x27;50&#x27;</span><br>		&#125;<br>	&#125;,<br>	<span class="hljs-attr">methods</span>: &#123;<br>		<span class="hljs-title function_">getValue</span>(<span class="hljs-params">e</span>)&#123;<br>			<span class="hljs-variable language_">this</span>.<span class="hljs-property">value</span> = <span class="hljs-number">100</span> - e.<span class="hljs-property">detail</span>.<span class="hljs-property">value</span>;<br>		&#125;<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h4 id="3-4-实现效果"><a href="#3-4-实现效果" class="headerlink" title="3.4 实现效果"></a>3.4 实现效果</h4><p><img src="https://foruda.gitee.com/images/1735805202891684287/c936ce9d_1681522.gif" alt="输入图片说明"></p>
-<h3 id="4-clip-path-inset-说明"><a href="#4-clip-path-inset-说明" class="headerlink" title="4. clip-path: inset 说明"></a>4. clip-path: inset 说明</h3><ol>
-<li>clip-path 是 CSS 中的一个属性，用于定义一个元素的可见区域。inset() 是 clip-path 的一个函数，用于创建一个矩形裁剪区域，该区域相对于元素的边界框进行定位。</li>
-</ol>
-<h4 id="4-1-语法"><a href="#4-1-语法" class="headerlink" title="4.1 语法"></a>4.1 语法</h4><figure class="highlight nix"><table><tr><td class="code"><pre><code class="hljs nix"><span class="hljs-params">clip-path:</span> inset(<span class="hljs-symbol">&lt;top&gt;</span> <span class="hljs-symbol">&lt;right&gt;</span> <span class="hljs-symbol">&lt;bottom&gt;</span> <span class="hljs-symbol">&lt;left&gt;</span> round <span class="hljs-symbol">&lt;radius&gt;</span>);<br></code></pre></td></tr></table></figure>
-
-<h4 id="4-2-值说明"><a href="#4-2-值说明" class="headerlink" title="4.2 值说明"></a>4.2 值说明</h4><ol>
-<li>top：定义裁剪区域顶部的偏移量。</li>
-<li>right：定义裁剪区域右侧的偏移量。</li>
-<li>bottom：定义裁剪区域底部的偏移量。</li>
-<li>left：定义裁剪区域左侧的偏移量。</li>
-<li>round radius：可选参数，用于定义裁剪区域的圆角半径。</li>
-</ol>
-<h4 id="4-3-注意"><a href="#4-3-注意" class="headerlink" title="4.3 注意"></a>4.3 注意</h4><ol>
-<li>浏览器支持：clip-path 属性在现代浏览器中得到了广泛支持，但在一些旧版本浏览器中可能需要使用前缀或不支持某些函数。在使用之前，请检查 <a target="_blank" rel="noopener" href="https://caniuse.com/?search=clip-path">Can I use</a> 以确定目标浏览器是否支持。</li>
-<li>性能考虑：复杂的 clip-path 可能会对性能产生影响，尤其是在动画或频繁重绘的情况下。在使用时应考虑性能优化。</li>
-</ol>
-<h4 id="4-4-兼容性"><a href="#4-4-兼容性" class="headerlink" title="4.4 兼容性"></a>4.4 兼容性</h4><p><img src="https://foruda.gitee.com/images/1735805250183918032/d927a137_1681522.png" alt="输入图片说明"></p>
-<h3 id="5-方案二：clip-path-polygon-实现"><a href="#5-方案二：clip-path-polygon-实现" class="headerlink" title="5. 方案二：clip-path: polygon 实现"></a>5. 方案二：clip-path: polygon 实现</h3><h4 id="5-1-DOM-结构"><a href="#5-1-DOM-结构" class="headerlink" title="5.1 DOM 结构"></a>5.1 DOM 结构</h4><figure class="highlight dust"><table><tr><td class="code"><pre><code class="hljs dust"><span class="language-xml">   <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;rui-removebg-content&quot;</span>&gt;</span></span><br><span class="language-xml">	<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;@/static/car5.jpg&quot;</span> <span class="hljs-attr">:style</span>=<span class="hljs-string">&quot;`clip-path: polygon(0 0, $</span></span></span><span class="hljs-template-variable">&#123;value&#125;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">% 0, $</span></span></span><span class="hljs-template-variable">&#123;value&#125;</span><span class="language-xml"><span class="hljs-tag"><span class="hljs-string">% 100%, 0 100%)`&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;rui-removebg-img&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">img</span>&gt;</span></span><br><span class="language-xml">	<span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;@/static/car5.png&quot;</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;rui-removebg-png-img&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">img</span>&gt;</span></span><br><span class="language-xml">	<span class="hljs-tag">&lt;<span class="hljs-name">slider</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;50&quot;</span></span></span><br><span class="hljs-tag"><span class="language-xml">		<span class="hljs-attr">backgroundColor</span>=<span class="hljs-string">&quot;transparent&quot;</span></span></span><br><span class="hljs-tag"><span class="language-xml">		<span class="hljs-attr">activeColor</span>=<span class="hljs-string">&quot;transparent&quot;</span></span></span><br><span class="hljs-tag"><span class="language-xml">		@<span class="hljs-attr">changing</span>=<span class="hljs-string">&quot;getValue&quot;</span> </span></span><br><span class="hljs-tag"><span class="language-xml">		@<span class="hljs-attr">change</span>=<span class="hljs-string">&quot;getValue&quot;</span></span></span><br><span class="hljs-tag"><span class="language-xml">		<span class="hljs-attr">step</span>=<span class="hljs-string">&quot;0.01&quot;</span> </span></span><br><span class="hljs-tag"><span class="language-xml">		<span class="hljs-attr">class</span>=<span class="hljs-string">&quot;rui-removebg-input&quot;</span>/&gt;</span></span><br><span class="language-xml"><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span><br></code></pre></td></tr></table></figure>
-
-<h4 id="5-2-CSS"><a href="#5-2-CSS" class="headerlink" title="5.2 CSS"></a>5.2 CSS</h4><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.rui-removebg-img</span>&#123;<br>	<span class="hljs-attribute">width</span>: <span class="hljs-number">720</span>rpx;<br>	<span class="hljs-attribute">height</span>: <span class="hljs-number">478</span>rpx;<br>	<span class="hljs-attribute">clip-path</span>: <span class="hljs-built_in">polygon</span>(<span class="hljs-number">0</span> <span class="hljs-number">0</span>,  <span class="hljs-number">50%</span> <span class="hljs-number">0</span>, <span class="hljs-number">50%</span> <span class="hljs-number">100%</span>, <span class="hljs-number">0</span> <span class="hljs-number">100%</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h4 id="5-3-JS"><a href="#5-3-JS" class="headerlink" title="5.3 JS"></a>5.3 JS</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> &#123;<br>	<span class="hljs-title function_">data</span>(<span class="hljs-params"></span>) &#123;<br>		<span class="hljs-keyword">return</span> &#123;<br>			<span class="hljs-attr">value</span>: <span class="hljs-string">&#x27;50&#x27;</span><br>		&#125;<br>	&#125;,<br>	<span class="hljs-attr">methods</span>: &#123;<br>		<span class="hljs-title function_">getValue</span>(<span class="hljs-params">e</span>)&#123;<br>			<span class="hljs-variable language_">this</span>.<span class="hljs-property">value</span> = e.<span class="hljs-property">detail</span>.<span class="hljs-property">value</span>;<br>		&#125;<br>	&#125;<br>&#125;<br></code></pre></td></tr></table></figure>
-
-<h4 id="5-4-实现效果"><a href="#5-4-实现效果" class="headerlink" title="5.4 实现效果"></a>5.4 实现效果</h4><p><img src="https://foruda.gitee.com/images/1735805280426307037/c655d6be_1681522.gif" alt="输入图片说明"></p>
-<h3 id="6-clip-path-polygon-说明"><a href="#6-clip-path-polygon-说明" class="headerlink" title="6. clip-path: polygon 说明"></a>6. clip-path: polygon 说明</h3><ol>
-<li>clip-path 是 CSS 中的一个属性，用于定义一个元素的可见区域。polygon() 是 clip-path 的一个函数，用于创建一个多边形裁剪区域。</li>
-</ol>
-<h4 id="6-1-语法"><a href="#6-1-语法" class="headerlink" title="6.1 语法"></a>6.1 语法</h4><figure class="highlight arcade"><table><tr><td class="code"><pre><code class="hljs arcade"><span class="hljs-built_in">clip</span>-path: <span class="hljs-built_in">polygon</span>(&lt;<span class="hljs-built_in">point</span>-list&gt;);<br></code></pre></td></tr></table></figure>
-
-<h4 id="6-2-值说明"><a href="#6-2-值说明" class="headerlink" title="6.2 值说明"></a>6.2 值说明</h4><ol>
-<li>point-list：一个用逗号分隔的点列表，每个点由两个值组成，分别表示该点在元素左上角的水平和垂直偏移量。偏移量可以是长度值（如 px、em 等）或百分比。</li>
-</ol>
-<h4 id="6-3-注意"><a href="#6-3-注意" class="headerlink" title="6.3 注意"></a>6.3 注意</h4><ol>
-<li>浏览器支持：clip-path 属性在现代浏览器中得到了广泛支持，但在一些旧版本浏览器中可能需要使用前缀或不支持某些函数。在使用之前，请检查 <a target="_blank" rel="noopener" href="https://caniuse.com/?search=clip-path">Can I use</a> 以确定目标浏览器是否支持。</li>
-<li>性能考虑：复杂的 clip-path 可能会对性能产生影响，尤其是在动画或频繁重绘的情况下。在使用时应考虑性能优化。</li>
-</ol>
-<h4 id="6-4-兼容性"><a href="#6-4-兼容性" class="headerlink" title="6.4 兼容性"></a>6.4 兼容性</h4><p><img src="https://foruda.gitee.com/images/1735805250183918032/d927a137_1681522.png" alt="输入图片说明"></p>
-<h3 id="7-总结"><a href="#7-总结" class="headerlink" title="7. 总结"></a>7. 总结</h3><ol>
-<li>整体来说就是显示或隐藏的之间进行切换，clip: rect 方法这里我没有实现，所以后边学习到这个 CSS 属性的时候再实现；</li>
-<li>本来想的是完全使用 CSS 实现，包括 input 的滑动监听，但是由于很久没有看 CSS 的属性，对监听那些不是很熟悉，所以这一篇博客就不实现了，后边边学习边实现对应的应用效果；</li>
-<li>为什么写这篇博客呢？就是前两天看到一个使用纯 CSS 实现各种效果的专栏，包括滚动监听等，我才发现原来现在CSS都已经这么强大了。侧面说明我有多久没有关注 CSS 的新属性，因此决定重新学习一下 CSS 的新特性和函数那些知识，到时边学习边总一个专栏，同时写一些实战效果。</li>
-</ol>
+        <p>我2014年还没有毕业的时候，其实我的梦想就是成为一个作家。那会儿想法很单纯，就是喜欢将发现或者思考的东西写出来。我不知道为什么不从来都不喜欢熟人看到我写的东西，包括以前的作文，我都很讨厌别作为范文来读给大家听。可能是由于我性格比较内向吧！但是这么多年来，我一直都不喜欢，包括我写博客，到现在也有七八年了，将近四百篇，我一直不愿意在文章中发表自己的观点和看法，我只是喜欢将技术的东西按照步骤一步一步的解释出来，问什么这么实现，实现的最终效果等等。</p>
+<p>说来也是奇怪，即便我不想表达出来，但是有一个很奇怪的现象，就是我去看我以前的朋友圈，或者QQ空间发表的那些，你会发现发表的都是一些云里雾里，现在我自己看了都理解不了的东西。但是我有印象的是当时我希望人家能够理解我的心情。现在想想，那会儿怎么说呢？我觉得我就是一个矛盾体，自卑而敏感（当然我从来都不承认我自卑），既不想表达自己，又希望朋友理解我。现在突然发现，那个时候的我能够有朋友，也是一个奇迹。大概就是我的病没有那么严重吧！所以在我还是比较正常的时候，能够交好一些朋友，哈哈哈，是不是很幸运！</p>
+<p>然后开始表达我自己的想法，我自己的感受，是我自己突然发现我情绪很不稳定，我容易将高兴和不高兴表达在脸上。如果我还是学生时期，我觉得可能问题不是很大。可是我都毕业十年了，我依然还是这样，说明磨练的不够，但是我这么晚才发现这个问题，说明了什么呢？说明我很幸运，从毕业都是顺风顺水的过来，所以导致我这么晚才发现自己的这个缺点。</p>
+<p>不要小看这个缺点额，有时他是很致命的。就比如家里，我记得那会儿我爸妈刚上来，我说实话，现在我已经忘记了当时是什么事情，我只是后来听我老婆说的，就是我妈看到我回家黑着脸，她就以为我是因为回家她没煮饭，所以我不高兴。然后第二天她和爸爸就回老家了。注意：这整个过程，我都不知道，没有任何感觉。可能当时我的确遇到了不高兴的事情，但是我觉得最少不是我妈没给我煮饭这种事，有可能就和他们没有关系。但是我表现在脸上了，这就导致他们会多想。是不是很可怕？也就是你什么都表现在脸上，可能在你不知道的情况下，你身边的人就会被你的情绪感染。</p>
+<p>我发现问题后，就不断的读书，控制自己的情绪。这个问题我老婆不止一次提醒过我，我爸爸也提醒过我两次了。我也不想找什么借口，就是控制不住自己。昨晚我不想开车，导致我回家后又黑着脸了。我都不知道怎么说自己了。妈昨天晕车上来，结果我昨晚带娃的时候，黑着脸，现在不用多想，妈估计以为我是冲她的。用我爸爸的话说，我们这属于遗传，整个我妈那边的亲戚都有这个问题。就是情绪很不稳定，有时莫名奇妙的发作，现在回想，我都觉得这是病。出了看书，调节，控制。我现在也想不到很好的方法。我觉得发现自己有问题，控制不住的时候，最好一个人找个地方冷静一下，做好心理建设。或许慢慢会好很多。</p>
+<p>那么为什么要坚持呢？我觉得就是把我的情绪说出来，不要再和以前一样，一个人放在心理，这样我觉得积的越久，往往爆发的约可怕。这一点就不得不说，要感谢我老婆的包容，我这个臭脾气，用我朋友的话说，我之前的几个女朋友估计就是受不了我的不稳定情绪，最后才没有走到一起。我老婆把我治的服服帖帖啊，但是也就相对于我朋友来说，这么多年下来，我的脾气比我高中的时候好了很多。这句话是我朋友的真实评价！</p>
+<p>还是要坚持自己调节，必定这依然会影响我老婆的。说不定随着孩子的长大，耳濡目染，最后他也成为我这样。这不是我希望看到的。所以我就希望成为日记一类的东西，将那些高兴的，不高兴的，生气的等等坚持表达出来。我觉得这样表达，有利于排解心中的郁闷吧！这样就不用每次都需要我自己找个地方调解心理的不舒服，也不用每次都需要我老婆来引导。哈哈哈，这么想想，我觉得还是不错。偶尔写一下读书的读后感，读的多少不重要，重要的是我在坚持阅读，其实也是另类的实践啊，将书上的知识，用到生活中，有不一样的惊喜额！</p>
+<p>就比如说非暴力沟通，是我上周开始读的一本书。我是没有将里边讲的东西全部用到生活中，但是最近几天不管是我听到的，还是我看到的，甚至我自己身上发生的事情。我就会去想，如果使用非暴力沟通，我应该怎么做，所以读书是为了在你需要使用的时候，你知道怎么做，而不是都不知道，更加无从说起使用了。就像我们学习技能，学习了就马上使用吗？并不是，除非你是现学现用，否则的话都是有了一定的触发条件，你才会使用。当然，技能还是需要先练习，熟能生巧。就比如说我看的记忆宫殿，可以说这三十多年里，我看过关于记忆宫殿的视频和书籍很多，但是这个东西，需要你练习啊！不练习，你就和我一样，永远不会。你要直到99%的都是普通人，我们做不到天才那些的不学就会的技能。那么我们就只能使用别人总结的方法，实践，实践，再实践！没有学会走，就像学会跑，你永远都学不会。这也是我这么多年，关于记忆的技能，一直都没有学会。</p>
+<p>我不管阅读的微习惯、记忆宫殿、投资十年实现财富自由、非暴力沟通等等，这些都是需要不断的坚持实践，在实践中总结出适合我们自己的套路。不然知行合一还没开始，就结束了。是不是很可笑。就像我上边提到的我想写一本书，这么多年了，我读的小说我都数不清楚了。但是你写过一千个字吗？模仿都没有吧！你不开始，那么就永远不可能，从张鑫旭的《技术写作指南》中也提到，必须开始，那怕你只写一句，你都要开始，写一次接着这里写。</p>
+<p>所以坚持开始，开始后坚持不断的完善。最后结果怎么样，我觉得不是那么重要，不然一开始你的心理期望太高。比如你一开始定的目标是今年挣一个亿，你本来最多挣十万，目标不现实，还没开始，你就放弃了。那么你永远也开始不了。不过写作你开始了，慢慢的你总会写出以本来。一天哪怕五百字，甚至一百字。一年就是三万字，按照我毕业的时间计算，现在最少都应该有三十万字了。但是没有开始，一个字都没有。</p>
+<p>没有什么好不好意思的，也不需要害怕。不要给自己找借口，坚持慢慢的完善，你总有实现的一天。我记得我写的创意都有好一些了，但是都没有扩展，实现。加油！坚持完善自己的路（比如写小说、考证、记忆宫殿完善），一个一个的完善，我还年轻，不要急躁。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 1148063373@qq.com </span>
