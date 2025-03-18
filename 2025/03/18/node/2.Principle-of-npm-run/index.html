@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>非暴力沟通每一章节的读后感 | 梁亚军的博客</title>
-  <meta name="keywords" content=" 非暴力沟通 ">
-  <meta name="description" content="非暴力沟通每一章节的读后感 | 梁亚军的博客">
+  <title>npm run 原理 | 梁亚军的博客</title>
+  <meta name="keywords" content=" Node , npm ">
+  <meta name="description" content="npm run 原理 | 梁亚军的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="1. npm run 执行原理npm run 命令的原理是执行 package.json 文件中定义的脚本。当你在命令行中运行 npm run  时，npm 会查找 package.json 文件中的 scripts 字段，然后执行对应的脚本命令。 2. 示例 2.1 以 dev:weapp 为例 运行 npm run dev:weapp 命令； npm 会查找 package.json 文件中的">
 <meta property="og:type" content="article">
@@ -654,9 +654,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-books/Nonviolent-Communication" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-node/2.Principle-of-npm-run" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">非暴力沟通每一章节的读后感</h1>
+        <h1 class="article-title">npm run 原理</h1>
     
     <div class="article-meta">
         
@@ -666,7 +666,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="读书笔记">读书笔记</a>
+            <a  data-rel="Node">Node</a>
             
         </span>
         
@@ -674,14 +674,16 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color1">非暴力沟通</a>
+            <a class="color5">Node</a>
+            
+            <a class="color4">npm</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2025-03-14 11:26:54'>2025-03-14 10:48</time>
+            Created At : <time class="date" title='Updated At: 2025-03-18 10:34:29'>2025-03-18 10:33</time>
         
     </div>
     <div class="article-meta">
@@ -703,7 +705,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%93%E4%BC%9A%E4%B8%8E%E8%A1%A8%E8%BE%BE%E6%84%9F%E5%8F%97"><span class="toc-text">体会与表达感受</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-npm-run-%E6%89%A7%E8%A1%8C%E5%8E%9F%E7%90%86"><span class="toc-text">1. npm run 执行原理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E7%A4%BA%E4%BE%8B"><span class="toc-text">2. 示例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E4%BB%A5-dev-weapp-%E4%B8%BA%E4%BE%8B"><span class="toc-text">2.1 以 dev:weapp 为例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E6%9F%A5%E7%9C%8B%E5%91%BD%E4%BB%A4%E6%89%A7%E8%A1%8C%E6%B5%81%E7%A8%8B"><span class="toc-text">2.2 查看命令执行流程</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-taro-%E8%84%9A%E6%9C%AC%E6%9F%A5%E6%89%BE%E8%A7%84%E5%88%99"><span class="toc-text">3. taro 脚本查找规则</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E5%BD%93%E5%89%8D-bin-%E7%9A%84-taro"><span class="toc-text">3.1 当前 .bin 的 taro</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E5%85%A8%E5%B1%80-taro"><span class="toc-text">3.2 全局 taro</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-text">3.3 环境变量</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-%E6%8A%A5%E9%94%99"><span class="toc-text">3.4 报错</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-npm-%E7%89%B9%E6%AE%8A%E8%84%9A%E6%9C%AC"><span class="toc-text">4. npm 特殊脚本</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E5%88%9B%E5%BB%BA%E8%84%9A%E6%9C%AC%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F"><span class="toc-text">4.1 创建脚本生命周期</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E6%B5%8B%E8%AF%95-pre"><span class="toc-text">4.2 测试 pre</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-%E5%91%BD%E4%BB%A4"><span class="toc-text">4.3 命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-%E8%AF%B4%E6%98%8E"><span class="toc-text">4.4 说明</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%88%9B%E5%BB%BA%E8%84%9A%E6%9C%AC%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E6%80%BB%E7%BB%93"><span class="toc-text">5. 创建脚本生命周期总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%8F%82%E6%95%B0%E7%9A%84%E4%BC%A0%E9%80%92%E4%B8%8E%E8%8E%B7%E5%8F%96"><span class="toc-text">6. 参数的传递与获取</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-%E8%8E%B7%E5%8F%96%E5%8F%82%E6%95%B0"><span class="toc-text">6.1 获取参数</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C"><span class="toc-text">6.2 执行结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E6%80%BB%E7%BB%93"><span class="toc-text">7. 总结</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -719,8 +721,57 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="体会与表达感受"><a href="#体会与表达感受" class="headerlink" title="体会与表达感受"></a>体会与表达感受</h2><p>读完这一段，我发现自己最大的问题就是喜欢分析别人，喜欢评论别人。而不是平等的和他人进行沟通，包括我的父母和老婆。我觉得自己应该学会平等的和他人沟通，尤其是和父母和老婆。因为我觉得父母和老婆是最需要帮助的人，他们的言行往往会影响到我很多。所以，我觉得我应该学会和父母和老婆平等的沟通，尤其是和他们分享自己的感受。不要强行将自己的观点和结论强加给他们，其实他们也是有自己的观点、想法和感受。但是我并没有听取，这里反思一下。总是喜欢发表自己的观点，然后将自己的想法强加给他们是不对的。</p>
-<p>我们应该停下来，耐心的听取他们的想法和感受，然后再给予回应。不要强行将自己的观点强加给他们，因为他们也有自己的观点和想法。我们应该尊重他们的想法，尤其是他们的感受。我们应该学会和他们平等的沟通，不要强行将自己的观点和结论强加给他们。</p>
+        <h3 id="1-npm-run-执行原理"><a href="#1-npm-run-执行原理" class="headerlink" title="1. npm run 执行原理"></a>1. npm run 执行原理</h3><p>npm run 命令的原理是执行 package.json 文件中定义的脚本。当你在命令行中运行 npm run <script-name> 时，npm 会查找 package.json 文件中的 scripts 字段，然后执行对应的脚本命令。</p>
+<h3 id="2-示例"><a href="#2-示例" class="headerlink" title="2. 示例"></a>2. 示例</h3><p><img src="https://foruda.gitee.com/images/1734423936087657576/b25a31be_1681522.png" alt="输入图片说明"></p>
+<h4 id="2-1-以-dev-weapp-为例"><a href="#2-1-以-dev-weapp-为例" class="headerlink" title="2.1 以 dev:weapp 为例"></a>2.1 以 dev:weapp 为例</h4><ol>
+<li>运行 npm run dev:weapp 命令；</li>
+<li>npm 会查找 package.json 文件中的 scripts 的 dev:weapp；</li>
+<li>由于配置的命令是 “dev:weapp”: “npm run build:weapp – –watch”；</li>
+<li>因此执行 npm run build:weapp – –watch 命令；</li>
+<li>npm 会查找 package.json 文件中的 scripts 的 build:weapp；</li>
+<li>由于配置的命令是 “build:weapp”: “taro build –type weapp”；</li>
+<li>因此执行 taro build –type weapp 命令；</li>
+<li>最后使用 taro 进行打包。</li>
+</ol>
+<h4 id="2-2-查看命令执行流程"><a href="#2-2-查看命令执行流程" class="headerlink" title="2.2 查看命令执行流程"></a>2.2 查看命令执行流程</h4><p><img src="https://foruda.gitee.com/images/1734424591763476783/9d0f9787_1681522.png" alt="输入图片说明"></p>
+<h3 id="3-taro-脚本查找规则"><a href="#3-taro-脚本查找规则" class="headerlink" title="3. taro 脚本查找规则"></a>3. taro 脚本查找规则</h3><ol>
+<li>从当前项目的 node_modules&#x2F;.bin 去查找可执行命令 taro；</li>
+<li>从全局的 node_modules 去找可执行命令 taro；</li>
+<li>从环境变量中查找；</li>
+<li>上边三步都没找到，就进行报错。</li>
+</ol>
+<h4 id="3-1-当前-bin-的-taro"><a href="#3-1-当前-bin-的-taro" class="headerlink" title="3.1 当前 .bin 的 taro"></a>3.1 当前 .bin 的 taro</h4><p><img src="https://foruda.gitee.com/images/1734425079866713488/9582d7ca_1681522.png" alt="输入图片说明"></p>
+<h4 id="3-2-全局-taro"><a href="#3-2-全局-taro" class="headerlink" title="3.2 全局 taro"></a>3.2 全局 taro</h4><p><img src="https://foruda.gitee.com/images/1734425201417889218/cf74b65e_1681522.png"></p>
+<h4 id="3-3-环境变量"><a href="#3-3-环境变量" class="headerlink" title="3.3 环境变量"></a>3.3 环境变量</h4><p><img src="https://foruda.gitee.com/images/1734425319675474520/2d9646f6_1681522.png" alt="输入图片说明"></p>
+<h4 id="3-4-报错"><a href="#3-4-报错" class="headerlink" title="3.4 报错"></a>3.4 报错</h4><p><img src="https://foruda.gitee.com/images/1734425413221102154/9e5a4c21_1681522.png" alt="输入图片说明"></p>
+<h3 id="4-npm-特殊脚本"><a href="#4-npm-特殊脚本" class="headerlink" title="4. npm 特殊脚本"></a>4. npm 特殊脚本</h3><p>在 npm 脚本中，pre 和 post 脚本是特殊的脚本，它们会在主脚本执行之前或之后自动执行。</p>
+<blockquote>
+<p>如果你有一个 build 脚本，你可以定义一个 prebuild 脚本，它会在 build 脚本执行之前运行。</p>
+</blockquote>
+<h4 id="4-1-创建脚本生命周期"><a href="#4-1-创建脚本生命周期" class="headerlink" title="4.1 创建脚本生命周期"></a>4.1 创建脚本生命周期</h4><blockquote>
+<p>由于在 npm 中，pre 和 post 是特殊的前缀，用于定义在某个脚本执行之前或之后自动运行的脚本。这些前缀可以与任何自定义脚本结合使用，以创建一个脚本执行的生命周期。</p>
+</blockquote>
+<h4 id="4-2-测试-pre"><a href="#4-2-测试-pre" class="headerlink" title="4.2 测试 pre"></a>4.2 测试 pre</h4><p><img src="https://foruda.gitee.com/images/1734426615859744331/6637fb81_1681522.png" alt="输入图片说明"></p>
+<h4 id="4-3-命令"><a href="#4-3-命令" class="headerlink" title="4.3 命令"></a>4.3 命令</h4><figure class="highlight n1ql"><table><tr><td class="code"><pre><code class="hljs n1ql">&quot;prebuild:weapp:test&quot;: &quot;node ./config/node_npm.js --env=test&quot;,<br>&quot;<span class="hljs-keyword">build</span>:weapp:test<span class="hljs-string">&quot;: &quot;</span>taro <span class="hljs-keyword">build</span> --<span class="hljs-built_in">type</span> weapp<span class="hljs-string">&quot;,</span><br><span class="hljs-string">&quot;</span>dev:weapp:test<span class="hljs-string">&quot;: &quot;</span>npm run <span class="hljs-keyword">build</span>:weapp:test -- --watch<span class="hljs-string">&quot;,</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="4-4-说明"><a href="#4-4-说明" class="headerlink" title="4.4 说明"></a>4.4 说明</h4><ol>
+<li>执行 dev:weapp:test 命令；</li>
+<li>执行 build:weapp:test 主命令前先执行 prebuild:weapp:test；</li>
+<li>再执行 build:weapp:test 命令。</li>
+</ol>
+<h3 id="5-创建脚本生命周期总结"><a href="#5-创建脚本生命周期总结" class="headerlink" title="5. 创建脚本生命周期总结"></a>5. 创建脚本生命周期总结</h3><p>创建脚本生命周期后，我们就可以在执行打包命令前，执行我们自己开发的脚本，然后再执行打包。比如上边示例，就是我通过脚本命令传递参数，来决定当前项目运行的测试接口环境还是正式接口环境。通过命令简化每次切换接口环境需要人工手动改写。</p>
+<h3 id="6-参数的传递与获取"><a href="#6-参数的传递与获取" class="headerlink" title="6. 参数的传递与获取"></a>6. 参数的传递与获取</h3><blockquote>
+<p>上边示例中的 –watch 和 –env&#x3D;test 都是我们通过命令传递给脚本的参数，在我们写的脚本中，可以获取对应的参数来决定脚本的一些执行逻辑。</p>
+</blockquote>
+<h4 id="6-1-获取参数"><a href="#6-1-获取参数" class="headerlink" title="6.1 获取参数"></a>6.1 获取参数</h4><figure class="highlight arcade"><table><tr><td class="code"><pre><code class="hljs arcade">const args = process.argv.<span class="hljs-built_in">slice</span>(<span class="hljs-number">2</span>);<br>const env = args.<span class="hljs-built_in">find</span>(<span class="hljs-function"><span class="hljs-params">arg</span> =&gt;</span> arg.startsWith(<span class="hljs-string">&#x27;--env=&#x27;</span>));<br></code></pre></td></tr></table></figure>
+
+<h4 id="6-2-执行结果"><a href="#6-2-执行结果" class="headerlink" title="6.2 执行结果"></a>6.2 执行结果</h4><p><img src="https://foruda.gitee.com/images/1734427222530093893/e477987e_1681522.png" alt="输入图片说明"></p>
+<h3 id="7-总结"><a href="#7-总结" class="headerlink" title="7. 总结"></a>7. 总结</h3><ol>
+<li>npm run 的执行原理，查找 package.json 文件中的 scripts 字段，然后执行对应的脚本命令。</li>
+<li>脚本执行的查找规则：当前 .bin &gt; 全局 node_modules &gt; 环境变量 &gt; 报错。</li>
+<li>使用特殊的脚本前缀，创建脚本执行生命周期，可以在主命令执行之前或者之后完成我们自己的脚本。</li>
+<li>通过脚本命令传递参数，使用参数来决定脚本的执行逻辑，参数获取。</li>
+</ol>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 1148063373@qq.com </span>
