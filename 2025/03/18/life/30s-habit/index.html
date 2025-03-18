@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>自动生成前端项目图标管理文件 | 梁亚军的博客</title>
-  <meta name="keywords" content=" Python ">
-  <meta name="description" content="自动生成前端项目图标管理文件 | 梁亚军的博客">
+  <title>三十秒的小习惯，一辈子的大影响 | 梁亚军的博客</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="三十秒的小习惯，一辈子的大影响 | 梁亚军的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="没有什么快速见效的办法，我知道这一点。作为一个社会科学迷，读了无数关于这个主题的书和博客，并且尝试了其中的很多建议 —— 然而大部分都是徒劳的。因此，我可能没有资格如此的轻描淡写。经过了数月的实践验证，我写这个主题仅仅是因为我已确信，在我听过的所有建议中，这条是最简单的之一，也是最好的之一。 它不是来自一本畅销书 —— 事实上没有出版商想要出版它：即使是最能说会道的管理思想家也很难围绕它写出一本书">
 <meta property="og:type" content="article">
@@ -695,9 +695,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-python/Automatically-generate-the-icon-management-file-for-the-front-end-project" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-life/30s-habit" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">自动生成前端项目图标管理文件</h1>
+        <h1 class="article-title">三十秒的小习惯，一辈子的大影响</h1>
     
     <div class="article-meta">
         
@@ -707,22 +707,17 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="Python">Python</a>
+            <a  data-rel="生活">生活</a> > 
+            
+            <a  data-rel="生活&lt;---&gt;翻译">翻译</a>
             
         </span>
         
-        
-        <span class="tag">
-            <i class="iconfont icon-tag"></i>
-            
-            <a class="color2">Python</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2025-03-14 16:31:30'>2025-03-12 17:24</time>
+            Created At : <time class="date" title='Updated At: 2025-03-18 16:56:42'>2025-03-18 16:54</time>
         
     </div>
     <div class="article-meta">
@@ -744,7 +739,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%9C%BA%E6%99%AF"><span class="toc-text">1. 场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%9B%BE%E6%A0%87%E7%AE%A1%E7%90%86"><span class="toc-text">2. 图标管理</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF"><span class="toc-text">3. 实现思路</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E6%89%80%E6%9C%89%E6%96%87%E4%BB%B6%E5%90%8D%E7%A7%B0"><span class="toc-text">4. 获取文件夹下所有文件名称</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E5%AE%9E%E7%8E%B0%E6%80%9D%E8%B7%AF"><span class="toc-text">4.1 实现思路</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E5%AE%9E%E7%8E%B0%E4%BB%A3%E7%A0%81"><span class="toc-text">4.2 实现代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E5%A4%B9%E4%B8%8B%E6%89%80%E6%9C%89%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6"><span class="toc-text">5. 获取文件夹下所有图片文件</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E6%A3%80%E6%9F%A5%E8%B7%AF%E5%BE%84%E7%B1%BB%E5%9E%8B"><span class="toc-text">6. 检查路径类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%B0%86%E5%9B%BE%E7%89%87%E6%8B%BC%E6%8E%A5%E4%B8%BA%E5%89%8D%E7%AB%AF%E4%BD%BF%E7%94%A8%E7%9A%84js%E6%96%87%E4%BB%B6%E6%96%87%E6%9C%AC%E5%86%85%E5%AE%B9"><span class="toc-text">7. 将图片拼接为前端使用的js文件文本内容</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-%E4%BB%A3%E7%A0%81%E5%88%86%E6%9E%90"><span class="toc-text">7.1 代码分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-%E5%AE%9E%E7%8E%B0%E4%BB%A3%E7%A0%81"><span class="toc-text">7.2 实现代码</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E5%88%9B%E5%BB%BA-js-%E6%96%87%E4%BB%B6%EF%BC%8C%E5%86%99%E5%85%A5%E5%86%85%E5%AE%B9"><span class="toc-text">8. 创建 js 文件，写入内容</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E8%BF%90%E8%A1%8C"><span class="toc-text">9. 运行</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9-1-%E8%BF%90%E8%A1%8C%E5%91%BD%E4%BB%A4"><span class="toc-text">9.1 运行命令</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-2-%E7%94%9F%E6%88%90%E7%9A%84%E5%9B%BE%E6%A0%87%E6%96%87%E4%BB%B6"><span class="toc-text">9.2 生成的图标文件</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E5%AE%8C%E6%95%B4%E4%BB%A3%E7%A0%81"><span class="toc-text">10. 完整代码</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E6%80%BB%E7%BB%93"><span class="toc-text">11. 总结</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%83%E4%B8%8D%E6%98%AF%E8%AE%B0%E7%AC%94%E8%AE%B0"><span class="toc-text">它不是记笔记</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%83%E6%98%AF%E8%89%B0%E8%8B%A6%E7%9A%84%E5%B7%A5%E4%BD%9C"><span class="toc-text">它是艰苦的工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%86%E8%8A%82%E6%98%AF%E9%99%B7%E9%98%B1"><span class="toc-text">细节是陷阱</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%A0%E5%BF%85%E9%A1%BB%E5%BF%AB%E9%80%9F%E8%A1%8C%E5%8A%A8"><span class="toc-text">你必须快速行动</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%A0%E4%BC%9A%E5%AD%A6%E4%BC%9A%E6%9B%B4%E5%A5%BD%E5%9C%B0%E5%80%BE%E5%90%AC%EF%BC%8C%E4%BB%A5%E5%8F%8A%E6%9B%B4%E5%A5%BD%E5%9C%B0%E9%97%AE%E9%97%AE%E9%A2%98"><span class="toc-text">你会学会更好地倾听，以及更好地问问题</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%A0%E8%83%BD%E6%9B%B4%E5%A5%BD%E7%9A%84%E5%B8%AE%E5%8A%A9%E4%BB%96%E4%BA%BA"><span class="toc-text">你能更好的帮助他人</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%83%E4%BC%9A%E5%8F%98%E5%BE%97%E6%9B%B4%E5%AE%B9%E6%98%93%EF%BC%8C%E4%B9%9F%E6%9B%B4%E6%9C%89%E4%BB%B7%E5%80%BC"><span class="toc-text">它会变得更容易，也更有价值</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -760,75 +755,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-场景"><a href="#1-场景" class="headerlink" title="1. 场景"></a>1. 场景</h3><p>在前端项目开发中，图标维护一直是一个比较麻烦的事情：</p>
-<ol>
-<li>第一种：就是直接项目页面里边直接读取图片，这种有个问题，就是如果后期图片地址存在变更，维护就比较麻烦，比如下图就是我 uniapp 项目的图标，如果后期将这些图片传到服务器【微信小程序由于包大小限制，因此图片尽量放在服务器，减小包的大小】，前端必须使用服务器地址，这样是不是直接懵逼。</li>
-<li>第二种：就是为了减小维护成本或者说后期改变的替换成本，就需要一个图标管理的 js 文件文件，将所有图标集中管理，这样后期即便需要替换，直接维护这个 js 文件就可以了。有所进步，但是还是比较麻烦，需要我们人工去维护，每次添加或者修改，都需要开发人员来维护这个文件，比较麻烦，比如改成服务器图片路径，需要替换的成本依然很高。</li>
-<li>第三种：写一个脚本来维护这些图标文件，当然脚本的语言随便你选择，node、python等等，只要可以实现功能，都是可以的，由于我比较熟悉 python 的脚本，所以本文直接以 python 实现自动化图标文件管理。</li>
-</ol>
-<h3 id="2-图标管理"><a href="#2-图标管理" class="headerlink" title="2. 图标管理"></a>2. 图标管理</h3><p><img src="https://foruda.gitee.com/images/1728960218226143308/c7a5e443_1681522.png" alt="输入图片说明"></p>
-<h3 id="3-实现思路"><a href="#3-实现思路" class="headerlink" title="3. 实现思路"></a>3. 实现思路</h3><ol>
-<li>递归查询图片文件夹中的所有文件夹和图片文件；</li>
-<li>遍历对应文件夹下的图片文件；</li>
-<li>将图片文件的路径组装为项目中图标 js 文件的字符串；</li>
-<li>创建对应的图标 js 文件。</li>
-</ol>
-<h3 id="4-获取文件夹下所有文件名称"><a href="#4-获取文件夹下所有文件名称" class="headerlink" title="4. 获取文件夹下所有文件名称"></a>4. 获取文件夹下所有文件名称</h3><h4 id="4-1-实现思路"><a href="#4-1-实现思路" class="headerlink" title="4.1 实现思路"></a>4.1 实现思路</h4><ol>
-<li>定义函数，接受一个参数 path，表示要遍历的路径。</li>
-<li>调用 get_all_image_names 函数，获取指定路径下的所有图片文件名，并将结果存储在 image_names 变量中。</li>
-<li>如果 image_names 不为空，调用 create_js_file 函数，传入 path 和 image_names 作为参数，该函数的作用是根据图片文件名创建一个 JavaScript 文件。</li>
-<li>获取指定路径下的所有文件和文件夹名，并将结果存储在 names 变量中。</li>
-<li>遍历 names 列表中的每个元素。</li>
-<li>使用 os.path.join 函数将当前路径 path 和当前遍历的文件名 name 拼接起来，形成一个新的路径 new_path。</li>
-<li>调用 check_path_type 函数，检查 new_path 的类型，并将结果存储在 type_name 变量中。</li>
-<li>如果 type_name 等于 ‘dir’，即 new_path 是一个文件夹。</li>
-<li>如果 new_path 是一个文件夹，则递归调用 get_all_file_names 函数，继续遍历该文件夹下的文件和文件夹。</li>
-</ol>
-<h4 id="4-2-实现代码"><a href="#4-2-实现代码" class="headerlink" title="4.2 实现代码"></a>4.2 实现代码</h4><figure class="highlight lua"><table><tr><td class="code"><pre><code class="hljs lua"># 获取文件夹下所有文件名称<br>def get_all_file_names(<span class="hljs-built_in">path</span>):<br>  # 获取当前文件夹下的图片文件<br>  image_names = get_all_image_names(<span class="hljs-built_in">path</span>)<br>  <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(image_names) &gt; <span class="hljs-number">0</span>:<br>    create_js_file(<span class="hljs-built_in">path</span>, image_names)<br>  # 获取路径下的所有文件<br>  names = <span class="hljs-built_in">os</span>.listdir(<span class="hljs-built_in">path</span>)<br>  <span class="hljs-keyword">for</span> name <span class="hljs-keyword">in</span> names:<br>    new_path = <span class="hljs-built_in">os</span>.<span class="hljs-built_in">path</span>.join(<span class="hljs-built_in">path</span>, name)<br>    type_name = check_path_type(new_path)<br>    <span class="hljs-keyword">if</span> type_name == <span class="hljs-string">&#x27;dir&#x27;</span>:<br>      get_all_file_names(new_path)<br></code></pre></td></tr></table></figure>
-
-<h3 id="5-获取文件夹下所有图片文件"><a href="#5-获取文件夹下所有图片文件" class="headerlink" title="5. 获取文件夹下所有图片文件"></a>5. 获取文件夹下所有图片文件</h3><ol>
-<li>获取路径下的所有文件。</li>
-<li>筛选其中的图片文件，返回图片名称列表。</li>
-</ol>
-<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 获取文件夹下所有图片文件名称</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">get_all_image_names</span>(<span class="hljs-params">path</span>):<br>  <span class="hljs-comment"># 获取路径下的所有文件</span><br>  names = os.listdir(path)<br>  <span class="hljs-comment"># 筛选其中的图片文件，返回图片名称列表</span><br>  image_names = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">filter</span>(<span class="hljs-keyword">lambda</span> x : x.split(<span class="hljs-string">&#x27;.&#x27;</span>).pop() <span class="hljs-keyword">in</span> [<span class="hljs-string">&#x27;jpg&#x27;</span>, <span class="hljs-string">&#x27;png&#x27;</span>, <span class="hljs-string">&#x27;jpeg&#x27;</span>, <span class="hljs-string">&#x27;bmp&#x27;</span>], names))<br>  <span class="hljs-keyword">return</span> image_names<br></code></pre></td></tr></table></figure>
-
-<h3 id="6-检查路径类型"><a href="#6-检查路径类型" class="headerlink" title="6. 检查路径类型"></a>6. 检查路径类型</h3><ol>
-<li>如果是文件夹，返回 dir 字符串。</li>
-<li>如果是文件，返回 file 字符串。</li>
-</ol>
-<figure class="highlight lua"><table><tr><td class="code"><pre><code class="hljs lua"># 检查路径类型<br>def check_path_type(<span class="hljs-built_in">path</span>):<br>  <span class="hljs-keyword">if</span> <span class="hljs-built_in">os</span>.<span class="hljs-built_in">path</span>.isfile(<span class="hljs-built_in">path</span>):<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;file&quot;</span><br>  elif <span class="hljs-built_in">os</span>.<span class="hljs-built_in">path</span>.isdir(<span class="hljs-built_in">path</span>):<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;dir&quot;</span><br>  <span class="hljs-keyword">else</span>:<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;other&quot;</span><br></code></pre></td></tr></table></figure>
-
-<h3 id="7-将图片拼接为前端使用的js文件文本内容"><a href="#7-将图片拼接为前端使用的js文件文本内容" class="headerlink" title="7. 将图片拼接为前端使用的js文件文本内容"></a>7. 将图片拼接为前端使用的js文件文本内容</h3><h4 id="7-1-代码分析"><a href="#7-1-代码分析" class="headerlink" title="7.1 代码分析"></a>7.1 代码分析</h4><ol>
-<li>定义函数，接受两个参数 path 和 image_names，分别表示要创建 JavaScript 文件的路径和图片文件名列表。</li>
-<li>获取文件名：从 path 中提取文件名，使用 split(‘\‘) 将路径分割成多个部分，然后使用 pop() 方法获取最后一个部分，即文件名。</li>
-<li>从 path 中提取创建路径，使用 split(‘user\‘) 将路径分割成多个部分，然后使用 pop() 方法获取最后一个部分，即创建路径。</li>
-<li>将 create_path 中的反斜杠 \ 替换为正斜杠 &#x2F;，以确保路径在 JavaScript 文件中正确表示。</li>
-<li>初始化一个空列表 icon_imports，用于存储导入图片文件的 JavaScript 代码。</li>
-<li>定义一个字符串 start_text，表示 JavaScript 文件的开头部分，其中包含导出的常量名称，该名称与文件名相同。</li>
-<li>初始化一个列表 icon_names，用于存储 JavaScript 文件的内容，首先将 start_text 添加到列表中。</li>
-<li>遍历 image_names 列表中的每个图片文件名。</li>
-<li>从图片文件名中提取不带扩展名的部分，作为图标的名称。</li>
-<li>定义一个字符串 icon_name，表示图标的名称，其中包含 V2Icon 后缀，并以逗号和换行符结尾。</li>
-<li>将 icon_name 添加到 icon_names 列表中。</li>
-<li>定义一个字符串 icon_import，表示导入图片文件的 JavaScript 代码【此步骤有一个优势，就是后期如果需要替换服务器路径时，直接将此字符串改为对应的服务器拼接字符串，上传图片都可以自动上传实现】。</li>
-<li>将 icon_import 添加到 icon_imports 列表中。</li>
-<li>将 JavaScript 文件的结束部分 };\n 添加到 icon_names 列表中。</li>
-<li>将 icon_imports 和 icon_names 列表合并成一个列表 js_texts，其中包含了导入图片文件的代码和图标的名称。</li>
-<li>定义一个字符串 js_file_path，表示要创建的 JavaScript 文件的路径。</li>
-<li>调用 create_js_folder 函数，传入 js_file_path、file_name 和 js_texts 作为参数，该函数的作用是创建一个 JavaScript 文件，并将 js_texts 中的内容写入该文件。</li>
-</ol>
-<h4 id="7-2-实现代码"><a href="#7-2-实现代码" class="headerlink" title="7.2 实现代码"></a>7.2 实现代码</h4><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 将图片拼接为前端使用的js文件文本内容</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">create_js_file</span>(<span class="hljs-params">path, image_names</span>):<br>  file_name = path.split(<span class="hljs-string">&#x27;\\&#x27;</span>).pop()<br>  create_path = path.split(<span class="hljs-string">&#x27;user\\&#x27;</span>).pop()<br>  create_path = create_path.replace(<span class="hljs-string">&#x27;\\&#x27;</span>, <span class="hljs-string">&#x27;/&#x27;</span>)<br>  <span class="hljs-comment"># 存储图标名称</span><br>  icon_imports = []<br>  start_text = <span class="hljs-string">&quot;export const &quot;</span>+ file_name +<span class="hljs-string">&quot; = &#123;\n&quot;</span><br>  icon_names = [start_text]<br>  <span class="hljs-comment"># 遍历图片名称列表</span><br>  <span class="hljs-keyword">for</span> name <span class="hljs-keyword">in</span> image_names:<br>    image_name = name.split(<span class="hljs-string">&#x27;.&#x27;</span>)[<span class="hljs-number">0</span>]<br>    icon_name = <span class="hljs-string">f&#x27;  <span class="hljs-subst">&#123;image_name&#125;</span>V2Icon,\n&#x27;</span><br>    icon_names.append(icon_name)<br>    icon_import = <span class="hljs-string">f&#x27;import <span class="hljs-subst">&#123;image_name&#125;</span>V2Icon from &quot;@/<span class="hljs-subst">&#123;create_path&#125;</span>/<span class="hljs-subst">&#123;name&#125;</span>&quot;;\n&#x27;</span><br>    icon_imports.append(icon_import)<br>  icon_names.append(<span class="hljs-string">&quot;&#125;;\n&quot;</span>)<br>  js_texts = icon_imports + icon_names<br>  <span class="hljs-comment"># 写入js文件</span><br>  js_file_path = <span class="hljs-string">r&#x27;f:\taro-react-rui\reservation-venue-platform\user\utils\icons&#x27;</span><br>  create_js_folder(js_file_path, file_name, js_texts)<br></code></pre></td></tr></table></figure>
-
-<h3 id="8-创建-js-文件，写入内容"><a href="#8-创建-js-文件，写入内容" class="headerlink" title="8. 创建 js 文件，写入内容"></a>8. 创建 js 文件，写入内容</h3><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-comment"># 创建 js 文件，写入内容</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">create_js_folder</span>(<span class="hljs-params">path, foldername, texts</span>):<br>  <span class="hljs-keyword">try</span>:<br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(path + <span class="hljs-string">&quot;/&quot;</span> + foldername + <span class="hljs-string">&quot;.js&quot;</span>, <span class="hljs-string">&quot;w&quot;</span>,encoding=<span class="hljs-string">&quot;utf-8&quot;</span>) <span class="hljs-keyword">as</span> js:<br>      js.writelines(texts)<br>      <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;创建 <span class="hljs-subst">&#123;foldername&#125;</span>.js 文件成功&quot;</span>)<br>  <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>    <span class="hljs-built_in">print</span>(e)<br></code></pre></td></tr></table></figure>
-
-<h3 id="9-运行"><a href="#9-运行" class="headerlink" title="9. 运行"></a>9. 运行</h3><h4 id="9-1-运行命令"><a href="#9-1-运行命令" class="headerlink" title="9.1 运行命令"></a>9.1 运行命令</h4><p><img src="https://foruda.gitee.com/images/1728981332023518843/a570008e_1681522.png" alt="输入图片说明"></p>
-<h4 id="9-2-生成的图标文件"><a href="#9-2-生成的图标文件" class="headerlink" title="9.2 生成的图标文件"></a>9.2 生成的图标文件</h4><p><img src="https://foruda.gitee.com/images/1728981459750145195/9d58036a_1681522.png" alt="输入图片说明"><br><img src="https://foruda.gitee.com/images/1728981482734320127/6afe4aea_1681522.png" alt="输入图片说明"></p>
-<h3 id="10-完整代码"><a href="#10-完整代码" class="headerlink" title="10. 完整代码"></a>10. 完整代码</h3><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br><br><span class="hljs-comment"># 获取文件夹下所有图片文件名称</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">get_all_image_names</span>(<span class="hljs-params">path</span>):<br>  <span class="hljs-comment"># 获取路径下的所有文件</span><br>  names = os.listdir(path)<br>  <span class="hljs-comment"># 筛选其中的图片文件，返回图片名称列表</span><br>  image_names = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">filter</span>(<span class="hljs-keyword">lambda</span> x : x.split(<span class="hljs-string">&#x27;.&#x27;</span>).pop() <span class="hljs-keyword">in</span> [<span class="hljs-string">&#x27;jpg&#x27;</span>, <span class="hljs-string">&#x27;png&#x27;</span>, <span class="hljs-string">&#x27;jpeg&#x27;</span>, <span class="hljs-string">&#x27;bmp&#x27;</span>], names))<br>  <span class="hljs-keyword">return</span> image_names<br><br><span class="hljs-comment"># 检查路径类型</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">check_path_type</span>(<span class="hljs-params">path</span>):<br>  <span class="hljs-keyword">if</span> os.path.isfile(path):<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;file&quot;</span><br>  <span class="hljs-keyword">elif</span> os.path.isdir(path):<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;dir&quot;</span><br>  <span class="hljs-keyword">else</span>:<br>    <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;other&quot;</span><br><br><span class="hljs-comment"># 获取文件夹下所有文件名称</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">get_all_file_names</span>(<span class="hljs-params">path</span>):<br>  <span class="hljs-comment"># 获取当前文件夹下的图片文件</span><br>  image_names = get_all_image_names(path)<br>  <span class="hljs-keyword">if</span> <span class="hljs-built_in">len</span>(image_names) &gt; <span class="hljs-number">0</span>:<br>    create_js_file(path, image_names)<br>  <span class="hljs-comment"># 获取路径下的所有文件</span><br>  names = os.listdir(path)<br>  <span class="hljs-keyword">for</span> name <span class="hljs-keyword">in</span> names:<br>    new_path = os.path.join(path, name)<br>    type_name = check_path_type(new_path)<br>    <span class="hljs-keyword">if</span> type_name == <span class="hljs-string">&#x27;dir&#x27;</span>:<br>      get_all_file_names(new_path)<br><br><span class="hljs-comment"># 将图片拼接为前端使用的js文件文本内容</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">create_js_file</span>(<span class="hljs-params">path, image_names</span>):<br>  file_name = path.split(<span class="hljs-string">&#x27;\\&#x27;</span>).pop()<br>  create_path = path.split(<span class="hljs-string">&#x27;user\\&#x27;</span>).pop()<br>  create_path = create_path.replace(<span class="hljs-string">&#x27;\\&#x27;</span>, <span class="hljs-string">&#x27;/&#x27;</span>)<br>  <span class="hljs-comment"># 存储图标名称</span><br>  icon_imports = []<br>  start_text = <span class="hljs-string">&quot;export const &quot;</span>+ file_name +<span class="hljs-string">&quot; = &#123;\n&quot;</span><br>  icon_names = [start_text]<br>  <span class="hljs-comment"># 遍历图片名称列表</span><br>  <span class="hljs-keyword">for</span> name <span class="hljs-keyword">in</span> image_names:<br>    image_name = name.split(<span class="hljs-string">&#x27;.&#x27;</span>)[<span class="hljs-number">0</span>]<br>    icon_name = <span class="hljs-string">f&#x27;  <span class="hljs-subst">&#123;image_name&#125;</span>V2Icon,\n&#x27;</span><br>    icon_names.append(icon_name)<br>    icon_import = <span class="hljs-string">f&#x27;import <span class="hljs-subst">&#123;image_name&#125;</span>V2Icon from &quot;@/<span class="hljs-subst">&#123;create_path&#125;</span>/<span class="hljs-subst">&#123;name&#125;</span>&quot;;\n&#x27;</span><br>    icon_imports.append(icon_import)<br>  icon_names.append(<span class="hljs-string">&quot;&#125;;\n&quot;</span>)<br>  js_texts = icon_imports + icon_names<br>  <span class="hljs-comment"># 写入js文件</span><br>  js_file_path = <span class="hljs-string">r&#x27;f:\taro-react-rui\reservation-venue-platform\user\utils\icons&#x27;</span><br>  create_js_folder(js_file_path, file_name, js_texts)<br><br><span class="hljs-comment"># 创建 js 文件，写入内容</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">create_js_folder</span>(<span class="hljs-params">path, foldername, texts</span>):<br>  <span class="hljs-keyword">try</span>:<br>    <span class="hljs-keyword">with</span> <span class="hljs-built_in">open</span>(path + <span class="hljs-string">&quot;/&quot;</span> + foldername + <span class="hljs-string">&quot;.js&quot;</span>, <span class="hljs-string">&quot;w&quot;</span>,encoding=<span class="hljs-string">&quot;utf-8&quot;</span>) <span class="hljs-keyword">as</span> js:<br>      js.writelines(texts)<br>      <span class="hljs-built_in">print</span>(<span class="hljs-string">f&quot;创建 <span class="hljs-subst">&#123;foldername&#125;</span>.js 文件成功&quot;</span>)<br>  <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>    <span class="hljs-built_in">print</span>(e)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>  path = <span class="hljs-string">r&#x27;f:\taro-react-rui\reservation-venue-platform\user\static\v2&#x27;</span><br>  get_all_file_names(path)<br></code></pre></td></tr></table></figure>
-
-<h3 id="11-总结"><a href="#11-总结" class="headerlink" title="11. 总结"></a>11. 总结</h3><ol>
-<li>方法很简单，实现的功能很简单，但是它减少了我的维护成本，我后边只需要将蓝湖中的图标下载下来，放到目标文件夹下，执行脚本，就能得到项目中使用的图标管理文件。</li>
-<li>后期上微信小程序时，将图片上传到服务器也好维护，直接在导入图片地址哪里调用上传接口，然后将返回的图片地址换为导入图片地址，这样只需要修改一个地方的代码，再执行脚本，就能将所有图片地址切换到服务器地址，是不是比前边的方法方便了很多，也不需要人为的去替换，解放我们的双手。哈哈哈！</li>
-</ol>
+        <p>没有什么快速见效的办法，我知道这一点。作为一个社会科学迷，读了无数关于这个主题的书和博客，并且尝试了其中的很多建议 —— 然而大部分都是徒劳的。因此，我可能没有资格如此的轻描淡写。经过了数月的实践验证，我写这个主题仅仅是因为我已确信，在我听过的所有建议中，这条是最简单的之一，也是最好的之一。</p>
+<p>它不是来自一本畅销书 —— 事实上没有出版商想要出版它：即使是最能说会道的管理思想家也很难围绕它写出一本书来。它也不是诞生于我们这个数字化过剩与不满的世界。相反，它是一个生于 19 世纪的爷爷在教育他年轻的孙子时说出的。今天他的孙子已经 50 岁了。</p>
+<p>上面谈及的人（爷爷的孙子），是我见过的最有趣的人之一，也是当今商业世界的幕后智囊。他帮助设计了那些家喻户晓的品牌。近来，他仅在感觉能提供一些帮助时才去工作，他会空降去解决股票价格威胁带来的企业危机。偶尔，他有足够兴趣时，他会为世界 500 强的 CEO 或政界领袖写讲稿，他的讲稿开出的账单高达六位数。他非常善于阅读，著述也颇丰。也写小说，不过是为了好玩，一写完，他就把它们销毁了。他不想看见它们被出版，也不追寻常见的媒体曝光。在他的朋友中，都是些这个星球上最强大的人物 —— 从商业领袖到政治家、演员和其他艺术界名人。但若是去 Google 他，你会发现在网络的海洋中他几乎没有一丝涟漪。</p>
+<p>我第一次见他是在他的公寓里喝咖啡，讨论有关非洲的一项高度政治化、非营利性的工作策略。围绕他的桌子坐满了直言不讳而又兼容并蓄的各色人等。我们的主人，默默做着咖啡，几乎不说话。但是，偶有时候他确实会插话，带着简洁的问题与观察。他的插话保持一贯的风格，精确的厘清了什么是重要的 —— 礼貌的清理并疏通了阻塞讨论通道的“观点淤泥”。这简直是大师级的：就像看着伦敦爱乐乐团的指挥，耐心摆弄着一个小镇学生组成的乐队逐渐成型。</p>
+<p>所以，当他分享一些曾经收到过的最好的建议时，我完全被迷住了。</p>
+<p>假如你只做一件事，那就做这件。</p>
+<p>在他十几岁，大约将进入高中时，他的爷爷把他拉到一边，告诫他如下事情：</p>
+<p>在每一场演讲、会议或任何重要的经历之后，花上 30 秒 —— 不多，也不少 —— 立刻写下最重要的点。 假如你持续这样做，爷爷说道，即便只做到这点，也不进行任何修订，你将来也会不错的。</p>
+<p>他确实这么做了。自那以后他所做的一切，取得了这样的成就，并且有了足够的空间去体验如此丰富的生活。后来，他又把这条建议传授给了他的两个儿子，两个孩子在他们年轻的职业生涯中都表现出色。</p>
+<p>我已经尝试了这条建议数月了，到目前为止，下面是我的一些发现与体会：</p>
+<h3 id="它不是记笔记"><a href="#它不是记笔记" class="headerlink" title="它不是记笔记"></a>它不是记笔记</h3><p>不要以为，你在会议上记下了所有的东西就可以免除这 30 秒的总结。这个练习虽然简短，但却完全不同于记笔记。它是一种行为的描述与解释、优先与排序、思考与决策。</p>
+<h3 id="它是艰苦的工作"><a href="#它是艰苦的工作" class="headerlink" title="它是艰苦的工作"></a>它是艰苦的工作</h3><p>决定什么是最重要的让人精疲力尽。让人惊讶的是，欺骗自己你已经抓住了一切重要的点是多么容易，以此为借口来避免这项短暂的精神冲刺 —— 一种头脑中的百米冲刺。</p>
+<h3 id="细节是陷阱"><a href="#细节是陷阱" class="headerlink" title="细节是陷阱"></a>细节是陷阱</h3><p>但是正因为我们常常从表面上去捕捉一切，以避免此类艰苦的工作 —— 决定什么是值得的，因而这一切的价值都降低了。当然，消除的技艺可以媲美于艺术的卓越。因而，30 秒的回顾阻止了你使用数量来作为借口。</p>
+<h3 id="你必须快速行动"><a href="#你必须快速行动" class="headerlink" title="你必须快速行动"></a>你必须快速行动</h3><p>假如你等上个几小时，你也许会回忆起事实，但是却丢失了细微精妙之处。正是这些细微精妙之处在决定什么更重要时起决定性作用。要么是某个人发音中的声调，要么是一种看似简单的建议激起了其他许多人的灵感火花，要么是一个瞬间的评论在你的头脑中触发了一点点的想法。</p>
+<h3 id="你会学会更好地倾听，以及更好地问问题"><a href="#你会学会更好地倾听，以及更好地问问题" class="headerlink" title="你会学会更好地倾听，以及更好地问问题"></a>你会学会更好地倾听，以及更好地问问题</h3><p>一旦你养成了 30 秒回顾的习惯，无论是在听一个演讲亦或是参加一个讨论时，它将开始改变你运用注意力的方式，这就像是在嘈杂的声音中去分辨出一段简单的旋律。并且随着你更专注的倾听，问出更好的问题，从而引发可立刻行动的答案，那么，你的 30 秒回顾会变得更有用。</p>
+<h3 id="你能更好的帮助他人"><a href="#你能更好的帮助他人" class="headerlink" title="你能更好的帮助他人"></a>你能更好的帮助他人</h3><p>30 秒裁剪的很大一部分作用是观察什么对别人是重要的，尽管，它的目的是在将来的对话中更好的管理不同方的关注点。它也有助于你了解别人的需要，并且解决他们的问题。这并没有让我感到惊讶：在数月间，我采访了许多乐于接受联系的人，我被如此多人都有自己的无意识 30 秒版本（聚焦于如何最好的提供帮助）震惊到了。</p>
+<h3 id="它会变得更容易，也更有价值"><a href="#它会变得更容易，也更有价值" class="headerlink" title="它会变得更容易，也更有价值"></a>它会变得更容易，也更有价值</h3><p>每练习一次，它都会变得更容易一点，更有用一点，也更有乐趣一点。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 1148063373@qq.com </span>
