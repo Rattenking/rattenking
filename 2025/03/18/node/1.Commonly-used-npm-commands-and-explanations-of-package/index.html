@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>JS 原生深拷贝 API structuredClone 使用细节和注意事项 | 梁亚军的博客</title>
-  <meta name="keywords" content=" JS ">
-  <meta name="description" content="JS 原生深拷贝 API structuredClone 使用细节和注意事项 | 梁亚军的博客">
+  <title>1. npm 常用命令和 package.json 说明 | 梁亚军的博客</title>
+  <meta name="keywords" content=" Node , npm ">
+  <meta name="description" content="1. npm 常用命令和 package.json 说明 | 梁亚军的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="NPM NPM 的全称是 Node Package Manager，是随同 NodeJS 一起安装的包管理和分发工具，它很方便让 JavaScript 开发者下载、安装、上传以及管理已经安装的包。  官网npm 官网：https:&#x2F;&#x2F;www.npmjs.com npm 命令   命令 说明    npm init 初始化一个新的 npm 项目，创建 package.json 文件。   npm h">
 <meta property="og:type" content="article">
@@ -636,9 +636,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-clientSide/javascript/JS-native-deep-copy-API-structuredClone-use-details-and-precautions" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-node/1.Commonly-used-npm-commands-and-explanations-of-package" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">JS 原生深拷贝 API structuredClone 使用细节和注意事项</h1>
+        <h1 class="article-title">1. npm 常用命令和 package.json 说明</h1>
     
     <div class="article-meta">
         
@@ -648,9 +648,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="前端">前端</a> > 
-            
-            <a  data-rel="前端&lt;---&gt;JavaScript">JavaScript</a>
+            <a  data-rel="Node">Node</a>
             
         </span>
         
@@ -658,14 +656,16 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color3">JS</a>
+            <a class="color5">Node</a>
+            
+            <a class="color4">npm</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2025-03-14 16:48:36'>2025-03-14 14:33</time>
+            Created At : <time class="date" title='Updated At: 2025-03-18 10:27:46'>2025-03-18 10:26</time>
         
     </div>
     <div class="article-meta">
@@ -687,7 +687,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BB%80%E4%B9%88%E6%98%AF-structuredClone%EF%BC%9F"><span class="toc-text">1. 什么是 structuredClone？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%AF%AD%E6%B3%95"><span class="toc-text">2. 语法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%8F%82%E6%95%B0"><span class="toc-text">3. 参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%9F%BA%E7%A1%80%E5%AE%9E%E4%BE%8B"><span class="toc-text">4. 基础实例</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E5%AE%9E%E4%BE%8B%E4%BB%A3%E7%A0%81"><span class="toc-text">4.1 实例代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C"><span class="toc-text">4.2 执行结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-structuredClone-%E6%94%AF%E6%8C%81%E7%9A%84%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B"><span class="toc-text">5. structuredClone 支持的数据类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-structuredClone-%E6%97%A0%E6%B3%95%E5%85%8B%E9%9A%86%E7%9A%84%E7%B1%BB%E5%9E%8B"><span class="toc-text">6. structuredClone 无法克隆的类型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%87%BD%E6%95%B0%E6%B5%8B%E8%AF%95"><span class="toc-text">7. 函数测试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#7-1-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="toc-text">7.1 测试代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#7-2-%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="toc-text">7.2 测试结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-DOM-%E5%AF%B9%E8%B1%A1%E6%B5%8B%E8%AF%95"><span class="toc-text">8. DOM 对象测试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#8-1-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="toc-text">8.1 测试代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#8-2-%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="toc-text">8.2 测试结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E5%8E%9F%E5%9E%8B%E9%93%BE"><span class="toc-text">9. 原型链</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#9-1-%E6%B5%8B%E8%AF%95%E4%BB%A3%E7%A0%81"><span class="toc-text">9.1 测试代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#9-2-%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="toc-text">9.2 测试结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E9%83%A8%E5%88%86%E7%89%B9%E6%AE%8A%E5%AF%B9%E8%B1%A1%E6%B5%8B%E8%AF%95"><span class="toc-text">10. 部分特殊对象测试</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#10-1-%E6%B5%8B%E8%AF%95-Promise-%E4%BB%A3%E7%A0%81"><span class="toc-text">10.1 测试 Promise 代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-2-%E6%B5%8B%E8%AF%95-Promise-%E7%BB%93%E6%9E%9C"><span class="toc-text">10.2 测试 Promise 结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-3-%E6%B5%8B%E8%AF%95-WeakMap-%E4%BB%A3%E7%A0%81"><span class="toc-text">10.3 测试 WeakMap 代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-4-%E6%B5%8B%E8%AF%95-WeakMap-%E7%BB%93%E6%9E%9C"><span class="toc-text">10.4 测试 WeakMap 结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-5-%E6%B5%8B%E8%AF%95-Proxy-%E4%BB%A3%E7%A0%81"><span class="toc-text">10.5 测试 Proxy 代码</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#10-6-%E6%B5%8B%E8%AF%95-Promise-%E7%BB%93%E6%9E%9C"><span class="toc-text">10.6 测试 Promise 结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E5%85%BC%E5%AE%B9%E6%80%A7"><span class="toc-text">11. 兼容性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B3%A8%E6%84%8F"><span class="toc-text">注意</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#NPM"><span class="toc-text">NPM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%98%E7%BD%91"><span class="toc-text">官网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm-%E5%91%BD%E4%BB%A4"><span class="toc-text">npm 命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm-install-%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E"><span class="toc-text">npm install 参数说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E5%8F%B7%E8%AF%B4%E6%98%8E"><span class="toc-text">版本号说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#package-json-%E5%AD%97%E6%AE%B5%E8%AF%B4%E6%98%8E"><span class="toc-text">package.json 字段说明</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -703,68 +703,231 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-什么是-structuredClone？"><a href="#1-什么是-structuredClone？" class="headerlink" title="1. 什么是 structuredClone？"></a>1. 什么是 structuredClone？</h3><blockquote>
-<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Window/structuredClone">structuredClone</a> 是 JavaScript 内置的深拷贝方法，基于<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Workers_API/Structured_clone_algorithm">结构化克隆算法</a>，用于复制复杂对象（如包含嵌套对象、数组、Date、Map、Set 等类型的数据），并支持处理循环引用。它替代了传统的 JSON.parse(JSON.stringify()) 深拷贝方法，解决了后者无法复制特殊对象和丢失数据类型的问题。</p>
+        <h3 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h3><blockquote>
+<p>NPM 的全称是 Node Package Manager，是随同 NodeJS 一起安装的包管理和分发工具，它很方便让 JavaScript 开发者下载、安装、上传以及管理已经安装的包。</p>
 </blockquote>
-<h3 id="2-语法"><a href="#2-语法" class="headerlink" title="2. 语法"></a>2. 语法</h3><figure class="highlight stylus"><table><tr><td class="code"><pre><code class="hljs stylus"><span class="hljs-function"><span class="hljs-title">structuredClone</span><span class="hljs-params">(value)</span></span><br><span class="hljs-function"><span class="hljs-title">structuredClone</span><span class="hljs-params">(value, options)</span></span><br></code></pre></td></tr></table></figure>
-
-<h3 id="3-参数"><a href="#3-参数" class="headerlink" title="3. 参数"></a>3. 参数</h3><ol>
-<li>value: 被克隆的对象。可以是任何<a target="_blank" rel="noopener" href="https://developer.mozilla.org/zh-CN/docs/Web/API/Web_Workers_API/Structured_clone_algorithm#%E6%94%AF%E6%8C%81%E7%9A%84%E7%B1%BB%E5%9E%8B">结构化克隆支持的类型</a>。</li>
-<li>options：一个具有以下属性的对象：<br>2.1 transfer：一个可转移对象的数组，里面的对象将被移动而不是克隆到返回的对象上。</li>
-</ol>
-<h3 id="4-基础实例"><a href="#4-基础实例" class="headerlink" title="4. 基础实例"></a>4. 基础实例</h3><h4 id="4-1-实例代码"><a href="#4-1-实例代码" class="headerlink" title="4.1 实例代码"></a>4.1 实例代码</h4><figure class="highlight arcade"><table><tr><td class="code"><pre><code class="hljs arcade">const original = &#123; <br>  <span class="hljs-attr">date</span>: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(),<br>  <span class="hljs-attr">map</span>: <span class="hljs-keyword">new</span> <span class="hljs-built_in">Map</span>([[<span class="hljs-string">&#x27;key&#x27;</span>, <span class="hljs-string">&#x27;value&#x27;</span>]]),<br>  <span class="hljs-attr">array</span>: [<span class="hljs-number">1</span>, &#123; <span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;test&#x27;</span> &#125;]<br>&#125;;<br><br><span class="hljs-comment">// 深拷贝对象</span><br>const cloned = structuredClone(original);<br><br><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(cloned.<span class="hljs-built_in">date</span> instanceof <span class="hljs-built_in">Date</span>); <span class="hljs-comment">// true（原数据类型保留）</span><br><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(cloned.<span class="hljs-built_in">map</span> instanceof <span class="hljs-built_in">Map</span>);   <span class="hljs-comment">// true</span><br><span class="hljs-built_in">console</span>.<span class="hljs-built_in">log</span>(cloned.<span class="hljs-built_in">array</span>[<span class="hljs-number">1</span>] === original.<span class="hljs-built_in">array</span>[<span class="hljs-number">1</span>]); <span class="hljs-comment">// false（深拷贝生效）</span><br></code></pre></td></tr></table></figure>
-
-<h4 id="4-2-执行结果"><a href="#4-2-执行结果" class="headerlink" title="4.2 执行结果"></a>4.2 执行结果</h4><p><img src="https://foruda.gitee.com/images/1740469105262845784/ee1914e7_1681522.png" alt="输入图片说明"></p>
-<h3 id="5-structuredClone-支持的数据类型"><a href="#5-structuredClone-支持的数据类型" class="headerlink" title="5. structuredClone 支持的数据类型"></a>5. structuredClone 支持的数据类型</h3><ol>
-<li>原始类型：string、number、boolean、null、undefined、BigInt；</li>
-<li>对象类型：Object、Array、Date、RegExp、Map、Set、ArrayBuffer；</li>
-<li>特殊类型：Error（部分场景）、Blob、ImageBitmap（浏览器环境）；</li>
-<li>循环引用：自动处理对象内部的循环引用。</li>
-</ol>
-<h3 id="6-structuredClone-无法克隆的类型"><a href="#6-structuredClone-无法克隆的类型" class="headerlink" title="6. structuredClone 无法克隆的类型"></a>6. structuredClone 无法克隆的类型</h3><ol>
-<li>函数（Function）、DOM 节点；</li>
-<li>对象原型链：克隆后的对象原型为 Object，而非原构造函数（如 class 实例会丢失方法）；</li>
-<li>部分特殊对象：Promise、WeakMap、Proxy。</li>
-</ol>
-<h3 id="7-函数测试"><a href="#7-函数测试" class="headerlink" title="7. 函数测试"></a>7. 函数测试</h3><h4 id="7-1-测试代码"><a href="#7-1-测试代码" class="headerlink" title="7.1 测试代码"></a>7.1 测试代码</h4><figure class="highlight bash"><table><tr><td class="code"><pre><code class="hljs bash"><span class="hljs-built_in">let</span> obj = &#123; <span class="hljs-built_in">test</span>: () =&gt; &#123; &#125; &#125;<br><span class="hljs-built_in">let</span> <span class="hljs-built_in">clone</span> = structuredClone(obj)<br></code></pre></td></tr></table></figure>
-<h4 id="7-2-测试结果"><a href="#7-2-测试结果" class="headerlink" title="7.2 测试结果"></a>7.2 测试结果</h4><p><img src="https://foruda.gitee.com/images/1740469548601245372/96c5b3eb_1681522.png" alt="输入图片说明"></p>
-<h3 id="8-DOM-对象测试"><a href="#8-DOM-对象测试" class="headerlink" title="8. DOM 对象测试"></a>8. DOM 对象测试</h3><h4 id="8-1-测试代码"><a href="#8-1-测试代码" class="headerlink" title="8.1 测试代码"></a>8.1 测试代码</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">let</span> dom1 = &#123; <span class="hljs-attr">el</span>: <span class="hljs-variable language_">document</span>.<span class="hljs-property">body</span> &#125;<br><span class="hljs-keyword">let</span> clone1 = <span class="hljs-title function_">structuredClone</span>(dom1)<br></code></pre></td></tr></table></figure>
-<h4 id="8-2-测试结果"><a href="#8-2-测试结果" class="headerlink" title="8.2 测试结果"></a>8.2 测试结果</h4><p><img src="https://foruda.gitee.com/images/1740469695177485487/625adfaa_1681522.png" alt="输入图片说明"></p>
-<h3 id="9-原型链"><a href="#9-原型链" class="headerlink" title="9. 原型链"></a>9. 原型链</h3><h4 id="9-1-测试代码"><a href="#9-1-测试代码" class="headerlink" title="9.1 测试代码"></a>9.1 测试代码</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">class</span> <span class="hljs-title class_">User</span> &#123; <span class="hljs-title function_">greet</span>(<span class="hljs-params"></span>) &#123;&#125; &#125;<br><span class="hljs-keyword">const</span> user = <span class="hljs-keyword">new</span> <span class="hljs-title class_">User</span>();<br><span class="hljs-keyword">const</span> clonedUser = <span class="hljs-title function_">structuredClone</span>(user);<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(clonedUser <span class="hljs-keyword">instanceof</span> <span class="hljs-title class_">User</span>);<br></code></pre></td></tr></table></figure>
-<h4 id="9-2-测试结果"><a href="#9-2-测试结果" class="headerlink" title="9.2 测试结果"></a>9.2 测试结果</h4><p><img src="https://foruda.gitee.com/images/1740469813362041666/70a1efe9_1681522.png" alt="输入图片说明"></p>
-<h3 id="10-部分特殊对象测试"><a href="#10-部分特殊对象测试" class="headerlink" title="10. 部分特殊对象测试"></a>10. 部分特殊对象测试</h3><h4 id="10-1-测试-Promise-代码"><a href="#10-1-测试-Promise-代码" class="headerlink" title="10.1 测试 Promise 代码"></a>10.1 测试 Promise 代码</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> originalPromise = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Promise</span>(<span class="hljs-function">(<span class="hljs-params">resolve</span>) =&gt;</span> <span class="hljs-title function_">resolve</span>(<span class="hljs-number">42</span>));<br><br><span class="hljs-keyword">try</span> &#123;<br>  <span class="hljs-keyword">const</span> clonedPromise = <span class="hljs-title function_">structuredClone</span>(originalPromise);<br>&#125; <span class="hljs-keyword">catch</span> (error) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">&quot;克隆 Promise 失败:&quot;</span>, error.<span class="hljs-property">message</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
-<h4 id="10-2-测试-Promise-结果"><a href="#10-2-测试-Promise-结果" class="headerlink" title="10.2 测试 Promise 结果"></a>10.2 测试 Promise 结果</h4><p><img src="https://foruda.gitee.com/images/1740470069218444854/0611c8b9_1681522.png" alt="输入图片说明"></p>
-<h4 id="10-3-测试-WeakMap-代码"><a href="#10-3-测试-WeakMap-代码" class="headerlink" title="10.3 测试 WeakMap 代码"></a>10.3 测试 WeakMap 代码</h4><figure class="highlight aspectj"><table><tr><td class="code"><pre><code class="hljs aspectj"><span class="hljs-keyword">const</span> originalWeakMap = <span class="hljs-keyword">new</span> WeakMap();<br><span class="hljs-keyword">const</span> key = &#123;&#125;;<br>originalWeakMap.set(key, <span class="hljs-string">&quot;value&quot;</span>);<br><br><span class="hljs-keyword">try</span> &#123;<br>  <span class="hljs-keyword">const</span> clonedWeakMap = structuredClone(originalWeakMap);<br>&#125; <span class="hljs-keyword">catch</span> (<span class="hljs-keyword">error</span>) &#123;<br>  console.<span class="hljs-keyword">error</span>(<span class="hljs-string">&quot;克隆 WeakMap 失败:&quot;</span>, <span class="hljs-keyword">error</span>.message);<br>&#125;<br></code></pre></td></tr></table></figure>
-<h4 id="10-4-测试-WeakMap-结果"><a href="#10-4-测试-WeakMap-结果" class="headerlink" title="10.4 测试 WeakMap 结果"></a>10.4 测试 WeakMap 结果</h4><p><img src="https://foruda.gitee.com/images/1740470177385056641/77bf24dc_1681522.png" alt="输入图片说明"></p>
-<h4 id="10-5-测试-Proxy-代码"><a href="#10-5-测试-Proxy-代码" class="headerlink" title="10.5 测试 Proxy 代码"></a>10.5 测试 Proxy 代码</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> target = &#123; <span class="hljs-attr">value</span>: <span class="hljs-number">100</span> &#125;;<br><span class="hljs-keyword">const</span> originalProxy = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Proxy</span>(target, &#123;<br>  <span class="hljs-attr">get</span>: <span class="hljs-function">(<span class="hljs-params">obj, prop</span>) =&gt;</span> obj[prop] * <span class="hljs-number">2</span>,<br>&#125;);<br><br><span class="hljs-keyword">try</span> &#123;<br>  <span class="hljs-keyword">const</span> clonedProxy = <span class="hljs-title function_">structuredClone</span>(originalProxy);<br>&#125; <span class="hljs-keyword">catch</span> (error) &#123;<br>  <span class="hljs-variable language_">console</span>.<span class="hljs-title function_">error</span>(<span class="hljs-string">&quot;克隆 Proxy 失败:&quot;</span>, error.<span class="hljs-property">message</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
-<h4 id="10-6-测试-Promise-结果"><a href="#10-6-测试-Promise-结果" class="headerlink" title="10.6 测试 Promise 结果"></a>10.6 测试 Promise 结果</h4><p><img src="https://foruda.gitee.com/images/1740470245298332629/b31500e2_1681522.png" alt="输入图片说明"></p>
-<h3 id="11-兼容性"><a href="#11-兼容性" class="headerlink" title="11. 兼容性"></a>11. 兼容性</h3><p><img src="https://foruda.gitee.com/images/1740470368239378273/cf650e0c_1681522.png" alt="输入图片说明"></p>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><ol>
-<li>深拷贝大数据量或嵌套层级过深的对象时，可能产生性能损耗。</li>
-<li>深拷贝方法对比：</li>
+<h3 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h3><p><a target="_blank" rel="noopener" href="https://www.npmjs.com/">npm 官网：https://www.npmjs.com</a></p>
+<h3 id="npm-命令"><a href="#npm-命令" class="headerlink" title="npm 命令"></a>npm 命令</h3><table>
+<thead>
+<tr>
+<th align="left">命令</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">npm init</td>
+<td align="left">初始化一个新的 npm 项目，创建 package.json 文件。</td>
+</tr>
+<tr>
+<td align="left">npm help</td>
+<td align="left">查看某条命令的详细帮助。</td>
+</tr>
+<tr>
+<td align="left">npm root</td>
+<td align="left">查看包的安装路径。</td>
+</tr>
+<tr>
+<td align="left">npm install</td>
+<td align="left">安装一个包或一组包，并且会在当前目录存放一个node_modules。</td>
+</tr>
+<tr>
+<td align="left">npm install package-name</td>
+<td align="left">安装指定的包。</td>
+</tr>
+<tr>
+<td align="left">npm install package-name –save</td>
+<td align="left">安装指定的包，并将其添加到 package.json 文件中的 dependencies 【生产依赖列表中】。</td>
+</tr>
+<tr>
+<td align="left">npm install package-name –save-dev</td>
+<td align="left">安装指定的包，并将其添加到 package.json 文件中的 devDependencies 【开发依赖列表中】。</td>
+</tr>
+<tr>
+<td align="left">npm install -g package-name</td>
+<td align="left">全局安装指定的包。</td>
+</tr>
+<tr>
+<td align="left">npm update package-name</td>
+<td align="left">更新指定的包。</td>
+</tr>
+<tr>
+<td align="left">npm uninstall package-name</td>
+<td align="left">卸载指定的包。</td>
+</tr>
+<tr>
+<td align="left">npm run script-name</td>
+<td align="left">执行 package.json 文件中定义的脚本命令。</td>
+</tr>
+<tr>
+<td align="left">npm config</td>
+<td align="left">管理npm的配置路径。</td>
+</tr>
+<tr>
+<td align="left">npm config list</td>
+<td align="left">用于列出所有的 npm 配置信息。执行该命令可以查看当前系统和用户级别的所有 npm 配置信息，以及当前项目的配置信息（如果在项目目录下执行该命令）。</td>
+</tr>
+<tr>
+<td align="left">npm get registry</td>
+<td align="left">用于获取当前 npm 配置中的 registry 配置项的值。registry 配置项用于指定 npm 包的下载地址，如果未指定，则默认使用 npm 官方的包注册表地址。</td>
+</tr>
+<tr>
+<td align="left">npm set registry npm config set registry registry-url</td>
+<td align="left">命令，将 registry 配置项的值修改为指定的 registry-url 地址。</td>
+</tr>
+<tr>
+<td align="left">npm search keyword</td>
+<td align="left">搜索 npm 库中包含指定关键字的包。</td>
+</tr>
+<tr>
+<td align="left">npm info package-name</td>
+<td align="left">查看指定包的详细信息。</td>
+</tr>
+<tr>
+<td align="left">npm list</td>
+<td align="left">列出当前项目中安装的所有包。</td>
+</tr>
+<tr>
+<td align="left">npm outdated</td>
+<td align="left">列出当前项目中需要更新的包。</td>
+</tr>
+<tr>
+<td align="left">npm audit</td>
+<td align="left">检查当前项目中的依赖项是否存在安全漏洞。</td>
+</tr>
+<tr>
+<td align="left">npm publish</td>
+<td align="left">发布自己开发的包到 npm 库中。</td>
+</tr>
+<tr>
+<td align="left">npm login</td>
+<td align="left">登录到 npm 账户。</td>
+</tr>
+<tr>
+<td align="left">npm logout</td>
+<td align="left">注销当前 npm 账户。</td>
+</tr>
+<tr>
+<td align="left">npm link</td>
+<td align="left">将本地模块链接到全局的 node_modules 目录下。</td>
+</tr>
+</tbody></table>
+<h3 id="npm-install-参数说明"><a href="#npm-install-参数说明" class="headerlink" title="npm install 参数说明"></a>npm install 参数说明</h3><blockquote>
+<p>npm install 安装模块的时候一般是扁平化安装的，但是有时候出现嵌套的情况是因为版本不同。</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th align="left">参数</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">-S或–save</td>
+<td align="left">安装包信息将加入到dependencies（生产阶段的依赖）。</td>
+</tr>
+<tr>
+<td align="left">-D或–sava-dev</td>
+<td align="left">安装信息将加入到devDependencies（开发阶段的依赖）。</td>
+</tr>
+<tr>
+<td align="left">-O或–save-optional</td>
+<td align="left">安装包信息将加入到optionalDependencies（可选阶段的依赖）。</td>
+</tr>
+<tr>
+<td align="left">-E或–save-exact</td>
+<td align="left">精准安装指定模块版本。</td>
+</tr>
+</tbody></table>
+<h3 id="版本号说明"><a href="#版本号说明" class="headerlink" title="版本号说明"></a>版本号说明</h3><blockquote>
+<p>version 版本号一般是1.0.0 大版本号、次版本号、修订号。</p>
+</blockquote>
+<ol>
+<li>大版本号：一般是有重大变化才会升级；</li>
+<li>次版本号：一般是增加功能进行升级；</li>
+<li>修订号：一般是修改bug进行升级。</li>
 </ol>
 <table>
 <thead>
 <tr>
-<th align="left">场景</th>
-<th align="left">推荐方法</th>
-<th align="left">注意事项</th>
+<th align="left">版本号</th>
+<th align="left">说明</th>
 </tr>
 </thead>
 <tbody><tr>
-<td align="left">简单对象深拷贝</td>
-<td align="left">structuredClone</td>
-<td align="left">避免用于含函数的对象。</td>
+<td align="left">~1.1.0、1.1.x、1.1</td>
+<td align="left">兼容模块新发布的补丁版本。</td>
 </tr>
 <tr>
-<td align="left">保留原型链的深拷贝</td>
-<td align="left">手动实现或 lodash.cloneDeep</td>
-<td align="left">需处理循环引用。</td>
+<td align="left">^1.1.0、1.x、1</td>
+<td align="left">兼容模块新发布的小版本、补丁版本。</td>
 </tr>
 <tr>
-<td align="left">兼容旧浏览器</td>
-<td align="left">JSON.parse(JSON.stringify())</td>
-<td align="left">丢失特殊类型（如 Date、Map）。</td>
+<td align="left">*、x</td>
+<td align="left">兼容模块新发布的大版本、小版本、补丁版本。</td>
+</tr>
+</tbody></table>
+<h3 id="package-json-字段说明"><a href="#package-json-字段说明" class="headerlink" title="package.json 字段说明"></a>package.json 字段说明</h3><table>
+<thead>
+<tr>
+<th align="left">字段</th>
+<th align="left">说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">name</td>
+<td align="left">项目名称，必须是唯一的字符串，通常采用小写字母和连字符的组合。</td>
+</tr>
+<tr>
+<td align="left">version</td>
+<td align="left">项目版本号，通常采用语义化版本号规范。</td>
+</tr>
+<tr>
+<td align="left">description</td>
+<td align="left">项目描述。</td>
+</tr>
+<tr>
+<td align="left">main</td>
+<td align="left">项目的主入口文件路径，通常是一个 JavaScript 文件。</td>
+</tr>
+<tr>
+<td align="left">keywords</td>
+<td align="left">项目的关键字列表，方便他人搜索和发现该项目。</td>
+</tr>
+<tr>
+<td align="left">author</td>
+<td align="left">项目作者的信息，包括姓名、邮箱、网址等。</td>
+</tr>
+<tr>
+<td align="left">license</td>
+<td align="left">项目的许可证类型，可以是自定义的许可证类型或者常见的开源许可证（如 MIT、Apache 等）。</td>
+</tr>
+<tr>
+<td align="left">dependencies</td>
+<td align="left">项目所依赖的包的列表，这些包会在项目运行时自动安装。</td>
+</tr>
+<tr>
+<td align="left">devDependencies</td>
+<td align="left">项目开发过程中所需要的包的列表，这些包不会随项目一起发布，而是只在开发时使用。</td>
+</tr>
+<tr>
+<td align="left">peerDependencies</td>
+<td align="left">项目的同级依赖，即项目所需要的模块被其他模块所依赖。</td>
+</tr>
+<tr>
+<td align="left">scripts</td>
+<td align="left">定义了一些脚本命令，比如启动项目、运行测试等。</td>
+</tr>
+<tr>
+<td align="left">repository</td>
+<td align="left">项目代码仓库的信息，包括类型、网址等。</td>
+</tr>
+<tr>
+<td align="left">bugs</td>
+<td align="left">项目的 bug 报告地址。</td>
+</tr>
+<tr>
+<td align="left">homepage</td>
+<td align="left">项目的官方网站地址或者文档地址。</td>
 </tr>
 </tbody></table>
 
