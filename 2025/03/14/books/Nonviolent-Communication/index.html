@@ -6,28 +6,19 @@
   <meta name="keywords" content=" 非暴力沟通 ">
   <meta name="description" content="非暴力沟通每一章节的读后感 | 梁亚军的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="1. npm run 执行原理npm run 命令的原理是执行 package.json 文件中定义的脚本。当你在命令行中运行 npm run  时，npm 会查找 package.json 文件中的 scripts 字段，然后执行对应的脚本命令。 2. 示例 2.1 以 dev:weapp 为例 运行 npm run dev:weapp 命令； npm 会查找 package.json 文件中的">
+<meta name="description" content="NPM NPM 的全称是 Node Package Manager，是随同 NodeJS 一起安装的包管理和分发工具，它很方便让 JavaScript 开发者下载、安装、上传以及管理已经安装的包。  官网npm 官网：https:&#x2F;&#x2F;www.npmjs.com npm 命令   命令 说明    npm init 初始化一个新的 npm 项目，创建 package.json 文件。   npm h">
 <meta property="og:type" content="article">
-<meta property="og:title" content="2. npm run 原理">
-<meta property="og:url" content="http://example.com/2025/03/18/node/2.Principle-of-npm-run/index.html">
+<meta property="og:title" content="1. npm 常用命令和 package.json 说明">
+<meta property="og:url" content="http://example.com/2025/03/18/node/1.Commonly-used-npm-commands-and-explanations-of-package/index.html">
 <meta property="og:site_name" content="梁亚军的博客">
-<meta property="og:description" content="1. npm run 执行原理npm run 命令的原理是执行 package.json 文件中定义的脚本。当你在命令行中运行 npm run  时，npm 会查找 package.json 文件中的 scripts 字段，然后执行对应的脚本命令。 2. 示例 2.1 以 dev:weapp 为例 运行 npm run dev:weapp 命令； npm 会查找 package.json 文件中的">
+<meta property="og:description" content="NPM NPM 的全称是 Node Package Manager，是随同 NodeJS 一起安装的包管理和分发工具，它很方便让 JavaScript 开发者下载、安装、上传以及管理已经安装的包。  官网npm 官网：https:&#x2F;&#x2F;www.npmjs.com npm 命令   命令 说明    npm init 初始化一个新的 npm 项目，创建 package.json 文件。   npm h">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://foruda.gitee.com/images/1734423936087657576/b25a31be_1681522.png">
-<meta property="og:image" content="https://foruda.gitee.com/images/1734424591763476783/9d0f9787_1681522.png">
-<meta property="og:image" content="https://foruda.gitee.com/images/1734425079866713488/9582d7ca_1681522.png">
-<meta property="og:image" content="https://foruda.gitee.com/images/1734425201417889218/cf74b65e_1681522.png">
-<meta property="og:image" content="https://foruda.gitee.com/images/1734425319675474520/2d9646f6_1681522.png">
-<meta property="og:image" content="https://foruda.gitee.com/images/1734425413221102154/9e5a4c21_1681522.png">
-<meta property="og:image" content="https://foruda.gitee.com/images/1734426615859744331/6637fb81_1681522.png">
-<meta property="og:image" content="https://foruda.gitee.com/images/1734427222530093893/e477987e_1681522.png">
-<meta property="article:published_time" content="2025-03-18T02:33:30.674Z">
-<meta property="article:modified_time" content="2025-03-18T02:43:51.861Z">
+<meta property="article:published_time" content="2025-03-18T02:26:27.328Z">
+<meta property="article:modified_time" content="2025-03-18T02:27:46.745Z">
 <meta property="article:author" content="梁亚军">
 <meta property="article:tag" content="Node">
 <meta property="article:tag" content="npm">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://foruda.gitee.com/images/1734423936087657576/b25a31be_1681522.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -666,7 +657,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2025-03-18 10:48:33'>2025-03-14 10:48</time>
+            Created At : <time class="date" title='Updated At: 2025-03-18 15:16:35'>2025-03-14 10:48</time>
         
     </div>
     <div class="article-meta">
@@ -688,7 +679,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%93%E4%BC%9A%E4%B8%8E%E8%A1%A8%E8%BE%BE%E6%84%9F%E5%8F%97"><span class="toc-text">体会与表达感受</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%8C%E7%90%86%E5%BF%83"><span class="toc-text">同理心</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%93%E4%BC%9A%E4%B8%8E%E8%A1%A8%E8%BE%BE%E6%84%9F%E5%8F%97"><span class="toc-text">体会与表达感受</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%90%8C%E7%90%86%E5%BF%83"><span class="toc-text">同理心</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -704,9 +695,27 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="体会与表达感受"><a href="#体会与表达感受" class="headerlink" title="体会与表达感受"></a>体会与表达感受</h2><p>读完这一段，我发现自己最大的问题就是喜欢分析别人，喜欢评论别人。而不是平等的和他人进行沟通，包括我的父母和老婆。我觉得自己应该学会平等的和他人沟通，尤其是和父母和老婆。因为我觉得父母和老婆是最需要帮助的人，他们的言行往往会影响到我很多。所以，我觉得我应该学会和父母和老婆平等的沟通，尤其是和他们分享自己的感受。不要强行将自己的观点和结论强加给他们，其实他们也是有自己的观点、想法和感受。但是我并没有听取，这里反思一下。总是喜欢发表自己的观点，然后将自己的想法强加给他们是不对的。</p>
+        <h3 id="体会与表达感受"><a href="#体会与表达感受" class="headerlink" title="体会与表达感受"></a>体会与表达感受</h3><ol>
+<li>我们的所有焦虑几乎都来自我们太渴望立刻看到结果了。</li>
+<li>戒掉焦虑，放下对于结果的执念，对于付出的计算，在过程中打磨做事的技能，平淡的心态以及良好的习惯。</li>
+<li>不带评论的观察是人类智力的最高形式。</li>
+<li>非暴力沟通的第四个要素是提出请求，以便让我们的生命更加丰盈。在提出请求时，我们要尽力避免模糊、抽象或模棱两可的语言，说明我们要什么，而不是不要什么。</li>
+<li>在开口时，我们越是把想要得到的回应表达清楚，就越有可能得到这样的回应。由于我们所表达的信息与别人的理解有可能不一致，我们需要学习去发现对方是否已经准确无误地接收到了我们的信息。特别是在团体讨论中，更需要清楚知道和说明我们想要的回应。否则，讨论可能只是在浪费大家的时间。</li>
+<li>前四章介绍了如何通过非暴力沟通的四个要素诚实地表达自己：我们观察到什么，有什么感受和需要，提出什么请求来丰盈自己的生命。本章我们将这四个要素运用于沟通过程的另一部分——同理倾听他人的<strong>观察、感受、需要和请求</strong>。</li>
+</ol>
+<p>读完这一段，我发现自己最大的问题就是喜欢分析别人，喜欢评论别人。而不是平等的和他人进行沟通，包括我的父母和老婆。我觉得自己应该学会平等的和他人沟通，尤其是和父母和老婆。因为我觉得父母和老婆是最需要帮助的人，他们的言行往往会影响到我很多。所以，我觉得我应该学会和父母和老婆平等的沟通，尤其是和他们分享自己的感受。不要强行将自己的观点和结论强加给他们，其实他们也是有自己的观点、想法和感受。但是我并没有听取，这里反思一下。总是喜欢发表自己的观点，然后将自己的想法强加给他们是不对的。</p>
 <p>我们应该停下来，耐心的听取他们的想法和感受，然后再给予回应。不要强行将自己的观点强加给他们，因为他们也有自己的观点和想法。我们应该尊重他们的想法，尤其是他们的感受。我们应该学会和他们平等的沟通，不要强行将自己的观点和结论强加给他们。</p>
-<h2 id="同理心"><a href="#同理心" class="headerlink" title="同理心"></a>同理心</h2>
+<h3 id="同理心"><a href="#同理心" class="headerlink" title="同理心"></a>同理心</h3><ol>
+<li>要同理他人，必须完全卸下对他人先入为主的成见和评判，这就是与他人“同在”的状态。</li>
+<li>生命中的情境虽有诸多相似之处，但每时每刻却如新生儿般，带着崭新的面孔，从未有过也永不再现。你无法提前准备如何回应，也无法停留在过去。生命呼唤着你与它同在当下，负起责任而又全心投入。</li>
+<li>所谓“同理”就是带着尊重来理解他人的经历。我们常常有强烈的冲动想给他人建议或安慰，或是解释自己的立场和感受。同理则邀请我们清空先入为主的想法，全身心地聆听他人。</li>
+<li>活在非暴力沟通中意味着，不论他人用什么样的言辞来表达自己，我们都只是聆听他们的观察、感受、需要和请求。接着，我们可以选择反馈他们的意思、复述我们的理解。此外，持续地同理让他人有机会充分表达自己，当他人感到被充分理解后，我们再来关注解决方案或提出请求。</li>
+<li>同理他人使得我们敢于呈现自己的脆弱，平息潜在的暴力，让乏味的对话变得有趣，并了解“不”和沉默所传达的感受和需要。一次又一次，我见证了同理倾听帮助人们疗愈心灵的伤痛。</li>
+</ol>
+<p>非暴力沟通讲到，不单是对别人需要同心理，对自己也需要同心理。对自己不要太苛刻，我读到这里的感受就是【吾日三省吾身】。当然他这里虽然意思差不多，但是着重强调的是非暴力，我们不要对自己的任何行为就行评价的判断，不要单纯的把一个人分为好人或者坏人。重点是那个时候为什么？</p>
+<p>举个简单的例子，我老婆来接我，但是回去的时候，她不想开车，那么就只有我来开，我也不想开车，但是没有办法，车在哪里，又只有我们俩，我就必须开车，所以我会生气。那么在这里我们能单纯的使用好坏来说明我这一行为吗？首先是我觉得在沟通，我们要想到的是，我们生气是因为我不想开车，但是她让我开了。非暴力沟通中我们如何既能解决我们自己的问题，又能解决我老婆的问题？担心什么？害怕什么？观察行为，感受行为，行为的需求是什么？最后找到请求。对于开车，我感受到了你不高兴，你在担心什么？其实矛盾点一直在开车，我觉得这个时候直接把车找个停车场，找其他工具回去。后边再来开车就是了。</p>
+<p>其实我也不知道我想要什么，不想要什么？我觉得现在这个对于我来说都是一个难题。连自己想要什么，不想要什么都搞不清楚，你说非暴力沟通的结果是什么？需要引导。</p>
+
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 1148063373@qq.com </span>
     </div>
