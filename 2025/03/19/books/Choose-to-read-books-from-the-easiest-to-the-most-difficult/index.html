@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>根据图片文件名称中的数字排序 | 梁亚军的博客</title>
-  <meta name="keywords" content=" Python , Sort , 文件名 ">
-  <meta name="description" content="根据图片文件名称中的数字排序 | 梁亚军的博客">
+  <title>读书选择由易到难 | 梁亚军的博客</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="读书选择由易到难 | 梁亚军的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="我不知道其他人的选择是怎么样的，最少从我23年开始读书以来，我说一下自己的感受。最开始读书就是《微习惯》，那是2023-10-07，千里之行始于足下，我从此开始了我的读书之旅。当然不是说我之前就没有读过书，只是选择的书不适合那个时候的我，都是看了别人的推荐，就去买了，比如《鬼谷子》、《JavaScript 开发指南》、《设计模式》、《天才在左，疯子在右》、《如何阅读一本书》等等。买了那么多书（家里">
 <meta property="og:type" content="article">
@@ -736,9 +736,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-python/Sort-according-to-the-numbers-in-the-names-of-the-picture-files" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-books/Choose-to-read-books-from-the-easiest-to-the-most-difficult" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">根据图片文件名称中的数字排序</h1>
+        <h1 class="article-title">读书选择由易到难</h1>
     
     <div class="article-meta">
         
@@ -748,28 +748,15 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="Python">Python</a> > 
-            
-            <a  data-rel="Python&lt;---&gt;脚本">脚本</a>
+            <a  data-rel="读书笔记">读书笔记</a>
             
         </span>
         
-        
-        <span class="tag">
-            <i class="iconfont icon-tag"></i>
-            
-            <a class="color2">Python</a>
-            
-            <a class="color5">Sort</a>
-            
-            <a class="color4">文件名</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2025-03-19 09:28:11'>2025-03-12 17:27</time>
+            Created At : <time class="date" title='Updated At: 2025-03-19 11:13:05'>2025-03-19 10:21</time>
         
     </div>
     <div class="article-meta">
@@ -791,7 +778,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E9%9C%80%E6%B1%82%E5%88%86%E6%9E%90"><span class="toc-text">1. 需求分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E8%8E%B7%E5%8F%96%E6%89%80%E6%9C%89%E5%9B%BE%E7%89%87%E6%96%87%E4%BB%B6%E5%90%8D%E7%A7%B0"><span class="toc-text">2. 获取所有图片文件名称</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0%E5%88%86%E6%9E%90"><span class="toc-text">2.1 代码实现分析</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E4%BB%A3%E7%A0%81%E5%AE%9E%E7%8E%B0"><span class="toc-text">2.2 代码实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C"><span class="toc-text">2.3 输出结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E8%8E%B7%E5%8F%96%E6%8E%92%E5%BA%8F%E5%90%8E%E7%9A%84%E6%96%87%E4%BB%B6%E5%90%8D%E7%A7%B0%E5%88%97%E8%A1%A8"><span class="toc-text">3. 获取排序后的文件名称列表</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E8%8E%B7%E5%8F%96%E6%96%87%E4%BB%B6%E5%90%8D%E7%A7%B0%E4%B8%AD%E7%9A%84%E6%95%B0%E5%AD%97"><span class="toc-text">3.1 获取文件名称中的数字</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C"><span class="toc-text">3.2 输出结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-%E5%A4%9A%E6%AC%A1%E5%BE%AA%E7%8E%AF%E5%AE%9E%E7%8E%B0%E5%90%8D%E7%A7%B0%E6%8E%92%E5%BA%8F"><span class="toc-text">3.3 多次循环实现名称排序</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C"><span class="toc-text">3.4 输出结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-%E4%BD%BF%E7%94%A8-sorted-%E9%85%8D%E5%90%88-lambda-%E5%AE%9E%E7%8E%B0"><span class="toc-text">3.5 使用 sorted 配合 lambda 实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-6-%E8%BE%93%E5%87%BA%E7%BB%93%E6%9E%9C"><span class="toc-text">3.6 输出结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%B3%A8%E6%84%8F"><span class="toc-text">4. 注意</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -807,38 +794,21 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-需求分析"><a href="#1-需求分析" class="headerlink" title="1. 需求分析"></a>1. 需求分析</h3><ol>
-<li>获取文件夹中的所有文件名称；</li>
-<li>筛选所有文件名称中的图片文件；</li>
-<li>获取图片文件名称中的数字；</li>
-<li>对数字排序；</li>
-<li>返回排序后的图片文件名称列表。</li>
+        <p>我不知道其他人的选择是怎么样的，最少从我23年开始读书以来，我说一下自己的感受。最开始读书就是《微习惯》，那是2023-10-07，<strong>千里之行始于足下</strong>，我从此开始了我的读书之旅。当然不是说我之前就没有读过书，只是选择的书不适合那个时候的我，都是看了别人的推荐，就去买了，比如《鬼谷子》、《JavaScript 开发指南》、《设计模式》、《天才在左，疯子在右》、《如何阅读一本书》等等。买了那么多书（家里最少有五六十本），但是就像我老婆所说，真真看完的，基本没有，当然这其中不乏也有我能够坚持阅读完的书籍。结果就是没有阅读完的，为什么呢？</p>
+<p>我不喜欢读书吗？并不是，我读小说，可以说从小学五六年级接触西游记书开始，小说的阅读量估计是一年最少二三十本，每本最少都是百万字。原因就是，一个是实体书不是很方便，简单说，像《黑客与画家》这本书，我也是读完了的，而且也是存在读书笔记的，我也买了实体书，但是实体书基本没有怎么翻开过。就是因为电子书方便的多。</p>
+<p>读完《微习惯》我基本都建立了自己的微习惯，有些我到现在依然坚持，比如每天晚上必须到楼下慢走两圈，可以说这个习惯一直坚持到现在。《黑客与画家》这本书其实就是对产品和客户之间，尽量减少距离，当然这只是我看到的，还有就是对行业的展望，很多都后来实现了。然后就阅读了《定投十年，实现财务自由》和《记忆宫殿》，在阅读这两本书的时候，由于它不像前两本书那么容易，比如《记忆宫殿》很多都需要反复练习，才能熟能生巧，所以现在看来，这本书不适合快读，而是需要一步一步的练习，精读。《财务自由》则有很多概念性的东西，讲的是各个基金是那些组成，说实话有点枯燥，所以在选择上，就导致没坚持下来，读到一半，就没有读了。我以为换一个故事性的书籍，可能会让我提起兴趣，所以我又看了《大秦帝国》，为什么选择这本书呢？因为我记得这个书是我读高中的时候，从图书馆借阅的，当时我记得是十部还是五部，我读了一半，还有部分没有了。我想高中那么感兴趣，而且我喜欢读小说，因该能够继续进行了吧！然而现实就是多年以来，我的阅读兴趣发生了变化，也没有读完。</p>
+<p>然后感觉自己的意志力不能够坚定，我就想学习一下心学，开始阅读《王阳明大传：知行合一的心学智慧》，发现更加痛苦，因为你一开始理解不了。我就找了《传习录》，不过是看的浙大董平教授讲的视频，然后再去阅读的书籍。说实话，很有用，当你坚持不下来的时候，就先从简单的开始，视频让你更容易跟着进行理解，然后你再去读，就会有自己的理解。《传习录》目前只读到了徐爱篇，董教授那个免费视频也只讲到了这里，估计收费的应该讲完了，只是我没搜到。</p>
+<p>回头又准备阅读《明朝那些事儿》，读读停停，也没有读完。然后读了《费曼学习法》、《技术写作指南》这是读完了，这里对于我来说最大的收获就是开始和坚持。就像张鑫旭大佬所说，哪怕只写一句话，但是你也必须去写，要有开始，你才能慢慢完善。</p>
+<p>最后就是最近在读的三本书《论语译注》、《价值：我对投资的思考》、《非暴力沟通》。特别是非暴力沟通的进度很快，基本两周的样子，现在快阅读完了。为什么呢？就是一个是使用了微信阅读，有一定的攀比心吧！最少我目前是这样的，当然不是为了时间就挂机那种乱翻，还是有思考和实践的。最少我目前阅读非暴力沟通，我会将自己实际遇到的沟通问题通过他去思考或者实践。</p>
+<p>可以看到从2023年10月份开始，我读过的书差不多十三本，中间因为难而放弃的不在少数，反而是阅读完的，不是很多，这个我觉得是选择的问题。就像在小学一年级，然你学习一元二次方程，甚至微积分，我估计你即便再天才，也不一定能坚持下来。所以需要先从简单的，你能够理解的，你感兴趣的开始阅读，慢慢的培养你的阅读习惯。遇到比较不容易理解的，比如《论语》、《传习录》这些，你感兴趣的，你可以先看视频，看别人的理解，看注释，慢慢的读，最后下一遍自己读的时候，你就没有那么困难了，慢慢的就会有自己的理解。</p>
+<p>人是团体动物，如果你能找到一个读书的圈子，那么相互鼓励，分享，我觉得会更好。所以微信阅读的好处就是它能够督促你阅读，最少目前我是这么觉得的。因为京东读书我也使用了，自己一个人枯燥的阅读，能够坚持下来的人，真心不多。看着有人陪伴，一起砥砺前行，真的很开心。</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
+<li>书籍从易到难；</li>
+<li>看不懂可以先找视频和注解的书阅读；</li>
+<li>尽量找一些志同道合的读友，一起阅读和分享；</li>
+<li>阅读软件我比较推荐微信读书，可以随时随地阅读。</li>
 </ol>
-<h3 id="2-获取所有图片文件名称"><a href="#2-获取所有图片文件名称" class="headerlink" title="2. 获取所有图片文件名称"></a>2. 获取所有图片文件名称</h3><h4 id="2-1-代码实现分析"><a href="#2-1-代码实现分析" class="headerlink" title="2.1 代码实现分析"></a>2.1 代码实现分析</h4><ol>
-<li>使用 os.listdir 获取文件夹下的所有文件名称；</li>
-<li>使用 for in 依次获取列表中的文件名称；</li>
-<li>获取文件名称的后缀；</li>
-<li>判断该文件是否是图片文件；</li>
-<li>是图片文件就将文件名称放入图片名称列表；</li>
-<li>返回汇总后的图片名称列表。</li>
-</ol>
-<h4 id="2-2-代码实现"><a href="#2-2-代码实现" class="headerlink" title="2.2 代码实现"></a>2.2 代码实现</h4><figure class="highlight scss"><table><tr><td class="code"><pre><code class="hljs scss">import os<br><br># 获取文件夹中的所有图片文件<br>def <span class="hljs-built_in">get_all_image_name</span>(path):<br>  names = os.<span class="hljs-built_in">listdir</span>(path)<br>  images = []<br>  for name in names:<br>    suffix = name.<span class="hljs-built_in">split</span>(<span class="hljs-string">&#x27;.&#x27;</span>).<span class="hljs-built_in">pop</span>()<br>    if suffix in [<span class="hljs-string">&#x27;jpg&#x27;</span>, <span class="hljs-string">&#x27;png&#x27;</span>, <span class="hljs-string">&#x27;jpeg&#x27;</span>, <span class="hljs-string">&#x27;bmp&#x27;</span>]:<br>      images.<span class="hljs-built_in">append</span>(name)<br>  return images<br><br>if __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>  image_names = <span class="hljs-built_in">get_all_image_name</span>(<span class="hljs-string">&#x27;./images&#x27;</span>)<br>  <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;image_names:&#x27;</span>,image_names)<br></code></pre></td></tr></table></figure>
-
-<h4 id="2-3-输出结果"><a href="#2-3-输出结果" class="headerlink" title="2.3 输出结果"></a>2.3 输出结果</h4><p><img src="https://foruda.gitee.com/images/1688110714117536680/f363e0ed_1681522.png" alt="输入图片说明"></p>
-<h3 id="3-获取排序后的文件名称列表"><a href="#3-获取排序后的文件名称列表" class="headerlink" title="3. 获取排序后的文件名称列表"></a>3. 获取排序后的文件名称列表</h3><h4 id="3-1-获取文件名称中的数字"><a href="#3-1-获取文件名称中的数字" class="headerlink" title="3.1 获取文件名称中的数字"></a>3.1 获取文件名称中的数字</h4><figure class="highlight scss"><table><tr><td class="code"><pre><code class="hljs scss">import os<br>import re<br><br># 获取文件夹中的所有图片文件<br>def <span class="hljs-built_in">get_all_image_name</span>(path):<br>  names = os.<span class="hljs-built_in">listdir</span>(path)<br>  images = []<br>  for name in names:<br>    suffix = name.<span class="hljs-built_in">split</span>(<span class="hljs-string">&#x27;.&#x27;</span>).<span class="hljs-built_in">pop</span>()<br>    if suffix in [<span class="hljs-string">&#x27;jpg&#x27;</span>, <span class="hljs-string">&#x27;png&#x27;</span>, <span class="hljs-string">&#x27;jpeg&#x27;</span>, <span class="hljs-string">&#x27;bmp&#x27;</span>]:<br>      images.<span class="hljs-built_in">append</span>(name)<br>  return images<br><br># 获取排序后的文件名称<br>def <span class="hljs-built_in">sort_names</span>(names):<br>  for name in names:<br>    <span class="hljs-built_in">print</span>(<span class="hljs-built_in">int</span>(re.<span class="hljs-built_in">sub</span>(<span class="hljs-string">&#x27;\D&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>, name)))<br><br>if __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>  image_names = <span class="hljs-built_in">get_all_image_name</span>(<span class="hljs-string">&#x27;./images&#x27;</span>)<br>  <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;image_names:&#x27;</span>,image_names)<br>  <span class="hljs-built_in">sort_names</span>(image_names)<br></code></pre></td></tr></table></figure>
-
-<h4 id="3-2-输出结果"><a href="#3-2-输出结果" class="headerlink" title="3.2 输出结果"></a>3.2 输出结果</h4><p><img src="https://foruda.gitee.com/images/1688110770030924002/37e130fa_1681522.png" alt="输入图片说明"></p>
-<h4 id="3-3-多次循环实现名称排序"><a href="#3-3-多次循环实现名称排序" class="headerlink" title="3.3 多次循环实现名称排序"></a>3.3 多次循环实现名称排序</h4><figure class="highlight scss"><table><tr><td class="code"><pre><code class="hljs scss">import os<br>import re<br><br># 获取文件夹中的所有图片文件<br>def <span class="hljs-built_in">get_all_image_name</span>(path):<br>  names = os.<span class="hljs-built_in">listdir</span>(path)<br>  images = []<br>  for name in names:<br>    suffix = name.<span class="hljs-built_in">split</span>(<span class="hljs-string">&#x27;.&#x27;</span>).<span class="hljs-built_in">pop</span>()<br>    if suffix in [<span class="hljs-string">&#x27;jpg&#x27;</span>, <span class="hljs-string">&#x27;png&#x27;</span>, <span class="hljs-string">&#x27;jpeg&#x27;</span>, <span class="hljs-string">&#x27;bmp&#x27;</span>]:<br>      images.<span class="hljs-built_in">append</span>(name)<br>  return images<br><br># 获取排序后的文件名称<br>def <span class="hljs-built_in">sort_names</span>(names):<br>  nums = []<br>  for name in names:<br>    nums.<span class="hljs-built_in">append</span>(<span class="hljs-built_in">int</span>(re.<span class="hljs-built_in">sub</span>(<span class="hljs-string">&#x27;\D&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>, name)))<br>  # 排序<br>  nums.<span class="hljs-built_in">sort</span>()<br>  last_names = []<br>  for num in nums:<br>    for name in names:<br>      if num == <span class="hljs-built_in">int</span>(re.<span class="hljs-built_in">sub</span>(<span class="hljs-string">&#x27;\D&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>, name)):<br>        last_names.<span class="hljs-built_in">append</span>(name)<br>  return last_names<br><br><br>if __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>  image_names = <span class="hljs-built_in">get_all_image_name</span>(<span class="hljs-string">&#x27;./images&#x27;</span>)<br>  <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;image_names:&#x27;</span>,image_names)<br>  sort_images = <span class="hljs-built_in">sort_names</span>(image_names)<br>  <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;sort_images:&#x27;</span>,sort_images)<br></code></pre></td></tr></table></figure>
-
-<h4 id="3-4-输出结果"><a href="#3-4-输出结果" class="headerlink" title="3.4 输出结果"></a>3.4 输出结果</h4><p><img src="https://foruda.gitee.com/images/1688110817275563155/281ae17d_1681522.png" alt="输入图片说明"></p>
-<h4 id="3-5-使用-sorted-配合-lambda-实现"><a href="#3-5-使用-sorted-配合-lambda-实现" class="headerlink" title="3.5 使用 sorted 配合 lambda 实现"></a>3.5 使用 sorted 配合 lambda 实现</h4><figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br><span class="hljs-keyword">import</span> re<br><br><span class="hljs-comment"># 获取文件夹中的所有图片文件</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">get_all_image_name</span>(<span class="hljs-params">path</span>):<br>  names = os.listdir(path)<br>  images = []<br>  <span class="hljs-keyword">for</span> name <span class="hljs-keyword">in</span> names:<br>    suffix = name.split(<span class="hljs-string">&#x27;.&#x27;</span>).pop()<br>    <span class="hljs-keyword">if</span> suffix <span class="hljs-keyword">in</span> [<span class="hljs-string">&#x27;jpg&#x27;</span>, <span class="hljs-string">&#x27;png&#x27;</span>, <span class="hljs-string">&#x27;jpeg&#x27;</span>, <span class="hljs-string">&#x27;bmp&#x27;</span>]:<br>      images.append(name)<br>  <span class="hljs-keyword">return</span> images<br><br><span class="hljs-comment"># 获取排序后的文件名称</span><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">sort_names</span>(<span class="hljs-params">names</span>):<br>  last_names = <span class="hljs-built_in">list</span>(<span class="hljs-built_in">sorted</span>(names, key=<span class="hljs-keyword">lambda</span> x:(<span class="hljs-built_in">int</span>(re.sub(<span class="hljs-string">&#x27;\D&#x27;</span>, <span class="hljs-string">&#x27;&#x27;</span>, x)),x)))<br>  <span class="hljs-keyword">return</span> last_names<br><br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&quot;__main__&quot;</span>:<br>  image_names = get_all_image_name(<span class="hljs-string">&#x27;./images&#x27;</span>)<br>  <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;image_names:&#x27;</span>,image_names)<br>  sort_images = sort_names(image_names)<br>  <span class="hljs-built_in">print</span>(<span class="hljs-string">&#x27;sort_images:&#x27;</span>,sort_images)<br></code></pre></td></tr></table></figure>
-
-<h4 id="3-6-输出结果"><a href="#3-6-输出结果" class="headerlink" title="3.6 输出结果"></a>3.6 输出结果</h4><p><img src="https://foruda.gitee.com/images/1688110848370230964/03667210_1681522.png" alt="输入图片说明"></p>
-<h3 id="4-注意"><a href="#4-注意" class="headerlink" title="4. 注意"></a>4. 注意</h3><ol>
-<li>使用 os 模块获取所有的文件名称；</li>
-<li>使用 re 获取文件名称中的数字；</li>
-<li>使用 sorted 对文件名称排序。</li>
-</ol>
+<p>不要想一口吃个胖子，读书就像人生一样，酸甜苦辣，你需要慢慢品味。好书可以读一辈子，所以不要在乎量，找到适合你的，就是最好的。记住不适合的，不要强求，不然那就是消磨你的兴趣和意志。换一本适合你的前行，总有一天你会发现原来的难，也不是那么难。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 1148063373@qq.com </span>
