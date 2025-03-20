@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>3. CSS 实现图片随鼠标移动局部放大特效 | 梁亚军的博客</title>
-  <meta name="keywords" content=" CSS , 图片放大 , 鼠标移动 ">
-  <meta name="description" content="3. CSS 实现图片随鼠标移动局部放大特效 | 梁亚军的博客">
+  <title>俄罗斯方块 | 梁亚军的博客</title>
+  <meta name="keywords" content=" javascript , 俄罗斯方块 ">
+  <meta name="description" content="俄罗斯方块 | 梁亚军的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="Score: 0                                  #tetris-container {     display: flex;     margin-top: 20px;     position: relative;   }   #tetris-board {     width: 300px;     height: 600px;     border:">
 <meta property="og:type" content="article">
@@ -779,9 +779,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-clientSide/css/3.CSS-implements-the-special-effect-of-local-magnification-of-pictures-with-the-movement-of-the-mouse" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-clientSide/javascript/tetris-demo" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">3. CSS 实现图片随鼠标移动局部放大特效</h1>
+        <h1 class="article-title">俄罗斯方块</h1>
     
     <div class="article-meta">
         
@@ -793,7 +793,7 @@
             
             <a  data-rel="前端">前端</a> > 
             
-            <a  data-rel="前端&lt;---&gt;CSS">CSS</a>
+            <a  data-rel="前端&lt;---&gt;javascript">javascript</a>
             
         </span>
         
@@ -801,18 +801,16 @@
         <span class="tag">
             <i class="iconfont icon-tag"></i>
             
-            <a class="color4">CSS</a>
+            <a class="color1">javascript</a>
             
-            <a class="color5">图片放大</a>
-            
-            <a class="color5">鼠标移动</a>
+            <a class="color1">俄罗斯方块</a>
             
         </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2025-03-18 10:29:09'>2025-03-14 17:09</time>
+            Created At : <time class="date" title='Updated At: 2025-03-20 15:38:48'>2025-03-20 10:44</time>
         
     </div>
     <div class="article-meta">
@@ -834,7 +832,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E6%95%88%E6%9E%9C%E3%80%90%E4%BA%AC%E4%B8%9C%E5%95%86%E5%93%81%E6%94%BE%E5%A4%A7%E7%89%B9%E6%95%88%E3%80%91"><span class="toc-text">1. 效果【京东商品放大特效】</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%9E%E7%8E%B0%E6%96%B9%E6%B3%95"><span class="toc-text">2. 实现方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-JS-%E5%AE%9E%E7%8E%B0"><span class="toc-text">2.1 JS 实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-CSS-%E5%AE%9E%E7%8E%B0"><span class="toc-text">2.2 CSS 实现</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%85%A8%E5%B1%80-CSS-%E5%8F%98%E9%87%8F"><span class="toc-text">3. 全局 CSS 变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E5%88%9B%E5%BB%BA%E5%8E%9F%E5%9B%BE"><span class="toc-text">4. 创建原图</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E5%8E%9F%E5%9B%BE%E7%9B%92%E5%AD%90"><span class="toc-text">4.1 原图盒子</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E5%8E%9F%E5%9B%BE%E6%A0%B7%E5%BC%8F"><span class="toc-text">4.2 原图样式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-%E6%95%88%E6%9E%9C"><span class="toc-text">4.3 效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-%E6%B3%A8%E6%84%8F"><span class="toc-text">4.4 注意</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-%E7%9B%91%E5%90%AC%E4%BA%8B%E4%BB%B6%E7%BB%91%E5%AE%9A"><span class="toc-text">4.5 监听事件绑定</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%88%9B%E5%BB%BA%E6%94%BE%E5%A4%A7%E5%8C%BA%E5%9F%9F"><span class="toc-text">5. 创建放大区域</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#5-1-%E6%94%BE%E5%A4%A7%E5%8C%BA%E5%9F%9F%E6%A0%B7%E5%BC%8F"><span class="toc-text">5.1 放大区域样式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-2-%E6%94%BE%E5%A4%A7%E5%8C%BA%E5%9F%9F%E6%95%88%E6%9E%9C"><span class="toc-text">5.2 放大区域效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#5-3-%E6%B3%A8%E6%84%8F"><span class="toc-text">5.3 注意</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%88%9B%E5%BB%BA%E6%94%BE%E5%A4%A7%E6%98%BE%E7%A4%BA%E5%99%A8"><span class="toc-text">6. 创建放大显示器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#6-1-%E6%98%BE%E7%A4%BA%E5%99%A8%E6%A0%B7%E5%BC%8F"><span class="toc-text">6.1 显示器样式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-2-%E6%98%BE%E7%A4%BA%E5%99%A8%E6%95%88%E6%9E%9C"><span class="toc-text">6.2 显示器效果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#6-3-%E6%B3%A8%E6%84%8F"><span class="toc-text">6.3 注意</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E6%9C%80%E7%BB%88%E6%95%88%E6%9E%9C"><span class="toc-text">7. 最终效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E6%94%BE%E5%A4%A7%E5%85%AD%E5%80%8D%E8%B0%83%E6%95%B4"><span class="toc-text">8. 放大六倍调整</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E6%80%BB%E7%BB%93"><span class="toc-text">9. 总结</span></a></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -850,74 +848,235 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="1-效果【京东商品放大特效】"><a href="#1-效果【京东商品放大特效】" class="headerlink" title="1. 效果【京东商品放大特效】"></a>1. 效果【京东商品放大特效】</h3><p><img src="https://foruda.gitee.com/images/1736906365421328007/a6b97e2d_1681522.png" alt="输入图片说明"></p>
-<h3 id="2-实现方法"><a href="#2-实现方法" class="headerlink" title="2. 实现方法"></a>2. 实现方法</h3><h4 id="2-1-JS-实现"><a href="#2-1-JS-实现" class="headerlink" title="2.1 JS 实现"></a>2.1 JS 实现</h4><ol>
-<li>创建原图片的盒子，并放入原图片；</li>
-<li>创建需要放大区域的遮罩块；</li>
-<li>创建显示放大后图片显示的盒子和盒子内放大的图片；</li>
-<li>给原图绑定移出移入和鼠标移动的监听事件；</li>
-<li>移入和移出控制放大区域和放大后盒子的显示隐藏；</li>
-<li>鼠标移动函数里边计算放大区域的位置坐标和，放大后图片的坐标；</li>
-<li>这是原来我们常使用的方法，由于最近我在学习CSS的变量和函数，因此简化了这个实现。</li>
-</ol>
-<h4 id="2-2-CSS-实现"><a href="#2-2-CSS-实现" class="headerlink" title="2.2 CSS 实现"></a>2.2 CSS 实现</h4><ol>
-<li>创建一个原图为背景的盒子；</li>
-<li>给盒子绑定鼠标的移动和移出事件；</li>
-<li>获取鼠标在盒子的位置，将位置坐标通过CSS变量传入CSS样式中；</li>
-<li>同时移动和移出控制放大区域和放大后图片的展示使用透明度控制展示和隐藏。</li>
-</ol>
-<h3 id="3-全局-CSS-变量"><a href="#3-全局-CSS-变量" class="headerlink" title="3. 全局 CSS 变量"></a>3. 全局 CSS 变量</h3><ol>
-<li>–content-w 原图片的大小；</li>
-<li>–mask-w 放大块的大小；</li>
-<li>–result-w 放大块可移动的最大值；</li>
-<li>–mult 图片放大倍数；</li>
-<li>这样方便封装为组件控制显示原图和放大区域等。</li>
-</ol>
-<figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-pseudo">:root</span> &#123;<br>  <span class="hljs-attr">--content-w</span>: <span class="hljs-number">300px</span>; <span class="hljs-comment">/* 原图片的大小 */</span><br>  <span class="hljs-attr">--mask-w</span>: <span class="hljs-number">100px</span>; <span class="hljs-comment">/* 放大块的大小 */</span><br>  <span class="hljs-attr">--result-w</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-built_in">var</span>(--content-w) - <span class="hljs-built_in">var</span>(--mask-w)); <span class="hljs-comment">/* 放大块可移动的最大值 */</span><br>  <span class="hljs-attr">--mult</span>: <span class="hljs-number">3</span>; <span class="hljs-comment">/* 图片放大倍数 calc(var(--content-w) / var(--mask-w))，但是由于 calc(var(--content-w) / var(--mask-w)) 计算的结果不是倍数，因此倍数设置需要自己计算 */</span><br>&#125;<br></code></pre></td></tr></table></figure>
+        <div>
+  <div id="tetris-score">Score: 0</div>
+  <div id="tetris-container">
+    <div id="tetris-board"></div>
+    <div id="tetris-preview">
+      <div id="next-piece"></div>
+    </div>
+  </div>
+</div>
 
-<h3 id="4-创建原图"><a href="#4-创建原图" class="headerlink" title="4. 创建原图"></a>4. 创建原图</h3><h4 id="4-1-原图盒子"><a href="#4-1-原图盒子" class="headerlink" title="4.1 原图盒子"></a>4.1 原图盒子</h4><figure class="highlight applescript"><table><tr><td class="code"><pre><code class="hljs applescript">&lt;<span class="hljs-keyword">div</span> <span class="hljs-built_in">class</span>=<span class="hljs-string">&quot;rui-content&quot;</span> <span class="hljs-built_in">id</span>=<span class="hljs-string">&quot;currentImage&quot;</span> style=<span class="hljs-string">&quot;--url: url(&#x27;./static/car5.jpg&#x27;)&quot;</span>&gt;&lt;/<span class="hljs-keyword">div</span>&gt;<br></code></pre></td></tr></table></figure>
+<style>
+  #tetris-container {
+    display: flex;
+    margin-top: 20px;
+    position: relative;
+  }
+  #tetris-board {
+    width: 300px;
+    height: 600px;
+    border: 2px solid #000;
+    position: relative;
+    background-color: #f0f0f0;
+  }
+  #tetris-preview{
+    width: 80px;
+    height: 80px;
+    margin-left: 20px;
+    border: 2px solid #000;
+    position: relative;
+    background-color: #f0f0f0;
+  }
+  #tetris-score {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+  }
+</style>
 
-<h4 id="4-2-原图样式"><a href="#4-2-原图样式" class="headerlink" title="4.2 原图样式"></a>4.2 原图样式</h4><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.rui-content</span> &#123;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-built_in">var</span>(--content-w);<br>  <span class="hljs-attribute">aspect-ratio</span>: <span class="hljs-number">1</span>;<br>  <span class="hljs-attribute">position</span>: relative;<br>  <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">var</span>(--url);<br>  <span class="hljs-attribute">background-size</span>: <span class="hljs-number">100%</span> <span class="hljs-number">100%</span>;<br>  <span class="hljs-attribute">background-repeat</span>: no-repeat;<br>  <span class="hljs-attribute">background-position</span>: center;<br>  <span class="hljs-attribute">cursor</span>: pointer;<br>&#125;<br></code></pre></td></tr></table></figure>
+<script>
+  const BOARD_WIDTH = 10;
+  const BOARD_HEIGHT = 20;
+  let board = Array.from({length: BOARD_HEIGHT}, () => Array(BOARD_WIDTH).fill(0));
+  let currentPiece;
+  let nextPiece;
+  let score = 0;
 
-<h4 id="4-3-效果"><a href="#4-3-效果" class="headerlink" title="4.3 效果"></a>4.3 效果</h4><p><img src="https://foruda.gitee.com/images/1736907480313719410/ef62c619_1681522.png" alt="输入图片说明"></p>
-<h4 id="4-4-注意"><a href="#4-4-注意" class="headerlink" title="4.4 注意"></a>4.4 注意</h4><ol>
-<li>通过 –url 这个变量获取了原图片的路径，这样就不要多地方设置图片路径；</li>
-<li>通过 var(–content-w) 设置原图片盒子的宽度；</li>
-<li>通过 aspect-ratio: 1 设置原图片盒子的宽高比。</li>
-</ol>
-<h4 id="4-5-监听事件绑定"><a href="#4-5-监听事件绑定" class="headerlink" title="4.5 监听事件绑定"></a>4.5 监听事件绑定</h4><figure class="highlight stylus"><table><tr><td class="code"><pre><code class="hljs stylus">let currentImage = document<span class="hljs-selector-class">.getElementById</span>(<span class="hljs-string">&#x27;currentImage&#x27;</span>)<br>currentImage<span class="hljs-selector-class">.addEventListener</span>(<span class="hljs-string">&#x27;mousemove&#x27;</span>, function (e) &#123;<br>  currentImage<span class="hljs-selector-class">.style</span><span class="hljs-selector-class">.setProperty</span>(<span class="hljs-string">&#x27;--area-op&#x27;</span>, <span class="hljs-number">0.3</span>)<br>  currentImage<span class="hljs-selector-class">.style</span><span class="hljs-selector-class">.setProperty</span>(<span class="hljs-string">&#x27;--area-top&#x27;</span>, `$&#123;e.<span class="hljs-attribute">y</span>&#125;px`)<br>  currentImage<span class="hljs-selector-class">.style</span><span class="hljs-selector-class">.setProperty</span>(<span class="hljs-string">&#x27;--area-left&#x27;</span>, `$&#123;e.<span class="hljs-attribute">x</span>&#125;px`)<br>  currentImage<span class="hljs-selector-class">.style</span><span class="hljs-selector-class">.setProperty</span>(<span class="hljs-string">&#x27;--bg-op&#x27;</span>, <span class="hljs-number">1</span>)<br>&#125;)<br>currentImage<span class="hljs-selector-class">.addEventListener</span>(<span class="hljs-string">&#x27;mouseout&#x27;</span>, function (e) &#123;<br>  currentImage<span class="hljs-selector-class">.style</span><span class="hljs-selector-class">.setProperty</span>(<span class="hljs-string">&#x27;--area-op&#x27;</span>, <span class="hljs-number">0</span>)<br>  currentImage<span class="hljs-selector-class">.style</span><span class="hljs-selector-class">.setProperty</span>(<span class="hljs-string">&#x27;--bg-op&#x27;</span>, <span class="hljs-number">0</span>)<br>&#125;)<br></code></pre></td></tr></table></figure>
+  const TETROMINOES = [
+    [[1,1,1,1]], // I
+    [[1],[1],[1],[1]],
+    [[1,1],[1,1]], // O
+    [[0,1,0],[1,1,1]], // T 向上
+    [[1,1,1],[0,1,0]], // T 向下
+    [[1,0,0],[1,1,1]], // L
+    [[0,0,1],[1,1,1]], // J
+    [[0,1,1],[1,1,0]], // S
+    [[1,1,0],[0,1,1]]  // Z
+  ];
 
-<h3 id="5-创建放大区域"><a href="#5-创建放大区域" class="headerlink" title="5. 创建放大区域"></a>5. 创建放大区域</h3><h4 id="5-1-放大区域样式"><a href="#5-1-放大区域样式" class="headerlink" title="5.1 放大区域样式"></a>5.1 放大区域样式</h4><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.rui-content</span><span class="hljs-selector-pseudo">::before</span> &#123;<br>  <span class="hljs-comment">/* 计算放大块的位置 */</span><br>  <span class="hljs-comment">/* 当前位置的坐标 - 放大块的大小 / 2，计算出放大块的位置 */</span><br>  <span class="hljs-comment">/* 限制放大块的移动位置在 0 到 --result-w 之间，因此使用 css 的 clamp 函数获取最终值，其实就类似与 min(max(value, min), max) */</span><br>  <span class="hljs-comment">/* 使用 opacity 控制放大块的透明度来控制显示隐藏 */</span><br>  <span class="hljs-attr">--top</span>: <span class="hljs-built_in">clamp</span>(<span class="hljs-number">0px</span>, <span class="hljs-built_in">calc</span>(<span class="hljs-built_in">var</span>(--area-top, <span class="hljs-number">0</span>) - <span class="hljs-built_in">var</span>(--mask-w) / <span class="hljs-number">2</span>), <span class="hljs-built_in">var</span>(--result-w));<br>  <span class="hljs-attr">--left</span>: <span class="hljs-built_in">clamp</span>(<span class="hljs-number">0px</span>, <span class="hljs-built_in">calc</span>(<span class="hljs-built_in">var</span>(--area-left, <span class="hljs-number">0</span>) - <span class="hljs-built_in">var</span>(--mask-w) / <span class="hljs-number">2</span>), <span class="hljs-built_in">var</span>(--result-w));<br>  <span class="hljs-attribute">content</span>: <span class="hljs-string">&#x27;&#x27;</span>;<br>  <span class="hljs-attribute">display</span>: block;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-built_in">var</span>(--mask-w);<br>  <span class="hljs-attribute">aspect-ratio</span>: <span class="hljs-number">1</span>;<br>  <span class="hljs-attribute">pointer-events</span>: none;<br>  <span class="hljs-attribute">background-color</span>: red;<br>  <span class="hljs-attribute">opacity</span>: <span class="hljs-built_in">var</span>(--area-op, <span class="hljs-number">0</span>);<br>  <span class="hljs-attribute">position</span>: absolute;<br>  <span class="hljs-attribute">top</span>: <span class="hljs-built_in">var</span>(--top, <span class="hljs-number">0</span>);<br>  <span class="hljs-attribute">left</span>: <span class="hljs-built_in">var</span>(--left, <span class="hljs-number">0</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
 
-<h4 id="5-2-放大区域效果"><a href="#5-2-放大区域效果" class="headerlink" title="5.2 放大区域效果"></a>5.2 放大区域效果</h4><p><img src="https://foruda.gitee.com/images/1736907784273390309/106fe66e_1681522.png" alt="输入图片说明"></p>
-<h4 id="5-3-注意"><a href="#5-3-注意" class="headerlink" title="5.3 注意"></a>5.3 注意</h4><ol>
-<li>放大区域并没有创建新的 DOM 元素，而是使用 ::before 伪元素，直接作为放大区域的盒子使用；</li>
-<li>使用 var, calc, clamp 三个 CSS 函数配合计算出当前放大区域所在的位置；</li>
-<li>使用 var(–area-op, 0) 计算盒子的透明度来控制显示还是隐藏；</li>
-<li>特别注意：需要设置盒子的 pointer-events 为 none，否则鼠标在放大区域显示的时候回丢失移入效果，就会出现不断闪动的效果。</li>
-</ol>
-<h3 id="6-创建放大显示器"><a href="#6-创建放大显示器" class="headerlink" title="6. 创建放大显示器"></a>6. 创建放大显示器</h3><h4 id="6-1-显示器样式"><a href="#6-1-显示器样式" class="headerlink" title="6.1 显示器样式"></a>6.1 显示器样式</h4><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-class">.rui-content</span><span class="hljs-selector-pseudo">::after</span> &#123;<br>  <span class="hljs-comment">/* 计算图片放大后的大小 */</span><br>  <span class="hljs-attr">--bg-size</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-built_in">var</span>(--content-w) * <span class="hljs-built_in">var</span>(--mult));<br>  <span class="hljs-comment">/* 计算放大后图片的位置 */</span><br>  <span class="hljs-attr">--cur-top</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-number">0px</span> - (<span class="hljs-built_in">var</span>(--area-top, <span class="hljs-number">0</span>) - <span class="hljs-built_in">var</span>(--mask-w) / <span class="hljs-number">2</span>) * <span class="hljs-built_in">var</span>(--mult));<br>  <span class="hljs-attr">--cur-left</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-number">0px</span> - (<span class="hljs-built_in">var</span>(--area-left, <span class="hljs-number">0</span>) - <span class="hljs-built_in">var</span>(--mask-w) / <span class="hljs-number">2</span>) * <span class="hljs-built_in">var</span>(--mult));<br>  <span class="hljs-comment">/* 计算图片放大后超出边界的位置 */</span><br>  <span class="hljs-attr">--init-val</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-number">0px</span> - <span class="hljs-built_in">var</span>(--result-w) * <span class="hljs-built_in">var</span>(--mult));<br>  <span class="hljs-comment">/* 计算放大后的区间值 */</span><br>  <span class="hljs-attr">--top</span>: <span class="hljs-built_in">clamp</span>(<span class="hljs-built_in">var</span>(--init-val), <span class="hljs-built_in">var</span>(--cur-top), <span class="hljs-number">0px</span>);<br>  <span class="hljs-attr">--left</span>: <span class="hljs-built_in">clamp</span>(<span class="hljs-built_in">var</span>(--init-val), <span class="hljs-built_in">var</span>(--cur-left), <span class="hljs-number">0px</span>);<br>  <span class="hljs-attribute">content</span>: <span class="hljs-string">&#x27;&#x27;</span>;<br>  <span class="hljs-attribute">display</span>: block;<br>  <span class="hljs-attribute">pointer-events</span>: none;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-built_in">var</span>(--content-w);<br>  <span class="hljs-attribute">aspect-ratio</span>: <span class="hljs-number">1</span>;<br>  <span class="hljs-attribute">opacity</span>: <span class="hljs-built_in">var</span>(--bg-op, <span class="hljs-number">0</span>);<br>  <span class="hljs-attribute">background-image</span>: <span class="hljs-built_in">var</span>(--url);<br>  <span class="hljs-attribute">background-size</span>: <span class="hljs-built_in">var</span>(--bg-size) <span class="hljs-built_in">var</span>(--bg-size);<br>  <span class="hljs-attribute">background-repeat</span>: no-repeat;<br>  <span class="hljs-attribute">background-position</span>: <span class="hljs-built_in">var</span>(--left, <span class="hljs-number">0</span>) <span class="hljs-built_in">var</span>(--top, <span class="hljs-number">0</span>);<br>  <span class="hljs-attribute">position</span>: absolute;<br>  <span class="hljs-attribute">top</span>: <span class="hljs-number">0</span>;<br>  <span class="hljs-attribute">left</span>: <span class="hljs-built_in">calc</span>(<span class="hljs-built_in">var</span>(--content-w) + <span class="hljs-number">10px</span>);<br>&#125;<br></code></pre></td></tr></table></figure>
+  function createPiece() {
+    const randomIndex = Math.floor(Math.random() * TETROMINOES.length);
+    let piece = {
+      shape: TETROMINOES[randomIndex],
+      x: Math.floor((BOARD_WIDTH - TETROMINOES[randomIndex][0].length) / 2),
+      y: 0
+    };
+    if (nextPiece) {
+      piece = nextPiece;
+    }
+    nextPiece = {
+      shape: TETROMINOES[Math.floor(Math.random() * TETROMINOES.length)],
+      x: Math.floor((BOARD_WIDTH - TETROMINOES[randomIndex][0].length) / 2),
+      y: 0
+    };
+    drawNextPiece(nextPiece);
+    return piece;
+  }
 
-<h4 id="6-2-显示器效果"><a href="#6-2-显示器效果" class="headerlink" title="6.2 显示器效果"></a>6.2 显示器效果</h4><p><img src="https://foruda.gitee.com/images/1736908327258407032/51cbb03e_1681522.png" alt="输入图片说明"></p>
-<h4 id="6-3-注意"><a href="#6-3-注意" class="headerlink" title="6.3 注意"></a>6.3 注意</h4><ol>
-<li>显示器并没有创建新的 DOM 元素，而是使用 ::after 伪元素，直接作为显示器的盒子使用；</li>
-<li>使用 var, calc, clamp 三个 CSS 函数配合计算出当前显示器背景图的坐标位置；</li>
-<li>使用 var, calc 计算图片放大后的大小；</li>
-<li>使用 var, calc 计算放大后图片的位置；</li>
-<li>使用 var, calc 计算图片放大后超出边界的位置；</li>
-<li>使用 var, clamp 计算放大后的位置的区间值；</li>
-<li>使用 var(–bg-op, 0) 控制显示器的显示和隐藏；</li>
-<li>使用 var(–url) 获取显示器的图片；</li>
-<li>注意：需要给显示器添加 pointer-events: none，防止鼠标移动到显示器，没有执行移出效果。</li>
-</ol>
-<h3 id="7-最终效果"><a href="#7-最终效果" class="headerlink" title="7. 最终效果"></a>7. 最终效果</h3><p><img src="https://foruda.gitee.com/images/1736909069695352870/e7a11a8a_1681522.gif" alt="输入图片说明"></p>
-<h3 id="8-放大六倍调整"><a href="#8-放大六倍调整" class="headerlink" title="8. 放大六倍调整"></a>8. 放大六倍调整</h3><p><img src="https://foruda.gitee.com/images/1736909207905874332/c7bbee94_1681522.png" alt="输入图片说明"></p>
-<h3 id="9-总结"><a href="#9-总结" class="headerlink" title="9. 总结"></a>9. 总结</h3><ol>
-<li>使用伪元素配合 CSS 函数计算，减少 DOM 的创建和控制；</li>
-<li>减少了 JS 的计算量，只用单纯的监听位置和移出，其他计算都交给 CSS 的函数完成，原生 JS 直接减少到 11 行代码，如果使用 vue 或者 react 库 JS 的监听代码量更少；</li>
-<li>熟练的使用 CSS 一些函数，能够使我们更加便捷的实现很多以前需要 JS 才能实现的复杂特效，所以细学 CSS 还是很有必要的，不断学习前进。</li>
-</ol>
+  function drawNextPiece(piece) {
+    const nextPieceElement = document.getElementById('next-piece');
+    nextPieceElement.innerHTML = '';
+    nextPieceWidth = piece.shape[0].length;
+    nextPieceHeight = piece.shape.length;
+    let left = (4 - nextPieceWidth) / 2 * 20;
+    let top = (4 - nextPieceHeight) / 2 * 20;
+    for (let row = 0; row < piece.shape.length; row++) {
+      for (let col = 0; col < piece.shape[row].length; col++) {
+        if (piece.shape[row][col]) {
+          const cell = document.createElement('div');
+          cell.style.width = '20px';
+          cell.style.height = '20px';
+          cell.style.position = 'absolute';
+          cell.style.left = `${col * 20 + left}px`;
+          cell.style.top = `${row * 20 + top}px`;
+          cell.style.backgroundColor = '#000';
+          nextPieceElement.appendChild(cell);
+        }
+      }
+    }
+  }
 
+  function draw() {
+    const boardElement = document.getElementById('tetris-board');
+    boardElement.innerHTML = '';
+    console.log('currentPiece',currentPiece);
+    console.log(board);
+    let { shape, x:i, y:j } = currentPiece;
+    
+    for (let y = 0; y < BOARD_HEIGHT; y++) {
+      for (let x = 0; x < BOARD_WIDTH; x++) {
+        let isPiece = false;
+        for (let row = 0; row < currentPiece.shape.length; row++) {
+          for (let col = 0; col < currentPiece.shape[row].length; col++) {
+            if (currentPiece.shape[row][col] && 
+                x === currentPiece.x + col && 
+                y === currentPiece.y + row) {
+              isPiece = true;
+            }
+          }
+        }
+        const cell = document.createElement('div');
+        cell.style.position = 'absolute';
+        cell.style.width = '30px';
+        cell.style.height = '30px';
+        cell.style.left = `${x * 30}px`;
+        cell.style.top = `${y * 30}px`;
+        cell.style.backgroundColor = isPiece ? '#f00' : (board[y][x] ? '#000' : '#f0f0f0');
+        boardElement.appendChild(cell);
+      }
+    }
+
+    document.getElementById('tetris-score').innerText = `Score: ${score}`;
+  }
+
+  function movePiece(dx, dy) {
+    if (!collision(currentPiece.shape, currentPiece.x + dx, currentPiece.y + dy)) {
+      currentPiece.x += dx;
+      currentPiece.y += dy;
+    }
+  }
+
+  function rotatePiece() {
+    const rotated = currentPiece.shape[0].map((_, i) => 
+      currentPiece.shape.map(row => row[i]).reverse()
+    );
+    if (!collision(rotated, currentPiece.x, currentPiece.y)) {
+      currentPiece.shape = rotated;
+    }
+  }
+
+  function collision(shape, x, y) {
+    for (let row = 0; row < shape.length; row++) {
+      for (let col = 0; col < shape[row].length; col++) {
+        if (shape[row][col] &&
+            (board[y + row] && board[y + row][x + col]) !== 0) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  function placePiece() {
+    for (let row = 0; row < currentPiece.shape.length; row++) {
+      for (let col = 0; col < currentPiece.shape[row].length; col++) {
+        if (currentPiece.shape[row][col]) {
+          board[currentPiece.y + row][currentPiece.x + col] = 1;
+        }
+      }
+    }
+    clearLines();
+    currentPiece = createPiece();
+    if (collision(currentPiece.shape, currentPiece.x, currentPiece.y)) {
+      gameOver();
+    }
+  }
+
+  function clearLines() {
+    let linesCleared = 0;
+    for (let y = BOARD_HEIGHT - 1; y >= 0; y--) {
+      if (board[y].every(cell => cell !== 0)) {
+        board.splice(y, 1);
+        board.unshift(Array(BOARD_WIDTH).fill(0));
+        linesCleared++;
+        y++;
+      }
+    }
+    score += linesCleared * 100;
+  }
+
+  function gameOver() {
+    alert(`Game Over! Your score: ${score}`);
+    board = Array.from({length: BOARD_HEIGHT}, () => Array(BOARD_WIDTH).fill(0));
+    score = 0;
+    currentPiece = createPiece();
+  }
+
+  document.addEventListener('keydown', (e) => {
+    switch (e.key) {
+      case 'ArrowLeft':
+        movePiece(-1, 0);
+        break;
+      case 'ArrowRight':
+        movePiece(1, 0);
+        break;
+      case 'ArrowDown':
+        movePiece(0, 1);
+        break;
+      case 'ArrowUp':
+        rotatePiece();
+        break;
+    }
+    draw();
+  });
+
+  function gameLoop() {
+    draw();
+    if (!collision(currentPiece.shape, currentPiece.x, currentPiece.y + 1)) {
+      currentPiece.y++;
+    } else {
+      placePiece();
+    }
+    setTimeout(gameLoop, 1000);
+  }
+
+  currentPiece = createPiece();
+  draw();
+  gameLoop();
+</script>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 1148063373@qq.com </span>
     </div>
