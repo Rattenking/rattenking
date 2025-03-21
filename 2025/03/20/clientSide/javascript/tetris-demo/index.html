@@ -6,15 +6,15 @@
   <meta name="keywords" content=" javascript , 俄罗斯方块 ">
   <meta name="description" content="俄罗斯方块 | 梁亚军的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="Score: 0                                  #tetris-container {     display: flex;     margin-top: 20px;     position: relative;   }   #tetris-board {     width: 300px;     height: 600px;     border:">
+<meta name="description" content="1. 介绍俄罗斯方块（俄语：Русская клеточная игра или Русская клеточная игра в квадрате）是一款经典的益智类游戏，其规则简单，操作简单，具有很高的趣味性。俄罗斯方块是一款2D的益智游戏，玩家控制一个方块在一个方格内自由移动，通过控制方块的旋转、下落、以及移动，来消除周围的方块，并在此过程中获得分数。 游戏的基本规则如下：  方块由四个小方">
 <meta property="og:type" content="article">
 <meta property="og:title" content="俄罗斯方块">
 <meta property="og:url" content="http://example.com/2025/03/20/clientSide/javascript/tetris-demo/index.html">
 <meta property="og:site_name" content="梁亚军的博客">
-<meta property="og:description" content="Score: 0                                  #tetris-container {     display: flex;     margin-top: 20px;     position: relative;   }   #tetris-board {     width: 300px;     height: 600px;     border:">
+<meta property="og:description" content="1. 介绍俄罗斯方块（俄语：Русская клеточная игра или Русская клеточная игра в квадрате）是一款经典的益智类游戏，其规则简单，操作简单，具有很高的趣味性。俄罗斯方块是一款2D的益智游戏，玩家控制一个方块在一个方格内自由移动，通过控制方块的旋转、下落、以及移动，来消除周围的方块，并在此过程中获得分数。 游戏的基本规则如下：  方块由四个小方">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-03-20T02:44:36.175Z">
-<meta property="article:modified_time" content="2025-03-20T09:01:36.074Z">
+<meta property="article:modified_time" content="2025-03-21T09:31:44.020Z">
 <meta property="article:author" content="梁亚军">
 <meta property="article:tag" content="javascript">
 <meta property="article:tag" content="俄罗斯方块">
@@ -810,7 +810,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2025-03-20 17:01:36'>2025-03-20 10:44</time>
+            Created At : <time class="date" title='Updated At: 2025-03-21 17:31:44'>2025-03-20 10:44</time>
         
     </div>
     <div class="article-meta">
@@ -832,7 +832,7 @@
     
     <div class="toc-ref">
     
-        
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BB%8B%E7%BB%8D"><span class="toc-text">1. 介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E9%A2%84%E8%A7%88%E6%95%88%E6%9E%9C"><span class="toc-text">2. 预览效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-DOM-%E7%BB%93%E6%9E%84"><span class="toc-text">3. DOM 结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-CSS-%E5%9F%BA%E7%A1%80%E6%A0%B7%E5%BC%8F"><span class="toc-text">4. CSS 基础样式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E5%A3%B0%E6%98%8E"><span class="toc-text">5. 全局变量声明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%88%9B%E5%BB%BA%E5%BD%93%E5%89%8D%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%B9%E5%9D%97%E5%92%8C%E4%B8%8B%E4%B8%80%E4%B8%AA%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%B9%E5%9D%97"><span class="toc-text">6. 创建当前俄罗斯方块和下一个俄罗斯方块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E7%BB%98%E5%88%B6%E9%A2%84%E5%91%8A%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%B9%E5%9D%97"><span class="toc-text">7. 绘制预告俄罗斯方块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E7%BB%98%E5%88%B6%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%B9%E5%9D%97%E6%9D%BF"><span class="toc-text">8. 绘制俄罗斯方块板</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E7%A7%BB%E5%8A%A8%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%B9%E5%9D%97"><span class="toc-text">9. 移动俄罗斯方块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E6%97%8B%E8%BD%AC%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%B9%E5%9D%97"><span class="toc-text">10. 旋转俄罗斯方块</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%B9%E5%9D%97%E6%98%AF%E5%90%A6%E7%A2%B0%E6%92%9E"><span class="toc-text">11. 俄罗斯方块是否碰撞</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E4%BF%84%E7%BD%97%E6%96%AF%E6%96%B9%E5%9D%97%E4%B8%8B%E8%90%BD"><span class="toc-text">12. 俄罗斯方块下落</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#13-%E6%B8%85%E9%99%A4%E6%BB%A1%E8%A1%8C"><span class="toc-text">13. 清除满行</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#14-%E6%B8%B8%E6%88%8F%E7%BB%93%E6%9D%9F"><span class="toc-text">14. 游戏结束</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#15-%E5%BC%80%E5%A7%8B%E6%B8%B8%E6%88%8F"><span class="toc-text">15. 开始游戏</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -848,8 +848,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <div>
+        <h3 id="1-介绍"><a href="#1-介绍" class="headerlink" title="1. 介绍"></a>1. 介绍</h3><p>俄罗斯方块（俄语：Русская клеточная игра или Русская клеточная игра в квадрате）是一款经典的益智类游戏，其规则简单，操作简单，具有很高的趣味性。<br>俄罗斯方块是一款2D的益智游戏，玩家控制一个方块在一个方格内自由移动，通过控制方块的旋转、下落、以及移动，来消除周围的方块，并在此过程中获得分数。</p>
+<p>游戏的基本规则如下：</p>
+<ul>
+<li>方块由四个小方块组成，每个小方块都有四个角落，四条边，以及一个中心点。</li>
+<li>方块可以旋转，但不能翻转。</li>
+<li>方块只能在空白的格子上移动。</li>
+<li>方块移动到底部时，方块会固定在底部，并开始下落。</li>
+<li>方块下落时，如果它与其他方块发生碰撞，则游戏结束。</li>
+<li>方块下落到底部时，它会消除周围的方块，并获得分数。</li>
+<li>方块消除一行时，游戏结束。</li>
+</ul>
+<p>本文将用javascript实现俄罗斯方块游戏。</p>
+<h3 id="2-预览效果"><a href="#2-预览效果" class="headerlink" title="2. 预览效果"></a>2. 预览效果</h3><div>
   <div id="tetris-score">Score: 0</div>
+  <div>
+    <button onclick="startGame()">Start Game</button>
+  </div>
   <div id="tetris-container">
     <div id="tetris-board"></div>
     <div id="tetris-preview">
@@ -872,23 +887,46 @@
     background-color: #f0f0f0;
   }
   #tetris-preview{
-    width: 80px;
-    height: 80px;
+    width: 120px;
+    height: 120px;
     margin-left: 20px;
     border: 2px solid #000;
     position: relative;
     background-color: #f0f0f0;
+  }
+  .rui-piece-cell{
+    box-sizing: border-box;
+    border: 1px solid #aaa;
   }
   #tetris-score {
     font-size: 20px;
     font-weight: bold;
     text-align: center;
   }
+  button {
+    display: block;
+    margin: 0 auto;
+    padding: 10px 20px;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+
+  button:hover {
+    background-color: #45a049;
+  }
 </style>
 
 <script>
   const BOARD_WIDTH = 10;
   const BOARD_HEIGHT = 20;
+  const PREVIEW_WIDTH = 6;
+  let timer = null;
   let board = Array.from({length: BOARD_HEIGHT}, () => Array(BOARD_WIDTH).fill(0));
   let currentPiece;
   let nextPiece;
@@ -927,8 +965,8 @@
     nextPieceElement.innerHTML = '';
     nextPieceWidth = piece.shape[0].length;
     nextPieceHeight = piece.shape.length;
-    let left = (4 - nextPieceWidth) / 2 * 20;
-    let top = (4 - nextPieceHeight) / 2 * 20;
+    let left = (PREVIEW_WIDTH - nextPieceWidth) / 2 * 20;
+    let top = (PREVIEW_WIDTH - nextPieceHeight) / 2 * 20;
     for (let row = 0; row < piece.shape.length; row++) {
       for (let col = 0; col < piece.shape[row].length; col++) {
         if (piece.shape[row][col]) {
@@ -939,6 +977,7 @@
           cell.style.left = `${col * 20 + left}px`;
           cell.style.top = `${row * 20 + top}px`;
           cell.style.backgroundColor = '#000';
+          cell.classList.add('rui-piece-cell');
           nextPieceElement.appendChild(cell);
         }
       }
@@ -948,8 +987,6 @@
   function draw() {
     const boardElement = document.getElementById('tetris-board');
     boardElement.innerHTML = '';
-    console.log('currentPiece',currentPiece);
-    console.log(board);
     let { shape, x:i, y:j } = currentPiece;
     
     for (let y = 0; y < BOARD_HEIGHT; y++) {
@@ -971,6 +1008,7 @@
         cell.style.left = `${x * 30}px`;
         cell.style.top = `${y * 30}px`;
         cell.style.backgroundColor = isPiece ? '#f00' : (board[y][x] ? '#000' : '#f0f0f0');
+        cell.classList.add('rui-piece-cell');
         boardElement.appendChild(cell);
       }
     }
@@ -1066,13 +1104,51 @@
     } else {
       placePiece();
     }
-    setTimeout(gameLoop, 1000);
+    timer = setTimeout(gameLoop, 1000);
   }
 
-  currentPiece = createPiece();
-  draw();
-  gameLoop();
+  function startGame() {
+    // 判断游戏是否已经开始，开始就清除定时器
+    if(timer) {
+      clearTimeout(timer); 
+    }
+    currentPiece = createPiece();
+    draw();
+    gameLoop();
+  }
 </script>
+
+<h3 id="3-DOM-结构"><a href="#3-DOM-结构" class="headerlink" title="3. DOM 结构"></a>3. DOM 结构</h3><figure class="highlight html"><table><tr><td class="code"><pre><code class="hljs html"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tetris-score&quot;</span>&gt;</span>Score: 0<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;startGame()&quot;</span>&gt;</span>Start Game<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tetris-container&quot;</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tetris-board&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tetris-preview&quot;</span>&gt;</span><br>      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;next-piece&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br>  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span><br></code></pre></td></tr></table></figure>
+
+<h3 id="4-CSS-基础样式"><a href="#4-CSS-基础样式" class="headerlink" title="4. CSS 基础样式"></a>4. CSS 基础样式</h3><figure class="highlight css"><table><tr><td class="code"><pre><code class="hljs css"><span class="hljs-selector-id">#tetris-container</span> &#123;<br>  <span class="hljs-attribute">display</span>: flex;<br>  <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">20px</span>;<br>  <span class="hljs-attribute">position</span>: relative;<br>&#125;<br><span class="hljs-selector-id">#tetris-board</span> &#123;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">300px</span>;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">600px</span>;<br>  <span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> solid <span class="hljs-number">#000</span>;<br>  <span class="hljs-attribute">position</span>: relative;<br>  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#f0f0f0</span>;<br>&#125;<br><span class="hljs-selector-id">#tetris-preview</span>&#123;<br>  <span class="hljs-attribute">width</span>: <span class="hljs-number">120px</span>;<br>  <span class="hljs-attribute">height</span>: <span class="hljs-number">120px</span>;<br>  <span class="hljs-attribute">margin-left</span>: <span class="hljs-number">20px</span>;<br>  <span class="hljs-attribute">border</span>: <span class="hljs-number">2px</span> solid <span class="hljs-number">#000</span>;<br>  <span class="hljs-attribute">position</span>: relative;<br>  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#f0f0f0</span>;<br>&#125;<br><span class="hljs-selector-class">.rui-piece-cell</span>&#123;<br>  <span class="hljs-attribute">box-sizing</span>: border-box;<br>  <span class="hljs-attribute">border</span>: <span class="hljs-number">1px</span> solid <span class="hljs-number">#aaa</span>;<br>&#125;<br><span class="hljs-selector-id">#tetris-score</span> &#123;<br>  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">20px</span>;<br>  <span class="hljs-attribute">font-weight</span>: bold;<br>  <span class="hljs-attribute">text-align</span>: center;<br>&#125;<br><span class="hljs-selector-tag">button</span> &#123;<br>  <span class="hljs-attribute">display</span>: block;<br>  <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> auto;<br>  <span class="hljs-attribute">padding</span>: <span class="hljs-number">10px</span> <span class="hljs-number">20px</span>;<br>  <span class="hljs-attribute">font-size</span>: <span class="hljs-number">18px</span>;<br>  <span class="hljs-attribute">font-weight</span>: bold;<br>  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#4CAF50</span>;<br>  <span class="hljs-attribute">color</span>: white;<br>  <span class="hljs-attribute">border</span>: none;<br>  <span class="hljs-attribute">border-radius</span>: <span class="hljs-number">5px</span>;<br>  <span class="hljs-attribute">cursor</span>: pointer;<br>  <span class="hljs-attribute">transition</span>: background-color <span class="hljs-number">0.3s</span> ease;<br>&#125;<br><br><span class="hljs-selector-tag">button</span><span class="hljs-selector-pseudo">:hover</span> &#123;<br>  <span class="hljs-attribute">background-color</span>: <span class="hljs-number">#45a049</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="5-全局变量声明"><a href="#5-全局变量声明" class="headerlink" title="5. 全局变量声明"></a>5. 全局变量声明</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> <span class="hljs-variable constant_">BOARD_WIDTH</span> = <span class="hljs-number">10</span>; <span class="hljs-comment">// 俄罗斯方块板宽</span><br><span class="hljs-keyword">const</span> <span class="hljs-variable constant_">BOARD_HEIGHT</span> = <span class="hljs-number">20</span>; <span class="hljs-comment">// 俄罗斯方块板高</span><br><span class="hljs-keyword">const</span> <span class="hljs-variable constant_">PREVIEW_WIDTH</span> = <span class="hljs-number">6</span>; <span class="hljs-comment">// 俄罗斯方块预览宽</span><br><span class="hljs-keyword">let</span> timer = <span class="hljs-literal">null</span>; <span class="hljs-comment">// 定时器</span><br><span class="hljs-keyword">let</span> board = <span class="hljs-title class_">Array</span>.<span class="hljs-title function_">from</span>(&#123;<span class="hljs-attr">length</span>: <span class="hljs-variable constant_">BOARD_HEIGHT</span>&#125;, <span class="hljs-function">() =&gt;</span> <span class="hljs-title class_">Array</span>(<span class="hljs-variable constant_">BOARD_WIDTH</span>).<span class="hljs-title function_">fill</span>(<span class="hljs-number">0</span>)); <span class="hljs-comment">// 俄罗斯方块板</span><br><span class="hljs-keyword">let</span> currentPiece; <span class="hljs-comment">// 当前俄罗斯方块</span><br><span class="hljs-keyword">let</span> nextPiece; <span class="hljs-comment">// 下一个俄罗斯方块</span><br><span class="hljs-keyword">let</span> score = <span class="hljs-number">0</span>; <span class="hljs-comment">// 得分</span><br><br><span class="hljs-keyword">const</span> <span class="hljs-variable constant_">TETROMINOES</span> = [<br>  [[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>]], <span class="hljs-comment">// I</span><br>  [[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>]], <span class="hljs-comment">// O</span><br>  [[<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>]], <span class="hljs-comment">// T 向上</span><br>  [[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>],[<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>]], <span class="hljs-comment">// T 向下</span><br>  [[<span class="hljs-number">1</span>,<span class="hljs-number">0</span>,<span class="hljs-number">0</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>]], <span class="hljs-comment">// L</span><br>  [[<span class="hljs-number">0</span>,<span class="hljs-number">0</span>,<span class="hljs-number">1</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>]], <span class="hljs-comment">// J</span><br>  [[<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>],[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>]], <span class="hljs-comment">// S</span><br>  [[<span class="hljs-number">1</span>,<span class="hljs-number">1</span>,<span class="hljs-number">0</span>],[<span class="hljs-number">0</span>,<span class="hljs-number">1</span>,<span class="hljs-number">1</span>]]  <span class="hljs-comment">// Z</span><br>];<br></code></pre></td></tr></table></figure>
+
+<h3 id="6-创建当前俄罗斯方块和下一个俄罗斯方块"><a href="#6-创建当前俄罗斯方块和下一个俄罗斯方块" class="headerlink" title="6. 创建当前俄罗斯方块和下一个俄罗斯方块"></a>6. 创建当前俄罗斯方块和下一个俄罗斯方块</h3><ol>
+<li>如果没有下一个俄罗斯方块，则创建一个，说明游戏刚开始，下一个俄罗斯方块还未创建。</li>
+<li>随机选择一个俄罗斯方块，计算俄罗斯方块出现的X坐标位置。</li>
+<li>创建下一个俄罗斯方块，并对下一个俄罗斯方块进行预告绘制。</li>
+<li>返回当前俄罗斯方块。</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">createRandomPiece</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// 随机选择一个俄罗斯方块</span><br>  <span class="hljs-keyword">const</span> randomIndex = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>(<span class="hljs-title class_">Math</span>.<span class="hljs-title function_">random</span>() * <span class="hljs-variable constant_">TETROMINOES</span>.<span class="hljs-property">length</span>);<br>  <span class="hljs-comment">// 计算俄罗斯方块出现的X坐标位置</span><br>  <span class="hljs-keyword">const</span> randomX = <span class="hljs-title class_">Math</span>.<span class="hljs-title function_">floor</span>((<span class="hljs-variable constant_">BOARD_WIDTH</span> - <span class="hljs-variable constant_">TETROMINOES</span>[randomIndex][<span class="hljs-number">0</span>].<span class="hljs-property">length</span>) / <span class="hljs-number">2</span>);<br>  <span class="hljs-keyword">return</span> &#123;<br>    <span class="hljs-attr">shape</span>: <span class="hljs-variable constant_">TETROMINOES</span>[randomIndex],<br>    <span class="hljs-attr">x</span>: randomX,<br>    <span class="hljs-attr">y</span>: <span class="hljs-number">0</span><br>  &#125;;<br>&#125;<br><span class="hljs-keyword">function</span> <span class="hljs-title function_">createPiece</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// 如果没有下一个俄罗斯方块，则创建一个</span><br>  <span class="hljs-keyword">let</span> piece = nextPiece || <span class="hljs-title function_">createRandomPiece</span>();<br>  <span class="hljs-comment">// 随机选择下一个俄罗斯方块</span><br>  nextPiece = <span class="hljs-title function_">createRandomPiece</span>();<br>  <span class="hljs-comment">// 绘制下一个俄罗斯方块</span><br>  <span class="hljs-title function_">drawNextPiece</span>(nextPiece);<br>  <span class="hljs-comment">// 返回当前俄罗斯方块</span><br>  <span class="hljs-keyword">return</span> piece;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="7-绘制预告俄罗斯方块"><a href="#7-绘制预告俄罗斯方块" class="headerlink" title="7. 绘制预告俄罗斯方块"></a>7. 绘制预告俄罗斯方块</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">drawNextPiece</span>(<span class="hljs-params">piece</span>) &#123;<br>  <span class="hljs-comment">// 获取展示预告俄罗斯方块的盒子</span><br>  <span class="hljs-keyword">const</span> nextPieceElement = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;next-piece&#x27;</span>);<br>  <span class="hljs-comment">// 清空展示预告俄罗斯方块的盒子</span><br>  nextPieceElement.<span class="hljs-property">innerHTML</span> = <span class="hljs-string">&#x27;&#x27;</span>;<br>  <span class="hljs-comment">// 获取俄罗斯方块的宽和高</span><br>  nextPieceWidth = piece.<span class="hljs-property">shape</span>[<span class="hljs-number">0</span>].<span class="hljs-property">length</span>;<br>  nextPieceHeight = piece.<span class="hljs-property">shape</span>.<span class="hljs-property">length</span>;<br>  <span class="hljs-comment">// 计算预告俄罗斯方块的左上角坐标</span><br>  <span class="hljs-keyword">let</span> left = (<span class="hljs-variable constant_">PREVIEW_WIDTH</span> - nextPieceWidth) / <span class="hljs-number">2</span> * <span class="hljs-number">20</span>;<br>  <span class="hljs-keyword">let</span> top = (<span class="hljs-variable constant_">PREVIEW_WIDTH</span> - nextPieceHeight) / <span class="hljs-number">2</span> * <span class="hljs-number">20</span>;<br>  <span class="hljs-comment">// 绘制预告俄罗斯方块</span><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> row = <span class="hljs-number">0</span>; row &lt; piece.<span class="hljs-property">shape</span>.<span class="hljs-property">length</span>; row++) &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> col = <span class="hljs-number">0</span>; col &lt; piece.<span class="hljs-property">shape</span>[row].<span class="hljs-property">length</span>; col++) &#123;<br>      <span class="hljs-keyword">if</span> (piece.<span class="hljs-property">shape</span>[row][col]) &#123;<br>        <span class="hljs-keyword">const</span> cell = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;div&#x27;</span>);<br>        cell.<span class="hljs-property">style</span>.<span class="hljs-property">width</span> = <span class="hljs-string">&#x27;20px&#x27;</span>;<br>        cell.<span class="hljs-property">style</span>.<span class="hljs-property">height</span> = <span class="hljs-string">&#x27;20px&#x27;</span>;<br>        cell.<span class="hljs-property">style</span>.<span class="hljs-property">position</span> = <span class="hljs-string">&#x27;absolute&#x27;</span>;<br>        cell.<span class="hljs-property">style</span>.<span class="hljs-property">left</span> = <span class="hljs-string">`<span class="hljs-subst">$&#123;col * <span class="hljs-number">20</span> + left&#125;</span>px`</span>;<br>        cell.<span class="hljs-property">style</span>.<span class="hljs-property">top</span> = <span class="hljs-string">`<span class="hljs-subst">$&#123;row * <span class="hljs-number">20</span> + top&#125;</span>px`</span>;<br>        cell.<span class="hljs-property">style</span>.<span class="hljs-property">backgroundColor</span> = <span class="hljs-string">&#x27;#000&#x27;</span>;<br>        cell.<span class="hljs-property">classList</span>.<span class="hljs-title function_">add</span>(<span class="hljs-string">&#x27;rui-piece-cell&#x27;</span>);<br>        nextPieceElement.<span class="hljs-title function_">appendChild</span>(cell);<br>      &#125;<br>    &#125;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="8-绘制俄罗斯方块板"><a href="#8-绘制俄罗斯方块板" class="headerlink" title="8. 绘制俄罗斯方块板"></a>8. 绘制俄罗斯方块板</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">draw</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// 获取俄罗斯方块板的盒子</span><br>  <span class="hljs-keyword">const</span> boardElement = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;tetris-board&#x27;</span>);<br>  <span class="hljs-comment">// 清空俄罗斯方块板的盒子</span><br>  boardElement.<span class="hljs-property">innerHTML</span> = <span class="hljs-string">&#x27;&#x27;</span>;<br>  <span class="hljs-comment">// 获取当前俄罗斯方块的形状、X坐标、Y坐标</span><br>  <span class="hljs-keyword">let</span> &#123; shape, <span class="hljs-attr">x</span>:i, <span class="hljs-attr">y</span>:j &#125; = currentPiece;<br>  <span class="hljs-comment">// 绘制俄罗斯方块板</span><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> y = <span class="hljs-number">0</span>; y &lt; <span class="hljs-variable constant_">BOARD_HEIGHT</span>; y++) &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> x = <span class="hljs-number">0</span>; x &lt; <span class="hljs-variable constant_">BOARD_WIDTH</span>; x++) &#123;<br>      <span class="hljs-comment">// 判断当前坐标是否是俄罗斯方块的一部分</span><br>      <span class="hljs-keyword">let</span> isPiece = <span class="hljs-literal">false</span>;<br>      <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> row = <span class="hljs-number">0</span>; row &lt; currentPiece.<span class="hljs-property">shape</span>.<span class="hljs-property">length</span>; row++) &#123;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> col = <span class="hljs-number">0</span>; col &lt; currentPiece.<span class="hljs-property">shape</span>[row].<span class="hljs-property">length</span>; col++) &#123;<br>          <span class="hljs-keyword">if</span> (currentPiece.<span class="hljs-property">shape</span>[row][col] &amp;&amp; <br>              x === currentPiece.<span class="hljs-property">x</span> + col &amp;&amp; <br>              y === currentPiece.<span class="hljs-property">y</span> + row) &#123;<br>            isPiece = <span class="hljs-literal">true</span>;<br>          &#125;<br>        &#125;<br>      &#125;<br>      <span class="hljs-comment">// 创建一个俄罗斯方块板的单元格</span><br>      <span class="hljs-keyword">const</span> cell = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;div&#x27;</span>);<br>      <span class="hljs-comment">// 设置单元格的样式</span><br>      <span class="hljs-keyword">const</span> cell = <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">createElement</span>(<span class="hljs-string">&#x27;div&#x27;</span>);<br>      cell.<span class="hljs-property">style</span>.<span class="hljs-property">position</span> = <span class="hljs-string">&#x27;absolute&#x27;</span>;<br>      cell.<span class="hljs-property">style</span>.<span class="hljs-property">width</span> = <span class="hljs-string">&#x27;30px&#x27;</span>;<br>      cell.<span class="hljs-property">style</span>.<span class="hljs-property">height</span> = <span class="hljs-string">&#x27;30px&#x27;</span>;<br>      cell.<span class="hljs-property">style</span>.<span class="hljs-property">left</span> = <span class="hljs-string">`<span class="hljs-subst">$&#123;x * <span class="hljs-number">30</span>&#125;</span>px`</span>;<br>      cell.<span class="hljs-property">style</span>.<span class="hljs-property">top</span> = <span class="hljs-string">`<span class="hljs-subst">$&#123;y * <span class="hljs-number">30</span>&#125;</span>px`</span>;<br>      cell.<span class="hljs-property">style</span>.<span class="hljs-property">backgroundColor</span> = isPiece ? <span class="hljs-string">&#x27;#f00&#x27;</span> : (board[y][x] ? <span class="hljs-string">&#x27;#000&#x27;</span> : <span class="hljs-string">&#x27;#f0f0f0&#x27;</span>);<br>      cell.<span class="hljs-property">classList</span>.<span class="hljs-title function_">add</span>(<span class="hljs-string">&#x27;rui-piece-cell&#x27;</span>);<br>      boardElement.<span class="hljs-title function_">appendChild</span>(cell);<br>    &#125;<br>  &#125;<br><br>  <span class="hljs-comment">// 绘制得分</span><br>  <span class="hljs-variable language_">document</span>.<span class="hljs-title function_">getElementById</span>(<span class="hljs-string">&#x27;tetris-score&#x27;</span>).<span class="hljs-property">innerText</span> = <span class="hljs-string">`Score: <span class="hljs-subst">$&#123;score&#125;</span>`</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="9-移动俄罗斯方块"><a href="#9-移动俄罗斯方块" class="headerlink" title="9. 移动俄罗斯方块"></a>9. 移动俄罗斯方块</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">movePiece</span>(<span class="hljs-params">dx, dy</span>) &#123;<br>  <span class="hljs-comment">// 如果当前俄罗斯方块可以移动，则移动当前俄罗斯方块</span><br>  <span class="hljs-keyword">if</span> (!<span class="hljs-title function_">collision</span>(currentPiece.<span class="hljs-property">shape</span>, currentPiece.<span class="hljs-property">x</span> + dx, currentPiece.<span class="hljs-property">y</span> + dy)) &#123;<br>    currentPiece.<span class="hljs-property">x</span> += dx;<br>    currentPiece.<span class="hljs-property">y</span> += dy;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="10-旋转俄罗斯方块"><a href="#10-旋转俄罗斯方块" class="headerlink" title="10. 旋转俄罗斯方块"></a>10. 旋转俄罗斯方块</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">rotatePiece</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// 旋转当前俄罗斯方块</span><br>  <span class="hljs-keyword">const</span> rotated = currentPiece.<span class="hljs-property">shape</span>[<span class="hljs-number">0</span>].<span class="hljs-title function_">map</span>(<span class="hljs-function">(<span class="hljs-params">_, i</span>) =&gt;</span> <br>    currentPiece.<span class="hljs-property">shape</span>.<span class="hljs-title function_">map</span>(<span class="hljs-function"><span class="hljs-params">row</span> =&gt;</span> row[i]).<span class="hljs-title function_">reverse</span>()<br>  );<br>  <span class="hljs-comment">// 如果旋转后的俄罗斯方块未发生碰撞，则旋转当前俄罗斯方块</span><br>  <span class="hljs-keyword">if</span> (!<span class="hljs-title function_">collision</span>(rotated, currentPiece.<span class="hljs-property">x</span>, currentPiece.<span class="hljs-property">y</span>)) &#123;<br>    currentPiece.<span class="hljs-property">shape</span> = rotated;<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="11-俄罗斯方块是否碰撞"><a href="#11-俄罗斯方块是否碰撞" class="headerlink" title="11. 俄罗斯方块是否碰撞"></a>11. 俄罗斯方块是否碰撞</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">collision</span>(<span class="hljs-params">shape, x, y</span>) &#123;<br>  <span class="hljs-comment">// 判断当前俄罗斯方块是否与俄罗斯方块板发生碰撞</span><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> row = <span class="hljs-number">0</span>; row &lt; shape.<span class="hljs-property">length</span>; row++) &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> col = <span class="hljs-number">0</span>; col &lt; shape[row].<span class="hljs-property">length</span>; col++) &#123;<br>      <span class="hljs-comment">// 判断当前俄罗斯方块的某一格是否与俄罗斯方块板的某一格发生碰撞</span><br>      <span class="hljs-keyword">if</span> (shape[row][col] &amp;&amp;<br>          (board[y + row] &amp;&amp; board[y + row][x + col]) !== <span class="hljs-number">0</span>) &#123;<br>        <span class="hljs-keyword">return</span> <span class="hljs-literal">true</span>;<br>      &#125;<br>    &#125;<br>  &#125;<br>  <span class="hljs-keyword">return</span> <span class="hljs-literal">false</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="12-俄罗斯方块下落"><a href="#12-俄罗斯方块下落" class="headerlink" title="12. 俄罗斯方块下落"></a>12. 俄罗斯方块下落</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">placePiece</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// 放置当前俄罗斯方块</span><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> row = <span class="hljs-number">0</span>; row &lt; currentPiece.<span class="hljs-property">shape</span>.<span class="hljs-property">length</span>; row++) &#123;<br>    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> col = <span class="hljs-number">0</span>; col &lt; currentPiece.<span class="hljs-property">shape</span>[row].<span class="hljs-property">length</span>; col++) &#123;<br>      <span class="hljs-keyword">if</span> (currentPiece.<span class="hljs-property">shape</span>[row][col]) &#123;<br>        board[currentPiece.<span class="hljs-property">y</span> + row][currentPiece.<span class="hljs-property">x</span> + col] = <span class="hljs-number">1</span>;<br>      &#125;<br>    &#125;<br>  &#125;<br>  <span class="hljs-comment">// 清除满行</span><br>  <span class="hljs-title function_">clearLines</span>();<br>  <span class="hljs-comment">// 创建下一个俄罗斯方块</span><br>  currentPiece = <span class="hljs-title function_">createPiece</span>();<br>  <span class="hljs-comment">// 如果当前俄罗斯方块与俄罗斯方块板发生碰撞，则游戏结束</span><br>  <span class="hljs-keyword">if</span> (<span class="hljs-title function_">collision</span>(currentPiece.<span class="hljs-property">shape</span>, currentPiece.<span class="hljs-property">x</span>, currentPiece.<span class="hljs-property">y</span>)) &#123;<br>    <span class="hljs-title function_">gameOver</span>();<br>  &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="13-清除满行"><a href="#13-清除满行" class="headerlink" title="13. 清除满行"></a>13. 清除满行</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">clearLines</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// 清除满行</span><br>  <span class="hljs-keyword">let</span> linesCleared = <span class="hljs-number">0</span>;<br>  <span class="hljs-comment">// 遍历俄罗斯方块板，从上到下遍历每一行</span><br>  <span class="hljs-keyword">for</span> (<span class="hljs-keyword">let</span> y = <span class="hljs-variable constant_">BOARD_HEIGHT</span> - <span class="hljs-number">1</span>; y &gt;= <span class="hljs-number">0</span>; y--) &#123;<br>    <span class="hljs-keyword">if</span> (board[y].<span class="hljs-title function_">every</span>(<span class="hljs-function"><span class="hljs-params">cell</span> =&gt;</span> cell !== <span class="hljs-number">0</span>)) &#123;<br>      board.<span class="hljs-title function_">splice</span>(y, <span class="hljs-number">1</span>);<br>      board.<span class="hljs-title function_">unshift</span>(<span class="hljs-title class_">Array</span>(<span class="hljs-variable constant_">BOARD_WIDTH</span>).<span class="hljs-title function_">fill</span>(<span class="hljs-number">0</span>));<br>      linesCleared++;<br>      y++;<br>    &#125;<br>  &#125;<br>  <span class="hljs-comment">// 增加分数</span><br>  score += linesCleared * <span class="hljs-number">100</span>;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="14-游戏结束"><a href="#14-游戏结束" class="headerlink" title="14. 游戏结束"></a>14. 游戏结束</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">gameOver</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-title function_">alert</span>(<span class="hljs-string">`Game Over! Your score: <span class="hljs-subst">$&#123;score&#125;</span>`</span>);<br>  <span class="hljs-comment">// 清空俄罗斯方块板</span><br>  board = <span class="hljs-title class_">Array</span>.<span class="hljs-title function_">from</span>(&#123;<span class="hljs-attr">length</span>: <span class="hljs-variable constant_">BOARD_HEIGHT</span>&#125;, <span class="hljs-function">() =&gt;</span> <span class="hljs-title class_">Array</span>(<span class="hljs-variable constant_">BOARD_WIDTH</span>).<span class="hljs-title function_">fill</span>(<span class="hljs-number">0</span>));<br>  <span class="hljs-comment">// 重置得分</span><br>  score = <span class="hljs-number">0</span>;<br>  <span class="hljs-comment">// 创建新的俄罗斯方块</span><br>  currentPiece = <span class="hljs-title function_">createPiece</span>();<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h3 id="15-开始游戏"><a href="#15-开始游戏" class="headerlink" title="15. 开始游戏"></a>15. 开始游戏</h3><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">function</span> <span class="hljs-title function_">gameLoop</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-title function_">draw</span>();<br>  <span class="hljs-comment">// 判断当前俄罗斯方块是否可以下落</span><br>  <span class="hljs-keyword">if</span> (!<span class="hljs-title function_">collision</span>(currentPiece.<span class="hljs-property">shape</span>, currentPiece.<span class="hljs-property">x</span>, currentPiece.<span class="hljs-property">y</span> + <span class="hljs-number">1</span>)) &#123;<br>    currentPiece.<span class="hljs-property">y</span>++;<br>  &#125; <span class="hljs-keyword">else</span> &#123;<br>    <span class="hljs-title function_">placePiece</span>();<br>  &#125;<br>  <span class="hljs-comment">// 开启下一轮游戏</span><br>  timer = <span class="hljs-built_in">setTimeout</span>(gameLoop, <span class="hljs-number">1000</span>);<br>&#125;<br><br><span class="hljs-keyword">function</span> <span class="hljs-title function_">startGame</span>(<span class="hljs-params"></span>) &#123;<br>  <span class="hljs-comment">// 判断游戏是否已经开始，开始就清除定时器</span><br>  <span class="hljs-keyword">if</span>(timer) &#123;<br>    <span class="hljs-built_in">clearTimeout</span>(timer); <br>  &#125;<br>  currentPiece = <span class="hljs-title function_">createPiece</span>();<br>  <span class="hljs-title function_">draw</span>();<br>  <span class="hljs-title function_">gameLoop</span>();<br>&#125;<br></code></pre></td></tr></table></figure>
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 1148063373@qq.com </span>
     </div>
