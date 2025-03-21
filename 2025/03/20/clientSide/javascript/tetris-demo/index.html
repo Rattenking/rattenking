@@ -14,7 +14,7 @@
 <meta property="og:description" content="Score: 0                                  #tetris-container {     display: flex;     margin-top: 20px;     position: relative;   }   #tetris-board {     width: 300px;     height: 600px;     border:">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2025-03-20T02:44:36.175Z">
-<meta property="article:modified_time" content="2025-03-20T07:42:08.239Z">
+<meta property="article:modified_time" content="2025-03-20T09:01:36.074Z">
 <meta property="article:author" content="梁亚军">
 <meta property="article:tag" content="javascript">
 <meta property="article:tag" content="俄罗斯方块">
@@ -810,7 +810,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2025-03-20 15:42:08'>2025-03-20 10:44</time>
+            Created At : <time class="date" title='Updated At: 2025-03-20 17:01:36'>2025-03-20 10:44</time>
         
     </div>
     <div class="article-meta">
@@ -908,14 +908,11 @@
 
   function createPiece() {
     const randomIndex = Math.floor(Math.random() * TETROMINOES.length);
-    let piece = {
+    let piece = nextPiece || {
       shape: TETROMINOES[randomIndex],
       x: Math.floor((BOARD_WIDTH - TETROMINOES[randomIndex][0].length) / 2),
       y: 0
     };
-    if (nextPiece) {
-      piece = nextPiece;
-    }
     nextPiece = {
       shape: TETROMINOES[Math.floor(Math.random() * TETROMINOES.length)],
       x: Math.floor((BOARD_WIDTH - TETROMINOES[randomIndex][0].length) / 2),
