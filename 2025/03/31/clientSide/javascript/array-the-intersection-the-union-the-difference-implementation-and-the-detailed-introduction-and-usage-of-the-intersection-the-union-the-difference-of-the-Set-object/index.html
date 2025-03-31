@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>读书选择由易到难 | 梁亚军的博客</title>
+  <title>数组的交集，并集，差集的实现，以及Set对象的交集，并集，差集的详细介绍和使用 | 梁亚军的博客</title>
   <meta name="keywords" content="">
-  <meta name="description" content="读书选择由易到难 | 梁亚军的博客">
+  <meta name="description" content="数组的交集，并集，差集的实现，以及Set对象的交集，并集，差集的详细介绍和使用 | 梁亚军的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="1. 前言数组的交集，并集，差集的实现。其实本质来说都不算难，但是 Set 类直接实现这些方法，所以我们先自己实现一下，然后再讲解一下 Set 类的相同方法。 2. intersection 交集用数学公式，交集被表示为：$$ A \cap B &#x3D; {x \in A \mid x \in B} $$ 使用图形表示就是：  交集：就是给定两个数组，返回两个数组的相同数据项。  2.1 数组">
 <meta property="og:type" content="article">
@@ -791,9 +791,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-books/Choose-to-read-books-from-the-easiest-to-the-most-difficult" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-clientSide/javascript/array-the-intersection-the-union-the-difference-implementation-and-the-detailed-introduction-and-usage-of-the-intersection-the-union-the-difference-of-the-Set-object" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">读书选择由易到难</h1>
+        <h1 class="article-title">数组的交集，并集，差集的实现，以及Set对象的交集，并集，差集的详细介绍和使用</h1>
     
     <div class="article-meta">
         
@@ -803,7 +803,9 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="读书笔记">读书笔记</a>
+            <a  data-rel="前端">前端</a> > 
+            
+            <a  data-rel="前端&lt;---&gt;JavaScript">JavaScript</a>
             
         </span>
         
@@ -811,7 +813,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2025-03-19 11:13:05'>2025-03-19 10:21</time>
+            Created At : <time class="date" title='Updated At: 2025-03-31 14:24:35'>2025-03-31 10:38</time>
         
     </div>
     <div class="article-meta">
@@ -833,7 +835,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%89%8D%E8%A8%80"><span class="toc-text">1. 前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-intersection-%E4%BA%A4%E9%9B%86"><span class="toc-text">2. intersection 交集</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#2-1-%E6%95%B0%E7%BB%84%E6%96%B9%E6%B3%95%E5%AE%9E%E7%8E%B0"><span class="toc-text">2.1 数组方法实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-2-%E6%B5%8B%E8%AF%95"><span class="toc-text">2.2 测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-3-%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="toc-text">2.3 测试结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-4-Set-intersection"><span class="toc-text">2.4 Set.intersection</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-5-%E6%B5%8B%E8%AF%95"><span class="toc-text">2.5 测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-6-%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="toc-text">2.6 测试结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-union-%E5%B9%B6%E9%9B%86"><span class="toc-text">3. union 并集</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#3-1-%E4%BD%BF%E7%94%A8-reduce-%E5%92%8C-includes-%E7%9A%84%E5%AE%9E%E7%8E%B0"><span class="toc-text">3.1 使用 reduce 和 includes 的实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-2-%E6%B5%8B%E8%AF%95"><span class="toc-text">3.2 测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-3-%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="toc-text">3.3 测试结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-4-Set-union"><span class="toc-text">3.4 Set.union</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-5-%E6%B5%8B%E8%AF%95"><span class="toc-text">3.5 测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-6-%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="toc-text">3.6 测试结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-difference-%E5%B7%AE%E9%9B%86"><span class="toc-text">4. difference 差集</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#4-1-%E4%BD%BF%E7%94%A8-filter-%E5%92%8C-includes-%E5%AE%9E%E7%8E%B0"><span class="toc-text">4.1 使用 filter 和 includes 实现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-2-%E6%B5%8B%E8%AF%95"><span class="toc-text">4.2 测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-3-%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="toc-text">4.3 测试结果</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-4-Set-difference"><span class="toc-text">4.4 Set.difference</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-5-%E6%B5%8B%E8%AF%95"><span class="toc-text">4.5 测试</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#4-6-%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="toc-text">4.6 测试结果</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%80%BB%E7%BB%93"><span class="toc-text">5. 总结</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%85%BC%E5%AE%B9%E6%80%A7"><span class="toc-text">6. 兼容性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%85%BC%E5%AE%B9%E6%80%A7%E8%A7%A3%E5%86%B3"><span class="toc-text">7. 兼容性解决</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E5%85%B6%E4%BB%96"><span class="toc-text">8. 其他</span></a></li></ol>
     
 <style>
     .left-col .switch-btn,
@@ -849,21 +851,69 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>我不知道其他人的选择是怎么样的，最少从我23年开始读书以来，我说一下自己的感受。最开始读书就是《微习惯》，那是2023-10-07，<strong>千里之行始于足下</strong>，我从此开始了我的读书之旅。当然不是说我之前就没有读过书，只是选择的书不适合那个时候的我，都是看了别人的推荐，就去买了，比如《鬼谷子》、《JavaScript 开发指南》、《设计模式》、《天才在左，疯子在右》、《如何阅读一本书》等等。买了那么多书（家里最少有五六十本），但是就像我老婆所说，真真看完的，基本没有，当然这其中不乏也有我能够坚持阅读完的书籍。结果就是没有阅读完的，为什么呢？</p>
-<p>我不喜欢读书吗？并不是，我读小说，可以说从小学五六年级接触西游记书开始，小说的阅读量估计是一年最少二三十本，每本最少都是百万字。原因就是，一个是实体书不是很方便，简单说，像《黑客与画家》这本书，我也是读完了的，而且也是存在读书笔记的，我也买了实体书，但是实体书基本没有怎么翻开过。就是因为电子书方便的多。</p>
-<p>读完《微习惯》我基本都建立了自己的微习惯，有些我到现在依然坚持，比如每天晚上必须到楼下慢走两圈，可以说这个习惯一直坚持到现在。《黑客与画家》这本书其实就是对产品和客户之间，尽量减少距离，当然这只是我看到的，还有就是对行业的展望，很多都后来实现了。然后就阅读了《定投十年，实现财务自由》和《记忆宫殿》，在阅读这两本书的时候，由于它不像前两本书那么容易，比如《记忆宫殿》很多都需要反复练习，才能熟能生巧，所以现在看来，这本书不适合快读，而是需要一步一步的练习，精读。《财务自由》则有很多概念性的东西，讲的是各个基金是那些组成，说实话有点枯燥，所以在选择上，就导致没坚持下来，读到一半，就没有读了。我以为换一个故事性的书籍，可能会让我提起兴趣，所以我又看了《大秦帝国》，为什么选择这本书呢？因为我记得这个书是我读高中的时候，从图书馆借阅的，当时我记得是十部还是五部，我读了一半，还有部分没有了。我想高中那么感兴趣，而且我喜欢读小说，因该能够继续进行了吧！然而现实就是多年以来，我的阅读兴趣发生了变化，也没有读完。</p>
-<p>然后感觉自己的意志力不能够坚定，我就想学习一下心学，开始阅读《王阳明大传：知行合一的心学智慧》，发现更加痛苦，因为你一开始理解不了。我就找了《传习录》，不过是看的浙大董平教授讲的视频，然后再去阅读的书籍。说实话，很有用，当你坚持不下来的时候，就先从简单的开始，视频让你更容易跟着进行理解，然后你再去读，就会有自己的理解。《传习录》目前只读到了徐爱篇，董教授那个免费视频也只讲到了这里，估计收费的应该讲完了，只是我没搜到。</p>
-<p>回头又准备阅读《明朝那些事儿》，读读停停，也没有读完。然后读了《费曼学习法》、《技术写作指南》这是读完了，这里对于我来说最大的收获就是开始和坚持。就像张鑫旭大佬所说，哪怕只写一句话，但是你也必须去写，要有开始，你才能慢慢完善。</p>
-<p>最后就是最近在读的三本书《论语译注》、《价值：我对投资的思考》、《非暴力沟通》。特别是非暴力沟通的进度很快，基本两周的样子，现在快阅读完了。为什么呢？就是一个是使用了微信阅读，有一定的攀比心吧！最少我目前是这样的，当然不是为了时间就挂机那种乱翻，还是有思考和实践的。最少我目前阅读非暴力沟通，我会将自己实际遇到的沟通问题通过他去思考或者实践。</p>
-<p>可以看到从2023年10月份开始，我读过的书差不多十三本，中间因为难而放弃的不在少数，反而是阅读完的，不是很多，这个我觉得是选择的问题。就像在小学一年级，然你学习一元二次方程，甚至微积分，我估计你即便再天才，也不一定能坚持下来。所以需要先从简单的，你能够理解的，你感兴趣的开始阅读，慢慢的培养你的阅读习惯。遇到比较不容易理解的，比如《论语》、《传习录》这些，你感兴趣的，你可以先看视频，看别人的理解，看注释，慢慢的读，最后下一遍自己读的时候，你就没有那么困难了，慢慢的就会有自己的理解。</p>
-<p>人是团体动物，如果你能找到一个读书的圈子，那么相互鼓励，分享，我觉得会更好。所以微信阅读的好处就是它能够督促你阅读，最少目前我是这么觉得的。因为京东读书我也使用了，自己一个人枯燥的阅读，能够坚持下来的人，真心不多。看着有人陪伴，一起砥砺前行，真的很开心。</p>
-<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
-<li>书籍从易到难；</li>
-<li>看不懂可以先找视频和注解的书阅读；</li>
-<li>尽量找一些志同道合的读友，一起阅读和分享；</li>
-<li>阅读软件我比较推荐微信读书，可以随时随地阅读。</li>
+        <h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h3><p>数组的交集，并集，差集的实现。其实本质来说都不算难，但是 Set 类直接实现这些方法，所以我们先自己实现一下，然后再讲解一下 Set 类的相同方法。</p>
+<h3 id="2-intersection-交集"><a href="#2-intersection-交集" class="headerlink" title="2. intersection 交集"></a>2. intersection 交集</h3><p>用数学公式，交集被表示为：<br>$$ A \cap B &#x3D; {x \in A \mid x \in B} $$</p>
+<p>使用图形表示就是：<br><img src="https://foruda.gitee.com/images/1743389585034433540/1a0d94be_1681522.png" alt="输入图片说明"></p>
+<blockquote>
+<p>交集：就是给定两个数组，返回两个数组的相同数据项。</p>
+</blockquote>
+<h4 id="2-1-数组方法实现"><a href="#2-1-数组方法实现" class="headerlink" title="2.1 数组方法实现"></a>2.1 数组方法实现</h4><blockquote>
+<p>通过 filter 方法实现。过滤数组1在数组2中存在的数据项，这样的结果就返回的数据项同时都在两个数组中。</p>
+</blockquote>
+<figure class="highlight arcade"><table><tr><td class="code"><pre><code class="hljs arcade">const <span class="hljs-built_in">intersection</span> = <span class="hljs-function">(<span class="hljs-params">arr1, arr2</span>) =&gt;</span> &#123;<br>  <span class="hljs-keyword">return</span> arr1.<span class="hljs-built_in">filter</span>(<span class="hljs-function"><span class="hljs-params">item</span> =&gt;</span> arr2.<span class="hljs-built_in">includes</span>(item));<br>&#125;;<br></code></pre></td></tr></table></figure>
+
+<h4 id="2-2-测试"><a href="#2-2-测试" class="headerlink" title="2.2 测试"></a>2.2 测试</h4><figure class="highlight apache"><table><tr><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">console</span>.log(intersection([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>],<span class="hljs-meta"> [4, 5, 6, 7, 8])); // [4, 5]</span><br></code></pre></td></tr></table></figure>
+<h4 id="2-3-测试结果"><a href="#2-3-测试结果" class="headerlink" title="2.3 测试结果"></a>2.3 测试结果</h4><p><img src="https://foruda.gitee.com/images/1743390256124202624/34eb2537_1681522.png" alt="输入图片说明"></p>
+<h4 id="2-4-Set-intersection"><a href="#2-4-Set-intersection" class="headerlink" title="2.4 Set.intersection"></a>2.4 Set.intersection</h4><p>使用语法：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">new</span> <span class="hljs-keyword">Set</span>(arr1).<span class="hljs-keyword">intersection</span>(<span class="hljs-keyword">new</span> <span class="hljs-keyword">Set</span>(arr2))<br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>由于是 Set 类的方法，因此需要将数组转换为 Set 对象，然后再调用 Set 对象的 intersection 方法，进行交集的获取。最后返回的是交集的 Set 对象，需要再转换为数组操作。</p>
+</blockquote>
+<h4 id="2-5-测试"><a href="#2-5-测试" class="headerlink" title="2.5 测试"></a>2.5 测试</h4><figure class="highlight apache"><table><tr><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">const</span> odds = new Set([<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">9</span>]);<br><span class="hljs-attribute">const</span> squares = new Set([<span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">9</span>]);<br><span class="hljs-attribute">const</span> result = odds.intersection(squares);<br><span class="hljs-attribute">console</span>.log(result ); // Set(<span class="hljs-number">2</span>) &#123; <span class="hljs-number">1</span>, <span class="hljs-number">9</span> &#125;<br><span class="hljs-attribute">console</span>.log([...result ])<br></code></pre></td></tr></table></figure>
+<h4 id="2-6-测试结果"><a href="#2-6-测试结果" class="headerlink" title="2.6 测试结果"></a>2.6 测试结果</h4><p><img src="https://foruda.gitee.com/images/1743390493540569514/a98bfaf0_1681522.png" alt="输入图片说明"></p>
+<h3 id="3-union-并集"><a href="#3-union-并集" class="headerlink" title="3. union 并集"></a>3. union 并集</h3><p>用数学公式，并集被表示为：<br>$$ A \cup B &#x3D; {x \mid x \in A \text{ or } x \in B} $$</p>
+<p>使用图形表示就是：<br><img src="https://foruda.gitee.com/images/1743390988405662644/7e02030a_1681522.png" alt="输入图片说明"></p>
+<blockquote>
+<p>并集：并集就是将两个数组合并，并去重。</p>
+</blockquote>
+<h4 id="3-1-使用-reduce-和-includes-的实现"><a href="#3-1-使用-reduce-和-includes-的实现" class="headerlink" title="3.1 使用 reduce 和 includes 的实现"></a>3.1 使用 reduce 和 includes 的实现</h4><ol>
+<li>先使用数组的扩展符，将两个数组进行合并；</li>
+<li>然后使用 reduce 方法遍历，查找当前元素是否已经存在，不存在就放入。</li>
 </ol>
-<p>不要想一口吃个胖子，读书就像人生一样，酸甜苦辣，你需要慢慢品味。好书可以读一辈子，所以不要在乎量，找到适合你的，就是最好的。记住不适合的，不要强求，不然那就是消磨你的兴趣和意志。换一本适合你的前行，总有一天你会发现原来的难，也不是那么难。</p>
+<figure class="highlight arcade"><table><tr><td class="code"><pre><code class="hljs arcade">const <span class="hljs-built_in">union</span> = <span class="hljs-function">(<span class="hljs-params">arr1, arr2</span>) =&gt;</span> &#123;<br>  const combined = [...arr1, ...arr2];<br>  <span class="hljs-keyword">return</span> combined.<span class="hljs-built_in">reduce</span>(<span class="hljs-function">(<span class="hljs-params">acc, item</span>) =&gt;</span> &#123;<br>    <span class="hljs-keyword">if</span> (!acc.<span class="hljs-built_in">includes</span>(item)) &#123;<br>      acc.<span class="hljs-built_in">push</span>(item);<br>    &#125;<br>    <span class="hljs-keyword">return</span> acc;<br>  &#125;, []);<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="3-2-测试"><a href="#3-2-测试" class="headerlink" title="3.2 测试"></a>3.2 测试</h4><figure class="highlight apache"><table><tr><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">console</span>.log(union([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>],<span class="hljs-meta"> [4, 5, 6, 7, 8]));</span><br></code></pre></td></tr></table></figure>
+
+<h4 id="3-3-测试结果"><a href="#3-3-测试结果" class="headerlink" title="3.3 测试结果"></a>3.3 测试结果</h4><p><img src="https://foruda.gitee.com/images/1743391385591290439/e761b363_1681522.png" alt="输入图片说明"></p>
+<h4 id="3-4-Set-union"><a href="#3-4-Set-union" class="headerlink" title="3.4 Set.union"></a>3.4 Set.union</h4><p>使用语法：</p>
+<figure class="highlight sql"><table><tr><td class="code"><pre><code class="hljs sql"><span class="hljs-keyword">new</span> <span class="hljs-keyword">Set</span>(arr1).<span class="hljs-keyword">union</span>(<span class="hljs-keyword">new</span> <span class="hljs-keyword">Set</span>(arr2))<br></code></pre></td></tr></table></figure>
+
+<h4 id="3-5-测试"><a href="#3-5-测试" class="headerlink" title="3.5 测试"></a>3.5 测试</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> odds = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Set</span>([<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">9</span>]);<br><span class="hljs-keyword">const</span> squares = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Set</span>([<span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">9</span>]);<br><span class="hljs-keyword">const</span> result = odds.<span class="hljs-title function_">union</span>(squares);<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(result );<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>([...result ])<br></code></pre></td></tr></table></figure>
+
+<h4 id="3-6-测试结果"><a href="#3-6-测试结果" class="headerlink" title="3.6 测试结果"></a>3.6 测试结果</h4><p><img src="https://foruda.gitee.com/images/1743391580590671786/b9b616cf_1681522.png" alt="输入图片说明"></p>
+<h3 id="4-difference-差集"><a href="#4-difference-差集" class="headerlink" title="4. difference 差集"></a>4. difference 差集</h3><p>用数学公式，差集被表示为：<br>$$ A \setminus B &#x3D; {x \in A \mid x \notin B} $$</p>
+<p>使用图形表示就是：<br><img src="https://foruda.gitee.com/images/1743400793899252366/b069308e_1681522.png" alt="输入图片说明"></p>
+<blockquote>
+<p>差集：就是表示返回的数据项在A数据集中能找到，在B数据集中没有。</p>
+</blockquote>
+<h4 id="4-1-使用-filter-和-includes-实现"><a href="#4-1-使用-filter-和-includes-实现" class="headerlink" title="4.1 使用 filter 和 includes 实现"></a>4.1 使用 filter 和 includes 实现</h4><figure class="highlight arcade"><table><tr><td class="code"><pre><code class="hljs arcade">const <span class="hljs-built_in">difference</span> = <span class="hljs-function">(<span class="hljs-params">arr1, arr2</span>) =&gt;</span> &#123;<br>  <span class="hljs-keyword">return</span> arr1.<span class="hljs-built_in">filter</span>(<span class="hljs-function"><span class="hljs-params">item</span> =&gt;</span> !arr2.<span class="hljs-built_in">includes</span>(item));<br>&#125;<br></code></pre></td></tr></table></figure>
+
+<h4 id="4-2-测试"><a href="#4-2-测试" class="headerlink" title="4.2 测试"></a>4.2 测试</h4><figure class="highlight apache"><table><tr><td class="code"><pre><code class="hljs apache"><span class="hljs-attribute">console</span>.log(difference([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>],<span class="hljs-meta"> [4, 5, 6, 7, 8])); </span><br></code></pre></td></tr></table></figure>
+<h4 id="4-3-测试结果"><a href="#4-3-测试结果" class="headerlink" title="4.3 测试结果"></a>4.3 测试结果</h4><p><img src="https://foruda.gitee.com/images/1743401039433242186/410f369a_1681522.png" alt="输入图片说明"></p>
+<h4 id="4-4-Set-difference"><a href="#4-4-Set-difference" class="headerlink" title="4.4 Set.difference"></a>4.4 Set.difference</h4><p>使用语法：</p>
+<figure class="highlight coffeescript"><table><tr><td class="code"><pre><code class="hljs coffeescript"><span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>(arr1).difference(<span class="hljs-keyword">new</span> <span class="hljs-built_in">Set</span>(arr2))<br></code></pre></td></tr></table></figure>
+
+<h4 id="4-5-测试"><a href="#4-5-测试" class="headerlink" title="4.5 测试"></a>4.5 测试</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><code class="hljs javascript"><span class="hljs-keyword">const</span> odds = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Set</span>([<span class="hljs-number">1</span>, <span class="hljs-number">3</span>, <span class="hljs-number">5</span>, <span class="hljs-number">7</span>, <span class="hljs-number">9</span>]);<br><span class="hljs-keyword">const</span> squares = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Set</span>([<span class="hljs-number">1</span>, <span class="hljs-number">4</span>, <span class="hljs-number">9</span>]);<br><span class="hljs-keyword">const</span> result = odds.<span class="hljs-title function_">difference</span>(squares);<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(result );<br><span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>([...result ])<br></code></pre></td></tr></table></figure>
+
+<h4 id="4-6-测试结果"><a href="#4-6-测试结果" class="headerlink" title="4.6 测试结果"></a>4.6 测试结果</h4><p><img src="https://foruda.gitee.com/images/1743401189208371836/491e201e_1681522.png" alt="输入图片说明"></p>
+<h3 id="5-总结"><a href="#5-总结" class="headerlink" title="5. 总结"></a>5. 总结</h3><ol>
+<li>Set 类的方法，每次都需要我们将数组转换为 Set 对象，做了对应操作后，再转会数组。</li>
+<li>我们自己通过数组方法实现，需要对返回结果去重操作，我这里的 difference 和 intersection 没有进行去重操作。</li>
+<li>Set 还提供一些其他数据集的操作，比如 symmetricDifference （方法接收一个集合，并返回一个新的集合，这个新集合包含的元素要么在这个集合中要么在给定的集合中，但不能同时在两个集合中。）、isDisjointFrom （接收一个集合作为参数，并返回一个布尔值，该值表示此集合与给定的集合是否没有共同的元素。）等，<a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set/isDisjointFrom">MDN 文档</a>中都有示例和图示，使用时查询即可。</li>
+</ol>
+<h3 id="6-兼容性"><a href="#6-兼容性" class="headerlink" title="6. 兼容性"></a>6. 兼容性</h3><p><img src="https://foruda.gitee.com/images/1743401779325906212/2e033fd7_1681522.png" alt="输入图片说明"></p>
+<h3 id="7-兼容性解决"><a href="#7-兼容性解决" class="headerlink" title="7. 兼容性解决"></a>7. 兼容性解决</h3><p><a target="_blank" rel="noopener" href="https://github.com/zloirock/core-js#new-set-methods">Polyfill：https://github.com/zloirock/core-js#new-set-methods</a><br><a target="_blank" rel="noopener" href="https://github.com/rauschma/set-methods-polyfill">Shim：https://github.com/rauschma/set-methods-polyfill</a></p>
+<h3 id="8-其他"><a href="#8-其他" class="headerlink" title="8. 其他"></a>8. 其他</h3><p>这篇文章的名字早就写在笔记本上了，一直准备写。直到昨天，《认知觉醒》看到清晰力里边，要求将第二天需要做的事情，按照重要程度，进行一个列表标记，今天才开始写出来，哎，真的是知易行难。知行合一的行在我这里还是有待加强。<br>加油！！！</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 1148063373@qq.com </span>

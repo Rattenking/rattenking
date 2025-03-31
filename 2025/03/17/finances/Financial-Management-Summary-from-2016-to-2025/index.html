@@ -6,17 +6,28 @@
   <meta name="keywords" content="">
   <meta name="description" content="2016年-2025年的理财总结 | 梁亚军的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="不知道从什么时候开始，我们开始喜欢那种及时满足（21天养成习惯、7天学会什么等等）。 我不知道有没有真正达到，最少我从来没有达到过。我们天性的及时满足感，让我们快速的达到满足感，就是我们不在思考的原因。 从去年年底开始，就比较焦虑，一个是人工智能的发展，我发现曾经的一技之长已经被取代。面临这以后可能没有工作的情况，我自己持续的焦虑，甚至影响到了我的家人。这对于我来说是一件很痛苦的事情。我不知道怎么">
+<meta name="description" content="1. 前言数组的交集，并集，差集的实现。其实本质来说都不算难，但是 Set 类直接实现这些方法，所以我们先自己实现一下，然后再讲解一下 Set 类的相同方法。 2. intersection 交集用数学公式，交集被表示为：$$ A \cap B &#x3D; {x \in A \mid x \in B} $$ 使用图形表示就是：  交集：就是给定两个数组，返回两个数组的相同数据项。  2.1 数组">
 <meta property="og:type" content="article">
-<meta property="og:title" content="慢就是快">
-<meta property="og:url" content="http://example.com/2025/03/27/life/slow-is-fast/index.html">
+<meta property="og:title" content="数组的交集，并集，差集的实现，以及Set对象的交集，并集，差集的详细介绍和使用">
+<meta property="og:url" content="http://example.com/2025/03/31/clientSide/javascript/array-the-intersection-the-union-the-difference-implementation-and-the-detailed-introduction-and-usage-of-the-intersection-the-union-the-difference-of-the-Set-object/index.html">
 <meta property="og:site_name" content="梁亚军的博客">
-<meta property="og:description" content="不知道从什么时候开始，我们开始喜欢那种及时满足（21天养成习惯、7天学会什么等等）。 我不知道有没有真正达到，最少我从来没有达到过。我们天性的及时满足感，让我们快速的达到满足感，就是我们不在思考的原因。 从去年年底开始，就比较焦虑，一个是人工智能的发展，我发现曾经的一技之长已经被取代。面临这以后可能没有工作的情况，我自己持续的焦虑，甚至影响到了我的家人。这对于我来说是一件很痛苦的事情。我不知道怎么">
+<meta property="og:description" content="1. 前言数组的交集，并集，差集的实现。其实本质来说都不算难，但是 Set 类直接实现这些方法，所以我们先自己实现一下，然后再讲解一下 Set 类的相同方法。 2. intersection 交集用数学公式，交集被表示为：$$ A \cap B &#x3D; {x \in A \mid x \in B} $$ 使用图形表示就是：  交集：就是给定两个数组，返回两个数组的相同数据项。  2.1 数组">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-03-27T01:38:13.738Z">
-<meta property="article:modified_time" content="2025-03-27T02:15:12.843Z">
+<meta property="og:image" content="https://foruda.gitee.com/images/1743389585034433540/1a0d94be_1681522.png">
+<meta property="og:image" content="https://foruda.gitee.com/images/1743390256124202624/34eb2537_1681522.png">
+<meta property="og:image" content="https://foruda.gitee.com/images/1743390493540569514/a98bfaf0_1681522.png">
+<meta property="og:image" content="https://foruda.gitee.com/images/1743390988405662644/7e02030a_1681522.png">
+<meta property="og:image" content="https://foruda.gitee.com/images/1743391385591290439/e761b363_1681522.png">
+<meta property="og:image" content="https://foruda.gitee.com/images/1743391580590671786/b9b616cf_1681522.png">
+<meta property="og:image" content="https://foruda.gitee.com/images/1743400793899252366/b069308e_1681522.png">
+<meta property="og:image" content="https://foruda.gitee.com/images/1743401039433242186/410f369a_1681522.png">
+<meta property="og:image" content="https://foruda.gitee.com/images/1743401189208371836/491e201e_1681522.png">
+<meta property="og:image" content="https://foruda.gitee.com/images/1743401779325906212/2e033fd7_1681522.png">
+<meta property="article:published_time" content="2025-03-31T02:38:04.846Z">
+<meta property="article:modified_time" content="2025-03-31T06:24:35.498Z">
 <meta property="article:author" content="梁亚军">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://foruda.gitee.com/images/1743389585034433540/1a0d94be_1681522.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -85,7 +96,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(31)</small>
+                <small>(32)</small>
             
         </div>
     </li>
@@ -127,7 +138,7 @@
         <div data-rel="前端">
             <i class="fold iconfont icon-right"></i>
             前端
-            <small>(9)</small>
+            <small>(10)</small>
         </div>
         
             <ul class="sub hide">
@@ -148,7 +159,7 @@
         <div data-rel="前端&lt;---&gt;JavaScript">
             
             JavaScript
-            <small>(3)</small>
+            <small>(4)</small>
         </div>
         
     </li>
@@ -297,7 +308,7 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="31">
+<input type="hidden" id="yelog_site_posts_number" value="32">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -473,6 +484,15 @@
 
     
     <nav id="title-list-nav">
+        
+        
+        <a  class="All 前端 JavaScript "
+           href="/2025/03/31/clientSide/javascript/array-the-intersection-the-union-the-difference-implementation-and-the-detailed-introduction-and-usage-of-the-intersection-the-union-the-difference-of-the-Set-object/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数组的交集，并集，差集的实现，以及Set对象的交集，并集，差集的详细介绍和使用">数组的交集，并集，差集的实现，以及Set对象的交集，并集，差集的详细介绍和使用</span>
+            <span class="post-date" title="2025-03-31 10:38:04">2025/03/31</span>
+        </a>
         
         
         <a  class="All 生活 感想 "
