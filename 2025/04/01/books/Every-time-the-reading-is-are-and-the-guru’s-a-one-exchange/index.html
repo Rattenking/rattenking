@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>1. npm 常用命令和 package.json 说明 | 梁亚军的博客</title>
-  <meta name="keywords" content=" Node , npm ">
-  <meta name="description" content="1. npm 常用命令和 package.json 说明 | 梁亚军的博客">
+  <title>每一次的读书，都是和大佬的一次交流 | 梁亚军的博客</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="每一次的读书，都是和大佬的一次交流 | 梁亚军的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="我们为什么读书？其实这是一个很重要的问题！ 读书的目的是为了找到问题的答案，而不是盲目的读。最少当我们在生活中，遇到了问题，书里的一些方法，能过够解决我们实际的问题，那么就能够让我们更加容易的记住他，并使用他。如果盲目的读书，那么就只能等待，在你没有使用它的时候，他就是知识，你不一定会使用它。只有使用它，并且不断的练习，使它形成我们的潜意识，才能够真正的掌握它。 就比如说《非暴力沟通》的阅读，你能">
 <meta property="og:type" content="article">
@@ -789,9 +789,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-node/1.Commonly-used-npm-commands-and-explanations-of-package" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-books/Every-time-the-reading-is-are-and-the-guru’s-a-one-exchange" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">1. npm 常用命令和 package.json 说明</h1>
+        <h1 class="article-title">每一次的读书，都是和大佬的一次交流</h1>
     
     <div class="article-meta">
         
@@ -801,24 +801,15 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="Node">Node</a>
+            <a  data-rel="读书笔记">读书笔记</a>
             
         </span>
         
-        
-        <span class="tag">
-            <i class="iconfont icon-tag"></i>
-            
-            <a class="color5">Node</a>
-            
-            <a class="color4">npm</a>
-            
-        </span>
         
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2025-03-18 10:27:46'>2025-03-18 10:26</time>
+            Created At : <time class="date" title='Updated At: 2025-04-01 15:35:04'>2025-04-01 15:02</time>
         
     </div>
     <div class="article-meta">
@@ -840,7 +831,7 @@
     
     <div class="toc-ref">
     
-        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#NPM"><span class="toc-text">NPM</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%98%E7%BD%91"><span class="toc-text">官网</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm-%E5%91%BD%E4%BB%A4"><span class="toc-text">npm 命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#npm-install-%E5%8F%82%E6%95%B0%E8%AF%B4%E6%98%8E"><span class="toc-text">npm install 参数说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%88%E6%9C%AC%E5%8F%B7%E8%AF%B4%E6%98%8E"><span class="toc-text">版本号说明</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#package-json-%E5%AD%97%E6%AE%B5%E8%AF%B4%E6%98%8E"><span class="toc-text">package.json 字段说明</span></a></li></ol>
+        
     
 <style>
     .left-col .switch-btn,
@@ -856,233 +847,16 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h3 id="NPM"><a href="#NPM" class="headerlink" title="NPM"></a>NPM</h3><blockquote>
-<p>NPM 的全称是 Node Package Manager，是随同 NodeJS 一起安装的包管理和分发工具，它很方便让 JavaScript 开发者下载、安装、上传以及管理已经安装的包。</p>
-</blockquote>
-<h3 id="官网"><a href="#官网" class="headerlink" title="官网"></a>官网</h3><p><a target="_blank" rel="noopener" href="https://www.npmjs.com/">npm 官网：https://www.npmjs.com</a></p>
-<h3 id="npm-命令"><a href="#npm-命令" class="headerlink" title="npm 命令"></a>npm 命令</h3><table>
-<thead>
-<tr>
-<th align="left">命令</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">npm init</td>
-<td align="left">初始化一个新的 npm 项目，创建 package.json 文件。</td>
-</tr>
-<tr>
-<td align="left">npm help</td>
-<td align="left">查看某条命令的详细帮助。</td>
-</tr>
-<tr>
-<td align="left">npm root</td>
-<td align="left">查看包的安装路径。</td>
-</tr>
-<tr>
-<td align="left">npm install</td>
-<td align="left">安装一个包或一组包，并且会在当前目录存放一个node_modules。</td>
-</tr>
-<tr>
-<td align="left">npm install package-name</td>
-<td align="left">安装指定的包。</td>
-</tr>
-<tr>
-<td align="left">npm install package-name –save</td>
-<td align="left">安装指定的包，并将其添加到 package.json 文件中的 dependencies 【生产依赖列表中】。</td>
-</tr>
-<tr>
-<td align="left">npm install package-name –save-dev</td>
-<td align="left">安装指定的包，并将其添加到 package.json 文件中的 devDependencies 【开发依赖列表中】。</td>
-</tr>
-<tr>
-<td align="left">npm install -g package-name</td>
-<td align="left">全局安装指定的包。</td>
-</tr>
-<tr>
-<td align="left">npm update package-name</td>
-<td align="left">更新指定的包。</td>
-</tr>
-<tr>
-<td align="left">npm uninstall package-name</td>
-<td align="left">卸载指定的包。</td>
-</tr>
-<tr>
-<td align="left">npm run script-name</td>
-<td align="left">执行 package.json 文件中定义的脚本命令。</td>
-</tr>
-<tr>
-<td align="left">npm config</td>
-<td align="left">管理npm的配置路径。</td>
-</tr>
-<tr>
-<td align="left">npm config list</td>
-<td align="left">用于列出所有的 npm 配置信息。执行该命令可以查看当前系统和用户级别的所有 npm 配置信息，以及当前项目的配置信息（如果在项目目录下执行该命令）。</td>
-</tr>
-<tr>
-<td align="left">npm get registry</td>
-<td align="left">用于获取当前 npm 配置中的 registry 配置项的值。registry 配置项用于指定 npm 包的下载地址，如果未指定，则默认使用 npm 官方的包注册表地址。</td>
-</tr>
-<tr>
-<td align="left">npm set registry npm config set registry registry-url</td>
-<td align="left">命令，将 registry 配置项的值修改为指定的 registry-url 地址。</td>
-</tr>
-<tr>
-<td align="left">npm search keyword</td>
-<td align="left">搜索 npm 库中包含指定关键字的包。</td>
-</tr>
-<tr>
-<td align="left">npm info package-name</td>
-<td align="left">查看指定包的详细信息。</td>
-</tr>
-<tr>
-<td align="left">npm list</td>
-<td align="left">列出当前项目中安装的所有包。</td>
-</tr>
-<tr>
-<td align="left">npm outdated</td>
-<td align="left">列出当前项目中需要更新的包。</td>
-</tr>
-<tr>
-<td align="left">npm audit</td>
-<td align="left">检查当前项目中的依赖项是否存在安全漏洞。</td>
-</tr>
-<tr>
-<td align="left">npm publish</td>
-<td align="left">发布自己开发的包到 npm 库中。</td>
-</tr>
-<tr>
-<td align="left">npm login</td>
-<td align="left">登录到 npm 账户。</td>
-</tr>
-<tr>
-<td align="left">npm logout</td>
-<td align="left">注销当前 npm 账户。</td>
-</tr>
-<tr>
-<td align="left">npm link</td>
-<td align="left">将本地模块链接到全局的 node_modules 目录下。</td>
-</tr>
-</tbody></table>
-<h3 id="npm-install-参数说明"><a href="#npm-install-参数说明" class="headerlink" title="npm install 参数说明"></a>npm install 参数说明</h3><blockquote>
-<p>npm install 安装模块的时候一般是扁平化安装的，但是有时候出现嵌套的情况是因为版本不同。</p>
-</blockquote>
-<table>
-<thead>
-<tr>
-<th align="left">参数</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">-S或–save</td>
-<td align="left">安装包信息将加入到dependencies（生产阶段的依赖）。</td>
-</tr>
-<tr>
-<td align="left">-D或–sava-dev</td>
-<td align="left">安装信息将加入到devDependencies（开发阶段的依赖）。</td>
-</tr>
-<tr>
-<td align="left">-O或–save-optional</td>
-<td align="left">安装包信息将加入到optionalDependencies（可选阶段的依赖）。</td>
-</tr>
-<tr>
-<td align="left">-E或–save-exact</td>
-<td align="left">精准安装指定模块版本。</td>
-</tr>
-</tbody></table>
-<h3 id="版本号说明"><a href="#版本号说明" class="headerlink" title="版本号说明"></a>版本号说明</h3><blockquote>
-<p>version 版本号一般是1.0.0 大版本号、次版本号、修订号。</p>
-</blockquote>
-<ol>
-<li>大版本号：一般是有重大变化才会升级；</li>
-<li>次版本号：一般是增加功能进行升级；</li>
-<li>修订号：一般是修改bug进行升级。</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th align="left">版本号</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">~1.1.0、1.1.x、1.1</td>
-<td align="left">兼容模块新发布的补丁版本。</td>
-</tr>
-<tr>
-<td align="left">^1.1.0、1.x、1</td>
-<td align="left">兼容模块新发布的小版本、补丁版本。</td>
-</tr>
-<tr>
-<td align="left">*、x</td>
-<td align="left">兼容模块新发布的大版本、小版本、补丁版本。</td>
-</tr>
-</tbody></table>
-<h3 id="package-json-字段说明"><a href="#package-json-字段说明" class="headerlink" title="package.json 字段说明"></a>package.json 字段说明</h3><table>
-<thead>
-<tr>
-<th align="left">字段</th>
-<th align="left">说明</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="left">name</td>
-<td align="left">项目名称，必须是唯一的字符串，通常采用小写字母和连字符的组合。</td>
-</tr>
-<tr>
-<td align="left">version</td>
-<td align="left">项目版本号，通常采用语义化版本号规范。</td>
-</tr>
-<tr>
-<td align="left">description</td>
-<td align="left">项目描述。</td>
-</tr>
-<tr>
-<td align="left">main</td>
-<td align="left">项目的主入口文件路径，通常是一个 JavaScript 文件。</td>
-</tr>
-<tr>
-<td align="left">keywords</td>
-<td align="left">项目的关键字列表，方便他人搜索和发现该项目。</td>
-</tr>
-<tr>
-<td align="left">author</td>
-<td align="left">项目作者的信息，包括姓名、邮箱、网址等。</td>
-</tr>
-<tr>
-<td align="left">license</td>
-<td align="left">项目的许可证类型，可以是自定义的许可证类型或者常见的开源许可证（如 MIT、Apache 等）。</td>
-</tr>
-<tr>
-<td align="left">dependencies</td>
-<td align="left">项目所依赖的包的列表，这些包会在项目运行时自动安装。</td>
-</tr>
-<tr>
-<td align="left">devDependencies</td>
-<td align="left">项目开发过程中所需要的包的列表，这些包不会随项目一起发布，而是只在开发时使用。</td>
-</tr>
-<tr>
-<td align="left">peerDependencies</td>
-<td align="left">项目的同级依赖，即项目所需要的模块被其他模块所依赖。</td>
-</tr>
-<tr>
-<td align="left">scripts</td>
-<td align="left">定义了一些脚本命令，比如启动项目、运行测试等。</td>
-</tr>
-<tr>
-<td align="left">repository</td>
-<td align="left">项目代码仓库的信息，包括类型、网址等。</td>
-</tr>
-<tr>
-<td align="left">bugs</td>
-<td align="left">项目的 bug 报告地址。</td>
-</tr>
-<tr>
-<td align="left">homepage</td>
-<td align="left">项目的官方网站地址或者文档地址。</td>
-</tr>
-</tbody></table>
+        <p>我们为什么读书？其实这是一个很重要的问题！</p>
+<p>读书的目的是为了找到问题的答案，而不是盲目的读。最少当我们在生活中，遇到了问题，书里的一些方法，能过够解决我们实际的问题，那么就能够让我们更加容易的记住他，并使用他。如果盲目的读书，那么就只能等待，在你没有使用它的时候，他就是知识，你不一定会使用它。只有使用它，并且不断的练习，使它形成我们的潜意识，才能够真正的掌握它。</p>
+<p>就比如说《非暴力沟通》的阅读，你能够做到，面对事情，或者生气，我们能够做到先不生气。观察，感受，需要，请求。找到问题的根本原因，不要带有评论、评价去讨论，或者问问题。要一直使用，在不断的练习中，你才能够真正的掌握它。当它成为你的潜意识时，那么我觉得读书的意义，改变就达到了。不要急于求成。</p>
+<p>就像阅读《认知觉醒》，其实作者用了很大的篇幅，来说明的事情，就是知行合一。当然我不是说没用，就像作者所说，知易行难。很多道理我们都知道，但是我们并没有去实践，那么随着时间的迁移，那些知识，就真正的可能只是知道，并没有成为你自己的知识。</p>
+<p>就像《微习惯》这本书，我读完后也建立了自己的微习惯列表，但是从23年到现在，还在坚持的还有那些呢？应该算起来就是每天慢走两圈，这个为什么还在坚持呢？其实就是我本身是有结石的，需要多运动，所以我才坚持，基本每天晚上八九点都会慢走。还有就是读书，中间读书的时间并没有做到当时做的微习惯列表，每天最少两页书，因为中间阅读一些我目前还理解不了的书籍，所以很痛苦，中间就放弃了一段时间。也不算放弃，就是没有连续阅读，偶尔阅读，也阅读了《传习录》等书籍。</p>
+<p>其他的像日记，反思，冥想都基本没有坚持下来。现在想来，就是建立的太多，你有了完成任务的感觉。虽然很容易。读书的最终结果，就是让我们的行动发生改变。所以古今中外，很多书籍都告诉我们，行动很重要，他们会告诉我们很多策略，让行动尽量变得容易。其实就是，阅读、思考、实践、输出。</p>
+<p>写出那个时候得感受，即便是混乱、迷茫、痛苦，也不要放弃。因为在书写得过程，其实也是我们思考得过程。我们就会将阅读得知识和我们本身得知识进行关联。那个时候就会反思，不要害怕，你慢慢就能从其中找到你需要得信息、思路。其实这个过程也是一个冷静思考得过程。只是我们大多数人都不常使用摆了。</p>
+<p>认真得思考每一本书要表达得意思，不要急于否定，也不要因为你知道书里得道理，而急于放弃。因为即便是同一个，每个人得解决问题得角度、方法都不一样。可能这个方法适合你呢？</p>
+<p>用心得思考，倾听书里表达想法，不需要全部都记得。只要你从中获取对你有用得，那么这本书就是值得我们阅读得。</p>
+<p>不要否定别人，评价别人。客观得看待事物，思考它存在得原因。多思考、多实践，你就能够真正的掌握它。</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 1148063373@qq.com </span>
