@@ -6,27 +6,17 @@
   <meta name="keywords" content=" Python , PDF , Excel ">
   <meta name="description" content="实现批量给 pdf 插入 excel 动态生成的印章 | 梁亚军的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="1. 前言在日常工作中，我们经常需要处理大量图片，并为这些图片添加元数据信息。本文将介绍如何使用Python开发一个批量处理图片的工具，自动为图片添加地理位置和时间信息。 2. 目标效果 3. 实现分析 从Excel文件中读取图片的元数据信息（地址、经纬度、日期），完成自动批量添加； 将经纬度转换为度分秒格式； 从图片的EXIF信息中提取拍摄时间； 在图片底部添加包含地址、经纬度和时间信息的文本；">
+<meta name="description" content="其实阅读完这本书，我现在能够清晰的记住就是拉伸区。 当然书中肯定不止讲了这些，但是我印象最深刻的就是这一点。为什么呢？ 就是我读书对这一点深有体会，记得我之前写过一篇博客，就是讲了读书的难易问题。那个时候不知道什么是拉伸区，开始阅读的《黑客与画家》、《微习惯》这一类的书籍都是相对容易理解的，难点就是落实在最终的实践上边。就比如《微习惯》就是让你建立足够小的习惯，小到你很容易完成，这样就不需要你使用">
 <meta property="og:type" content="article">
-<meta property="og:title" content="使用Python批量处理图片：添加地理位置和时间信息">
-<meta property="og:url" content="http://example.com/2025/04/03/python/Using-Python-batch-processing-images-adding-geolocation-and-time-information/index.html">
+<meta property="og:title" content="认知觉醒读书总结">
+<meta property="og:url" content="http://example.com/2025/04/07/books/cognitive-awakening-reading-summary/index.html">
 <meta property="og:site_name" content="梁亚军的博客">
-<meta property="og:description" content="1. 前言在日常工作中，我们经常需要处理大量图片，并为这些图片添加元数据信息。本文将介绍如何使用Python开发一个批量处理图片的工具，自动为图片添加地理位置和时间信息。 2. 目标效果 3. 实现分析 从Excel文件中读取图片的元数据信息（地址、经纬度、日期），完成自动批量添加； 将经纬度转换为度分秒格式； 从图片的EXIF信息中提取拍摄时间； 在图片底部添加包含地址、经纬度和时间信息的文本；">
+<meta property="og:description" content="其实阅读完这本书，我现在能够清晰的记住就是拉伸区。 当然书中肯定不止讲了这些，但是我印象最深刻的就是这一点。为什么呢？ 就是我读书对这一点深有体会，记得我之前写过一篇博客，就是讲了读书的难易问题。那个时候不知道什么是拉伸区，开始阅读的《黑客与画家》、《微习惯》这一类的书籍都是相对容易理解的，难点就是落实在最终的实践上边。就比如《微习惯》就是让你建立足够小的习惯，小到你很容易完成，这样就不需要你使用">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://foruda.gitee.com/images/1743647820220491716/a9acd99e_1681522.png">
-<meta property="og:image" content="https://foruda.gitee.com/images/1743648429378585246/24862eb4_1681522.png">
-<meta property="og:image" content="https://foruda.gitee.com/images/1743648488163546703/8160fcb8_1681522.png">
-<meta property="og:image" content="https://foruda.gitee.com/images/1743648559639725302/09700f9e_1681522.png">
-<meta property="article:published_time" content="2025-04-03T03:00:30.562Z">
-<meta property="article:modified_time" content="2025-04-03T03:01:40.879Z">
+<meta property="article:published_time" content="2025-04-07T01:42:13.198Z">
+<meta property="article:modified_time" content="2025-04-07T02:24:59.062Z">
 <meta property="article:author" content="梁亚军">
-<meta property="article:tag" content="Python">
-<meta property="article:tag" content="脚本">
-<meta property="article:tag" content="批量处理图片">
-<meta property="article:tag" content="地理位置">
-<meta property="article:tag" content="时间信息">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://foruda.gitee.com/images/1743647820220491716/a9acd99e_1681522.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -95,7 +85,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(36)</small>
+                <small>(37)</small>
             
         </div>
     </li>
@@ -189,7 +179,7 @@
         <div data-rel="读书笔记">
             
             读书笔记
-            <small>(5)</small>
+            <small>(6)</small>
         </div>
         
     </li>
@@ -322,7 +312,7 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="36">
+<input type="hidden" id="yelog_site_posts_number" value="37">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -510,6 +500,15 @@
 
     
     <nav id="title-list-nav">
+        
+        
+        <a  class="All 读书笔记 "
+           href="/2025/04/07/books/cognitive-awakening-reading-summary/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="认知觉醒读书总结">认知觉醒读书总结</span>
+            <span class="post-date" title="2025-04-07 09:42:13">2025/04/07</span>
+        </a>
         
         
         <a  class="All Python 脚本 "
