@@ -1,0 +1,1620 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>俄罗斯方块 | 梁亚军的博客</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="俄罗斯方块 | 梁亚军的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="1. 需求 由于微信小程序开发图片文件不能直接放在项目中，因此采用的是将图片上传到一个图片服务器，然后在项目中创建一个配置图片路径的 js 配置文件； 随着技术的更新，需要维护原生微信小程序，也有新开发的以 Taro React 开发的微信小程序和H5，细数需要维护开发的项目有 11 个； 最近由于集团对安全要求很严格，所以之前的图片服务器返回的图片路径存在安全隐患，需要统一处理； 通过 vsco">
+<meta property="og:type" content="article">
+<meta property="og:title" content="获取所有项目中配置的所有图片路径">
+<meta property="og:url" content="http://example.com/2025/05/08/python/get-all-image-paths-configured-in-the-project/index.html">
+<meta property="og:site_name" content="梁亚军的博客">
+<meta property="og:description" content="1. 需求 由于微信小程序开发图片文件不能直接放在项目中，因此采用的是将图片上传到一个图片服务器，然后在项目中创建一个配置图片路径的 js 配置文件； 随着技术的更新，需要维护原生微信小程序，也有新开发的以 Taro React 开发的微信小程序和H5，细数需要维护开发的项目有 11 个； 最近由于集团对安全要求很严格，所以之前的图片服务器返回的图片路径存在安全隐患，需要统一处理； 通过 vsco">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/2006650859cde397961f2c5f18019a17.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/d28d00086da7e35d948edb4d8fd480ee.png">
+<meta property="article:published_time" content="2025-05-08T03:30:40.469Z">
+<meta property="article:modified_time" content="2025-05-08T05:55:27.699Z">
+<meta property="article:author" content="梁亚军">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i-blog.csdnimg.cn/blog_migrate/2006650859cde397961f2c5f18019a17.png">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<!-- <script src="//cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script> -->
+ <script src="/js/vue.js?v=1.1.0" ></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>梁亚军</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(57)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="Python">
+            <i class="fold iconfont icon-right"></i>
+            Python
+            <small>(18)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="Python&lt;---&gt;版本管理">
+            
+            版本管理
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="Python&lt;---&gt;代码优化">
+            
+            代码优化
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="Python&lt;---&gt;脚本">
+            
+            脚本
+            <small>(15)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="Python&lt;---&gt;AI">
+            
+            AI
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="前端">
+            <i class="fold iconfont icon-right"></i>
+            前端
+            <small>(17)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="前端&lt;---&gt;游戏">
+            
+            游戏
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="前端&lt;---&gt;CSS">
+            
+            CSS
+            <small>(6)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="前端&lt;---&gt;JavaScript">
+            
+            JavaScript
+            <small>(8)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="前端&lt;---&gt;TypeScript">
+            
+            TypeScript
+            <small>(2)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="读书笔记">
+            
+            读书笔记
+            <small>(8)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="生活">
+            <i class="fold iconfont icon-right"></i>
+            生活
+            <small>(8)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="生活&lt;---&gt;翻译">
+            
+            翻译
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="生活&lt;---&gt;感想">
+            
+            感想
+            <small>(6)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="生活&lt;---&gt;理财">
+            
+            理财
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="游戏">
+            
+            游戏
+            <small>(2)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="GIT">
+            
+            GIT
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="Node">
+            
+            Node
+            <small>(2)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+        <a 
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="57">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://blog.csdn.net/m0_38082783">CSDN</a></li>
+            
+            <li><a target="_blank" href="https://juejin.cn/user/2124687263150136">掘金</a></li>
+            
+            <li><a target="_blank" href="https://www.zhihu.com/people/wen-bin-54-21">知乎</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="search shortcut key i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="switch to outline view shortcut key w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="return"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="case sensitive"></i>
+            <i class="iconfont icon-tag" data-title="label"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">outline</div>
+            <i class="iconfont icon-list" data-title="switch to article list"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>百度通用文字识别</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>变量</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>地理位置</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>动画</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>俄罗斯方块</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>非暴力沟通</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>滑动效果</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>脚本</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>爬虫</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>批量处理图片</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>时间信息</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>鼠标移动</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>图片背景清除</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>图片放大</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>文件名</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>样式</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>attr</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Builder</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSDN</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSS</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Email</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Excel</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>function</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Image</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>javascript</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>JavaScript</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>JS</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Node</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>npm</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>openpyxl</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>PDF</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Python</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ReportLab</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Sort</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Trae</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/05/08/python/get-all-image-paths-configured-in-the-project/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="获取所有项目中配置的所有图片路径">获取所有项目中配置的所有图片路径</span>
+            <span class="post-date" title="2025-05-08 11:30:40">2025/05/08</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/05/07/python/use-python-to-batch-convert-ncm-audio-files-to-mp3-format/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用Python批量将 .ncm 格式的音频文件转换为 .mp3 格式">使用Python批量将 .ncm 格式的音频文件转换为 .mp3 格式</span>
+            <span class="post-date" title="2025-05-07 09:51:29">2025/05/07</span>
+        </a>
+        
+        
+        <a  class="All 前端 JavaScript "
+           href="/2025/05/07/games/maze/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="迷宫">迷宫</span>
+            <span class="post-date" title="2025-05-07 09:31:49">2025/05/07</span>
+        </a>
+        
+        
+        <a  class="All 生活 感想 "
+           href="/2025/04/28/life/2025-04-28-what-wiped-out-my-dream-what-made-me-start-to-hesitate/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="是什么磨灭了我的梦想，是什么使我开始瞻前顾后？">是什么磨灭了我的梦想，是什么使我开始瞻前顾后？</span>
+            <span class="post-date" title="2025-04-28 10:36:44">2025/04/28</span>
+        </a>
+        
+        
+        <a  class="All Python 代码优化 "
+           href="/2025/04/21/python/Using-Trae-for-code-optimization/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用 Trae 进行代码优化">使用 Trae 进行代码优化</span>
+            <span class="post-date" title="2025-04-21 10:38:53">2025/04/21</span>
+        </a>
+        
+        
+        <a  class="All 前端 TypeScript "
+           href="/2025/04/17/clientSide/TypeScript/02.TypeScript-interface-and-object-type/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="TypeScript 接口和对象类型">TypeScript 接口和对象类型</span>
+            <span class="post-date" title="2025-04-17 09:48:15">2025/04/17</span>
+        </a>
+        
+        
+        <a  class="All 前端 TypeScript "
+           href="/2025/04/17/clientSide/TypeScript/01.TypeScript-the-type/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="TypeScript 的类型">TypeScript 的类型</span>
+            <span class="post-date" title="2025-04-17 09:45:17">2025/04/17</span>
+        </a>
+        
+        
+        <a  class="All 前端 JavaScript "
+           href="/2025/04/14/clientSide/javascript/The-Hacker-Imperial-code-rain-Recreating-the-classic-effect-with-TypeScript/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="《黑客帝国》的代码雨：用TypeScript重现经典特效">《黑客帝国》的代码雨：用TypeScript重现经典特效</span>
+            <span class="post-date" title="2025-04-14 17:14:02">2025/04/14</span>
+        </a>
+        
+        
+        <a  class="All 前端 JavaScript "
+           href="/2025/04/14/clientSide/javascript/H5-open-App-redirect-Compatibility-Optimization-and-Practice-Summary/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="H5唤起App支付的三种方案：URL Scheme、Universal Links与Intent Scheme">H5唤起App支付的三种方案：URL Scheme、Universal Links与Intent Scheme</span>
+            <span class="post-date" title="2025-04-14 10:48:46">2025/04/14</span>
+        </a>
+        
+        
+        <a  class="All 读书笔记 "
+           href="/2025/04/14/books/typescript-summary/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Typescript 总结">Typescript 总结</span>
+            <span class="post-date" title="2025-04-14 10:09:39">2025/04/14</span>
+        </a>
+        
+        
+        <a  class="All 生活 感想 "
+           href="/2025/04/14/life/2025-04-13/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="时间胶囊">时间胶囊</span>
+            <span class="post-date" title="2025-04-14 09:42:31">2025/04/14</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/04/10/python/Using-Trae-s-Builder-mode-to-implement-automatic-batch-processing-of-images-to-add-geolocation-and-time-information-script/"
+           data-tag="Python,脚本,Trae,Builder"
+           data-author="" >
+            <span class="post-title" title="使用 Trae 的 Builder 模式实现【自动批量处理图片：添加地理位置和时间信息】脚本">使用 Trae 的 Builder 模式实现【自动批量处理图片：添加地理位置和时间信息】脚本</span>
+            <span class="post-date" title="2025-04-10 10:31:59">2025/04/10</span>
+        </a>
+        
+        
+        <a  class="All 生活 感想 "
+           href="/2025/04/09/life/2025-04-09-Recently-my-mood-has-been-terrible/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="最近的心情很糟糕">最近的心情很糟糕</span>
+            <span class="post-date" title="2025-04-09 17:14:49">2025/04/09</span>
+        </a>
+        
+        
+        <a  class="All Python 版本管理 "
+           href="/2025/04/09/python/shiyong-Trae-de-chat-moshi-jinhang-python-de-banben-guanli-gongju-anzhuang/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用 Trae 的 chat 模式进行 python 的版本管理工具安装">使用 Trae 的 chat 模式进行 python 的版本管理工具安装</span>
+            <span class="post-date" title="2025-04-09 16:18:57">2025/04/09</span>
+        </a>
+        
+        
+        <a  class="All 前端 JavaScript "
+           href="/2025/04/09/clientSide/javascript/Using-native-JavaScript-implement-Tetris/"
+           data-tag="javascript,俄罗斯方块"
+           data-author="" >
+            <span class="post-title" title="使用原生 JavaScript 实现俄罗斯方块">使用原生 JavaScript 实现俄罗斯方块</span>
+            <span class="post-date" title="2025-04-09 09:46:33">2025/04/09</span>
+        </a>
+        
+        
+        <a  class="All 前端 游戏 "
+           href="/2025/04/09/clientSide/javascript/Based-on-Trae-from-0-develop-a-Gomoku-game/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="基于 Trae，从 0 开始，开发一个五子棋小游戏">基于 Trae，从 0 开始，开发一个五子棋小游戏</span>
+            <span class="post-date" title="2025-04-09 09:34:08">2025/04/09</span>
+        </a>
+        
+        
+        <a  class="All 游戏 "
+           href="/2025/04/08/games/gomoku/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="五子棋">五子棋</span>
+            <span class="post-date" title="2025-04-08 14:43:30">2025/04/08</span>
+        </a>
+        
+        
+        <a  class="All 前端 JavaScript "
+           href="/2025/04/08/games/Snake-Eater/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="贪吃蛇">贪吃蛇</span>
+            <span class="post-date" title="2025-04-08 14:30:22">2025/04/08</span>
+        </a>
+        
+        
+        <a  class="All 生活 感想 "
+           href="/2025/04/08/life/2025-04-07-black-Friday/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="黑色星期一(2025-04-07)">黑色星期一(2025-04-07)</span>
+            <span class="post-date" title="2025-04-08 09:54:21">2025/04/08</span>
+        </a>
+        
+        
+        <a  class="All 读书笔记 "
+           href="/2025/04/07/books/Non-Violent-Communication-Reading-Summary/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="非暴力沟通总结">非暴力沟通总结</span>
+            <span class="post-date" title="2025-04-07 14:18:01">2025/04/07</span>
+        </a>
+        
+        
+        <a  class="All 读书笔记 "
+           href="/2025/04/07/books/cognitive-awakening-reading-summary/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="认知觉醒读书总结">认知觉醒读书总结</span>
+            <span class="post-date" title="2025-04-07 09:42:13">2025/04/07</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/04/03/python/Using-Python-batch-processing-images-adding-geolocation-and-time-information/"
+           data-tag="Python,脚本,批量处理图片,地理位置,时间信息"
+           data-author="" >
+            <span class="post-title" title="使用Python批量处理图片：添加地理位置和时间信息">使用Python批量处理图片：添加地理位置和时间信息</span>
+            <span class="post-date" title="2025-04-03 11:00:30">2025/04/03</span>
+        </a>
+        
+        
+        <a  class="All 读书笔记 "
+           href="/2025/04/02/books/analogical-method-explains-the-pain-of-things/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="类比方法解释事物的痛苦">类比方法解释事物的痛苦</span>
+            <span class="post-date" title="2025-04-02 09:57:28">2025/04/02</span>
+        </a>
+        
+        
+        <a  class="All Python AI "
+           href="/2025/04/01/python/hugging-face/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="AI 公开课回顾">AI 公开课回顾</span>
+            <span class="post-date" title="2025-04-01 15:38:00">2025/04/01</span>
+        </a>
+        
+        
+        <a  class="All 读书笔记 "
+           href="/2025/04/01/books/Every-time-the-reading-is-are-and-the-guru%E2%80%99s-a-one-exchange/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="每一次的读书，都是和大佬的一次交流">每一次的读书，都是和大佬的一次交流</span>
+            <span class="post-date" title="2025-04-01 15:02:19">2025/04/01</span>
+        </a>
+        
+        
+        <a  class="All 前端 JavaScript "
+           href="/2025/03/31/clientSide/javascript/array-the-intersection-the-union-the-difference-implementation-and-the-detailed-introduction-and-usage-of-the-intersection-the-union-the-difference-of-the-Set-object/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数组的交集，并集，差集的实现，以及Set对象的交集，并集，差集的详细介绍和使用">数组的交集，并集，差集的实现，以及Set对象的交集，并集，差集的详细介绍和使用</span>
+            <span class="post-date" title="2025-03-31 10:38:04">2025/03/31</span>
+        </a>
+        
+        
+        <a  class="All 生活 感想 "
+           href="/2025/03/27/life/slow-is-fast/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="慢就是快">慢就是快</span>
+            <span class="post-date" title="2025-03-27 09:38:13">2025/03/27</span>
+        </a>
+        
+        
+        <a  class="All 游戏 "
+           href="/2025/03/20/games/tetris-demo/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="俄罗斯方块">俄罗斯方块</span>
+            <span class="post-date" title="2025-03-20 10:44:36">2025/03/20</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/03/20/python/crawl-all-the-hero-avatars-in-honor-of-kings/"
+           data-tag="Python,脚本"
+           data-author="" >
+            <span class="post-title" title="爬取王者荣耀的所有英雄头像">爬取王者荣耀的所有英雄头像</span>
+            <span class="post-date" title="2025-03-20 09:37:46">2025/03/20</span>
+        </a>
+        
+        
+        <a  class="All 读书笔记 "
+           href="/2025/03/19/books/Choose-to-read-books-from-the-easiest-to-the-most-difficult/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="读书选择由易到难">读书选择由易到难</span>
+            <span class="post-date" title="2025-03-19 10:21:57">2025/03/19</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/03/19/python/Batch-add-different-watermarks-to-images/"
+           data-tag="Python,脚本"
+           data-author="" >
+            <span class="post-title" title="批量对图片添加不同水印">批量对图片添加不同水印</span>
+            <span class="post-date" title="2025-03-19 09:24:28">2025/03/19</span>
+        </a>
+        
+        
+        <a  class="All 生活 翻译 "
+           href="/2025/03/18/life/30s-habit/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="三十秒的小习惯，一辈子的大影响">三十秒的小习惯，一辈子的大影响</span>
+            <span class="post-date" title="2025-03-18 16:54:40">2025/03/18</span>
+        </a>
+        
+        
+        <a  class="All 生活 感想 "
+           href="/2025/03/18/life/2025-03-18-Persistence/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="坚持">坚持</span>
+            <span class="post-date" title="2025-03-18 15:18:41">2025/03/18</span>
+        </a>
+        
+        
+        <a  class="All Node "
+           href="/2025/03/18/node/2.Principle-of-npm-run/"
+           data-tag="Node,npm"
+           data-author="" >
+            <span class="post-title" title="2. npm run 原理">2. npm run 原理</span>
+            <span class="post-date" title="2025-03-18 10:33:30">2025/03/18</span>
+        </a>
+        
+        
+        <a  class="All Node "
+           href="/2025/03/18/node/1.Commonly-used-npm-commands-and-explanations-of-package/"
+           data-tag="Node,npm"
+           data-author="" >
+            <span class="post-title" title="1. npm 常用命令和 package.json 说明">1. npm 常用命令和 package.json 说明</span>
+            <span class="post-date" title="2025-03-18 10:26:27">2025/03/18</span>
+        </a>
+        
+        
+        <a  class="All 前端 CSS "
+           href="/2025/03/18/clientSide/css/1.Explanation-and-usage-of-the-attr-function/"
+           data-tag="CSS,attr,function"
+           data-author="" >
+            <span class="post-title" title="1. CSS 介绍 attr 函数的说明和使用">1. CSS 介绍 attr 函数的说明和使用</span>
+            <span class="post-date" title="2025-03-18 10:21:00">2025/03/18</span>
+        </a>
+        
+        
+        <a  class="All 前端 CSS "
+           href="/2025/03/18/clientSide/css/4.CSS-implementation-of-expand-and-collapse-buttons-when-the-content-exceeds-a-fixed-height/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="4. CSS 实现超过固定高度后出现展开折叠按钮">4. CSS 实现超过固定高度后出现展开折叠按钮</span>
+            <span class="post-date" title="2025-03-18 10:14:11">2025/03/18</span>
+        </a>
+        
+        
+        <a  class="All GIT "
+           href="/2025/03/17/clientSide/git/solve-Authentication-failed-for/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="解决【Authentication failed for】">解决【Authentication failed for】</span>
+            <span class="post-date" title="2025-03-17 15:20:18">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 生活 理财 "
+           href="/2025/03/17/finances/Financial-Management-Summary-from-2016-to-2025/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2016年-2025年的理财总结">2016年-2025年的理财总结</span>
+            <span class="post-date" title="2025-03-17 10:08:52">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 前端 CSS "
+           href="/2025/03/14/clientSide/css/3.CSS-implements-the-special-effect-of-local-magnification-of-pictures-with-the-movement-of-the-mouse/"
+           data-tag="CSS,图片放大,鼠标移动"
+           data-author="" >
+            <span class="post-title" title="3. CSS 实现图片随鼠标移动局部放大特效">3. CSS 实现图片随鼠标移动局部放大特效</span>
+            <span class="post-date" title="2025-03-14 17:09:35">2025/03/14</span>
+        </a>
+        
+        
+        <a  class="All 前端 CSS "
+           href="/2025/03/14/clientSide/css/2.Three-methods-for-implementing-the-sliding-effect-of-clearing-the-background-of-an-image-with-CSS/"
+           data-tag="CSS,图片背景清除,滑动效果"
+           data-author="" >
+            <span class="post-title" title="2. CSS 实现图片背景清除的滑动效果三种方法">2. CSS 实现图片背景清除的滑动效果三种方法</span>
+            <span class="post-date" title="2025-03-14 16:56:13">2025/03/14</span>
+        </a>
+        
+        
+        <a  class="All 前端 CSS "
+           href="/2025/03/14/clientSide/css/6.CSS-variables-achieve-reuse-of-styles-and-animation-functions/"
+           data-tag="CSS,变量,样式,动画"
+           data-author="" >
+            <span class="post-title" title="6. CSS 变量，实现样式和动画函数复用">6. CSS 变量，实现样式和动画函数复用</span>
+            <span class="post-date" title="2025-03-14 16:50:15">2025/03/14</span>
+        </a>
+        
+        
+        <a  class="All 前端 JavaScript "
+           href="/2025/03/14/clientSide/javascript/Usage-examples-of-new-JS-array-method-with/"
+           data-tag="JavaScript"
+           data-author="" >
+            <span class="post-title" title="JS 数组新方法 with 的使用示例">JS 数组新方法 with 的使用示例</span>
+            <span class="post-date" title="2025-03-14 16:36:35">2025/03/14</span>
+        </a>
+        
+        
+        <a  class="All 前端 JavaScript "
+           href="/2025/03/14/clientSide/javascript/JS-native-deep-copy-API-structuredClone-use-details-and-precautions/"
+           data-tag="JS"
+           data-author="" >
+            <span class="post-title" title="JS 原生深拷贝 API structuredClone 使用细节和注意事项">JS 原生深拷贝 API structuredClone 使用细节和注意事项</span>
+            <span class="post-date" title="2025-03-14 14:33:02">2025/03/14</span>
+        </a>
+        
+        
+        <a  class="All 读书笔记 "
+           href="/2025/03/14/books/Summary-of-Zhang-Xinxu-Technical-Writing-Guide/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="张鑫旭的技术写作指南总结">张鑫旭的技术写作指南总结</span>
+            <span class="post-date" title="2025-03-14 14:30:32">2025/03/14</span>
+        </a>
+        
+        
+        <a  class="All 读书笔记 "
+           href="/2025/03/14/books/Nonviolent-Communication/"
+           data-tag="非暴力沟通"
+           data-author="" >
+            <span class="post-title" title="非暴力沟通每一章节的读后感">非暴力沟通每一章节的读后感</span>
+            <span class="post-date" title="2025-03-14 10:48:26">2025/03/14</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/03/12/python/Batch-recognize-the-text-in-pictures-and-save-it-into-an-Excel-spreadsheet/"
+           data-tag="Python,openpyxl,百度通用文字识别"
+           data-author="" >
+            <span class="post-title" title="批量识别图片文字保存到 excel 中">批量识别图片文字保存到 excel 中</span>
+            <span class="post-date" title="2025-03-12 17:30:51">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/03/12/python/Sort-according-to-the-numbers-in-the-names-of-the-picture-files/"
+           data-tag="Python,Sort,文件名"
+           data-author="" >
+            <span class="post-title" title="根据图片文件名称中的数字排序">根据图片文件名称中的数字排序</span>
+            <span class="post-date" title="2025-03-12 17:27:23">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/03/12/python/Automatically-generate-the-icon-management-file-for-the-front-end-project/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="自动生成前端项目图标管理文件">自动生成前端项目图标管理文件</span>
+            <span class="post-date" title="2025-03-12 17:24:28">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/03/12/python/Automatically-download-all-the-hero-avatars-in-Honor-of-Kings-in-batches/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="自动批量下载王者荣耀的所有英雄头像">自动批量下载王者荣耀的所有英雄头像</span>
+            <span class="post-date" title="2025-03-12 17:22:12">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/03/12/python/auto-crawl-the-list-of-CSDN-column-articles/"
+           data-tag="Python,CSDN,爬虫"
+           data-author="" >
+            <span class="post-title" title="爬取 CSDN 专栏文章列表">爬取 CSDN 专栏文章列表</span>
+            <span class="post-date" title="2025-03-12 17:19:03">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/03/12/python/auto-replace-image-url/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="自动替换项目中全部图片的新服务器地址">自动替换项目中全部图片的新服务器地址</span>
+            <span class="post-date" title="2025-03-12 17:14:28">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/03/12/python/to-pdf-table/"
+           data-tag="Python,ReportLab"
+           data-author="" >
+            <span class="post-title" title="使用 ReportLab 实现在 pdf 生成表格印章">使用 ReportLab 实现在 pdf 生成表格印章</span>
+            <span class="post-date" title="2025-03-12 17:12:20">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/03/12/python/do-pdf-in-to-image/"
+           data-tag="Python,PDF,Image"
+           data-author="" >
+            <span class="post-title" title="实现向指定PDF指定页面指定位置插入图片">实现向指定PDF指定页面指定位置插入图片</span>
+            <span class="post-date" title="2025-03-12 17:09:10">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/03/12/python/auto-on-pdf-in-to-excel-info/"
+           data-tag="Python,PDF,Excel"
+           data-author="" >
+            <span class="post-title" title="实现批量给 pdf 插入 excel 动态生成的印章">实现批量给 pdf 插入 excel 动态生成的印章</span>
+            <span class="post-date" title="2025-03-12 17:03:01">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All 前端 CSS "
+           href="/2025/03/12/clientSide/css/5.css-scrolling/"
+           data-tag="CSS"
+           data-author="" >
+            <span class="post-title" title="5. CSS 实现无限滚动轮播">5. CSS 实现无限滚动轮播</span>
+            <span class="post-date" title="2025-03-12 16:03:54">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/03/12/python/auto-send-email/"
+           data-tag="Python,Excel,Email"
+           data-author="" >
+            <span class="post-title" title="实现批量发送邮件，通过读取 excel 中的发送内容">实现批量发送邮件，通过读取 excel 中的发送内容</span>
+            <span class="post-date" title="2025-03-12 15:40:25">2025/03/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="Toggle full screen shortcut key s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-games/tetris-demo" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">俄罗斯方块</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="游戏">游戏</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2025-04-09 10:40:32'>2025-03-20 10:44</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <div id="tetris-content" style="background-color:#fff;padding:20px;">
+  <div id="tetris-score">Score: 0</div>
+  <div>
+    <button onclick="startGame()">Start Game</button>
+  </div>
+  <div id="tetris-container">
+    <div id="tetris-board"></div>
+    <div id="tetris-preview">
+      <div id="next-piece"></div>
+    </div>
+  </div>
+</div>
+
+<style>
+  #tetris-container {
+    display: flex;
+    margin-top: 20px;
+    position: relative;
+    background: linear-gradient(135deg, #f5f7fa, #c3cfe2);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  #tetris-board {
+    width: 300px;
+    height: 600px;
+    border: 2px solid #000;
+    position: relative;
+    background-color: #f0f0f0;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  #tetris-preview{
+    width: 120px;
+    height: 120px;
+    margin-left: 20px;
+    border: 2px solid #000;
+    position: relative;
+    background-color: #f0f0f0;
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  .rui-piece-cell{
+    box-sizing: border-box;
+    border: 1px solid #aaa;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  #tetris-score {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    color: #2c3e50;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  }
+  button {
+    display: block;
+    margin: 0 auto;
+    padding: 12px 24px;
+    font-size: 18px;
+    font-weight: bold;
+    background: linear-gradient(135deg, #4CAF50, #45a049);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.15);
+  }
+  button:active {
+    transform: translateY(0);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+</style>
+
+<script>
+  const BOARD_WIDTH = 10;
+  const BOARD_HEIGHT = 20;
+  const PREVIEW_WIDTH = 6;
+  let timer = null;
+  let board = Array.from({length: BOARD_HEIGHT}, () => Array(BOARD_WIDTH).fill(0));
+  let currentPiece;
+  let nextPiece;
+  let score = 0;
+
+  const TETROMINOES = [
+    [[1,1,1,1]], // I
+    [[1,1],[1,1]], // O
+    [[0,1,0],[1,1,1]], // T 向上
+    [[1,1,1],[0,1,0]], // T 向下
+    [[1,0,0],[1,1,1]], // L
+    [[0,0,1],[1,1,1]], // J
+    [[0,1,1],[1,1,0]], // S
+    [[1,1,0],[0,1,1]]  // Z
+  ];
+
+
+  function createPiece() {
+    const randomIndex = Math.floor(Math.random() * TETROMINOES.length);
+    let piece = nextPiece || {
+      shape: TETROMINOES[randomIndex],
+      x: Math.floor((BOARD_WIDTH - TETROMINOES[randomIndex][0].length) / 2),
+      y: 0
+    };
+    nextPiece = {
+      shape: TETROMINOES[Math.floor(Math.random() * TETROMINOES.length)],
+      x: Math.floor((BOARD_WIDTH - TETROMINOES[randomIndex][0].length) / 2),
+      y: 0
+    };
+    drawNextPiece(nextPiece);
+    return piece;
+  }
+
+  function drawNextPiece(piece) {
+    const nextPieceElement = document.getElementById('next-piece');
+    nextPieceElement.innerHTML = '';
+    nextPieceWidth = piece.shape[0].length;
+    nextPieceHeight = piece.shape.length;
+    let left = (PREVIEW_WIDTH - nextPieceWidth) / 2 * 20;
+    let top = (PREVIEW_WIDTH - nextPieceHeight) / 2 * 20;
+    for (let row = 0; row < piece.shape.length; row++) {
+      for (let col = 0; col < piece.shape[row].length; col++) {
+        if (piece.shape[row][col]) {
+          const cell = document.createElement('div');
+          cell.style.width = '20px';
+          cell.style.height = '20px';
+          cell.style.position = 'absolute';
+          cell.style.left = `${col * 20 + left}px`;
+          cell.style.top = `${row * 20 + top}px`;
+          cell.style.backgroundColor = '#000';
+          cell.classList.add('rui-piece-cell');
+          nextPieceElement.appendChild(cell);
+        }
+      }
+    }
+  }
+
+  function draw() {
+    const boardElement = document.getElementById('tetris-board');
+    boardElement.innerHTML = '';
+    let { shape, x:i, y:j } = currentPiece;
+    
+    for (let y = 0; y < BOARD_HEIGHT; y++) {
+      for (let x = 0; x < BOARD_WIDTH; x++) {
+        let isPiece = false;
+        for (let row = 0; row < currentPiece.shape.length; row++) {
+          for (let col = 0; col < currentPiece.shape[row].length; col++) {
+            if (currentPiece.shape[row][col] && 
+                x === currentPiece.x + col && 
+                y === currentPiece.y + row) {
+              isPiece = true;
+            }
+          }
+        }
+        const cell = document.createElement('div');
+        cell.style.position = 'absolute';
+        cell.style.width = '30px';
+        cell.style.height = '30px';
+        cell.style.left = `${x * 30}px`;
+        cell.style.top = `${y * 30}px`;
+        cell.style.backgroundColor = isPiece ? '#f00' : (board[y][x] ? '#000' : '#f0f0f0');
+        cell.classList.add('rui-piece-cell');
+        boardElement.appendChild(cell);
+      }
+    }
+
+    document.getElementById('tetris-score').innerText = `Score: ${score}`;
+  }
+
+  function movePiece(dx, dy) {
+    if (!collision(currentPiece.shape, currentPiece.x + dx, currentPiece.y + dy)) {
+      currentPiece.x += dx;
+      currentPiece.y += dy;
+    }
+  }
+
+  function rotatePiece() {
+    const rotated = currentPiece.shape[0].map((_, i) => 
+      currentPiece.shape.map(row => row[i]).reverse()
+    );
+    if (!collision(rotated, currentPiece.x, currentPiece.y)) {
+      currentPiece.shape = rotated;
+    }
+  }
+
+  function collision(shape, x, y) {
+    for (let row = 0; row < shape.length; row++) {
+      for (let col = 0; col < shape[row].length; col++) {
+        if (shape[row][col] &&
+            (board[y + row] && board[y + row][x + col]) !== 0) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  function placePiece() {
+    for (let row = 0; row < currentPiece.shape.length; row++) {
+      for (let col = 0; col < currentPiece.shape[row].length; col++) {
+        if (currentPiece.shape[row][col]) {
+          board[currentPiece.y + row][currentPiece.x + col] = 1;
+        }
+      }
+    }
+    clearLines();
+    currentPiece = createPiece();
+    if (collision(currentPiece.shape, currentPiece.x, currentPiece.y)) {
+      gameOver();
+    }
+  }
+
+  function clearLines() {
+    let linesCleared = 0;
+    for (let y = BOARD_HEIGHT - 1; y >= 0; y--) {
+      if (board[y].every(cell => cell !== 0)) {
+        board.splice(y, 1);
+        board.unshift(Array(BOARD_WIDTH).fill(0));
+        linesCleared++;
+        y++;
+      }
+    }
+    score += linesCleared * 100;
+  }
+
+  function gameOver() {
+    alert(`Game Over! Your score: ${score}`);
+    board = Array.from({length: BOARD_HEIGHT}, () => Array(BOARD_WIDTH).fill(0));
+    score = 0;
+    currentPiece = createPiece();
+  }
+
+  document.addEventListener('keydown', (e) => {
+    switch (e.key) {
+      case 'ArrowLeft':
+        movePiece(-1, 0);
+        break;
+      case 'ArrowRight':
+        movePiece(1, 0);
+        break;
+      case 'ArrowDown':
+        movePiece(0, 1);
+        break;
+      case 'ArrowUp':
+        rotatePiece();
+        break;
+    }
+    draw();
+  });
+
+  function gameLoop() {
+    draw();
+    if (!collision(currentPiece.shape, currentPiece.x, currentPiece.y + 1)) {
+      currentPiece.y++;
+    } else {
+      placePiece();
+    }
+    timer = setTimeout(gameLoop, 1000);
+  }
+
+  function startGame() {
+    // 判断游戏是否已经开始，开始就清除定时器
+    if(timer) {
+      clearTimeout(timer); 
+    }
+    currentPiece = createPiece();
+    draw();
+    gameLoop();
+
+    // 进入全屏模式
+    const tetrisContainer = document.getElementById('tetris-content');
+    if (tetrisContainer.requestFullscreen) {
+      tetrisContainer.requestFullscreen();
+    } else if (tetrisContainer.mozRequestFullScreen) { // Firefox
+      tetrisContainer.mozRequestFullScreen();
+    } else if (tetrisContainer.webkitRequestFullscreen) { // Chrome, Safari and Opera
+      tetrisContainer.webkitRequestFullscreen();
+    } else if (tetrisContainer.msRequestFullscreen) { // IE/Edge
+      tetrisContainer.msRequestFullscreen();
+    }
+  }
+</script>
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 1148063373@qq.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+   ©2017 梁亚军
+</p>
+<p class="footer-entry">
+  <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备20024589号-1</a>
+</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'false';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

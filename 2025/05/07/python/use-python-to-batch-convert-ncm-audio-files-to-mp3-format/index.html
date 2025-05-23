@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>使用Python批量将 .ncm 格式的音频文件转换为 .mp3 格式 | 梁亚军的博客</title>
+  <meta name="keywords" content="">
+  <meta name="description" content="使用Python批量将 .ncm 格式的音频文件转换为 .mp3 格式 | 梁亚军的博客">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="description" content="1. 需求 由于微信小程序开发图片文件不能直接放在项目中，因此采用的是将图片上传到一个图片服务器，然后在项目中创建一个配置图片路径的 js 配置文件； 随着技术的更新，需要维护原生微信小程序，也有新开发的以 Taro React 开发的微信小程序和H5，细数需要维护开发的项目有 11 个； 最近由于集团对安全要求很严格，所以之前的图片服务器返回的图片路径存在安全隐患，需要统一处理； 通过 vsco">
+<meta property="og:type" content="article">
+<meta property="og:title" content="获取所有项目中配置的所有图片路径">
+<meta property="og:url" content="http://example.com/2025/05/08/python/get-all-image-paths-configured-in-the-project/index.html">
+<meta property="og:site_name" content="梁亚军的博客">
+<meta property="og:description" content="1. 需求 由于微信小程序开发图片文件不能直接放在项目中，因此采用的是将图片上传到一个图片服务器，然后在项目中创建一个配置图片路径的 js 配置文件； 随着技术的更新，需要维护原生微信小程序，也有新开发的以 Taro React 开发的微信小程序和H5，细数需要维护开发的项目有 11 个； 最近由于集团对安全要求很严格，所以之前的图片服务器返回的图片路径存在安全隐患，需要统一处理； 通过 vsco">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/2006650859cde397961f2c5f18019a17.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/d28d00086da7e35d948edb4d8fd480ee.png">
+<meta property="article:published_time" content="2025-05-08T03:30:40.469Z">
+<meta property="article:modified_time" content="2025-05-08T05:55:27.699Z">
+<meta property="article:author" content="梁亚军">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i-blog.csdnimg.cn/blog_migrate/2006650859cde397961f2c5f18019a17.png">
+
+
+<link rel="icon" href="/img/avatar.jpg">
+
+<link href="/css/style.css?v=1.1.0" rel="stylesheet">
+
+<link href="/css/hl_theme/atom-light.css?v=1.1.0" rel="stylesheet">
+
+<link href="//cdn.jsdelivr.net/npm/animate.css@4.1.0/animate.min.css" rel="stylesheet">
+
+<script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+<!-- <script src="//cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script> -->
+ <script src="/js/vue.js?v=1.1.0" ></script>
+<script src="/js/titleTip.js?v=1.1.0" ></script>
+
+<script src="//cdn.jsdelivr.net/npm/highlightjs@9.16.2/highlight.pack.min.js"></script>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+
+<script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js"></script>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/jquery.cookie@1.4.1/jquery.cookie.min.js" ></script>
+
+<script src="/js/iconfont.js?v=1.1.0" ></script>
+
+<meta name="generator" content="Hexo 7.3.0"></head>
+<div style="display: none">
+  <input class="theme_disqus_on" value="false">
+  <input class="theme_preload_comment" value="">
+  <input class="theme_blog_path" value="">
+  <input id="theme_shortcut" value="true" />
+  <input id="theme_highlight_on" value="true" />
+  <input id="theme_code_copy" value="true" />
+</div>
+
+
+
+<body>
+<aside class="nav">
+    <div class="nav-left">
+        <a href="/"
+   class="avatar_target">
+    <img class="avatar"
+         src="/img/avatar.jpg"/>
+</a>
+<div class="author">
+    <span>梁亚军</span>
+</div>
+
+<div class="icon">
+    
+        
+    
+        
+    
+</div>
+
+
+
+
+
+<ul>
+    <li>
+        <div class="all active" data-rel="All">All
+            
+                <small>(57)</small>
+            
+        </div>
+    </li>
+    
+        
+            
+                
+    <li>
+        <div data-rel="Python">
+            <i class="fold iconfont icon-right"></i>
+            Python
+            <small>(18)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="Python&lt;---&gt;版本管理">
+            
+            版本管理
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="Python&lt;---&gt;代码优化">
+            
+            代码优化
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="Python&lt;---&gt;脚本">
+            
+            脚本
+            <small>(15)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="Python&lt;---&gt;AI">
+            
+            AI
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="前端">
+            <i class="fold iconfont icon-right"></i>
+            前端
+            <small>(17)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="前端&lt;---&gt;游戏">
+            
+            游戏
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="前端&lt;---&gt;CSS">
+            
+            CSS
+            <small>(6)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="前端&lt;---&gt;JavaScript">
+            
+            JavaScript
+            <small>(8)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="前端&lt;---&gt;TypeScript">
+            
+            TypeScript
+            <small>(2)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="读书笔记">
+            
+            读书笔记
+            <small>(8)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="生活">
+            <i class="fold iconfont icon-right"></i>
+            生活
+            <small>(8)</small>
+        </div>
+        
+            <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="生活&lt;---&gt;翻译">
+            
+            翻译
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="生活&lt;---&gt;感想">
+            
+            感想
+            <small>(6)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="生活&lt;---&gt;理财">
+            
+            理财
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+            </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="游戏">
+            
+            游戏
+            <small>(2)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="GIT">
+            
+            GIT
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="Node">
+            
+            Node
+            <small>(2)</small>
+        </div>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+</ul>
+<div class="left-bottom">
+    <div class="menus">
+        
+            
+            
+            
+    </div>
+    <div>
+        
+        <a 
+                                           class="friends">Friends</a>
+        
+    </div>
+</div>
+<input type="hidden" id="yelog_site_posts_number" value="57">
+
+<div style="display: none">
+    <span id="busuanzi_value_site_uv"></span>
+    <span id="busuanzi_value_site_pv"></span>
+</div>
+
+    </div>
+    <div class="nav-right">
+        <div class="friends-area">
+    <div class="friends-title">
+        Links
+        <i class="iconfont icon-left"></i>
+    </div>
+    <div class="friends-content">
+        <ul>
+            
+            <li><a target="_blank" href="https://blog.csdn.net/m0_38082783">CSDN</a></li>
+            
+            <li><a target="_blank" href="https://juejin.cn/user/2124687263150136">掘金</a></li>
+            
+            <li><a target="_blank" href="https://www.zhihu.com/people/wen-bin-54-21">知乎</a></li>
+            
+        </ul>
+    </div>
+</div>
+        <div class="title-list">
+    <div class="right-top">
+        <div id="default-panel">
+            <i class="iconfont icon-search" data-title="search shortcut key i"></i>
+            <div class="right-title">All</div>
+            <i class="iconfont icon-file-tree" data-title="switch to outline view shortcut key w"></i>
+        </div>
+        <div id="search-panel">
+            <i class="iconfont icon-left" data-title="return"></i>
+            <input id="local-search-input" autocomplete="off"/>
+            <label class="border-line" for="input"></label>
+            <i class="iconfont icon-case-sensitive" data-title="case sensitive"></i>
+            <i class="iconfont icon-tag" data-title="label"></i>
+        </div>
+        <div id="outline-panel" style="display: none">
+            <div class="right-title">outline</div>
+            <i class="iconfont icon-list" data-title="switch to article list"></i>
+        </div>
+    </div>
+
+    <div class="tags-list">
+    <input id="tag-search" />
+    <div class="tag-wrapper">
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>百度通用文字识别</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>变量</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>地理位置</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>动画</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>俄罗斯方块</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>非暴力沟通</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>滑动效果</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>脚本</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>爬虫</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>批量处理图片</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>时间信息</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>鼠标移动</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>图片背景清除</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>图片放大</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>文件名</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>样式</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>attr</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Builder</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSDN</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>CSS</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Email</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Excel</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>function</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Image</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>javascript</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>JavaScript</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>JS</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Node</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>npm</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>openpyxl</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>PDF</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Python</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>ReportLab</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Sort</a>
+            </li>
+        
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Trae</a>
+            </li>
+        
+    </div>
+
+</div>
+
+    
+    <nav id="title-list-nav">
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/05/08/python/get-all-image-paths-configured-in-the-project/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="获取所有项目中配置的所有图片路径">获取所有项目中配置的所有图片路径</span>
+            <span class="post-date" title="2025-05-08 11:30:40">2025/05/08</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/05/07/python/use-python-to-batch-convert-ncm-audio-files-to-mp3-format/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用Python批量将 .ncm 格式的音频文件转换为 .mp3 格式">使用Python批量将 .ncm 格式的音频文件转换为 .mp3 格式</span>
+            <span class="post-date" title="2025-05-07 09:51:29">2025/05/07</span>
+        </a>
+        
+        
+        <a  class="All 前端 JavaScript "
+           href="/2025/05/07/games/maze/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="迷宫">迷宫</span>
+            <span class="post-date" title="2025-05-07 09:31:49">2025/05/07</span>
+        </a>
+        
+        
+        <a  class="All 生活 感想 "
+           href="/2025/04/28/life/2025-04-28-what-wiped-out-my-dream-what-made-me-start-to-hesitate/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="是什么磨灭了我的梦想，是什么使我开始瞻前顾后？">是什么磨灭了我的梦想，是什么使我开始瞻前顾后？</span>
+            <span class="post-date" title="2025-04-28 10:36:44">2025/04/28</span>
+        </a>
+        
+        
+        <a  class="All Python 代码优化 "
+           href="/2025/04/21/python/Using-Trae-for-code-optimization/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用 Trae 进行代码优化">使用 Trae 进行代码优化</span>
+            <span class="post-date" title="2025-04-21 10:38:53">2025/04/21</span>
+        </a>
+        
+        
+        <a  class="All 前端 TypeScript "
+           href="/2025/04/17/clientSide/TypeScript/02.TypeScript-interface-and-object-type/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="TypeScript 接口和对象类型">TypeScript 接口和对象类型</span>
+            <span class="post-date" title="2025-04-17 09:48:15">2025/04/17</span>
+        </a>
+        
+        
+        <a  class="All 前端 TypeScript "
+           href="/2025/04/17/clientSide/TypeScript/01.TypeScript-the-type/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="TypeScript 的类型">TypeScript 的类型</span>
+            <span class="post-date" title="2025-04-17 09:45:17">2025/04/17</span>
+        </a>
+        
+        
+        <a  class="All 前端 JavaScript "
+           href="/2025/04/14/clientSide/javascript/The-Hacker-Imperial-code-rain-Recreating-the-classic-effect-with-TypeScript/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="《黑客帝国》的代码雨：用TypeScript重现经典特效">《黑客帝国》的代码雨：用TypeScript重现经典特效</span>
+            <span class="post-date" title="2025-04-14 17:14:02">2025/04/14</span>
+        </a>
+        
+        
+        <a  class="All 前端 JavaScript "
+           href="/2025/04/14/clientSide/javascript/H5-open-App-redirect-Compatibility-Optimization-and-Practice-Summary/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="H5唤起App支付的三种方案：URL Scheme、Universal Links与Intent Scheme">H5唤起App支付的三种方案：URL Scheme、Universal Links与Intent Scheme</span>
+            <span class="post-date" title="2025-04-14 10:48:46">2025/04/14</span>
+        </a>
+        
+        
+        <a  class="All 读书笔记 "
+           href="/2025/04/14/books/typescript-summary/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Typescript 总结">Typescript 总结</span>
+            <span class="post-date" title="2025-04-14 10:09:39">2025/04/14</span>
+        </a>
+        
+        
+        <a  class="All 生活 感想 "
+           href="/2025/04/14/life/2025-04-13/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="时间胶囊">时间胶囊</span>
+            <span class="post-date" title="2025-04-14 09:42:31">2025/04/14</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/04/10/python/Using-Trae-s-Builder-mode-to-implement-automatic-batch-processing-of-images-to-add-geolocation-and-time-information-script/"
+           data-tag="Python,脚本,Trae,Builder"
+           data-author="" >
+            <span class="post-title" title="使用 Trae 的 Builder 模式实现【自动批量处理图片：添加地理位置和时间信息】脚本">使用 Trae 的 Builder 模式实现【自动批量处理图片：添加地理位置和时间信息】脚本</span>
+            <span class="post-date" title="2025-04-10 10:31:59">2025/04/10</span>
+        </a>
+        
+        
+        <a  class="All 生活 感想 "
+           href="/2025/04/09/life/2025-04-09-Recently-my-mood-has-been-terrible/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="最近的心情很糟糕">最近的心情很糟糕</span>
+            <span class="post-date" title="2025-04-09 17:14:49">2025/04/09</span>
+        </a>
+        
+        
+        <a  class="All Python 版本管理 "
+           href="/2025/04/09/python/shiyong-Trae-de-chat-moshi-jinhang-python-de-banben-guanli-gongju-anzhuang/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用 Trae 的 chat 模式进行 python 的版本管理工具安装">使用 Trae 的 chat 模式进行 python 的版本管理工具安装</span>
+            <span class="post-date" title="2025-04-09 16:18:57">2025/04/09</span>
+        </a>
+        
+        
+        <a  class="All 前端 JavaScript "
+           href="/2025/04/09/clientSide/javascript/Using-native-JavaScript-implement-Tetris/"
+           data-tag="javascript,俄罗斯方块"
+           data-author="" >
+            <span class="post-title" title="使用原生 JavaScript 实现俄罗斯方块">使用原生 JavaScript 实现俄罗斯方块</span>
+            <span class="post-date" title="2025-04-09 09:46:33">2025/04/09</span>
+        </a>
+        
+        
+        <a  class="All 前端 游戏 "
+           href="/2025/04/09/clientSide/javascript/Based-on-Trae-from-0-develop-a-Gomoku-game/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="基于 Trae，从 0 开始，开发一个五子棋小游戏">基于 Trae，从 0 开始，开发一个五子棋小游戏</span>
+            <span class="post-date" title="2025-04-09 09:34:08">2025/04/09</span>
+        </a>
+        
+        
+        <a  class="All 游戏 "
+           href="/2025/04/08/games/gomoku/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="五子棋">五子棋</span>
+            <span class="post-date" title="2025-04-08 14:43:30">2025/04/08</span>
+        </a>
+        
+        
+        <a  class="All 前端 JavaScript "
+           href="/2025/04/08/games/Snake-Eater/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="贪吃蛇">贪吃蛇</span>
+            <span class="post-date" title="2025-04-08 14:30:22">2025/04/08</span>
+        </a>
+        
+        
+        <a  class="All 生活 感想 "
+           href="/2025/04/08/life/2025-04-07-black-Friday/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="黑色星期一(2025-04-07)">黑色星期一(2025-04-07)</span>
+            <span class="post-date" title="2025-04-08 09:54:21">2025/04/08</span>
+        </a>
+        
+        
+        <a  class="All 读书笔记 "
+           href="/2025/04/07/books/Non-Violent-Communication-Reading-Summary/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="非暴力沟通总结">非暴力沟通总结</span>
+            <span class="post-date" title="2025-04-07 14:18:01">2025/04/07</span>
+        </a>
+        
+        
+        <a  class="All 读书笔记 "
+           href="/2025/04/07/books/cognitive-awakening-reading-summary/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="认知觉醒读书总结">认知觉醒读书总结</span>
+            <span class="post-date" title="2025-04-07 09:42:13">2025/04/07</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/04/03/python/Using-Python-batch-processing-images-adding-geolocation-and-time-information/"
+           data-tag="Python,脚本,批量处理图片,地理位置,时间信息"
+           data-author="" >
+            <span class="post-title" title="使用Python批量处理图片：添加地理位置和时间信息">使用Python批量处理图片：添加地理位置和时间信息</span>
+            <span class="post-date" title="2025-04-03 11:00:30">2025/04/03</span>
+        </a>
+        
+        
+        <a  class="All 读书笔记 "
+           href="/2025/04/02/books/analogical-method-explains-the-pain-of-things/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="类比方法解释事物的痛苦">类比方法解释事物的痛苦</span>
+            <span class="post-date" title="2025-04-02 09:57:28">2025/04/02</span>
+        </a>
+        
+        
+        <a  class="All Python AI "
+           href="/2025/04/01/python/hugging-face/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="AI 公开课回顾">AI 公开课回顾</span>
+            <span class="post-date" title="2025-04-01 15:38:00">2025/04/01</span>
+        </a>
+        
+        
+        <a  class="All 读书笔记 "
+           href="/2025/04/01/books/Every-time-the-reading-is-are-and-the-guru%E2%80%99s-a-one-exchange/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="每一次的读书，都是和大佬的一次交流">每一次的读书，都是和大佬的一次交流</span>
+            <span class="post-date" title="2025-04-01 15:02:19">2025/04/01</span>
+        </a>
+        
+        
+        <a  class="All 前端 JavaScript "
+           href="/2025/03/31/clientSide/javascript/array-the-intersection-the-union-the-difference-implementation-and-the-detailed-introduction-and-usage-of-the-intersection-the-union-the-difference-of-the-Set-object/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="数组的交集，并集，差集的实现，以及Set对象的交集，并集，差集的详细介绍和使用">数组的交集，并集，差集的实现，以及Set对象的交集，并集，差集的详细介绍和使用</span>
+            <span class="post-date" title="2025-03-31 10:38:04">2025/03/31</span>
+        </a>
+        
+        
+        <a  class="All 生活 感想 "
+           href="/2025/03/27/life/slow-is-fast/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="慢就是快">慢就是快</span>
+            <span class="post-date" title="2025-03-27 09:38:13">2025/03/27</span>
+        </a>
+        
+        
+        <a  class="All 游戏 "
+           href="/2025/03/20/games/tetris-demo/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="俄罗斯方块">俄罗斯方块</span>
+            <span class="post-date" title="2025-03-20 10:44:36">2025/03/20</span>
+        </a>
+        
+        
+        <a  class="All "
+           href="/2025/03/20/python/crawl-all-the-hero-avatars-in-honor-of-kings/"
+           data-tag="Python,脚本"
+           data-author="" >
+            <span class="post-title" title="爬取王者荣耀的所有英雄头像">爬取王者荣耀的所有英雄头像</span>
+            <span class="post-date" title="2025-03-20 09:37:46">2025/03/20</span>
+        </a>
+        
+        
+        <a  class="All 读书笔记 "
+           href="/2025/03/19/books/Choose-to-read-books-from-the-easiest-to-the-most-difficult/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="读书选择由易到难">读书选择由易到难</span>
+            <span class="post-date" title="2025-03-19 10:21:57">2025/03/19</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/03/19/python/Batch-add-different-watermarks-to-images/"
+           data-tag="Python,脚本"
+           data-author="" >
+            <span class="post-title" title="批量对图片添加不同水印">批量对图片添加不同水印</span>
+            <span class="post-date" title="2025-03-19 09:24:28">2025/03/19</span>
+        </a>
+        
+        
+        <a  class="All 生活 翻译 "
+           href="/2025/03/18/life/30s-habit/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="三十秒的小习惯，一辈子的大影响">三十秒的小习惯，一辈子的大影响</span>
+            <span class="post-date" title="2025-03-18 16:54:40">2025/03/18</span>
+        </a>
+        
+        
+        <a  class="All 生活 感想 "
+           href="/2025/03/18/life/2025-03-18-Persistence/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="坚持">坚持</span>
+            <span class="post-date" title="2025-03-18 15:18:41">2025/03/18</span>
+        </a>
+        
+        
+        <a  class="All Node "
+           href="/2025/03/18/node/2.Principle-of-npm-run/"
+           data-tag="Node,npm"
+           data-author="" >
+            <span class="post-title" title="2. npm run 原理">2. npm run 原理</span>
+            <span class="post-date" title="2025-03-18 10:33:30">2025/03/18</span>
+        </a>
+        
+        
+        <a  class="All Node "
+           href="/2025/03/18/node/1.Commonly-used-npm-commands-and-explanations-of-package/"
+           data-tag="Node,npm"
+           data-author="" >
+            <span class="post-title" title="1. npm 常用命令和 package.json 说明">1. npm 常用命令和 package.json 说明</span>
+            <span class="post-date" title="2025-03-18 10:26:27">2025/03/18</span>
+        </a>
+        
+        
+        <a  class="All 前端 CSS "
+           href="/2025/03/18/clientSide/css/1.Explanation-and-usage-of-the-attr-function/"
+           data-tag="CSS,attr,function"
+           data-author="" >
+            <span class="post-title" title="1. CSS 介绍 attr 函数的说明和使用">1. CSS 介绍 attr 函数的说明和使用</span>
+            <span class="post-date" title="2025-03-18 10:21:00">2025/03/18</span>
+        </a>
+        
+        
+        <a  class="All 前端 CSS "
+           href="/2025/03/18/clientSide/css/4.CSS-implementation-of-expand-and-collapse-buttons-when-the-content-exceeds-a-fixed-height/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="4. CSS 实现超过固定高度后出现展开折叠按钮">4. CSS 实现超过固定高度后出现展开折叠按钮</span>
+            <span class="post-date" title="2025-03-18 10:14:11">2025/03/18</span>
+        </a>
+        
+        
+        <a  class="All GIT "
+           href="/2025/03/17/clientSide/git/solve-Authentication-failed-for/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="解决【Authentication failed for】">解决【Authentication failed for】</span>
+            <span class="post-date" title="2025-03-17 15:20:18">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 生活 理财 "
+           href="/2025/03/17/finances/Financial-Management-Summary-from-2016-to-2025/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="2016年-2025年的理财总结">2016年-2025年的理财总结</span>
+            <span class="post-date" title="2025-03-17 10:08:52">2025/03/17</span>
+        </a>
+        
+        
+        <a  class="All 前端 CSS "
+           href="/2025/03/14/clientSide/css/3.CSS-implements-the-special-effect-of-local-magnification-of-pictures-with-the-movement-of-the-mouse/"
+           data-tag="CSS,图片放大,鼠标移动"
+           data-author="" >
+            <span class="post-title" title="3. CSS 实现图片随鼠标移动局部放大特效">3. CSS 实现图片随鼠标移动局部放大特效</span>
+            <span class="post-date" title="2025-03-14 17:09:35">2025/03/14</span>
+        </a>
+        
+        
+        <a  class="All 前端 CSS "
+           href="/2025/03/14/clientSide/css/2.Three-methods-for-implementing-the-sliding-effect-of-clearing-the-background-of-an-image-with-CSS/"
+           data-tag="CSS,图片背景清除,滑动效果"
+           data-author="" >
+            <span class="post-title" title="2. CSS 实现图片背景清除的滑动效果三种方法">2. CSS 实现图片背景清除的滑动效果三种方法</span>
+            <span class="post-date" title="2025-03-14 16:56:13">2025/03/14</span>
+        </a>
+        
+        
+        <a  class="All 前端 CSS "
+           href="/2025/03/14/clientSide/css/6.CSS-variables-achieve-reuse-of-styles-and-animation-functions/"
+           data-tag="CSS,变量,样式,动画"
+           data-author="" >
+            <span class="post-title" title="6. CSS 变量，实现样式和动画函数复用">6. CSS 变量，实现样式和动画函数复用</span>
+            <span class="post-date" title="2025-03-14 16:50:15">2025/03/14</span>
+        </a>
+        
+        
+        <a  class="All 前端 JavaScript "
+           href="/2025/03/14/clientSide/javascript/Usage-examples-of-new-JS-array-method-with/"
+           data-tag="JavaScript"
+           data-author="" >
+            <span class="post-title" title="JS 数组新方法 with 的使用示例">JS 数组新方法 with 的使用示例</span>
+            <span class="post-date" title="2025-03-14 16:36:35">2025/03/14</span>
+        </a>
+        
+        
+        <a  class="All 前端 JavaScript "
+           href="/2025/03/14/clientSide/javascript/JS-native-deep-copy-API-structuredClone-use-details-and-precautions/"
+           data-tag="JS"
+           data-author="" >
+            <span class="post-title" title="JS 原生深拷贝 API structuredClone 使用细节和注意事项">JS 原生深拷贝 API structuredClone 使用细节和注意事项</span>
+            <span class="post-date" title="2025-03-14 14:33:02">2025/03/14</span>
+        </a>
+        
+        
+        <a  class="All 读书笔记 "
+           href="/2025/03/14/books/Summary-of-Zhang-Xinxu-Technical-Writing-Guide/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="张鑫旭的技术写作指南总结">张鑫旭的技术写作指南总结</span>
+            <span class="post-date" title="2025-03-14 14:30:32">2025/03/14</span>
+        </a>
+        
+        
+        <a  class="All 读书笔记 "
+           href="/2025/03/14/books/Nonviolent-Communication/"
+           data-tag="非暴力沟通"
+           data-author="" >
+            <span class="post-title" title="非暴力沟通每一章节的读后感">非暴力沟通每一章节的读后感</span>
+            <span class="post-date" title="2025-03-14 10:48:26">2025/03/14</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/03/12/python/Batch-recognize-the-text-in-pictures-and-save-it-into-an-Excel-spreadsheet/"
+           data-tag="Python,openpyxl,百度通用文字识别"
+           data-author="" >
+            <span class="post-title" title="批量识别图片文字保存到 excel 中">批量识别图片文字保存到 excel 中</span>
+            <span class="post-date" title="2025-03-12 17:30:51">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/03/12/python/Sort-according-to-the-numbers-in-the-names-of-the-picture-files/"
+           data-tag="Python,Sort,文件名"
+           data-author="" >
+            <span class="post-title" title="根据图片文件名称中的数字排序">根据图片文件名称中的数字排序</span>
+            <span class="post-date" title="2025-03-12 17:27:23">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/03/12/python/Automatically-generate-the-icon-management-file-for-the-front-end-project/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="自动生成前端项目图标管理文件">自动生成前端项目图标管理文件</span>
+            <span class="post-date" title="2025-03-12 17:24:28">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/03/12/python/Automatically-download-all-the-hero-avatars-in-Honor-of-Kings-in-batches/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="自动批量下载王者荣耀的所有英雄头像">自动批量下载王者荣耀的所有英雄头像</span>
+            <span class="post-date" title="2025-03-12 17:22:12">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/03/12/python/auto-crawl-the-list-of-CSDN-column-articles/"
+           data-tag="Python,CSDN,爬虫"
+           data-author="" >
+            <span class="post-title" title="爬取 CSDN 专栏文章列表">爬取 CSDN 专栏文章列表</span>
+            <span class="post-date" title="2025-03-12 17:19:03">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/03/12/python/auto-replace-image-url/"
+           data-tag="Python"
+           data-author="" >
+            <span class="post-title" title="自动替换项目中全部图片的新服务器地址">自动替换项目中全部图片的新服务器地址</span>
+            <span class="post-date" title="2025-03-12 17:14:28">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/03/12/python/to-pdf-table/"
+           data-tag="Python,ReportLab"
+           data-author="" >
+            <span class="post-title" title="使用 ReportLab 实现在 pdf 生成表格印章">使用 ReportLab 实现在 pdf 生成表格印章</span>
+            <span class="post-date" title="2025-03-12 17:12:20">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/03/12/python/do-pdf-in-to-image/"
+           data-tag="Python,PDF,Image"
+           data-author="" >
+            <span class="post-title" title="实现向指定PDF指定页面指定位置插入图片">实现向指定PDF指定页面指定位置插入图片</span>
+            <span class="post-date" title="2025-03-12 17:09:10">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/03/12/python/auto-on-pdf-in-to-excel-info/"
+           data-tag="Python,PDF,Excel"
+           data-author="" >
+            <span class="post-title" title="实现批量给 pdf 插入 excel 动态生成的印章">实现批量给 pdf 插入 excel 动态生成的印章</span>
+            <span class="post-date" title="2025-03-12 17:03:01">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All 前端 CSS "
+           href="/2025/03/12/clientSide/css/5.css-scrolling/"
+           data-tag="CSS"
+           data-author="" >
+            <span class="post-title" title="5. CSS 实现无限滚动轮播">5. CSS 实现无限滚动轮播</span>
+            <span class="post-date" title="2025-03-12 16:03:54">2025/03/12</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/03/12/python/auto-send-email/"
+           data-tag="Python,Excel,Email"
+           data-author="" >
+            <span class="post-title" title="实现批量发送邮件，通过读取 excel 中的发送内容">实现批量发送邮件，通过读取 excel 中的发送内容</span>
+            <span class="post-date" title="2025-03-12 15:40:25">2025/03/12</span>
+        </a>
+        
+        <div id="no-item-tips">
+
+        </div>
+    </nav>
+    <div id="outline-list">
+    </div>
+</div>
+
+    </div>
+    <div class="hide-list">
+        <div class="semicircle" data-title="Toggle full screen shortcut key s">
+            <div class="brackets first"><</div>
+            <div class="brackets">&gt;</div>
+        </div>
+    </div>
+</aside>
+<div id="post">
+    <div class="pjax">
+        <article id="post-python/use-python-to-batch-convert-ncm-audio-files-to-mp3-format" class="article article-type-post" itemscope itemprop="blogPost">
+    
+        <h1 class="article-title">使用Python批量将 .ncm 格式的音频文件转换为 .mp3 格式</h1>
+    
+    <div class="article-meta">
+        
+        
+        
+        <span class="book">
+            <i class="iconfont icon-category"></i>
+            
+            
+            <a  data-rel="Python">Python</a> > 
+            
+            <a  data-rel="Python&lt;---&gt;脚本">脚本</a>
+            
+        </span>
+        
+        
+    </div>
+    <div class="article-meta">
+        
+            Created At : <time class="date" title='Updated At: 2025-05-07 09:59:15'>2025-05-07 09:51</time>
+        
+    </div>
+    <div class="article-meta">
+        
+        
+        <span id="busuanzi_container_page_pv">
+            Views 👀 :<span id="busuanzi_value_page_pv">
+                <span class="count-comment">
+                    <span class="spinner">
+                      <div class="cube1"></div>
+                      <div class="cube2"></div>
+                    </span>
+                </span>
+            </span>
+        </span>
+        
+        
+    </div>
+    
+    <div class="toc-ref">
+    
+        <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E5%89%8D%E8%A8%80"><span class="toc-text">1. 前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E5%AE%89%E8%A3%85-ncmdump"><span class="toc-text">2. 安装 ncmdump</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E5%AE%9E%E7%8E%B0-ncm-%E8%BD%AC-mp3"><span class="toc-text">3. 实现 .ncm 转 .mp3</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E6%89%A7%E8%A1%8C%E8%BF%87%E7%A8%8B"><span class="toc-text">4. 执行过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-%E6%89%A7%E8%A1%8C%E7%BB%93%E6%9E%9C"><span class="toc-text">5. 执行结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E8%A7%A3%E5%86%B3%E8%AD%A6%E5%91%8A"><span class="toc-text">6. 解决警告</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E5%AE%89%E8%A3%85-ffmpeg"><span class="toc-text">7. 安装 ffmpeg</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#8-%E5%AE%89%E8%A3%85%E5%AE%8C%E6%88%90%E9%85%8D%E7%BD%AE-ffmpeg-%E7%9A%84%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F"><span class="toc-text">8. 安装完成配置 ffmpeg 的环境变量</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E7%8E%AF%E5%A2%83%E5%8F%98%E9%87%8F%E9%85%8D%E7%BD%AE"><span class="toc-text">9. 环境变量配置</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#10-%E8%AD%A6%E5%91%8A%E6%B6%88%E5%A4%B1"><span class="toc-text">10. 警告消失</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#11-%E6%89%B9%E9%87%8F%E8%BD%AC%E6%8D%A2"><span class="toc-text">11. 批量转换</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#12-%E6%8A%80%E6%9C%AF%E6%80%BB%E7%BB%93%E4%B8%8E%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9"><span class="toc-text">12. 技术总结与注意事项</span></a></li></ol>
+    
+<style>
+    .left-col .switch-btn,
+    .left-col .switch-area {
+        display: none;
+    }
+    .toc-level-3 i,
+    .toc-level-3 ol {
+        display: none !important;
+    }
+</style>
+</div>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h3 id="1-前言"><a href="#1-前言" class="headerlink" title="1. 前言"></a>1. 前言</h3><p>.ncm 格式是网易云音乐专属的加密音频格式，用于保护版权。这种格式无法直接播放，需要解密后才能转换为常见的音频格式。本文将介绍如何使用 Python 批量将 .ncm 格式的音频文件转换为 .mp3 格式。</p>
+<h3 id="2-安装-ncmdump"><a href="#2-安装-ncmdump" class="headerlink" title="2. 安装 ncmdump"></a>2. 安装 ncmdump</h3><blockquote>
+<p>ncmdump 是一个专门用于解密 .ncm 文件的工具。它能够解析网易云音乐的加密算法，将 .ncm 文件转换为可播放的音频格式。首先需要安装它：</p>
+</blockquote>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><code class="hljs cmake">pip <span class="hljs-keyword">install</span> ncmdump<br></code></pre></td></tr></table></figure>
+
+<h3 id="3-实现-ncm-转-mp3"><a href="#3-实现-ncm-转-mp3" class="headerlink" title="3. 实现 .ncm 转 .mp3"></a>3. 实现 .ncm 转 .mp3</h3><p>将 .ncm 文件转换为 .mp3 文件：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br><span class="hljs-keyword">from</span> ncmdump <span class="hljs-keyword">import</span> dump<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">convert_ncm_to_mp3</span>(<span class="hljs-params">input_file, output_file</span>):<br>    <span class="hljs-comment"># 解密 .ncm 文件</span><br>    dump(input_file, output_file)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    input_file = <span class="hljs-string">&#x27;周传雄 - 青花.ncm&#x27;</span><br>    output_file = <span class="hljs-string">&#x27;周传雄 - 青花.mp3&#x27;</span><br>    convert_ncm_to_mp3(input_file, output_file)<br>    <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;转换完成: <span class="hljs-subst">&#123;output_file&#125;</span>&#x27;</span>)<br></code></pre></td></tr></table></figure>
+
+<h3 id="4-执行过程"><a href="#4-执行过程" class="headerlink" title="4. 执行过程"></a>4. 执行过程</h3><p><img src="https://i-blog.csdnimg.cn/img_convert/2476a39ac558a979302dabe0054e1b45.png" alt="输入图片说明"></p>
+<h3 id="5-执行结果"><a href="#5-执行结果" class="headerlink" title="5. 执行结果"></a>5. 执行结果</h3><p><img src="https://i-blog.csdnimg.cn/img_convert/01bb3d07669f9dc905bc77059d097db6.png" alt="输入图片说明"></p>
+<h3 id="6-解决警告"><a href="#6-解决警告" class="headerlink" title="6. 解决警告"></a>6. 解决警告</h3><figure class="highlight routeros"><table><tr><td class="code"><pre><code class="hljs routeros">RuntimeWarning: Couldn<span class="hljs-string">&#x27;t find ffmpeg</span><br><span class="hljs-string">or avconv - defaulting to ffmpeg, but may not work</span><br><span class="hljs-string">  warn(&quot;Couldn&#x27;</span>t <span class="hljs-built_in">find</span> ffmpeg <span class="hljs-keyword">or</span> avconv - defaulting <span class="hljs-keyword">to</span> ffmpeg, but may <span class="hljs-keyword">not</span> work<span class="hljs-string">&quot;, Run</span><br><span class="hljs-string">timeWarning)</span><br></code></pre></td></tr></table></figure>
+<blockquote>
+<p>这个警告表明你的系统中没有正确安装或配置ffmpeg。ncmdump 库依赖于ffmpeg来处理音频文件转换。</p>
+</blockquote>
+<h3 id="7-安装-ffmpeg"><a href="#7-安装-ffmpeg" class="headerlink" title="7. 安装 ffmpeg"></a>7. 安装 ffmpeg</h3><p>FFmpeg 是一个强大的多媒体处理工具，ncmdump 依赖它来进行音频格式转换。在 Windows 系统上，我们可以使用 Chocolatey 包管理器来安装 FFmpeg：</p>
+<figure class="highlight cmake"><table><tr><td class="code"><pre><code class="hljs cmake">choco <span class="hljs-keyword">install</span> ffmpeg<br></code></pre></td></tr></table></figure>
+
+<p>如果系统中没有安装 Chocolatey，需要先安装它：</p>
+<figure class="highlight pgsql"><table><tr><td class="code"><pre><code class="hljs pgsql"><span class="hljs-keyword">Set</span>-ExecutionPolicy Bypass -Scope Process -Force; [<span class="hljs-keyword">System</span>.Net.ServicePointManager]::SecurityProtocol = [<span class="hljs-keyword">System</span>.Net.ServicePointManager]::SecurityProtocol -bor <span class="hljs-number">3072</span>; iex ((<span class="hljs-built_in">New</span>-<span class="hljs-keyword">Object</span> <span class="hljs-keyword">System</span>.Net.WebClient).DownloadString(<span class="hljs-string">&#x27;https://community.chocolatey.org/install.ps1&#x27;</span>))<br></code></pre></td></tr></table></figure>
+
+<h3 id="8-安装完成配置-ffmpeg-的环境变量"><a href="#8-安装完成配置-ffmpeg-的环境变量" class="headerlink" title="8. 安装完成配置 ffmpeg 的环境变量"></a>8. 安装完成配置 ffmpeg 的环境变量</h3><p><img src="https://i-blog.csdnimg.cn/img_convert/1e934939fdab1edc545c2b0282a4343d.png" alt="输入图片说明"><br><img src="https://i-blog.csdnimg.cn/img_convert/ba9070d955ca0b083e29ac64132ce7df.png" alt="输入图片说明"></p>
+<h3 id="9-环境变量配置"><a href="#9-环境变量配置" class="headerlink" title="9. 环境变量配置"></a>9. 环境变量配置</h3><p><img src="https://i-blog.csdnimg.cn/img_convert/cb02c2a68078bcf50d097782a935892c.png" alt="输入图片说明"></p>
+<h3 id="10-警告消失"><a href="#10-警告消失" class="headerlink" title="10. 警告消失"></a>10. 警告消失</h3><p><img src="https://i-blog.csdnimg.cn/img_convert/e30b4bc51901bbf0e76921fca30c43b5.png" alt="输入图片说明"></p>
+<h3 id="11-批量转换"><a href="#11-批量转换" class="headerlink" title="11. 批量转换"></a>11. 批量转换</h3><p>在实际使用中，我们通常需要批量转换整个文件夹中的 .ncm 文件。以下代码展示了如何实现这一功能：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><code class="hljs python"><span class="hljs-keyword">import</span> os<br><span class="hljs-keyword">from</span> ncmdump <span class="hljs-keyword">import</span> dump<br><br><span class="hljs-keyword">def</span> <span class="hljs-title function_">batch_convert_ncm_to_mp3</span>(<span class="hljs-params">input_folder, output_folder</span>):<br>    <span class="hljs-comment"># 确保输出文件夹存在</span><br>    os.makedirs(output_folder, exist_ok=<span class="hljs-literal">True</span>)<br>    <br>    <span class="hljs-comment"># 遍历输入文件夹中的所有 .ncm 文件</span><br>    <span class="hljs-keyword">for</span> filename <span class="hljs-keyword">in</span> os.listdir(input_folder):<br>        <span class="hljs-keyword">if</span> filename.endswith(<span class="hljs-string">&quot;.ncm&quot;</span>):<br>            input_file = os.path.join(input_folder, filename)<br>            output_file = os.path.join(output_folder, filename.replace(<span class="hljs-string">&quot;.ncm&quot;</span>, <span class="hljs-string">&quot;.mp3&quot;</span>))<br>            <span class="hljs-comment"># 转换 .ncm 文件为 .mp3</span><br>            <span class="hljs-keyword">try</span>:<br>                dump(input_file, output_file)<br>                <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;成功转换: <span class="hljs-subst">&#123;filename&#125;</span>&#x27;</span>)<br>            <span class="hljs-keyword">except</span> Exception <span class="hljs-keyword">as</span> e:<br>                <span class="hljs-built_in">print</span>(<span class="hljs-string">f&#x27;转换失败: <span class="hljs-subst">&#123;filename&#125;</span>, 错误信息: <span class="hljs-subst">&#123;<span class="hljs-built_in">str</span>(e)&#125;</span>&#x27;</span>)<br><br><span class="hljs-keyword">if</span> __name__ == <span class="hljs-string">&#x27;__main__&#x27;</span>:<br>    <span class="hljs-comment"># 示例：批量将 .ncm 文件转换为 .mp3 文件</span><br>    input_folder = <span class="hljs-string">&quot;input_folder&quot;</span><br>    output_folder = <span class="hljs-string">&quot;output_folder&quot;</span><br>    batch_convert_ncm_to_mp3(input_folder, output_folder)<br></code></pre></td></tr></table></figure>
+
+<h3 id="12-技术总结与注意事项"><a href="#12-技术总结与注意事项" class="headerlink" title="12. 技术总结与注意事项"></a>12. 技术总结与注意事项</h3><ol>
+<li><p><strong>.ncm 格式解析</strong></p>
+<ul>
+<li>.ncm 是网易云音乐的加密音频格式，采用AES加密算法保护版权</li>
+<li>文件头包含关键信息：文件标识、版本号、密钥索引等</li>
+</ul>
+</li>
+<li><p><strong>ncmdump 工作原理</strong></p>
+<ul>
+<li>解析文件头获取关键信息</li>
+<li>使用AES算法解密音频数据</li>
+<li>将解密后的数据转换为标准音频格式</li>
+</ul>
+</li>
+<li><p><strong>性能优化建议</strong></p>
+<ul>
+<li>使用多进程处理：利用 multiprocessing 模块并行处理多个文件</li>
+<li>内存优化：使用生成器处理大文件，减少内存占用</li>
+<li>错误重试机制：为失败任务添加重试逻辑</li>
+</ul>
+</li>
+<li><p><strong>常见问题解决方案</strong></p>
+<ul>
+<li><strong>转换失败</strong><ul>
+<li>检查文件完整性，确保.ncm文件未损坏</li>
+<li>验证ncmdump版本是否最新</li>
+<li>检查系统时间是否正确，加密算法对时间敏感</li>
+</ul>
+</li>
+<li><strong>音质问题</strong><ul>
+<li>确保使用最新版FFmpeg</li>
+<li>调整音频比特率参数</li>
+<li>检查源文件是否为无损格式</li>
+</ul>
+</li>
+<li><strong>批量处理中断</strong><ul>
+<li>实现断点续传功能</li>
+<li>记录已处理文件状态</li>
+<li>添加异常捕获机制</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p><strong>安全注意事项</strong></p>
+<ul>
+<li>不要在公共网络传输未加密的.ncm文件</li>
+<li>定期更新ncmdump和FFmpeg以修复安全漏洞</li>
+<li>谨慎处理转换后的音频文件，避免版权问题</li>
+</ul>
+</li>
+</ol>
+
+      
+       <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 1148063373@qq.com </span>
+    </div>
+</article>
+
+
+
+
+
+
+
+    
+
+
+
+
+    </div>
+    <div class="copyright">
+        <p class="footer-entry">
+   ©2017 梁亚军
+</p>
+<p class="footer-entry">
+  <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备20024589号-1</a>
+</p>
+
+    </div>
+    <div class="full-toc">
+        <button class="full" data-title="Toggle full screen shortcut key s"><span class="min "></span></button>
+<a class="" id="rocket" ></a>
+
+    </div>
+</div>
+
+</body>
+<script src="/js/jquery.pjax.js?v=1.1.0" ></script>
+
+<script src="/js/script.js?v=1.1.0" ></script>
+<script>
+    var img_resize = 'false';
+    function initArticle() {
+        /*渲染对应的表格样式*/
+        
+            $("#post .pjax table").addClass("green_title");
+        
+
+        /*渲染打赏样式*/
+        
+
+        /*高亮代码块行号*/
+        
+
+        /*访问数量*/
+        
+        $.getScript("//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js");
+        
+
+        /*代码高亮，行号对齐*/
+        $('.pre-numbering').css('line-height',$('.has-numbering').css('line-height'));
+
+        
+        
+    }
+
+    /*打赏页面隐藏与展示*/
+    
+
+</script>
+
+<!--加入行号的高亮代码块样式-->
+
+<!--自定义样式设置-->
+<style>
+    
+    
+    .nav {
+        width: 542px;
+    }
+    .nav.fullscreen {
+        margin-left: -542px;
+    }
+    .nav-left {
+        width: 120px;
+    }
+    
+    
+    @media screen and (max-width: 1468px) {
+        .nav {
+            width: 492px;
+        }
+        .nav.fullscreen {
+            margin-left: -492px;
+        }
+        .nav-left {
+            width: 100px;
+        }
+    }
+    
+    
+    @media screen and (max-width: 1024px) {
+        .nav {
+            width: 492px;
+            margin-left: -492px
+        }
+        .nav.fullscreen {
+            margin-left: 0;
+        }
+    }
+    
+    @media screen and (max-width: 426px) {
+        .nav {
+            width: 100%;
+        }
+        .nav-left {
+            width: 100%;
+        }
+    }
+    
+    
+    .nav-right .title-list nav a .post-title, .nav-right .title-list #local-search-result a .post-title {
+        color: #383636;
+    }
+    
+    
+    .nav-right .title-list nav a .post-date, .nav-right .title-list #local-search-result a .post-date {
+        color: #5e5e5f;
+    }
+    
+    
+    .nav-right nav a.hover, #local-search-result a.hover{
+        background-color: #e2e0e0;
+    }
+    
+    
+
+    /*列表样式*/
+    
+
+    /* 背景图样式 */
+    
+    
+
+
+    /*引用块样式*/
+    
+
+    /*文章列表背景图*/
+    
+
+    
+</style>
+
+
+
+
+
+
+
+</html>

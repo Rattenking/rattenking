@@ -6,17 +6,20 @@
   <meta name="keywords" content="">
   <meta name="description" content="4. CSS 实现超过固定高度后出现展开折叠按钮 | 梁亚军的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta name="description" content="昨天，堪称“黑色星期一”。回想去年九月，我为梁知一创建了投资账号，当时正在清仓利润，已经损失了17万。虽然回本了一大部分，但仍亏损12万。为了加快回本速度，我决定采用低买高卖的策略。恰巧那时招商银行推出了一款利息优惠券，20万贷款一年的利息仅需5000元，于是我果断贷了出来。 到了今年四月，亏损已缩减至8万。然而，就在昨天，短短一天之内，我几个月的努力化为泡影，单日亏损高达3.5万。唉，意外总是来">
+<meta name="description" content="1. 需求 由于微信小程序开发图片文件不能直接放在项目中，因此采用的是将图片上传到一个图片服务器，然后在项目中创建一个配置图片路径的 js 配置文件； 随着技术的更新，需要维护原生微信小程序，也有新开发的以 Taro React 开发的微信小程序和H5，细数需要维护开发的项目有 11 个； 最近由于集团对安全要求很严格，所以之前的图片服务器返回的图片路径存在安全隐患，需要统一处理； 通过 vsco">
 <meta property="og:type" content="article">
-<meta property="og:title" content="黑色星期一(2025-04-07)">
-<meta property="og:url" content="http://example.com/2025/04/08/life/2025-04-07-black-Friday/index.html">
+<meta property="og:title" content="获取所有项目中配置的所有图片路径">
+<meta property="og:url" content="http://example.com/2025/05/08/python/get-all-image-paths-configured-in-the-project/index.html">
 <meta property="og:site_name" content="梁亚军的博客">
-<meta property="og:description" content="昨天，堪称“黑色星期一”。回想去年九月，我为梁知一创建了投资账号，当时正在清仓利润，已经损失了17万。虽然回本了一大部分，但仍亏损12万。为了加快回本速度，我决定采用低买高卖的策略。恰巧那时招商银行推出了一款利息优惠券，20万贷款一年的利息仅需5000元，于是我果断贷了出来。 到了今年四月，亏损已缩减至8万。然而，就在昨天，短短一天之内，我几个月的努力化为泡影，单日亏损高达3.5万。唉，意外总是来">
+<meta property="og:description" content="1. 需求 由于微信小程序开发图片文件不能直接放在项目中，因此采用的是将图片上传到一个图片服务器，然后在项目中创建一个配置图片路径的 js 配置文件； 随着技术的更新，需要维护原生微信小程序，也有新开发的以 Taro React 开发的微信小程序和H5，细数需要维护开发的项目有 11 个； 最近由于集团对安全要求很严格，所以之前的图片服务器返回的图片路径存在安全隐患，需要统一处理； 通过 vsco">
 <meta property="og:locale" content="en_US">
-<meta property="article:published_time" content="2025-04-08T01:54:21.929Z">
-<meta property="article:modified_time" content="2025-04-08T03:03:29.069Z">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/2006650859cde397961f2c5f18019a17.png">
+<meta property="og:image" content="https://i-blog.csdnimg.cn/blog_migrate/d28d00086da7e35d948edb4d8fd480ee.png">
+<meta property="article:published_time" content="2025-05-08T03:30:40.469Z">
+<meta property="article:modified_time" content="2025-05-08T05:55:27.699Z">
 <meta property="article:author" content="梁亚军">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i-blog.csdnimg.cn/blog_migrate/2006650859cde397961f2c5f18019a17.png">
 
 
 <link rel="icon" href="/img/avatar.jpg">
@@ -85,7 +88,7 @@
     <li>
         <div class="all active" data-rel="All">All
             
-                <small>(39)</small>
+                <small>(57)</small>
             
         </div>
     </li>
@@ -97,17 +100,39 @@
         <div data-rel="Python">
             <i class="fold iconfont icon-right"></i>
             Python
-            <small>(13)</small>
+            <small>(18)</small>
         </div>
         
             <ul class="sub hide">
                 
                     
     <li>
+        <div data-rel="Python&lt;---&gt;版本管理">
+            
+            版本管理
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="Python&lt;---&gt;代码优化">
+            
+            代码优化
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
         <div data-rel="Python&lt;---&gt;脚本">
             
             脚本
-            <small>(12)</small>
+            <small>(15)</small>
         </div>
         
     </li>
@@ -138,10 +163,21 @@
         <div data-rel="前端">
             <i class="fold iconfont icon-right"></i>
             前端
-            <small>(10)</small>
+            <small>(17)</small>
         </div>
         
             <ul class="sub hide">
+                
+                    
+    <li>
+        <div data-rel="前端&lt;---&gt;游戏">
+            
+            游戏
+            <small>(1)</small>
+        </div>
+        
+    </li>
+
                 
                     
     <li>
@@ -159,7 +195,18 @@
         <div data-rel="前端&lt;---&gt;JavaScript">
             
             JavaScript
-            <small>(4)</small>
+            <small>(8)</small>
+        </div>
+        
+    </li>
+
+                
+                    
+    <li>
+        <div data-rel="前端&lt;---&gt;TypeScript">
+            
+            TypeScript
+            <small>(2)</small>
         </div>
         
     </li>
@@ -174,12 +221,20 @@
     
         
             
+        
+    
+        
+            
+        
+    
+        
+            
                 
     <li>
         <div data-rel="读书笔记">
             
             读书笔记
-            <small>(7)</small>
+            <small>(8)</small>
         </div>
         
     </li>
@@ -210,7 +265,7 @@
         <div data-rel="生活">
             <i class="fold iconfont icon-right"></i>
             生活
-            <small>(5)</small>
+            <small>(8)</small>
         </div>
         
             <ul class="sub hide">
@@ -231,7 +286,7 @@
         <div data-rel="生活&lt;---&gt;感想">
             
             感想
-            <small>(3)</small>
+            <small>(6)</small>
         </div>
         
     </li>
@@ -249,6 +304,25 @@
 
                 
             </ul>
+        
+    </li>
+
+            
+        
+    
+        
+            
+        
+    
+        
+            
+                
+    <li>
+        <div data-rel="游戏">
+            
+            游戏
+            <small>(2)</small>
+        </div>
         
     </li>
 
@@ -297,6 +371,10 @@
             
         
     
+        
+            
+        
+    
 </ul>
 <div class="left-bottom">
     <div class="menus">
@@ -312,7 +390,7 @@
         
     </div>
 </div>
-<input type="hidden" id="yelog_site_posts_number" value="39">
+<input type="hidden" id="yelog_site_posts_number" value="57">
 
 <div style="display: none">
     <span id="busuanzi_value_site_uv"></span>
@@ -431,6 +509,10 @@
             </li>
         
             <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Builder</a>
+            </li>
+        
+            <li class="article-tag-list-item">
                 <i class="iconfont icon-tag"></i><a>CSDN</a>
             </li>
         
@@ -494,12 +576,178 @@
                 <i class="iconfont icon-tag"></i><a>Sort</a>
             </li>
         
+            <li class="article-tag-list-item">
+                <i class="iconfont icon-tag"></i><a>Trae</a>
+            </li>
+        
     </div>
 
 </div>
 
     
     <nav id="title-list-nav">
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/05/08/python/get-all-image-paths-configured-in-the-project/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="获取所有项目中配置的所有图片路径">获取所有项目中配置的所有图片路径</span>
+            <span class="post-date" title="2025-05-08 11:30:40">2025/05/08</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/05/07/python/use-python-to-batch-convert-ncm-audio-files-to-mp3-format/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用Python批量将 .ncm 格式的音频文件转换为 .mp3 格式">使用Python批量将 .ncm 格式的音频文件转换为 .mp3 格式</span>
+            <span class="post-date" title="2025-05-07 09:51:29">2025/05/07</span>
+        </a>
+        
+        
+        <a  class="All 前端 JavaScript "
+           href="/2025/05/07/games/maze/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="迷宫">迷宫</span>
+            <span class="post-date" title="2025-05-07 09:31:49">2025/05/07</span>
+        </a>
+        
+        
+        <a  class="All 生活 感想 "
+           href="/2025/04/28/life/2025-04-28-what-wiped-out-my-dream-what-made-me-start-to-hesitate/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="是什么磨灭了我的梦想，是什么使我开始瞻前顾后？">是什么磨灭了我的梦想，是什么使我开始瞻前顾后？</span>
+            <span class="post-date" title="2025-04-28 10:36:44">2025/04/28</span>
+        </a>
+        
+        
+        <a  class="All Python 代码优化 "
+           href="/2025/04/21/python/Using-Trae-for-code-optimization/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用 Trae 进行代码优化">使用 Trae 进行代码优化</span>
+            <span class="post-date" title="2025-04-21 10:38:53">2025/04/21</span>
+        </a>
+        
+        
+        <a  class="All 前端 TypeScript "
+           href="/2025/04/17/clientSide/TypeScript/02.TypeScript-interface-and-object-type/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="TypeScript 接口和对象类型">TypeScript 接口和对象类型</span>
+            <span class="post-date" title="2025-04-17 09:48:15">2025/04/17</span>
+        </a>
+        
+        
+        <a  class="All 前端 TypeScript "
+           href="/2025/04/17/clientSide/TypeScript/01.TypeScript-the-type/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="TypeScript 的类型">TypeScript 的类型</span>
+            <span class="post-date" title="2025-04-17 09:45:17">2025/04/17</span>
+        </a>
+        
+        
+        <a  class="All 前端 JavaScript "
+           href="/2025/04/14/clientSide/javascript/The-Hacker-Imperial-code-rain-Recreating-the-classic-effect-with-TypeScript/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="《黑客帝国》的代码雨：用TypeScript重现经典特效">《黑客帝国》的代码雨：用TypeScript重现经典特效</span>
+            <span class="post-date" title="2025-04-14 17:14:02">2025/04/14</span>
+        </a>
+        
+        
+        <a  class="All 前端 JavaScript "
+           href="/2025/04/14/clientSide/javascript/H5-open-App-redirect-Compatibility-Optimization-and-Practice-Summary/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="H5唤起App支付的三种方案：URL Scheme、Universal Links与Intent Scheme">H5唤起App支付的三种方案：URL Scheme、Universal Links与Intent Scheme</span>
+            <span class="post-date" title="2025-04-14 10:48:46">2025/04/14</span>
+        </a>
+        
+        
+        <a  class="All 读书笔记 "
+           href="/2025/04/14/books/typescript-summary/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="Typescript 总结">Typescript 总结</span>
+            <span class="post-date" title="2025-04-14 10:09:39">2025/04/14</span>
+        </a>
+        
+        
+        <a  class="All 生活 感想 "
+           href="/2025/04/14/life/2025-04-13/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="时间胶囊">时间胶囊</span>
+            <span class="post-date" title="2025-04-14 09:42:31">2025/04/14</span>
+        </a>
+        
+        
+        <a  class="All Python 脚本 "
+           href="/2025/04/10/python/Using-Trae-s-Builder-mode-to-implement-automatic-batch-processing-of-images-to-add-geolocation-and-time-information-script/"
+           data-tag="Python,脚本,Trae,Builder"
+           data-author="" >
+            <span class="post-title" title="使用 Trae 的 Builder 模式实现【自动批量处理图片：添加地理位置和时间信息】脚本">使用 Trae 的 Builder 模式实现【自动批量处理图片：添加地理位置和时间信息】脚本</span>
+            <span class="post-date" title="2025-04-10 10:31:59">2025/04/10</span>
+        </a>
+        
+        
+        <a  class="All 生活 感想 "
+           href="/2025/04/09/life/2025-04-09-Recently-my-mood-has-been-terrible/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="最近的心情很糟糕">最近的心情很糟糕</span>
+            <span class="post-date" title="2025-04-09 17:14:49">2025/04/09</span>
+        </a>
+        
+        
+        <a  class="All Python 版本管理 "
+           href="/2025/04/09/python/shiyong-Trae-de-chat-moshi-jinhang-python-de-banben-guanli-gongju-anzhuang/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="使用 Trae 的 chat 模式进行 python 的版本管理工具安装">使用 Trae 的 chat 模式进行 python 的版本管理工具安装</span>
+            <span class="post-date" title="2025-04-09 16:18:57">2025/04/09</span>
+        </a>
+        
+        
+        <a  class="All 前端 JavaScript "
+           href="/2025/04/09/clientSide/javascript/Using-native-JavaScript-implement-Tetris/"
+           data-tag="javascript,俄罗斯方块"
+           data-author="" >
+            <span class="post-title" title="使用原生 JavaScript 实现俄罗斯方块">使用原生 JavaScript 实现俄罗斯方块</span>
+            <span class="post-date" title="2025-04-09 09:46:33">2025/04/09</span>
+        </a>
+        
+        
+        <a  class="All 前端 游戏 "
+           href="/2025/04/09/clientSide/javascript/Based-on-Trae-from-0-develop-a-Gomoku-game/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="基于 Trae，从 0 开始，开发一个五子棋小游戏">基于 Trae，从 0 开始，开发一个五子棋小游戏</span>
+            <span class="post-date" title="2025-04-09 09:34:08">2025/04/09</span>
+        </a>
+        
+        
+        <a  class="All 游戏 "
+           href="/2025/04/08/games/gomoku/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="五子棋">五子棋</span>
+            <span class="post-date" title="2025-04-08 14:43:30">2025/04/08</span>
+        </a>
+        
+        
+        <a  class="All 前端 JavaScript "
+           href="/2025/04/08/games/Snake-Eater/"
+           data-tag=""
+           data-author="" >
+            <span class="post-title" title="贪吃蛇">贪吃蛇</span>
+            <span class="post-date" title="2025-04-08 14:30:22">2025/04/08</span>
+        </a>
         
         
         <a  class="All 生活 感想 "
@@ -583,9 +831,9 @@
         </a>
         
         
-        <a  class="All 前端 JavaScript "
-           href="/2025/03/20/clientSide/javascript/tetris-demo/"
-           data-tag="javascript,俄罗斯方块"
+        <a  class="All 游戏 "
+           href="/2025/03/20/games/tetris-demo/"
+           data-tag=""
            data-author="" >
             <span class="post-title" title="俄罗斯方块">俄罗斯方块</span>
             <span class="post-date" title="2025-03-20 10:44:36">2025/03/20</span>
@@ -1014,9 +1262,11 @@
     </div>
     <div class="copyright">
         <p class="footer-entry">
-    ©2017 梁亚军
+   ©2017 梁亚军
 </p>
-<p class="footer-entry">Built with <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/yelog/hexo-theme-3-hexo" target="_blank">3-hexo</a> theme</p>
+<p class="footer-entry">
+  <a href="https://beian.miit.gov.cn/" target="_blank">蜀ICP备20024589号-1</a>
+</p>
 
     </div>
     <div class="full-toc">
