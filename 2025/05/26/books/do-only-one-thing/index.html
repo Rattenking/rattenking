@@ -2,9 +2,9 @@
 <html>
 <head>
   <meta charset="utf-8">
-  <title>五子棋 | 梁亚军的博客</title>
+  <title>只做一件事 | 梁亚军的博客</title>
   <meta name="keywords" content="">
-  <meta name="description" content="五子棋 | 梁亚军的博客">
+  <meta name="description" content="只做一件事 | 梁亚军的博客">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 <meta name="description" content="只做一件事，看着是一件简单的事情，其实没有我们想的那么简单。 涉及到的问题就是目标，要有明确的目标。说个最简单的例子：我们都希望自己实现财富自由。那么请问一个问题，你知道需要多少钱才能满足你实现财富自由？你实现财富自由的目标需要经过那些步骤？我估计思考过这个问题的人，少之又少。这就是没有目标，也是我们目标不明确导致的。 由于我是从事的软件开发，一般来说都是需要有一个明确的目标，然后根据这个目标来制">
 <meta property="og:type" content="article">
@@ -1124,9 +1124,9 @@
 </aside>
 <div id="post">
     <div class="pjax">
-        <article id="post-games/gomoku" class="article article-type-post" itemscope itemprop="blogPost">
+        <article id="post-books/do-only-one-thing" class="article article-type-post" itemscope itemprop="blogPost">
     
-        <h1 class="article-title">五子棋</h1>
+        <h1 class="article-title">只做一件事</h1>
     
     <div class="article-meta">
         
@@ -1136,7 +1136,7 @@
             <i class="iconfont icon-category"></i>
             
             
-            <a  data-rel="游戏">游戏</a>
+            <a  data-rel="读书笔记">读书笔记</a>
             
         </span>
         
@@ -1144,7 +1144,7 @@
     </div>
     <div class="article-meta">
         
-            Created At : <time class="date" title='Updated At: 2025-04-09 10:40:14'>2025-04-08 14:43</time>
+            Created At : <time class="date" title='Updated At: 2025-05-26 10:30:26'>2025-05-26 09:30</time>
         
     </div>
     <div class="article-meta">
@@ -1182,405 +1182,15 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <style>
-  .button-group {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
-  }
-  .button-group button {
-    padding: 8px 16px;
-    margin: 0 5px;
-    border: 1px solid #ccc;
-    background-color: #f5f5f5;
-    cursor: pointer;
-    border-radius: 4px;
-    transition: all 0.2s ease;
-    width: 80px;
-    height: 36px;
-  }
-  .button-group button:hover {
-    background-color: #e0e0e0;
-  }
-  .button-group button.active {
-    background-color: #007bff;
-    color: white;
-    border-color: #007bff;
-  }
-  #game-controls {
-    margin-bottom: 15px;
-    padding: 16px;
-    background-color: #f8f9fa;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  }
-  #start-btn, #reset-btn {
-    padding: 8px 20px;
-    font-size: 14px;
-    font-weight: 500;
-    border-radius: 4px;
-    transition: all 0.2s ease;
-  }
-  #start-btn {
-    background-color: #28a745;
-    color: white;
-    border: 1px solid #28a745;
-  }
-  #start-btn:hover {
-    background-color: #218838;
-  }
-  #reset-btn {
-    background-color: #dc3545;
-    color: white;
-    border: 1px solid #dc3545;
-  }
-  #reset-btn:hover {
-    background-color: #c82333;
-  }
-</style>
-<div id="game-content" style="background-color:#fff;padding:20px;">
-  <canvas id="gomoku-board" width="448" height="448" style="box-shadow: 0 0 0 5px rgba(0,0,0,0.75);"></canvas>
-  <div id="game-controls" style="margin-bottom: 15px;">
-    <div style="margin-bottom: 8px;">
-      <div class="button-group">
-        <span>先手选择：</span>
-        <button id="player-first" class="active">玩家</button>
-        <button id="ai-first">AI</button>
-      </div>
-      <div class="button-group">
-        <span>执棋颜色：</span>
-        <button id="black-piece" class="active">黑棋</button>
-        <button id="white-piece">白棋</button>
-      </div>
-    </div>
-    <button id="start-btn" style="margin-right: 10px;">开始游戏</button>
-    <button id="reset-btn">重新开始</button>
-  </div>
-</div>
-<script>
-  const canvas = document.getElementById('gomoku-board');
-  const ctx = canvas.getContext('2d');
-  const size = 16;
-  const cellSize = 28;
-  const borderWidth = 10;
-  // 绘制棋盘
-  function drawBoard(){
-    // 绘制外边框
-    ctx.strokeStyle = '#000';
-    ctx.lineWidth = 2;
-    ctx.strokeRect(0, 0, canvas.width, canvas.height);
-    // 添加棋盘背景渐变
-    const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-    gradient.addColorStop(0, '#f0d9b5');
-    gradient.addColorStop(1, '#b58863');
-    ctx.fillStyle = gradient;
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-    // 优化网格线样式
-    ctx.strokeStyle = '#666';
-    ctx.lineWidth = 1;
-    for (let i = 0; i <= size; i++) {
-      ctx.beginPath();
-      ctx.moveTo(i * cellSize + 0.5, 0.5);
-      ctx.lineTo(i * cellSize + 0.5, size * cellSize + 0.5);
-      ctx.stroke();
-      ctx.beginPath();
-      ctx.moveTo(0.5, i * cellSize + 0.5);
-      ctx.lineTo(size * cellSize + 0.5, i * cellSize + 0.5);
-      ctx.stroke();
-    }
-    // 绘制星位标记
-    const starPoints = [3, 8, 13];
-    starPoints.forEach(x => {
-      starPoints.forEach(y => {
-        ctx.beginPath();
-        ctx.arc(x * cellSize + 0.5, y * cellSize + 0.5, 3, 0, Math.PI * 2);
-        ctx.fillStyle = '#666';
-        ctx.fill();
-      });
-    });
-  }
-  let board = Array.from({length: size}, () => Array(size).fill(0));
-  let gameOver = true;
-let gameStarted = false;
-let playerFirst = true;
-let playerColor = 'black';
-// 添加按钮事件监听
-function setupButtonEvents() {
-  document.getElementById('player-first').addEventListener('click', () => {
-    playerFirst = true;
-    document.getElementById('player-first').classList.add('active');
-    document.getElementById('ai-first').classList.remove('active');
-  });
-  document.getElementById('ai-first').addEventListener('click', () => {
-    playerFirst = false;
-    document.getElementById('ai-first').classList.add('active');
-    document.getElementById('player-first').classList.remove('active');
-  });
-  document.getElementById('black-piece').addEventListener('click', () => {
-    playerColor = 'black';
-    document.getElementById('black-piece').classList.add('active');
-    document.getElementById('white-piece').classList.remove('active');
-  });
-  document.getElementById('white-piece').addEventListener('click', () => {
-    playerColor = 'white';
-    document.getElementById('white-piece').classList.add('active');
-    document.getElementById('black-piece').classList.remove('active');
-  });
-}
-  function placePiece(x, y, player) {
-    if (board[y][x] === 0) {
-      board[y][x] = player;
-      drawPiece(x, y, player);
-      return true;
-    }
-    return false;
-  }
-  function drawPiece(x, y, player) {
-    ctx.save();
-    const centerX = x * cellSize + cellSize/2;
-    const centerY = y * cellSize + cellSize/2;
-    // 添加阴影效果
-    ctx.shadowColor = 'rgba(0, 0, 0, 0.5)';
-    ctx.shadowBlur = 8;
-    ctx.shadowOffsetX = 3;
-    ctx.shadowOffsetY = 3;
-    // 创建径向渐变实现发光效果
-    const gradient = ctx.createRadialGradient(
-      centerX, centerY, 2,
-      centerX, centerY, cellSize/2 - 2
-    );
-    const baseColor = (player === 1 && playerColor === 'black') || (player === 2 && playerColor === 'white') ? '#000000' : '#ffffff';
-    gradient.addColorStop(0, baseColor);
-    gradient.addColorStop(1, baseColor);
-    ctx.beginPath();
-    ctx.arc(centerX, centerY, cellSize/2 - 2, 0, 2 * Math.PI);
-    ctx.fillStyle = gradient;
-    ctx.fill();
-    // 添加高光点
-    ctx.beginPath();
-    ctx.arc(centerX - 4, centerY - 4, 3, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
-    ctx.fill();
-    ctx.restore();
-  }
-  function evaluatePosition(x, y, player) {
-    let score = 0;
-    // 检查四个方向：水平、垂直、两个对角线
-    const directions = [
-      [1, 0], // 水平
-      [0, 1], // 垂直
-      [1, 1], // 对角线1
-      [1, -1] // 对角线2
-    ];
-    for (const [dx, dy] of directions) {
-      let count = 1; // 当前棋子
-      let openEnds = 0;
-      // 正向搜索
-      let cx = x + dx, cy = y + dy;
-      while (cx >= 0 && cx < size && cy >= 0 && cy < size && board[cy][cx] === player) {
-        count++;
-        cx += dx;
-        cy += dy;
-      }
-      if (cx >= 0 && cx < size && cy >= 0 && cy < size && board[cy][cx] === 0) {
-        openEnds++;
-      }
-      // 反向搜索
-      cx = x - dx, cy = y - dy;
-      while (cx >= 0 && cx < size && cy >= 0 && cy < size && board[cy][cx] === player) {
-        count++;
-        cx -= dx;
-        cy -= dy;
-      }
-      if (cx >= 0 && cx < size && cy >= 0 && cy < size && board[cy][cx] === 0) {
-        openEnds++;
-      }
-      // 根据连子数量和开放端计算分数
-      if (count >= 5) {
-        score += 1000000;
-      } else if (count === 4) {
-        if (openEnds >= 2) {
-          score += 50000;
-        } else if (openEnds === 1) {
-          score += 10000;
-        }
-      } else if (count === 3) {
-        if (openEnds >= 2) {
-          score += 5000;
-        } else if (openEnds === 1) {
-          score += 1000;
-        }
-      } else if (count === 2) {
-        if (openEnds >= 2) {
-          score += 500;
-        } else if (openEnds === 1) {
-          score += 100;
-        }
-      }
-      // 增加对关键位置的评估
-      if ((x === 7 && y === 7) || (x === 3 && y === 3) || (x === 11 && y === 11)) {
-        score += 50;
-      }
-    }
-    return score;
-  }
-  function aiMove() {
-    let bestScore = -Infinity;
-    let bestMove = null;
-    let playerBestScore = -Infinity;
-    let playerBestMove = null;
-    for (let y = 0; y < size; y++) {
-      for (let x = 0; x < size; x++) {
-        if (board[y][x] === 0) {
-          // 计算AI得分
-          let attackScore = evaluatePosition(x, y, 2);
-          let defenseScore = evaluatePosition(x, y, 1);
-          let totalScore = attackScore + defenseScore;
-          // 计算玩家得分
-          let playerScore = evaluatePosition(x, y, 1);
-          // 如果当前位置能形成五连子，直接返回最大分数
-          if (checkFiveInRow(x, y, 2)) {
-            totalScore = Infinity;
-          }
-          // 记录玩家最高得分位置
-          if (playerScore > playerBestScore) {
-            playerBestScore = playerScore;
-            playerBestMove = {x, y};
-          }
-          // 如果玩家得分高于AI，优先占据玩家最高得分位置
-          if (playerBestScore > totalScore) {
-            bestScore = playerBestScore;
-            bestMove = playerBestMove;
-          } else if (totalScore > bestScore) {
-            bestScore = totalScore;
-            bestMove = {x, y};
-          }
-        }
-      }
-    }
-    if (bestMove) {
-      if (placePiece(bestMove.x, bestMove.y, 2)) {
-        return bestMove;
-      }
-    }
-    return null;
-  }
-  function checkWin(x, y, player) {
-    const directions = [
-      [1, 0],
-      [0, 1],
-      [1, 1],
-      [1, -1]
-    ];
-    for (const [dx, dy] of directions) {
-      let count = 1;
-      let cx = x + dx, cy = y + dy;
-      while (cx >= 0 && cx < size && cy >= 0 && cy < size && board[cy][cx] === player) {
-        count++;
-        cx += dx;
-        cy += dy;
-      }
-      cx = x - dx, cy = y - dy;
-      while (cx >= 0 && cx < size && cy >= 0 && cy < size && board[cy][cx] === player) {
-        count++;
-        cx -= dx;
-        cy -= dy;
-      }
-      if (count >= 5) {
-        return true;
-      }
-    }
-    return false;
-  }
-  function checkFiveInRow(x, y, player) {
-    const directions = [
-      [1, 0],
-      [0, 1],
-      [1, 1],
-      [1, -1]
-    ];
-    for (const [dx, dy] of directions) {
-      let count = 1;
-      let cx = x + dx, cy = y + dy;
-      while (cx >= 0 && cx < size && cy >= 0 && cy < size && board[cy][cx] === player) {
-        count++;
-        cx += dx;
-        cy += dy;
-      }
-      cx = x - dx, cy = y - dy;
-      while (cx >= 0 && cx < size && cy >= 0 && cy < size && board[cy][cx] === player) {
-        count++;
-        cx -= dx;
-        cy -= dy;
-      }
-      if (count >= 5) {
-        return true;
-      }
-    }
-    return false;
-  }
-  setupButtonEvents();
-document.getElementById('start-btn').addEventListener('click', () => {
-  gameStarted = true;
-  gameOver = false;
-  playerFirst = document.getElementById('player-first').classList.contains('active');
-  playerColor = document.getElementById('black-piece').classList.contains('active') ? 'black' : 'white';
-  if (!playerFirst) {
-    const aiPos = aiMove();
-    if (aiPos) {
-      placePiece(aiPos.x, aiPos.y, 2);
-    }
-  }
-  fullScreen();
-});
-canvas.addEventListener('click', (e) => {
-    if (gameOver || !gameStarted) return;
-    const rect = canvas.getBoundingClientRect();
-    // 优化坐标计算：四舍五入到最近的交叉点
-    const x = Math.floor((e.clientX - rect.left) / cellSize);
-    const y = Math.floor((e.clientY - rect.top) / cellSize);
-    if (x < 0 || x >= size || y < 0 || y >= size) return;
-    if (placePiece(x, y, 1)) {
-      if (checkWin(x, y, 1)) {
-        alert('玩家获胜！');
-        gameOver = true;
-        return;
-      }
-      const aiPos = aiMove();
-      if (aiPos && checkWin(aiPos.x, aiPos.y, 2)) {
-        alert('AI获胜！');
-        gameOver = true;
-        return;
-      }
-      if (gameOver || !gameStarted) return;
-    }
-  });
-  function resetGame() {
-    gameStarted = false;
-    document.getElementById('first-player').value = 'player';
-    document.getElementById('piece-color').value = 'black';
-    board = Array.from({length: size}, () => Array(size).fill(0));
-    gameOver = false;
-    ctx.clearRect(0, 0, canvas.width, canvas.height);
-    drawBoard();
-    fullScreen();
-  }
-  function fullScreen(){
-    // 进入全屏模式
-    const tetrisContainer = document.getElementById('game-content');
-    if (tetrisContainer.requestFullscreen) {
-      tetrisContainer.requestFullscreen();
-    } else if (tetrisContainer.mozRequestFullScreen) { // Firefox
-      tetrisContainer.mozRequestFullScreen();
-    } else if (tetrisContainer.webkitRequestFullscreen) { // Chrome, Safari and Opera
-      tetrisContainer.webkitRequestFullscreen();
-    } else if (tetrisContainer.msRequestFullscreen) { // IE/Edge
-      tetrisContainer.msRequestFullscreen();
-    }
-  }
-  document.getElementById('reset-btn').addEventListener('click', resetGame); 
-  drawBoard()
-</script>
+        <p>只做一件事，看着是一件简单的事情，其实没有我们想的那么简单。</p>
+<p>涉及到的问题就是目标，要有明确的目标。说个最简单的例子：我们都希望自己实现财富自由。那么请问一个问题，你知道需要多少钱才能满足你实现财富自由？你实现财富自由的目标需要经过那些步骤？我估计思考过这个问题的人，少之又少。这就是没有目标，也是我们目标不明确导致的。</p>
+<p>由于我是从事的软件开发，一般来说都是需要有一个明确的目标，然后根据这个目标来制定一个框架计划，然后一步一步的去实现每一个细节。但是说实话，到目前为止，我觉得我的人生还是浑浑噩噩，没有明确的目标，也没有我想要的东西。所以我很难达到心流的境界，总是容易被外界所影响或者诱惑。</p>
+<p>就像只做一件事所说，你的五年目标是什么？你的一年目标是什么？你的一月目标是什么？你的一周目标是什么？你的一天目标是什么？你的当前目标是什么？在这不断询问和整理的过程，找到你这个时间段最重要的事情，并且只有一件事情，那么就去做好它，完成它。但是对于我来说，好像都是被人安排，然后按照安排的流程来完成，我自己从来没有计划或思考过这些问题。</p>
+<p>比如知识体系，这个东西从我很久之前读小说就知道了它的存在，但是呢？没有自己的输入、实践、输出。到目前为止，也就只存在于我的知道。所以最近读书，给我最大的感受就是【知易行难】。</p>
+<p>就是在一个时间段里专心做一件事情，将它做到精通。刻意练习到最后精通。</p>
+<p>说到这里，我就想起今早我读到这里的时候最想完成的目标，就是写书。这是我还在读大学时的梦想。但是我大学毕业都十一年了，中间读书的时间都很少，更加不要说写书了。唯一保持还算比较好的习惯大概就是坚持平均每周写一篇博客吧！但是事与愿违，特别是最近两年，基本都是应付了事，没有用心写过。特别是今年AI出来以后，他的却方便了我们写作，也会进行总结等，但是同时我觉得它磨灭了我的思考。我已经有好几个月的写作都没自己思考过了，基本都是问大模型，然后他给我输出，然后我再完善细节。它的总结的确很好很到位，但是那不是我的东西，也不是我的思考。所以在这个适应阶段是一件很痛的事情。</p>
+<p>所以就目前来说，我觉得目标明确是很重要的。那么既然我们制定了目标，剩下的就是更具这个目标去制定计划。不要被外在的环境所影响。虽然我们做不到心流的境界，但是我还是希望自己能够清空大脑，在那个时间段只做哪一件事情。</p>
+<p>五年目标：【写小说四本】<br>一年目标：【根据风云他生渡完成一本小说】<br>一月目标：【第一个月，开始估计很难，先定一个目标每天写一千字】<br>一周目标：【这一周尽快将小说的大纲完成】<br>一天目标：【思考目标和主题框架】<br>当前目标：【对小说定一个可行的计划和标题】</p>
 
       
        <hr><span style="font-style: italic;color: gray;"> 转载请注明来源，欢迎对文章中的引用来源进行考证，欢迎指出任何有错误或不够清晰的表达。可以邮件至 1148063373@qq.com </span>
